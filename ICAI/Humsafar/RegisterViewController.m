@@ -81,6 +81,11 @@
 }
 
 #pragma mark- Button Actions
+- (IBAction)btnBackAction:(UIButton *)sender {
+    [self.navigationController popViewControllerAnimated:true];
+}
+
+
 - (IBAction)showStatePicker:(id)sender {
    
     [_txtFieldName resignFirstResponder];
