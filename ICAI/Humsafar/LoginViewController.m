@@ -13,15 +13,18 @@
 
 
 //@interface LoginViewController () <GIDSignInDelegate, GIDSignInUIDelegate>
+@interface LoginViewController ()
+@property (weak, nonatomic) IBOutlet UIButton *buttonForgotPassword;
+
 //
 //@property (weak, nonatomic) IBOutlet GIDSignInButton *GSignIn;
-//@end
+@end
 
 @implementation LoginViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
+    _buttonForgotPassword.layer.borderColor = [[UIColor lightGrayColor] CGColor];
 }
 
 - (void)didReceiveMemoryWarning {
