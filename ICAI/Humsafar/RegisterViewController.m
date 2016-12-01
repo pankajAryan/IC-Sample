@@ -11,6 +11,7 @@
 #import "UITextField+Validation.h"
 #import "UIViewController+Utility.h"
 #import "OTPViewController.h"
+#import "RootViewController.h"
 
 @interface RegisterViewController () <UITextFieldDelegate> {
     
@@ -85,6 +86,13 @@
     [self.navigationController popViewControllerAnimated:true];
 }
 
+- (IBAction)btnSubmitAction:(UIButton *)sender {
+//    [UIViewController saveDatatoUserDefault:@"11" forKey:@"userId"];
+//    [UIViewController saveDatatoUserDefault:@"1" forKey:@"isUserLoggedIn"];
+    
+    RootViewController *VC = [RootViewController instantiateViewControllerWithIdentifier:@"RootViewController" fromStoryboard:@"Main"];
+    [self.navigationController pushViewController:VC animated:YES];
+}
 
 - (IBAction)showStatePicker:(id)sender {
    

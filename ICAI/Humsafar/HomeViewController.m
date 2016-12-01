@@ -28,6 +28,7 @@
 
     [_btn_menu addTarget:self action:@selector(presentLeftMenuViewController:) forControlEvents:UIControlEventTouchUpInside];
     
+    /*
     if ([[UIViewController retrieveDataFromUserDefault:@"loginType"] isEqualToString:@"department"]) {// Normal Login
         [self fetchDistrictListForStateId:@"29"];//Hardcode
         self.incentiveView.hidden = YES;
@@ -36,6 +37,7 @@
         [self fetchWalletBalanceForUserFromServer];
         self.incentiveView.hidden = NO;
     }
+    */
 }
 
 - (void)didReceiveMemoryWarning {

@@ -274,6 +274,9 @@
                                             </textField>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5Pi-hL-aDQ">
                                                 <state key="normal" image="arrow_left"/>
+                                                <connections>
+                                                    <action selector="btnSubmitAction:" destination="dmc-vK-a5u" eventType="touchUpInside" id="FxJ-ob-p6j"/>
+                                                </connections>
                                             </button>
                                         </subviews>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
