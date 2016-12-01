@@ -42,7 +42,6 @@
 }
 
 - (void)logout {
-    
 //    [[GIDSignIn sharedInstance] signOut];
     [UIViewController saveDatatoUserDefault:@"" forKey:@"userId"];
     [UIViewController saveDatatoUserDefault:@"0" forKey:@"isUserLoggedIn"];
