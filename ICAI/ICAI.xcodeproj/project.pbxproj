@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		41AACF731DF175F900C58064 /* HomeCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 41AACF721DF175F900C58064 /* HomeCollectionViewCell.m */; };
+		41AACF761DF1A1D700C58064 /* NotificationTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 41AACF751DF1A1D700C58064 /* NotificationTableViewCell.m */; };
+		41AACF791DF1A20C00C58064 /* NotificationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 41AACF781DF1A20C00C58064 /* NotificationViewController.m */; };
 		B781D6E31DBAB4F2001627F1 /* HomeListVC.m in Sources */ = {isa = PBXBuildFile; fileRef = B781D6E21DBAB4F2001627F1 /* HomeListVC.m */; };
 		B7CA057C1DBFE1F900750CF6 /* HomeListVC2.m in Sources */ = {isa = PBXBuildFile; fileRef = B7CA057B1DBFE1F900750CF6 /* HomeListVC2.m */; };
 		B7E8D3CB1DD3AB45001F005C /* Other.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B7E8D3CA1DD3AB45001F005C /* Other.storyboard */; };
@@ -88,6 +90,10 @@
 /* Begin PBXFileReference section */
 		41AACF711DF175F900C58064 /* HomeCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HomeCollectionViewCell.h; sourceTree = "<group>"; };
 		41AACF721DF175F900C58064 /* HomeCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HomeCollectionViewCell.m; sourceTree = "<group>"; };
+		41AACF741DF1A1D700C58064 /* NotificationTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NotificationTableViewCell.h; sourceTree = "<group>"; };
+		41AACF751DF1A1D700C58064 /* NotificationTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NotificationTableViewCell.m; sourceTree = "<group>"; };
+		41AACF771DF1A20C00C58064 /* NotificationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NotificationViewController.h; sourceTree = "<group>"; };
+		41AACF781DF1A20C00C58064 /* NotificationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NotificationViewController.m; sourceTree = "<group>"; };
 		B781D6E11DBAB4F2001627F1 /* HomeListVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HomeListVC.h; sourceTree = "<group>"; };
 		B781D6E21DBAB4F2001627F1 /* HomeListVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HomeListVC.m; sourceTree = "<group>"; };
 		B7CA057A1DBFE1F900750CF6 /* HomeListVC2.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HomeListVC2.h; sourceTree = "<group>"; };
@@ -260,6 +266,10 @@
 				B7CA057B1DBFE1F900750CF6 /* HomeListVC2.m */,
 				41AACF711DF175F900C58064 /* HomeCollectionViewCell.h */,
 				41AACF721DF175F900C58064 /* HomeCollectionViewCell.m */,
+				41AACF741DF1A1D700C58064 /* NotificationTableViewCell.h */,
+				41AACF751DF1A1D700C58064 /* NotificationTableViewCell.m */,
+				41AACF771DF1A20C00C58064 /* NotificationViewController.h */,
+				41AACF781DF1A20C00C58064 /* NotificationViewController.m */,
 			);
 			path = HomeVC;
 			sourceTree = "<group>";
@@ -658,6 +668,8 @@
 				CE2B39841DAE6D1F00B266E1 /* IntroViewController.m in Sources */,
 				CE2B39E71DAE7FCB00B266E1 /* CLLocationManager+blocks.m in Sources */,
 				CE2B39EB1DAE7FCB00B266E1 /* UIFont+FF.m in Sources */,
+				41AACF791DF1A20C00C58064 /* NotificationViewController.m in Sources */,
+				41AACF761DF1A1D700C58064 /* NotificationTableViewCell.m in Sources */,
 				CE2B39E91DAE7FCB00B266E1 /* NSString+device.m in Sources */,
 				CE2B39CE1DAE7D2C00B266E1 /* RootViewController.m in Sources */,
 				CE2B39EA1DAE7FCB00B266E1 /* UIColor+FF.m in Sources */,
