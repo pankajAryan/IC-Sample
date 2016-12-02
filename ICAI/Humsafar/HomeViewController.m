@@ -8,6 +8,7 @@
 
 #import "HomeViewController.h"
 #import "UIViewController+RESideMenu.h"
+#import "HomeCollectionViewCell.h"
 
 @interface HomeViewController ()
 
@@ -78,5 +79,45 @@
     }];
 }
 
+#pragma mark - UIColleciton view delegate
+- (NSInteger)collectionView:(UICollectionView *)collectionView
+     numberOfItemsInSection:(NSInteger)section{
+    return 4;
+}
+
+- (__kindof UICollectionViewCell *)collectionView:(UICollectionView *)collectionView
+                           cellForItemAtIndexPath:(NSIndexPath *)indexPath{
+    HomeCollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"HomeCollectionViewCell" forIndexPath:indexPath];
+
+    NSString *imageName, *text;
+    switch (indexPath.item) {
+        case 0:
+            imageName = @"User";
+            text = @"My Profile";
+            break;
+        case 1:
+            imageName = @"Payment";
+            text = @"Payment";
+            break;
+        case 2:
+            imageName = @"TestTask";
+            text = @"Test Task";
+            break;
+        case 3:
+            imageName = @"ApplicationForm";
+            text = @"Application Form";
+            break;
+            
+        default:
+            break;
+    }
+    [cell configCellWithImage:imageName labelText:text];
+    return cell;
+}
+
+- (void)collectionView:(UICollectionView *)collectionView
+didSelectItemAtIndexPath:(NSIndexPath *)indexPath{
+    NSLog(@"didSelectItemAtIndexPath");
+}
 
 @end
