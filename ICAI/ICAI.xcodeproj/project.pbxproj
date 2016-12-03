@@ -282,11 +282,11 @@
 		410D4B051DF28B1000FFB0D8 /* View Controller */ = {
 			isa = PBXGroup;
 			children = (
+				410D4B0A1DF28B1000FFB0D8 /* My Profile VC */,
 				410D4B061DF28B1000FFB0D8 /* AboutExamVC */,
 				410D4B071DF28B1000FFB0D8 /* AboutVC */,
 				410D4B081DF28B1000FFB0D8 /* Analysis VC */,
 				410D4B091DF28B1000FFB0D8 /* ApplicationFormVC */,
-				410D4B0A1DF28B1000FFB0D8 /* My Profile VC */,
 				410D4B0B1DF28B1000FFB0D8 /* Notification VC */,
 				410D4B101DF28B1000FFB0D8 /* Payment VC */,
 				410D4B111DF28B1000FFB0D8 /* TakeTest VC */,
@@ -498,22 +498,15 @@
 		CE2B397B1DAE6D1F00B266E1 /* ICAI */ = {
 			isa = PBXGroup;
 			children = (
-				410D4B051DF28B1000FFB0D8 /* View Controller */,
 				CE0596BF1DB6654E001E62A9 /* WebServiceHelpers */,
-				CE2B39AC1DAE70DB00B266E1 /* Constants */,
 				CE16DAF11DBB405E00AB664C /* Storyboards */,
 				CE2B397F1DAE6D1F00B266E1 /* AppDelegate.h */,
 				CE2B39801DAE6D1F00B266E1 /* AppDelegate.m */,
-				CE2B39821DAE6D1F00B266E1 /* IntroViewController.h */,
-				CE2B39831DAE6D1F00B266E1 /* IntroViewController.m */,
-				CE2B39BD1DAE72AB00B266E1 /* LoginViewController.h */,
-				CE2B39BE1DAE72AB00B266E1 /* LoginViewController.m */,
-				CE2B39C01DAE736B00B266E1 /* RegisterViewController.h */,
-				CE2B39C11DAE736B00B266E1 /* RegisterViewController.m */,
-				CE9316671DBC0B7200A84A91 /* OTPViewController.h */,
-				CE9316681DBC0B7200A84A91 /* OTPViewController.m */,
+				CEC24E8F1DF292B00050B6CA /* LoginNregister */,
 				CE2B39C61DAE7B2F00B266E1 /* SideManuPanel */,
 				B781D6E01DBAB4BE001627F1 /* HomeVC */,
+				410D4B051DF28B1000FFB0D8 /* View Controller */,
+				CE2B39AC1DAE70DB00B266E1 /* Constants */,
 				CE16DAF41DBB426400AB664C /* Assets.xcassets */,
 				CE2B398A1DAE6D1F00B266E1 /* LaunchScreen.storyboard */,
 				CE2B398D1DAE6D1F00B266E1 /* Info.plist */,
@@ -687,6 +680,21 @@
 				CE9316601DBBB6D700A84A91 /* AddressBook.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		CEC24E8F1DF292B00050B6CA /* LoginNregister */ = {
+			isa = PBXGroup;
+			children = (
+				CE2B39821DAE6D1F00B266E1 /* IntroViewController.h */,
+				CE2B39831DAE6D1F00B266E1 /* IntroViewController.m */,
+				CE2B39BD1DAE72AB00B266E1 /* LoginViewController.h */,
+				CE2B39BE1DAE72AB00B266E1 /* LoginViewController.m */,
+				CE2B39C01DAE736B00B266E1 /* RegisterViewController.h */,
+				CE2B39C11DAE736B00B266E1 /* RegisterViewController.m */,
+				CE9316671DBC0B7200A84A91 /* OTPViewController.h */,
+				CE9316681DBC0B7200A84A91 /* OTPViewController.m */,
+			);
+			name = LoginNregister;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */

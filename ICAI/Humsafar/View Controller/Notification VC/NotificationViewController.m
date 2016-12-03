@@ -19,11 +19,14 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    [_btn_menu addTarget:self action:@selector(presentLeftMenuViewController:) forControlEvents:UIControlEventTouchUpInside];
 }
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
+}
+- (IBAction)popVCAction:(id)sender {
+    
+    [self.navigationController popViewControllerAnimated:YES];
 }
 
 #pragma mark- TableView Datasource
@@ -45,5 +48,7 @@
 //    cell.labelQuestionDetail.text = @"test abc test abc test abc test abc test abc test abc test abc test abc test abc test abc";
     return cell;
 }
+
+
 
 @end

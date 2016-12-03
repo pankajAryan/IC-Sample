@@ -29,6 +29,11 @@
 //    tableviewInstruction.layer.shadowOpacity = 1.0;
 }
 
+- (IBAction)popVCAction:(id)sender {
+    
+    [self.navigationController popViewControllerAnimated:YES];
+}
+
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
