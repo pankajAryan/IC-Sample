@@ -26,7 +26,7 @@
 #import "UIImageView+AFNetworking.h"
 #import <MediaPlayer/MediaPlayer.h>
 #import <AVFoundation/AVFoundation.h>
-
+#import "CommonWebViewController.h"
 
 static NSString *stringLeftMenuCellIdentifier  = @"LeftMenuCell";
 
@@ -135,7 +135,9 @@ static NSString *stringLeftMenuCellIdentifier  = @"LeftMenuCell";
             
         case 8:
         {
-            AnalysisViewController *controller = (AnalysisViewController*)[UIViewController instantiateViewControllerWithIdentifier:@"AnalysisViewController" fromStoryboard:@"LeftMenuScenes"];            
+            CommonWebViewController *controller = (CommonWebViewController*)[UIViewController instantiateViewControllerWithIdentifier:@"CommonWebViewController" fromStoryboard:@"Other"];
+            controller.title = @"About";
+            controller.urlString = @"http://icaicommercewizard.com";
             [homeController.navigationController pushViewController:controller animated:YES];
         }
             break;

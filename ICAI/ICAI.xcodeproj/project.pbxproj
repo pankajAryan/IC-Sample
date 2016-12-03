@@ -93,6 +93,7 @@
 		CE9316631DBBB6DD00A84A91 /* SafariServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CE9316621DBBB6DD00A84A91 /* SafariServices.framework */; };
 		CE9316651DBBB82400A84A91 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = CE9316641DBBB82400A84A91 /* GoogleService-Info.plist */; };
 		CE9316691DBC0B7200A84A91 /* OTPViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CE9316681DBC0B7200A84A91 /* OTPViewController.m */; };
+		CEB08FF41DF35AD5008A83AB /* CommonWebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CEB08FF31DF35AD5008A83AB /* CommonWebViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -251,6 +252,8 @@
 		CE9316661DBBC71B00A84A91 /* Humsafar.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Humsafar.entitlements; sourceTree = "<group>"; };
 		CE9316671DBC0B7200A84A91 /* OTPViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OTPViewController.h; sourceTree = "<group>"; };
 		CE9316681DBC0B7200A84A91 /* OTPViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OTPViewController.m; sourceTree = "<group>"; };
+		CEB08FF21DF35AD5008A83AB /* CommonWebViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CommonWebViewController.h; sourceTree = "<group>"; };
+		CEB08FF31DF35AD5008A83AB /* CommonWebViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CommonWebViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -290,6 +293,8 @@
 				410D4B0B1DF28B1000FFB0D8 /* Notification VC */,
 				410D4B101DF28B1000FFB0D8 /* Payment VC */,
 				410D4B111DF28B1000FFB0D8 /* TakeTest VC */,
+				CEB08FF21DF35AD5008A83AB /* CommonWebViewController.h */,
+				CEB08FF31DF35AD5008A83AB /* CommonWebViewController.m */,
 			);
 			path = "View Controller";
 			sourceTree = "<group>";
@@ -799,6 +804,7 @@
 				CE2B39A51DAE6F2D00B266E1 /* ActionSheetStringPicker.m in Sources */,
 				CE0596DD1DB665B5001E62A9 /* AFNetworkReachabilityManager.m in Sources */,
 				CE0596DE1DB665B5001E62A9 /* AFSecurityPolicy.m in Sources */,
+				CEB08FF41DF35AD5008A83AB /* CommonWebViewController.m in Sources */,
 				CE2B3A2C1DAE823D00B266E1 /* HexColor.m in Sources */,
 				B7CA057C1DBFE1F900750CF6 /* HomeListVC2.m in Sources */,
 				CE2B39811DAE6D1F00B266E1 /* AppDelegate.m in Sources */,
