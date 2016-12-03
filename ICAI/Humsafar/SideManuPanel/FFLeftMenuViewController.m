@@ -15,7 +15,14 @@
 //#import "MyIncentiveVC.h"
 //#import "MyVehicleProfileVC.h"
 //#import "FaqViewController.h"
-
+#import "ProfileViewController.h"
+#import "NotificationViewController.h"
+#import "PaymentViewController.h"
+#import "InstructionViewController.h"
+#import "ApplicationFormViewController.h"
+#import "AboutViewController.h"
+#import "AboutExamViewController.h"
+#import "AnalysisViewController.h"
 #import "UIImageView+AFNetworking.h"
 #import <MediaPlayer/MediaPlayer.h>
 #import <AVFoundation/AVFoundation.h>
@@ -33,10 +40,10 @@ static NSString *stringLeftMenuCellIdentifier  = @"LeftMenuCell";
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     
-    self.imgVw_userImg.layer.cornerRadius = 28;
-    self.imgVw_userImg.layer.masksToBounds = YES;
-    self.imgVw_userImg.layer.borderColor = [UIColor orangeColor].CGColor;
-    self.imgVw_userImg.layer.borderWidth = 3;
+//    self.imgVw_userImg.layer.cornerRadius = 28;
+//    self.imgVw_userImg.layer.masksToBounds = YES;
+//    self.imgVw_userImg.layer.borderColor = [UIColor orangeColor].CGColor;
+//    self.imgVw_userImg.layer.borderWidth = 3;
     
 }
 
@@ -48,8 +55,8 @@ static NSString *stringLeftMenuCellIdentifier  = @"LeftMenuCell";
 -(void)viewWillAppear:(BOOL)animated{
     [super viewWillAppear:animated];
     
-    self.lbl_name.text = [UIViewController retrieveDataFromUserDefault:@"name"];
-    [self.imgVw_userImg setImageWithURL:[NSURL URLWithString:[UIViewController retrieveDataFromUserDefault:@"userImageUrl"]] placeholderImage:nil];
+//    self.lbl_name.text = [UIViewController retrieveDataFromUserDefault:@"name"];
+//    [self.imgVw_userImg setImageWithURL:[NSURL URLWithString:[UIViewController retrieveDataFromUserDefault:@"userImageUrl"]] placeholderImage:nil];
 }
 
 #pragma mark- TableView Delegate
@@ -57,73 +64,45 @@ static NSString *stringLeftMenuCellIdentifier  = @"LeftMenuCell";
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
     
     NSInteger index = indexPath.row;
-    
-    if ((index >=7) && ([[UIViewController retrieveDataFromUserDefault:@"loginType"] isEqualToString:@"department"])) {// Department Login
-        
-        index++;
-    }
-
     HomeViewController *homeController = (HomeViewController*)self.sideMenuViewController.contentViewController;
 
     switch (index)
     {
-/*        case 0:
+        case 0:
         {
-            
-            if ([[UIViewController retrieveDataFromUserDefault:@"loginType"] isEqualToString:@"department"]) {// Normal Login
-                
-                ProfileViewController2 *vc = (ProfileViewController2 *)[UIViewController instantiateViewControllerWithIdentifier:@"ProfileViewController2" fromStoryboard:@"LeftMenuScenes"];
-                [homeController.navigationController pushViewController:vc animated:YES];
-            }else{ // G+ login
-                
+//
+//            if ([[UIViewController retrieveDataFromUserDefault:@"loginType"] isEqualToString:@"department"]) {// Normal Login
+//                
+//                ProfileViewController2 *vc = (ProfileViewController2 *)[UIViewController instantiateViewControllerWithIdentifier:@"ProfileViewController2" fromStoryboard:@"LeftMenuScenes"];
+//                [homeController.navigationController pushViewController:vc animated:YES];
+//            }else{ // G+ login
+//                
                 ProfileViewController *vc = (ProfileViewController *)[UIViewController instantiateViewControllerWithIdentifier:@"ProfileViewController" fromStoryboard:@"LeftMenuScenes"];
                 [homeController.navigationController pushViewController:vc animated:YES];
-            }
+            
         }
             break;
         case 1:
         {
-            EmergencyContactsVC *vc = (EmergencyContactsVC *)[UIViewController instantiateViewControllerWithIdentifier:@"EmergencyContactsVC" fromStoryboard:@"LeftMenuScenes"];
+            NotificationViewController *vc = (NotificationViewController *)[UIViewController instantiateViewControllerWithIdentifier:@"NotificationViewController" fromStoryboard:@"Home"];
             [homeController.navigationController pushViewController:vc animated:YES];
         }
             break;
 
         case 2:
-            
-            if ([[UIViewController retrieveDataFromUserDefault:@"loginType"] isEqualToString:@"department"]) {// Normal Login
-                
-                MyFeedsVC *vc = (MyFeedsVC *)[UIViewController instantiateViewControllerWithIdentifier:@"MyFeedsVC" fromStoryboard:@"LeftMenuScenes"];
-                [homeController.navigationController pushViewController:vc animated:YES];
-            }else{ // G+ login
-                MyIncentiveVC *vc = (MyIncentiveVC *)[UIViewController instantiateViewControllerWithIdentifier:@"MyIncentiveVC" fromStoryboard:@"LeftMenuScenes"];
+        {
+//            if ([[UIViewController retrieveDataFromUserDefault:@"loginType"] isEqualToString:@"department"]) {// Normal Login
+//                MyFeedsVC *vc = (MyFeedsVC *)[UIViewController instantiateViewControllerWithIdentifier:@"MyFeedsVC" fromStoryboard:@"LeftMenuScenes"];
+//                [homeController.navigationController pushViewController:vc animated:YES];
+//            }else{ // G+ login
+                PaymentViewController *vc = (PaymentViewController *)[UIViewController instantiateViewControllerWithIdentifier:@"PaymentViewController" fromStoryboard:@"LeftMenuScenes"];
                 [homeController.navigationController pushViewController:vc animated:YES];
             }
             break;
             
         case 3:
-            
-            if ([[UIViewController retrieveDataFromUserDefault:@"loginType"] isEqualToString:@"department"])
-            {// Normal Login
-                
-                NSString *mediaType = AVMediaTypeVideo; // Or AVMediaTypeAudio
-                
-                AVAuthorizationStatus authStatus = [AVCaptureDevice authorizationStatusForMediaType:mediaType];
-                
-                if(authStatus == AVAuthorizationStatusDenied)
-                {
-                    // The user has explicitly denied permission for media capture.
-                    
-                    [self showErrorTSMessage:@"To use this feature you must allow camera access from the device settings."];
-                }
-                else {
-                    BarCodeScannerController *controller = (BarCodeScannerController*)[UIViewController instantiateViewControllerWithIdentifier:@"BarCodeScannerController" fromStoryboard:@"Other"];
-                    
-                    [homeController.navigationController pushViewController:controller animated:YES];
-                }
-            }
-            else{ // G+ login
-                
-                MyVehicleProfileVC *vc = (MyVehicleProfileVC *)[UIViewController instantiateViewControllerWithIdentifier:@"MyVehicleProfileVC" fromStoryboard:@"LeftMenuScenes"];
+            {
+                InstructionViewController *vc = (InstructionViewController *)[UIViewController instantiateViewControllerWithIdentifier:@"InstructionViewController" fromStoryboard:@"Home"];
                 [homeController.navigationController pushViewController:vc animated:YES];
             }
             
@@ -131,47 +110,46 @@ static NSString *stringLeftMenuCellIdentifier  = @"LeftMenuCell";
 
         case 4:
         {
-            RoadSafetyEducationHomeVC *vc = (RoadSafetyEducationHomeVC *)[UIViewController instantiateViewControllerWithIdentifier:@"RoadSafetyEducationHomeVC" fromStoryboard:@"LeftMenuScenes"];
+            ApplicationFormViewController *vc = (ApplicationFormViewController *)[UIViewController instantiateViewControllerWithIdentifier:@"ApplicationFormViewController" fromStoryboard:@"LeftMenuScenes"];
             [homeController.navigationController pushViewController:vc animated:YES];
         }
             break;
             
         case 5:
         {
-            GetAmbulanceViewController *vc = [[GetAmbulanceViewController alloc] initWithNibName:@"GetAmbulanceViewController" bundle:nil];
+            AboutViewController *vc = (AboutViewController *)[UIViewController instantiateViewControllerWithIdentifier:@"AboutViewController" fromStoryboard:@"LeftMenuScenes"];
             [homeController.navigationController pushViewController:vc animated:YES];
         }
             break;
 
         case 6:
         {
-            HighwayServicesHomeVC *vc = (HighwayServicesHomeVC *)[UIViewController instantiateViewControllerWithIdentifier:@"HighwayServicesHomeVC" fromStoryboard:@"LeftMenuScenes"];
+            AboutExamViewController *vc = (AboutExamViewController *)[UIViewController instantiateViewControllerWithIdentifier:@"AboutExamViewController" fromStoryboard:@"LeftMenuScenes"];
             [homeController.navigationController pushViewController:vc animated:YES];
         }
             break;
         
         case 7:
-            //return [UIImage imageNamed:@"speed_analysis"];
+//            [App_Delegate logout];
             break;
             
         case 8:
         {
-            FaqViewController *controller = (FaqViewController*)[UIViewController instantiateViewControllerWithIdentifier:@"FaqViewController" fromStoryboard:@"Other"];
-            
+            AnalysisViewController *controller = (AnalysisViewController*)[UIViewController instantiateViewControllerWithIdentifier:@"AnalysisViewController" fromStoryboard:@"LeftMenuScenes"];            
             [homeController.navigationController pushViewController:controller animated:YES];
         }
             break;
             
-        case 9:
-        {
-            AboutViewController *vc = [AboutViewController new];
-            [homeController.navigationController pushViewController:vc animated:YES];
-        }
-            break;
-  */
-        case 10:
-            [App_Delegate logout];
-            break;
+//        case 9:
+//        {
+//            AboutViewController *vc = [AboutViewController new];
+//            [homeController.navigationController pushViewController:vc animated:YES];
+//        }
+//            break;
+//  
+//        case 10:
+//            [App_Delegate logout];
+//            break;
             
         default:
             break;
@@ -184,11 +162,7 @@ static NSString *stringLeftMenuCellIdentifier  = @"LeftMenuCell";
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    if ([[UIViewController retrieveDataFromUserDefault:@"loginType"] isEqualToString:@"department"]) {// Department Login
-        return 10;
-    }else{ // G+ User login
-        return 11;
-    }
+    return 9;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
@@ -218,66 +192,43 @@ static NSString *stringLeftMenuCellIdentifier  = @"LeftMenuCell";
 
 - (UIImage*)imageIconForMenuItemAtIndex:(NSInteger)index {
     
-    if ((index >=7) && ([[UIViewController retrieveDataFromUserDefault:@"loginType"] isEqualToString:@"department"])) {// Department Login
-        
-        index++;
-    }
-    
     switch (index) {
         case 0:
-            return [UIImage imageNamed:@"profile"];
+            return [UIImage imageNamed:@"MyProfile"];
             break;
             
         case 1:
-            return [UIImage imageNamed:@"emerg_call"];
+            return [UIImage imageNamed:@"Notification"];
             break;
             
         case 2:
-            if ([[UIViewController retrieveDataFromUserDefault:@"loginType"] isEqualToString:@"department"]) {// Normal Login
-                return [UIImage imageNamed:@"my_feeds"];
-            }else{ // G+ login
-                return [UIImage imageNamed:@"my_incentives"];
-            }
-
+            return [UIImage imageNamed:@"Payment_left"];
             break;
 
         case 3:
-            if ([[UIViewController retrieveDataFromUserDefault:@"loginType"] isEqualToString:@"department"]) {// Normal Login
-                return [UIImage imageNamed:@"QR_Icon"];
-            }else{ // G+ login
-                return [UIImage imageNamed:@"vehicle_profile"];
-            }
-            
+            return [UIImage imageNamed:@"TakeTest"];
             break;
 
         case 4:
-            return [UIImage imageNamed:@"road_safety"];
+            return [UIImage imageNamed:@"ApplicationForm_left"];
             break;
           
         case 5:
-            return [UIImage imageNamed:@"ambulance"];
+            return [UIImage imageNamed:@"About"];
             break;
             
         case 6:
-            return [UIImage imageNamed:@"highway"];
+            return [UIImage imageNamed:@"AboutExam"];
             break;
             
         case 7:
-            return [UIImage imageNamed:@"speed_analysis"];
+            return [UIImage imageNamed:@"Logout"];
             break;
             
         case 8:
-            return [UIImage imageNamed:@"faq"];
+            return [UIImage imageNamed:@"Analysis"];
             break;
-            
-        case 9:
-            return [UIImage imageNamed:@"about"];
-            break;
-         
-        case 10:
-            return [UIImage imageNamed:@"signout"];
-            break;
-            
+
         default: return nil;
             
             break;
@@ -285,66 +236,41 @@ static NSString *stringLeftMenuCellIdentifier  = @"LeftMenuCell";
 }
 
 - (NSString*)titleForMenuItemAtIndex:(NSInteger)index {
-    
-    if ((index >=7) && ([[UIViewController retrieveDataFromUserDefault:@"loginType"] isEqualToString:@"department"])) {// Department Login
-        
-        index++;
-    }
-
     switch (index) {
         case 0:
-            return @"MY PROFILE";
+            return @"My Profile";
             break;
             
         case 1:
-            return @"EMERGENCY CONTACT";
+            return @"Notification";
             break;
             
         case 2:
-            
-            if ([[UIViewController retrieveDataFromUserDefault:@"loginType"] isEqualToString:@"department"]) {// Normal Login
-                return @"MY FEED";
-            }else{ // G+ login
-                return @"MY INCENTIVES";
-            }
+            return @"Payment";
             break;
 
         case 3:
-            
-            if ([[UIViewController retrieveDataFromUserDefault:@"loginType"] isEqualToString:@"department"]) {// Normal Login
-                return @"SCAN QR CODE";
-            }else{ // G+ login
-                return @"MY VEHICLE PROFILE";
-            }
-
+            return @"Take Test";
             break;
 
         case 4:
-            return @"ROAD SAFETY EDUCATION";
+            return @"Application Form";
             break;
             
         case 5:
-            return @"GET AMBULANCE";
+            return @"About";
             break;
             
         case 6:
-            return @"HIGHWAY SERVICES";
+            return @"About Exam";
             break;
             
         case 7:
-            return @"SPEED ANALYTICS";
+            return @"Logout";
             break;
             
         case 8:
-            return @"FAQ'S";
-            break;
-   
-        case 9:
-            return @"ABOUT";
-            break;
-            
-        case 10:
-            return @"LOGOUT";
+            return @"Analysis";
             break;
             
         default:

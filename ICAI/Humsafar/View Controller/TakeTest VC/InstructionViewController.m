@@ -21,6 +21,8 @@
     [super viewDidLoad];
     
     //SHADOW TO TABLE VIEW
+    tableviewInstruction.layer.borderColor = [[UIColor lightGrayColor] CGColor];
+    tableviewInstruction.layer.borderWidth = 1.0;
 //    tableviewInstruction.layer.masksToBounds = NO;
 //    tableviewInstruction.layer.shadowOffset = CGSizeMake(0, 0);
 //    tableviewInstruction.layer.shadowRadius = 1;
