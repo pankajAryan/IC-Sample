@@ -9,6 +9,7 @@
 #import "HomeViewController.h"
 #import "UIViewController+RESideMenu.h"
 #import "HomeCollectionViewCell.h"
+#import "InstructionViewController.h"
 
 @interface HomeViewController ()
 
@@ -118,6 +119,9 @@
 - (void)collectionView:(UICollectionView *)collectionView
 didSelectItemAtIndexPath:(NSIndexPath *)indexPath{
     NSLog(@"didSelectItemAtIndexPath");
+    
+    InstructionViewController *vc = (InstructionViewController *)[UIViewController instantiateViewControllerWithIdentifier:@"InstructionViewController" fromStoryboard:@"Home"];
+    [self.navigationController pushViewController:vc animated:YES];
 }
 
 @end

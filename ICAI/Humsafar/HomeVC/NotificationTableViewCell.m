@@ -14,7 +14,7 @@
 
 - (void)awakeFromNib {
     [super awakeFromNib];
-    // Initialization code
+    
     viewContainer.layer.masksToBounds = NO;
     viewContainer.layer.shadowOffset = CGSizeMake(0, 0);
     viewContainer.layer.shadowRadius = 1;

@@ -67,7 +67,7 @@
                         <subviews>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="kjx-3P-QX0" customClass="TPKeyboardAvoidingScrollView">
                                 <subviews>
-                                    <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" image="Default" translatesAutoresizingMaskIntoConstraints="NO" id="cdK-Sp-I4O"/>
+                                    <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" image="Main_bg" translatesAutoresizingMaskIntoConstraints="NO" id="cdK-Sp-I4O"/>
                                     <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" image="logo_login" translatesAutoresizingMaskIntoConstraints="NO" id="2Hw-rT-UA4">
                                         <constraints>
                                             <constraint firstAttribute="width" constant="144" id="HUc-SJ-PpY"/>
@@ -197,7 +197,7 @@
                         <subviews>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="W7e-sm-OxQ" customClass="TPKeyboardAvoidingScrollView">
                                 <subviews>
-                                    <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" image="Default" translatesAutoresizingMaskIntoConstraints="NO" id="m2v-tr-Rlf"/>
+                                    <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" image="Main_bg" translatesAutoresizingMaskIntoConstraints="NO" id="m2v-tr-Rlf"/>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="U2Q-78-oU4">
                                         <state key="normal" image="Back"/>
                                         <connections>
@@ -457,10 +457,10 @@
     </scenes>
     <resources>
         <image name="Back" width="32" height="32"/>
-        <image name="Default" width="375" height="667"/>
+        <image name="Main_bg" width="375" height="667"/>
         <image name="arrow_left" width="58" height="58"/>
         <image name="login_bg" width="323" height="252"/>
-        <image name="logo_login" width="144" height="149"/>
+        <image name="logo_login" width="136" height="127"/>
         <image name="signup_bg" width="323" height="455"/>
         <image name="slider_bg" width="375" height="667"/>
     </resources>

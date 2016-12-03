@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		410D4B011DF2784700FFB0D8 /* InstructionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 410D4B001DF2784700FFB0D8 /* InstructionViewController.m */; };
+		410D4B041DF278E600FFB0D8 /* InstructionTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 410D4B031DF278E600FFB0D8 /* InstructionTableViewCell.m */; };
 		41AACF731DF175F900C58064 /* HomeCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 41AACF721DF175F900C58064 /* HomeCollectionViewCell.m */; };
 		41AACF761DF1A1D700C58064 /* NotificationTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 41AACF751DF1A1D700C58064 /* NotificationTableViewCell.m */; };
 		41AACF791DF1A20C00C58064 /* NotificationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 41AACF781DF1A20C00C58064 /* NotificationViewController.m */; };
@@ -88,6 +90,10 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		410D4AFF1DF2784700FFB0D8 /* InstructionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InstructionViewController.h; sourceTree = "<group>"; };
+		410D4B001DF2784700FFB0D8 /* InstructionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InstructionViewController.m; sourceTree = "<group>"; };
+		410D4B021DF278E600FFB0D8 /* InstructionTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InstructionTableViewCell.h; sourceTree = "<group>"; };
+		410D4B031DF278E600FFB0D8 /* InstructionTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InstructionTableViewCell.m; sourceTree = "<group>"; };
 		41AACF711DF175F900C58064 /* HomeCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HomeCollectionViewCell.h; sourceTree = "<group>"; };
 		41AACF721DF175F900C58064 /* HomeCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HomeCollectionViewCell.m; sourceTree = "<group>"; };
 		41AACF741DF1A1D700C58064 /* NotificationTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NotificationTableViewCell.h; sourceTree = "<group>"; };
@@ -255,6 +261,17 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		410D4AFE1DF2783100FFB0D8 /* Take Test VC */ = {
+			isa = PBXGroup;
+			children = (
+				410D4AFF1DF2784700FFB0D8 /* InstructionViewController.h */,
+				410D4B001DF2784700FFB0D8 /* InstructionViewController.m */,
+				410D4B021DF278E600FFB0D8 /* InstructionTableViewCell.h */,
+				410D4B031DF278E600FFB0D8 /* InstructionTableViewCell.m */,
+			);
+			path = "Take Test VC";
+			sourceTree = "<group>";
+		};
 		B781D6E01DBAB4BE001627F1 /* HomeVC */ = {
 			isa = PBXGroup;
 			children = (
@@ -387,6 +404,7 @@
 		CE2B397B1DAE6D1F00B266E1 /* ICAI */ = {
 			isa = PBXGroup;
 			children = (
+				410D4AFE1DF2783100FFB0D8 /* Take Test VC */,
 				CE0596BF1DB6654E001E62A9 /* WebServiceHelpers */,
 				CE2B39AC1DAE70DB00B266E1 /* Constants */,
 				CE16DAF11DBB405E00AB664C /* Storyboards */,
@@ -665,6 +683,7 @@
 			files = (
 				CE0596DF1DB665B5001E62A9 /* AFURLConnectionOperation.m in Sources */,
 				CE0596DA1DB665B5001E62A9 /* AFHTTPRequestOperation.m in Sources */,
+				410D4B041DF278E600FFB0D8 /* InstructionTableViewCell.m in Sources */,
 				CE2B39841DAE6D1F00B266E1 /* IntroViewController.m in Sources */,
 				CE2B39E71DAE7FCB00B266E1 /* CLLocationManager+blocks.m in Sources */,
 				CE2B39EB1DAE7FCB00B266E1 /* UIFont+FF.m in Sources */,
@@ -707,6 +726,7 @@
 				B781D6E31DBAB4F2001627F1 /* HomeListVC.m in Sources */,
 				CE16DAFF1DBB42FD00AB664C /* TSMessageView.m in Sources */,
 				CE0596BB1DB65E92001E62A9 /* GUITabScrollView.m in Sources */,
+				410D4B011DF2784700FFB0D8 /* InstructionViewController.m in Sources */,
 				CE0596E21DB665B5001E62A9 /* AFURLSessionManager.m in Sources */,
 				CE0596DC1DB665B5001E62A9 /* AFHTTPSessionManager.m in Sources */,
 				CE2B39A91DAE6F2D00B266E1 /* RESideMenu.m in Sources */,
