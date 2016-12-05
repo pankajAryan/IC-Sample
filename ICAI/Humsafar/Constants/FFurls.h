@@ -18,7 +18,8 @@
 // ************ DEVELOPMENT ENVIRONMENT CONFIGURATION ********************************************* //
 
 
-#define BASE_URL        @"http://128.199.129.241:8080/ShieldServer/rest/service"
+//#define BASE_URL        @"http://128.199.129.241:8080/ShieldServer/rest/service"
+#define BASE_URL        @"https://icaicommercewizard.com"
 
 
 // 2. *********************|| Prefix By BASE_URL ||**************************************************** //

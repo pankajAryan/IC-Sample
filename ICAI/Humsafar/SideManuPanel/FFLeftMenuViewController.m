@@ -126,7 +126,7 @@ static NSString *stringLeftMenuCellIdentifier  = @"LeftMenuCell";
         {
             CommonWebViewController *controller = (CommonWebViewController*)[UIViewController instantiateViewControllerWithIdentifier:@"CommonWebViewController" fromStoryboard:@"Other"];
             controller.title = @"About Commerce Wizard";
-            controller.urlString = @"http://icaicommercewizard.com";
+            controller.urlString = @"https://icaicommercewizard.com/commerce-wizard-mobile/cw_2016.html";
             [homeController.navigationController pushViewController:controller animated:YES];
 //            AboutExamViewController *vc = (AboutExamViewController *)[UIViewController instantiateViewControllerWithIdentifier:@"AboutExamViewController" fromStoryboard:@"LeftMenuScenes"];
 //            [homeController.navigationController pushViewController:vc animated:YES];
@@ -137,7 +137,7 @@ static NSString *stringLeftMenuCellIdentifier  = @"LeftMenuCell";
         {
             CommonWebViewController *controller = (CommonWebViewController*)[UIViewController instantiateViewControllerWithIdentifier:@"CommonWebViewController" fromStoryboard:@"Other"];
             controller.title = @"About CCC, ICAI";
-            controller.urlString = @"http://icaicommercewizard.com";
+            controller.urlString = @"http://cccicai.in/";
             [homeController.navigationController pushViewController:controller animated:YES];
             break;
         }
@@ -145,7 +145,7 @@ static NSString *stringLeftMenuCellIdentifier  = @"LeftMenuCell";
         {
             CommonWebViewController *controller = (CommonWebViewController*)[UIViewController instantiateViewControllerWithIdentifier:@"CommonWebViewController" fromStoryboard:@"Other"];
             controller.title = @"FAQ";
-            controller.urlString = @"http://icaicommercewizard.com";
+            controller.urlString = @"https://icaicommercewizard.com/commerce-wizard-mobile/faq_mobile.html";
             [homeController.navigationController pushViewController:controller animated:YES];
         }
             break;
