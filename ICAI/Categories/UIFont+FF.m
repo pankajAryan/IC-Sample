@@ -22,10 +22,17 @@
 {
     return [UIFont fontWithName:@"OpenSans" size:[self fontSize:fontSize]];
 }
+
 + (UIFont *)ffSemiBoldFontWithSize:(ffFontSize)fontSize
 {
     return [UIFont fontWithName:@"OpenSans-Semibold" size:[self fontSize:fontSize]];
 }
+
++ (UIFont *)ffBoldFontWithSize:(ffFontSize)fontSize
+{
+    return [UIFont fontWithName:@"OpenSans-Bold" size:[self fontSize:fontSize]];
+}
+
 
 +(CGFloat)fontSize:(ffFontSize)size
 {

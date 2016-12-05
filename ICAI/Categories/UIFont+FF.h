@@ -25,4 +25,5 @@ typedef enum : NSUInteger {
 + (UIFont *)ffLightItalicFontWithSize:(ffFontSize)fontSize;
 + (UIFont *)ffRegularFontWithSize:(ffFontSize)fontSize;
 + (UIFont *)ffSemiBoldFontWithSize:(ffFontSize)fontSize;
++ (UIFont *)ffBoldFontWithSize:(ffFontSize)fontSize;
 @end

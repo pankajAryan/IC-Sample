@@ -11,11 +11,12 @@
 #import "HomeCollectionViewCell.h"
 #import "InstructionViewController.h"
 
-@interface HomeViewController ()
+@interface HomeViewController ()<UICollectionViewDelegate>
 
 @property (weak, nonatomic) IBOutlet UIButton *btn_menu;
 @property (strong, nonatomic) NSString *navType;
 @property (weak, nonatomic) IBOutlet UIButton *alertBtn;
+@property (weak, nonatomic) IBOutlet UILabel *labelTitle;
 
 @property (weak, nonatomic) IBOutlet UIView *incentiveView;
 @property (weak, nonatomic) IBOutlet UILabel *lbl_incentiveAmount;
@@ -24,10 +25,29 @@
 
 @implementation HomeViewController
 
+-(void)setTitleLabel{
+    NSMutableAttributedString* keyAttString = [[NSMutableAttributedString alloc] initWithString:@"2016\n"];
+    UIFont* boldFont = [UIFont ffBoldFontWithSize:ffFontSize14px];
+    NSDictionary* style = @{
+                            NSFontAttributeName: boldFont,
+                            NSForegroundColorAttributeName : [UIColor whiteColor]
+                            };
+    [keyAttString addAttributes:style range:NSMakeRange(0, keyAttString.string.length)];
+
+    NSDictionary* style1 = @{
+                             NSFontAttributeName: [UIFont ffRegularFontWithSize:ffFontSize14px],
+                             NSForegroundColorAttributeName : [UIColor whiteColor]
+                             };
+    [keyAttString appendAttributedString:[[NSAttributedString alloc] initWithString:[NSString stringWithFormat:@"Organized by\nCareerCounselling Committee, ICAI"] attributes:style1] ];
+
+    [_labelTitle setTextAlignment: NSTextAlignmentCenter];
+    [_labelTitle setAttributedText:keyAttString];
+}
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-
+    [self setTitleLabel];
     [_btn_menu addTarget:self action:@selector(presentLeftMenuViewController:) forControlEvents:UIControlEventTouchUpInside];
     
     /*
@@ -89,7 +109,6 @@
 - (__kindof UICollectionViewCell *)collectionView:(UICollectionView *)collectionView
                            cellForItemAtIndexPath:(NSIndexPath *)indexPath{
     HomeCollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"HomeCollectionViewCell" forIndexPath:indexPath];
-
     NSString *imageName, *text;
     switch (indexPath.item) {
         case 0:
@@ -97,12 +116,12 @@
             text = @"My Profile";
             break;
         case 1:
-            imageName = @"Payment";
-            text = @"Payment";
+            imageName = @"TestTask";
+            text = @"Take Task";
             break;
         case 2:
-            imageName = @"TestTask";
-            text = @"Test Task";
+            imageName = @"Payment";
+            text = @"Enrollment Status";
             break;
         case 3:
             imageName = @"ApplicationForm";
@@ -124,4 +143,9 @@ didSelectItemAtIndexPath:(NSIndexPath *)indexPath{
     [self.navigationController pushViewController:vc animated:YES];
 }
 
+- (CGSize)collectionView:(UICollectionView *)collectionView
+                  layout:(UICollectionViewLayout*)collectionViewLayout
+  sizeForItemAtIndexPath:(NSIndexPath *)indexPath{
+    return CGSizeMake(self.view.frame.size.width/2.5, self.view.frame.size.height/4.5);
+}
 @end
