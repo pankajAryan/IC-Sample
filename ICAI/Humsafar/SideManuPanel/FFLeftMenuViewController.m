@@ -84,25 +84,21 @@ static NSString *stringLeftMenuCellIdentifier  = @"LeftMenuCell";
             break;
         case 1:
         {
-            NotificationViewController *vc = (NotificationViewController *)[UIViewController instantiateViewControllerWithIdentifier:@"NotificationViewController" fromStoryboard:@"Home"];
+            PaymentViewController *vc = (PaymentViewController *)[UIViewController instantiateViewControllerWithIdentifier:@"PaymentViewController" fromStoryboard:@"LeftMenuScenes"];
             [homeController.navigationController pushViewController:vc animated:YES];
         }
             break;
 
         case 2:
         {
-//            if ([[UIViewController retrieveDataFromUserDefault:@"loginType"] isEqualToString:@"department"]) {// Normal Login
-//                MyFeedsVC *vc = (MyFeedsVC *)[UIViewController instantiateViewControllerWithIdentifier:@"MyFeedsVC" fromStoryboard:@"LeftMenuScenes"];
-//                [homeController.navigationController pushViewController:vc animated:YES];
-//            }else{ // G+ login
-                PaymentViewController *vc = (PaymentViewController *)[UIViewController instantiateViewControllerWithIdentifier:@"PaymentViewController" fromStoryboard:@"LeftMenuScenes"];
-                [homeController.navigationController pushViewController:vc animated:YES];
-            }
+            InstructionViewController *vc = (InstructionViewController *)[UIViewController instantiateViewControllerWithIdentifier:@"InstructionViewController" fromStoryboard:@"Home"];
+            [homeController.navigationController pushViewController:vc animated:YES];
+        }
             break;
             
         case 3:
             {
-                InstructionViewController *vc = (InstructionViewController *)[UIViewController instantiateViewControllerWithIdentifier:@"InstructionViewController" fromStoryboard:@"Home"];
+                ApplicationFormViewController *vc = (ApplicationFormViewController *)[UIViewController instantiateViewControllerWithIdentifier:@"ApplicationFormViewController" fromStoryboard:@"LeftMenuScenes"];
                 [homeController.navigationController pushViewController:vc animated:YES];
             }
             
@@ -110,45 +106,56 @@ static NSString *stringLeftMenuCellIdentifier  = @"LeftMenuCell";
 
         case 4:
         {
-            ApplicationFormViewController *vc = (ApplicationFormViewController *)[UIViewController instantiateViewControllerWithIdentifier:@"ApplicationFormViewController" fromStoryboard:@"LeftMenuScenes"];
+            NotificationViewController *vc = (NotificationViewController *)[UIViewController instantiateViewControllerWithIdentifier:@"NotificationViewController" fromStoryboard:@"Home"];
             [homeController.navigationController pushViewController:vc animated:YES];
         }
             break;
             
         case 5:
         {
-            AboutViewController *vc = (AboutViewController *)[UIViewController instantiateViewControllerWithIdentifier:@"AboutViewController" fromStoryboard:@"LeftMenuScenes"];
-            [homeController.navigationController pushViewController:vc animated:YES];
+            CommonWebViewController *controller = (CommonWebViewController*)[UIViewController instantiateViewControllerWithIdentifier:@"CommonWebViewController" fromStoryboard:@"Other"];
+            controller.title = @"About ICAI";
+            controller.urlString = @"http://icaicommercewizard.com";
+            [homeController.navigationController pushViewController:controller animated:YES];
+//            AboutViewController *vc = (AboutViewController *)[UIViewController instantiateViewControllerWithIdentifier:@"AboutViewController" fromStoryboard:@"LeftMenuScenes"];
+//            [homeController.navigationController pushViewController:vc animated:YES];
         }
             break;
 
         case 6:
         {
-            AboutExamViewController *vc = (AboutExamViewController *)[UIViewController instantiateViewControllerWithIdentifier:@"AboutExamViewController" fromStoryboard:@"LeftMenuScenes"];
-            [homeController.navigationController pushViewController:vc animated:YES];
+            CommonWebViewController *controller = (CommonWebViewController*)[UIViewController instantiateViewControllerWithIdentifier:@"CommonWebViewController" fromStoryboard:@"Other"];
+            controller.title = @"About Commerce Wizard";
+            controller.urlString = @"http://icaicommercewizard.com";
+            [homeController.navigationController pushViewController:controller animated:YES];
+//            AboutExamViewController *vc = (AboutExamViewController *)[UIViewController instantiateViewControllerWithIdentifier:@"AboutExamViewController" fromStoryboard:@"LeftMenuScenes"];
+//            [homeController.navigationController pushViewController:vc animated:YES];
         }
             break;
         
         case 7:
-//            [App_Delegate logout];
+        {
+            CommonWebViewController *controller = (CommonWebViewController*)[UIViewController instantiateViewControllerWithIdentifier:@"CommonWebViewController" fromStoryboard:@"Other"];
+            controller.title = @"About CCC, ICAI";
+            controller.urlString = @"http://icaicommercewizard.com";
+            [homeController.navigationController pushViewController:controller animated:YES];
             break;
-            
+        }
         case 8:
         {
             CommonWebViewController *controller = (CommonWebViewController*)[UIViewController instantiateViewControllerWithIdentifier:@"CommonWebViewController" fromStoryboard:@"Other"];
-            controller.title = @"About";
+            controller.title = @"FAQ";
             controller.urlString = @"http://icaicommercewizard.com";
             [homeController.navigationController pushViewController:controller animated:YES];
         }
             break;
             
-//        case 9:
-//        {
-//            AboutViewController *vc = [AboutViewController new];
-//            [homeController.navigationController pushViewController:vc animated:YES];
-//        }
-//            break;
-//  
+        case 9:
+        {
+            [App_Delegate logout];
+        }
+            break;
+//
 //        case 10:
 //            [App_Delegate logout];
 //            break;
@@ -164,7 +171,7 @@ static NSString *stringLeftMenuCellIdentifier  = @"LeftMenuCell";
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    return 9;
+    return 10;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
@@ -200,23 +207,23 @@ static NSString *stringLeftMenuCellIdentifier  = @"LeftMenuCell";
             break;
             
         case 1:
-            return [UIImage imageNamed:@"Notification"];
+            return [UIImage imageNamed:@"Payment_left"];
             break;
             
         case 2:
-            return [UIImage imageNamed:@"Payment_left"];
-            break;
-
-        case 3:
             return [UIImage imageNamed:@"TakeTest"];
             break;
 
-        case 4:
+        case 3:
             return [UIImage imageNamed:@"ApplicationForm_left"];
+            break;
+
+        case 4:
+            return [UIImage imageNamed:@"Notification"];
             break;
           
         case 5:
-            return [UIImage imageNamed:@"About"];
+            return [UIImage imageNamed:@"MyProfile"];//Todo, change
             break;
             
         case 6:
@@ -224,13 +231,17 @@ static NSString *stringLeftMenuCellIdentifier  = @"LeftMenuCell";
             break;
             
         case 7:
-            return [UIImage imageNamed:@"Logout"];
+            return [UIImage imageNamed:@"AboutExam"];
             break;
             
         case 8:
-            return [UIImage imageNamed:@"Analysis"];
+            return [UIImage imageNamed:@"About"];
             break;
-
+        
+        case 9:
+            return [UIImage imageNamed:@"Logout"];
+            break;
+            
         default: return nil;
             
             break;
@@ -244,37 +255,40 @@ static NSString *stringLeftMenuCellIdentifier  = @"LeftMenuCell";
             break;
             
         case 1:
-            return @"Notification";
+            return @"Enrollment Status";
             break;
             
         case 2:
-            return @"Payment";
-            break;
-
-        case 3:
             return @"Take Test";
             break;
 
-        case 4:
+        case 3:
             return @"Application Form";
+            break;
+
+        case 4:
+            return @"Notification";
             break;
             
         case 5:
-            return @"About";
+            return @"About ICAI";
             break;
             
         case 6:
-            return @"About Exam";
+            return @"About Commerce Wizard";
             break;
             
         case 7:
-            return @"Logout";
+            return @"About CCC, ICAI";
             break;
             
         case 8:
-            return @"Analysis";
+            return @"FAQ";
             break;
             
+        case 9:
+            return @"Logout";
+            break;
         default:
             return nil;
             

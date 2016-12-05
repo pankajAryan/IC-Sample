@@ -45,7 +45,7 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
     NotificationTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"NotificationTableViewCell"];
-//    cell.labelQuestionDetail.text = @"test abc test abc test abc test abc test abc test abc test abc test abc test abc test abc";
+    cell.labelQuestionDetail.text = @"test abc test abc test abc test abc test abc test abc test abc test abc test abc test abc";
     return cell;
 }
 
