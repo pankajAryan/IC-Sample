@@ -23,6 +23,9 @@
 		4163DB8B1DF5495F00CCACCF /* HomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4163DB871DF5495F00CCACCF /* HomeViewController.m */; };
 		4163DB921DF5499100CCACCF /* ForgotPassword.m in Sources */ = {isa = PBXBuildFile; fileRef = 4163DB911DF5499100CCACCF /* ForgotPassword.m */; };
 		4163DB941DF5499E00CCACCF /* ForgotPassword.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4163DB931DF5499E00CCACCF /* ForgotPassword.xib */; };
+		4163DBB71DF57A0100CCACCF /* OpenSans-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 4163DBB41DF57A0100CCACCF /* OpenSans-Bold.ttf */; };
+		4163DBB81DF57A0100CCACCF /* OpenSans-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 4163DBB51DF57A0100CCACCF /* OpenSans-Regular.ttf */; };
+		4163DBB91DF57A0100CCACCF /* OpenSans-Semibold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 4163DBB61DF57A0100CCACCF /* OpenSans-Semibold.ttf */; };
 		B7E8D3CB1DD3AB45001F005C /* Other.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B7E8D3CA1DD3AB45001F005C /* Other.storyboard */; };
 		CE0596BA1DB65E92001E62A9 /* GUITabPagerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CE0596B71DB65E92001E62A9 /* GUITabPagerViewController.m */; };
 		CE0596BB1DB65E92001E62A9 /* GUITabScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = CE0596B91DB65E92001E62A9 /* GUITabScrollView.m */; };
@@ -130,6 +133,9 @@
 		4163DB901DF5499100CCACCF /* ForgotPassword.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ForgotPassword.h; sourceTree = "<group>"; };
 		4163DB911DF5499100CCACCF /* ForgotPassword.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ForgotPassword.m; sourceTree = "<group>"; };
 		4163DB931DF5499E00CCACCF /* ForgotPassword.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ForgotPassword.xib; sourceTree = "<group>"; };
+		4163DBB41DF57A0100CCACCF /* OpenSans-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "OpenSans-Bold.ttf"; sourceTree = "<group>"; };
+		4163DBB51DF57A0100CCACCF /* OpenSans-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "OpenSans-Regular.ttf"; sourceTree = "<group>"; };
+		4163DBB61DF57A0100CCACCF /* OpenSans-Semibold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "OpenSans-Semibold.ttf"; sourceTree = "<group>"; };
 		B7E8D3CA1DD3AB45001F005C /* Other.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Other.storyboard; sourceTree = "<group>"; };
 		CE0596B61DB65E92001E62A9 /* GUITabPagerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GUITabPagerViewController.h; sourceTree = "<group>"; };
 		CE0596B71DB65E92001E62A9 /* GUITabPagerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GUITabPagerViewController.m; sourceTree = "<group>"; };
@@ -414,6 +420,16 @@
 			path = "Forgot Password";
 			sourceTree = "<group>";
 		};
+		4163DBB31DF57A0100CCACCF /* Font */ = {
+			isa = PBXGroup;
+			children = (
+				4163DBB41DF57A0100CCACCF /* OpenSans-Bold.ttf */,
+				4163DBB51DF57A0100CCACCF /* OpenSans-Regular.ttf */,
+				4163DBB61DF57A0100CCACCF /* OpenSans-Semibold.ttf */,
+			);
+			path = Font;
+			sourceTree = "<group>";
+		};
 		CE0596B51DB65E92001E62A9 /* GUITabPager */ = {
 			isa = PBXGroup;
 			children = (
@@ -527,6 +543,7 @@
 		CE2B397B1DAE6D1F00B266E1 /* ICAI */ = {
 			isa = PBXGroup;
 			children = (
+				4163DBB31DF57A0100CCACCF /* Font */,
 				4163DB8E1DF5497E00CCACCF /* UIViews */,
 				CE0596BF1DB6654E001E62A9 /* WebServiceHelpers */,
 				CE16DAF11DBB405E00AB664C /* Storyboards */,
@@ -793,8 +810,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4163DBB71DF57A0100CCACCF /* OpenSans-Bold.ttf in Resources */,
 				CE16DAF51DBB426400AB664C /* Assets.xcassets in Resources */,
 				CE2B398C1DAE6D1F00B266E1 /* LaunchScreen.storyboard in Resources */,
+				4163DBB91DF57A0100CCACCF /* OpenSans-Semibold.ttf in Resources */,
 				B7E8D3CB1DD3AB45001F005C /* Other.storyboard in Resources */,
 				CE2B39871DAE6D1F00B266E1 /* Main.storyboard in Resources */,
 				CE16DAF31DBB423500AB664C /* TSMessagesDefaultDesign.json in Resources */,
@@ -802,6 +821,7 @@
 				CE9316651DBBB82400A84A91 /* GoogleService-Info.plist in Resources */,
 				4163DB941DF5499E00CCACCF /* ForgotPassword.xib in Resources */,
 				CE2B39C81DAE7B7E00B266E1 /* Home.storyboard in Resources */,
+				4163DBB81DF57A0100CCACCF /* OpenSans-Regular.ttf in Resources */,
 				CE16DAF01DBB3D0300AB664C /* LeftMenuScenes.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
