@@ -17,9 +17,12 @@
 		410D4B251DF28D8D00FFB0D8 /* AboutViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 410D4B241DF28D8D00FFB0D8 /* AboutViewController.m */; };
 		410D4B281DF28DE900FFB0D8 /* AboutExamViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 410D4B271DF28DE900FFB0D8 /* AboutExamViewController.m */; };
 		410D4B2B1DF28E2300FFB0D8 /* AnalysisViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 410D4B2A1DF28E2300FFB0D8 /* AnalysisViewController.m */; };
-		41AACF731DF175F900C58064 /* HomeCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 41AACF721DF175F900C58064 /* HomeCollectionViewCell.m */; };
-		B781D6E31DBAB4F2001627F1 /* HomeListVC.m in Sources */ = {isa = PBXBuildFile; fileRef = B781D6E21DBAB4F2001627F1 /* HomeListVC.m */; };
-		B7CA057C1DBFE1F900750CF6 /* HomeListVC2.m in Sources */ = {isa = PBXBuildFile; fileRef = B7CA057B1DBFE1F900750CF6 /* HomeListVC2.m */; };
+		4163DB881DF5495F00CCACCF /* HomeCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 4163DB811DF5495F00CCACCF /* HomeCollectionViewCell.m */; };
+		4163DB891DF5495F00CCACCF /* HomeListVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 4163DB831DF5495F00CCACCF /* HomeListVC.m */; };
+		4163DB8A1DF5495F00CCACCF /* HomeListVC2.m in Sources */ = {isa = PBXBuildFile; fileRef = 4163DB851DF5495F00CCACCF /* HomeListVC2.m */; };
+		4163DB8B1DF5495F00CCACCF /* HomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4163DB871DF5495F00CCACCF /* HomeViewController.m */; };
+		4163DB921DF5499100CCACCF /* ForgotPassword.m in Sources */ = {isa = PBXBuildFile; fileRef = 4163DB911DF5499100CCACCF /* ForgotPassword.m */; };
+		4163DB941DF5499E00CCACCF /* ForgotPassword.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4163DB931DF5499E00CCACCF /* ForgotPassword.xib */; };
 		B7E8D3CB1DD3AB45001F005C /* Other.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B7E8D3CA1DD3AB45001F005C /* Other.storyboard */; };
 		CE0596BA1DB65E92001E62A9 /* GUITabPagerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CE0596B71DB65E92001E62A9 /* GUITabPagerViewController.m */; };
 		CE0596BB1DB65E92001E62A9 /* GUITabScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = CE0596B91DB65E92001E62A9 /* GUITabScrollView.m */; };
@@ -62,7 +65,6 @@
 		CE2B39BC1DAE71CC00B266E1 /* UIScrollView+TPKeyboardAvoidingAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = CE2B39B81DAE71CC00B266E1 /* UIScrollView+TPKeyboardAvoidingAdditions.m */; };
 		CE2B39BF1DAE72AB00B266E1 /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CE2B39BE1DAE72AB00B266E1 /* LoginViewController.m */; };
 		CE2B39C21DAE736B00B266E1 /* RegisterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CE2B39C11DAE736B00B266E1 /* RegisterViewController.m */; };
-		CE2B39C51DAE7A1000B266E1 /* HomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CE2B39C41DAE7A1000B266E1 /* HomeViewController.m */; };
 		CE2B39C81DAE7B7E00B266E1 /* Home.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CE2B39C71DAE7B7E00B266E1 /* Home.storyboard */; };
 		CE2B39CB1DAE7BF300B266E1 /* FFLeftMenuViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CE2B39CA1DAE7BF300B266E1 /* FFLeftMenuViewController.m */; };
 		CE2B39CE1DAE7D2C00B266E1 /* RootViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CE2B39CD1DAE7D2C00B266E1 /* RootViewController.m */; };
@@ -117,12 +119,17 @@
 		410D4B271DF28DE900FFB0D8 /* AboutExamViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AboutExamViewController.m; sourceTree = "<group>"; };
 		410D4B291DF28E2300FFB0D8 /* AnalysisViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AnalysisViewController.h; sourceTree = "<group>"; };
 		410D4B2A1DF28E2300FFB0D8 /* AnalysisViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AnalysisViewController.m; sourceTree = "<group>"; };
-		41AACF711DF175F900C58064 /* HomeCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HomeCollectionViewCell.h; sourceTree = "<group>"; };
-		41AACF721DF175F900C58064 /* HomeCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HomeCollectionViewCell.m; sourceTree = "<group>"; };
-		B781D6E11DBAB4F2001627F1 /* HomeListVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HomeListVC.h; sourceTree = "<group>"; };
-		B781D6E21DBAB4F2001627F1 /* HomeListVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HomeListVC.m; sourceTree = "<group>"; };
-		B7CA057A1DBFE1F900750CF6 /* HomeListVC2.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HomeListVC2.h; sourceTree = "<group>"; };
-		B7CA057B1DBFE1F900750CF6 /* HomeListVC2.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HomeListVC2.m; sourceTree = "<group>"; };
+		4163DB801DF5495F00CCACCF /* HomeCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HomeCollectionViewCell.h; sourceTree = "<group>"; };
+		4163DB811DF5495F00CCACCF /* HomeCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HomeCollectionViewCell.m; sourceTree = "<group>"; };
+		4163DB821DF5495F00CCACCF /* HomeListVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HomeListVC.h; sourceTree = "<group>"; };
+		4163DB831DF5495F00CCACCF /* HomeListVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HomeListVC.m; sourceTree = "<group>"; };
+		4163DB841DF5495F00CCACCF /* HomeListVC2.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HomeListVC2.h; sourceTree = "<group>"; };
+		4163DB851DF5495F00CCACCF /* HomeListVC2.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HomeListVC2.m; sourceTree = "<group>"; };
+		4163DB861DF5495F00CCACCF /* HomeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HomeViewController.h; sourceTree = "<group>"; };
+		4163DB871DF5495F00CCACCF /* HomeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HomeViewController.m; sourceTree = "<group>"; };
+		4163DB901DF5499100CCACCF /* ForgotPassword.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ForgotPassword.h; sourceTree = "<group>"; };
+		4163DB911DF5499100CCACCF /* ForgotPassword.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ForgotPassword.m; sourceTree = "<group>"; };
+		4163DB931DF5499E00CCACCF /* ForgotPassword.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ForgotPassword.xib; sourceTree = "<group>"; };
 		B7E8D3CA1DD3AB45001F005C /* Other.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Other.storyboard; sourceTree = "<group>"; };
 		CE0596B61DB65E92001E62A9 /* GUITabPagerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GUITabPagerViewController.h; sourceTree = "<group>"; };
 		CE0596B71DB65E92001E62A9 /* GUITabPagerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GUITabPagerViewController.m; sourceTree = "<group>"; };
@@ -207,8 +214,6 @@
 		CE2B39BE1DAE72AB00B266E1 /* LoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginViewController.m; sourceTree = "<group>"; };
 		CE2B39C01DAE736B00B266E1 /* RegisterViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RegisterViewController.h; sourceTree = "<group>"; };
 		CE2B39C11DAE736B00B266E1 /* RegisterViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RegisterViewController.m; sourceTree = "<group>"; };
-		CE2B39C31DAE7A1000B266E1 /* HomeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = HomeViewController.h; path = ../HomeViewController.h; sourceTree = "<group>"; };
-		CE2B39C41DAE7A1000B266E1 /* HomeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = HomeViewController.m; path = ../HomeViewController.m; sourceTree = "<group>"; };
 		CE2B39C71DAE7B7E00B266E1 /* Home.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Home.storyboard; sourceTree = "<group>"; };
 		CE2B39C91DAE7BF300B266E1 /* FFLeftMenuViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FFLeftMenuViewController.h; sourceTree = "<group>"; };
 		CE2B39CA1DAE7BF300B266E1 /* FFLeftMenuViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FFLeftMenuViewController.m; sourceTree = "<group>"; };
@@ -285,6 +290,7 @@
 		410D4B051DF28B1000FFB0D8 /* View Controller */ = {
 			isa = PBXGroup;
 			children = (
+				4163DB7F1DF5495F00CCACCF /* HomeVC */,
 				410D4B0A1DF28B1000FFB0D8 /* My Profile VC */,
 				410D4B061DF28B1000FFB0D8 /* AboutExamVC */,
 				410D4B071DF28B1000FFB0D8 /* AboutVC */,
@@ -375,19 +381,37 @@
 			path = "TakeTest VC";
 			sourceTree = "<group>";
 		};
-		B781D6E01DBAB4BE001627F1 /* HomeVC */ = {
+		4163DB7F1DF5495F00CCACCF /* HomeVC */ = {
 			isa = PBXGroup;
 			children = (
-				CE2B39C31DAE7A1000B266E1 /* HomeViewController.h */,
-				CE2B39C41DAE7A1000B266E1 /* HomeViewController.m */,
-				B781D6E11DBAB4F2001627F1 /* HomeListVC.h */,
-				B781D6E21DBAB4F2001627F1 /* HomeListVC.m */,
-				B7CA057A1DBFE1F900750CF6 /* HomeListVC2.h */,
-				B7CA057B1DBFE1F900750CF6 /* HomeListVC2.m */,
-				41AACF711DF175F900C58064 /* HomeCollectionViewCell.h */,
-				41AACF721DF175F900C58064 /* HomeCollectionViewCell.m */,
+				4163DB801DF5495F00CCACCF /* HomeCollectionViewCell.h */,
+				4163DB811DF5495F00CCACCF /* HomeCollectionViewCell.m */,
+				4163DB821DF5495F00CCACCF /* HomeListVC.h */,
+				4163DB831DF5495F00CCACCF /* HomeListVC.m */,
+				4163DB841DF5495F00CCACCF /* HomeListVC2.h */,
+				4163DB851DF5495F00CCACCF /* HomeListVC2.m */,
+				4163DB861DF5495F00CCACCF /* HomeViewController.h */,
+				4163DB871DF5495F00CCACCF /* HomeViewController.m */,
 			);
 			path = HomeVC;
+			sourceTree = "<group>";
+		};
+		4163DB8E1DF5497E00CCACCF /* UIViews */ = {
+			isa = PBXGroup;
+			children = (
+				4163DB8F1DF5497E00CCACCF /* Forgot Password */,
+			);
+			path = UIViews;
+			sourceTree = "<group>";
+		};
+		4163DB8F1DF5497E00CCACCF /* Forgot Password */ = {
+			isa = PBXGroup;
+			children = (
+				4163DB901DF5499100CCACCF /* ForgotPassword.h */,
+				4163DB911DF5499100CCACCF /* ForgotPassword.m */,
+				4163DB931DF5499E00CCACCF /* ForgotPassword.xib */,
+			);
+			path = "Forgot Password";
 			sourceTree = "<group>";
 		};
 		CE0596B51DB65E92001E62A9 /* GUITabPager */ = {
@@ -503,13 +527,13 @@
 		CE2B397B1DAE6D1F00B266E1 /* ICAI */ = {
 			isa = PBXGroup;
 			children = (
+				4163DB8E1DF5497E00CCACCF /* UIViews */,
 				CE0596BF1DB6654E001E62A9 /* WebServiceHelpers */,
 				CE16DAF11DBB405E00AB664C /* Storyboards */,
 				CE2B397F1DAE6D1F00B266E1 /* AppDelegate.h */,
 				CE2B39801DAE6D1F00B266E1 /* AppDelegate.m */,
 				CEC24E8F1DF292B00050B6CA /* LoginNregister */,
 				CE2B39C61DAE7B2F00B266E1 /* SideManuPanel */,
-				B781D6E01DBAB4BE001627F1 /* HomeVC */,
 				410D4B051DF28B1000FFB0D8 /* View Controller */,
 				CE2B39AC1DAE70DB00B266E1 /* Constants */,
 				CE16DAF41DBB426400AB664C /* Assets.xcassets */,
@@ -776,6 +800,7 @@
 				CE16DAF31DBB423500AB664C /* TSMessagesDefaultDesign.json in Resources */,
 				CE8D5F521DE9AACF00D4846F /* beep1.mp3 in Resources */,
 				CE9316651DBBB82400A84A91 /* GoogleService-Info.plist in Resources */,
+				4163DB941DF5499E00CCACCF /* ForgotPassword.xib in Resources */,
 				CE2B39C81DAE7B7E00B266E1 /* Home.storyboard in Resources */,
 				CE16DAF01DBB3D0300AB664C /* LeftMenuScenes.storyboard in Resources */,
 			);
@@ -793,6 +818,7 @@
 				CE2B39841DAE6D1F00B266E1 /* IntroViewController.m in Sources */,
 				CE2B39E71DAE7FCB00B266E1 /* CLLocationManager+blocks.m in Sources */,
 				CE2B39EB1DAE7FCB00B266E1 /* UIFont+FF.m in Sources */,
+				4163DB8B1DF5495F00CCACCF /* HomeViewController.m in Sources */,
 				410D4B171DF28B1000FFB0D8 /* NotificationViewController.m in Sources */,
 				410D4B251DF28D8D00FFB0D8 /* AboutViewController.m in Sources */,
 				410D4B161DF28B1000FFB0D8 /* NotificationTableViewCell.m in Sources */,
@@ -806,18 +832,17 @@
 				CE0596DE1DB665B5001E62A9 /* AFSecurityPolicy.m in Sources */,
 				CEB08FF41DF35AD5008A83AB /* CommonWebViewController.m in Sources */,
 				CE2B3A2C1DAE823D00B266E1 /* HexColor.m in Sources */,
-				B7CA057C1DBFE1F900750CF6 /* HomeListVC2.m in Sources */,
 				CE2B39811DAE6D1F00B266E1 /* AppDelegate.m in Sources */,
 				CE2B39BC1DAE71CC00B266E1 /* UIScrollView+TPKeyboardAvoidingAdditions.m in Sources */,
 				CE2B397E1DAE6D1F00B266E1 /* main.m in Sources */,
 				CE2B39B91DAE71CC00B266E1 /* TPKeyboardAvoidingCollectionView.m in Sources */,
 				CE0596BA1DB65E92001E62A9 /* GUITabPagerViewController.m in Sources */,
 				410D4B281DF28DE900FFB0D8 /* AboutExamViewController.m in Sources */,
+				4163DB8A1DF5495F00CCACCF /* HomeListVC2.m in Sources */,
 				410D4B1C1DF28B5800FFB0D8 /* ProfileViewController.m in Sources */,
 				CE0596E11DB665B5001E62A9 /* AFURLResponseSerialization.m in Sources */,
 				CE2B39BB1DAE71CC00B266E1 /* TPKeyboardAvoidingTableView.m in Sources */,
 				CE2B39C21DAE736B00B266E1 /* RegisterViewController.m in Sources */,
-				CE2B39C51DAE7A1000B266E1 /* HomeViewController.m in Sources */,
 				CE16DAE91DBA043500AB664C /* FFValidationResult.m in Sources */,
 				410D4B2B1DF28E2300FFB0D8 /* AnalysisViewController.m in Sources */,
 				CE16DB031DBB6B2D00AB664C /* UIImageView+AFNetworking.m in Sources */,
@@ -835,8 +860,8 @@
 				CE2B39EC1DAE7FCB00B266E1 /* UIImage+Scale.m in Sources */,
 				CE2B39F01DAE7FCB00B266E1 /* UIView+FF.m in Sources */,
 				CE16DAFE1DBB42FD00AB664C /* TSMessage.m in Sources */,
+				4163DB921DF5499100CCACCF /* ForgotPassword.m in Sources */,
 				410D4B1F1DF28BFF00FFB0D8 /* PaymentViewController.m in Sources */,
-				B781D6E31DBAB4F2001627F1 /* HomeListVC.m in Sources */,
 				CE16DAFF1DBB42FD00AB664C /* TSMessageView.m in Sources */,
 				410D4B221DF28CC900FFB0D8 /* ApplicationFormViewController.m in Sources */,
 				CE0596BB1DB65E92001E62A9 /* GUITabScrollView.m in Sources */,
@@ -846,11 +871,12 @@
 				CE2B39A91DAE6F2D00B266E1 /* RESideMenu.m in Sources */,
 				CE2B39A81DAE6F2D00B266E1 /* RECommonFunctions.m in Sources */,
 				CE2B39BF1DAE72AB00B266E1 /* LoginViewController.m in Sources */,
-				41AACF731DF175F900C58064 /* HomeCollectionViewCell.m in Sources */,
 				CE2B39F11DAE7FCB00B266E1 /* UIViewController+Utility.m in Sources */,
 				CE0596C41DB6655E001E62A9 /* FFWebServiceHelper.m in Sources */,
 				CE16DAFD1DBB42FD00AB664C /* TSBlurView.m in Sources */,
 				CE2B39EE1DAE7FCB00B266E1 /* UINavigationItem+FF.m in Sources */,
+				4163DB891DF5495F00CCACCF /* HomeListVC.m in Sources */,
+				4163DB881DF5495F00CCACCF /* HomeCollectionViewCell.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

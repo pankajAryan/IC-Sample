@@ -10,6 +10,7 @@
 #import "RegisterViewController.h"
 #import "UITextField+Validation.h"
 #import "RootViewController.h"
+#import "ForgotPassword.h"
 
 
 //@interface LoginViewController () <GIDSignInDelegate, GIDSignInUIDelegate>
@@ -24,7 +25,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    _buttonForgotPassword.layer.borderColor = [[UIColor lightGrayColor] CGColor];
+//    _buttonForgotPassword.layer.borderColor = [[UIColor lightGrayColor] CGColor];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -34,6 +35,12 @@
 
 
 #pragma mark - Login Actions
+- (IBAction)btnForgotPasswordAction:(UIButton *)sender
+{
+    UIWindow *window =[[[UIApplication sharedApplication]delegate]window];
+    ForgotPassword *viewForgotPassword = [[ForgotPassword alloc] initWithFrame:self.view.bounds];
+    [window addSubview:viewForgotPassword];
+}
 
 - (IBAction)loginButtonDidTap:(id)sender {
     
