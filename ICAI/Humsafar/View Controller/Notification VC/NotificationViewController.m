@@ -10,7 +10,11 @@
 #import "NotificationTableViewCell.h"
 #import "UIViewController+RESideMenu.h"
 
-@interface NotificationViewController ()<UITableViewDelegate,UITableViewDataSource>
+@interface NotificationViewController ()<UITableViewDelegate,UITableViewDataSource> {
+    
+    NSArray *notificationsArray;
+}
+
 @property (weak, nonatomic) IBOutlet UIButton *btn_menu;
 
 @end
@@ -19,6 +23,21 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
+    [[FFWebServiceHelper sharedManager]
+                callWebServiceWithUrl:[FFWebServiceHelper javaServerUrlWithString:GET_USER_ALERTS]
+                withParameter:@{ @"checkSource" : @"7MV8TLIt0A26Q9gg6Ttcn/4dSNaT1OPq"}
+                onCompletion:^(eResponseType responseType, id response)
+                {
+                     if (responseType == eResponseTypeSuccessJSON)
+                     {
+                         notificationsArray = [response objectForKey:@"responseObject"];
+                     }
+                     else{
+                         [self showAlert:@"Something went wrong, Please try after sometime"];
+                     }
+                }];
+    
 }
 
 - (void)didReceiveMemoryWarning {

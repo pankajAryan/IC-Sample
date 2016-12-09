@@ -10,6 +10,5 @@
 
 @interface HomeViewController : UIViewController<UIImagePickerControllerDelegate,UINavigationControllerDelegate>
 
--(IBAction)action_openCamera:(id)sender;
 
 @end

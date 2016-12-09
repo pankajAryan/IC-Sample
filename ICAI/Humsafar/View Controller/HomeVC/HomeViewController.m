@@ -25,41 +25,13 @@
 
 @implementation HomeViewController
 
--(void)setTitleLabel{
-    NSMutableAttributedString* keyAttString = [[NSMutableAttributedString alloc] initWithString:@"2016\n"];
-    UIFont* boldFont = [UIFont ffBoldFontWithSize:ffFontSize14px];
-    NSDictionary* style = @{
-                            NSFontAttributeName: boldFont,
-                            NSForegroundColorAttributeName : [UIColor whiteColor]
-                            };
-    [keyAttString addAttributes:style range:NSMakeRange(0, keyAttString.string.length)];
-
-    NSDictionary* style1 = @{
-                             NSFontAttributeName: [UIFont ffRegularFontWithSize:ffFontSize14px],
-                             NSForegroundColorAttributeName : [UIColor whiteColor]
-                             };
-    [keyAttString appendAttributedString:[[NSAttributedString alloc] initWithString:[NSString stringWithFormat:@"Organized by\nCareerCounselling Committee, ICAI"] attributes:style1] ];
-
-    [_labelTitle setTextAlignment: NSTextAlignmentCenter];
-    [_labelTitle setAttributedText:keyAttString];
-}
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
-    [self setTitleLabel];
+
+//    [self setTitleLabel];
     [_btn_menu addTarget:self action:@selector(presentLeftMenuViewController:) forControlEvents:UIControlEventTouchUpInside];
-    
-    /*
-    if ([[UIViewController retrieveDataFromUserDefault:@"loginType"] isEqualToString:@"department"]) {// Normal Login
-        [self fetchDistrictListForStateId:@"29"];//Hardcode
-        self.incentiveView.hidden = YES;
-    }else{
-        [self.alertBtn setBackgroundImage:[UIImage imageNamed:@"route"] forState:UIControlStateNormal];
-        [self fetchWalletBalanceForUserFromServer];
-        self.incentiveView.hidden = NO;
-    }
-    */
+
 }
 
 - (void)didReceiveMemoryWarning {
@@ -67,10 +39,25 @@
     // Dispose of any resources that can be recreated.
 }
 
+#pragma mark - Button Actions
+
+- (IBAction)myProfileButtonAction:(id)sender {
+}
+
+- (IBAction)takeTestAction:(id)sender {
+    [self showAlert:@"Coming soon..."];
+}
+
+- (IBAction)enrollmentPaymentStatusAction:(id)sender {
+}
+
+- (IBAction)applicationFormDidTap:(id)sender {
+}
+
 #pragma mark -
 
 -(void)fetchWalletBalanceForUserFromServer {
-    
+/*
     [[FFWebServiceHelper sharedManager] callWebServiceWithUrl:GetIncentiveWalletBalanceForUser withParameter:@{@"userMobile" : [UIViewController retrieveDataFromUserDefault:@"mobile"]} onCompletion:^(eResponseType responseType, id response) {
         
         if (responseType == eResponseTypeSuccessJSON) {
@@ -79,9 +66,11 @@
             [self showResponseErrorWithType:eResponseTypeFailJSON responseObject:response errorMessage:nil];
         }
     }];
+ */
 }
 
 - (void)fetchDistrictListForStateId:(NSString*)stateId {
+/*
     [[FFWebServiceHelper sharedManager] callWebServiceWithUrl:GetDistricts withParameter:@{@"stateId" : stateId} onCompletion:^(eResponseType responseType, id response) {
         
         @try {
@@ -98,7 +87,28 @@
         }
         
     }];
+ */
 }
+
+//-(void)setTitleLabel{
+//    NSMutableAttributedString* keyAttString = [[NSMutableAttributedString alloc] initWithString:@"2016\n"];
+//    UIFont* boldFont = [UIFont ffBoldFontWithSize:ffFontSize14px];
+//    NSDictionary* style = @{
+//                            NSFontAttributeName: boldFont,
+//                            NSForegroundColorAttributeName : [UIColor whiteColor]
+//                            };
+//    [keyAttString addAttributes:style range:NSMakeRange(0, keyAttString.string.length)];
+//
+//    NSDictionary* style1 = @{
+//                             NSFontAttributeName: [UIFont ffRegularFontWithSize:ffFontSize14px],
+//                             NSForegroundColorAttributeName : [UIColor whiteColor]
+//                             };
+//    [keyAttString appendAttributedString:[[NSAttributedString alloc] initWithString:[NSString stringWithFormat:@"Organized by\nCareerCounselling Committee, ICAI"] attributes:style1] ];
+//
+//    [_labelTitle setTextAlignment: NSTextAlignmentCenter];
+//    [_labelTitle setAttributedText:keyAttString];
+//}
+
 
 #pragma mark - UIColleciton view delegate
 - (NSInteger)collectionView:(UICollectionView *)collectionView
@@ -148,4 +158,6 @@ didSelectItemAtIndexPath:(NSIndexPath *)indexPath{
   sizeForItemAtIndexPath:(NSIndexPath *)indexPath{
     return CGSizeMake(self.view.frame.size.width/2.5, self.view.frame.size.height/4.5);
 }
+
+
 @end

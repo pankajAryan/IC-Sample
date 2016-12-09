@@ -25,7 +25,7 @@
 - (IBAction)resendOTP:(id)sender {
     
     [self showProgressHudWithMessage:@"Resending OTP"];
-    
+/*
     [[FFWebServiceHelper sharedManager] callWebServiceWithUrl:RegenerateOtp
                                                 withParameter:@{@"mobileNumber":_mobileNumber}
                                                  onCompletion:^(eResponseType responseType, id response)
@@ -39,12 +39,13 @@
                                                         // [self showAlert:[response objectForKey:kKEY_ErrorMessage]];
                                                     }
                                                 }];
+*/
 }
 
 - (IBAction)verifyOTP:(id)sender {
     
     [self showProgressHudWithMessage:@"Verifying OTP"];
-    
+/*
     [[FFWebServiceHelper sharedManager] callWebServiceWithUrl:VerifyOtp withParameter:@{@"mobileNumber":_mobileNumber, @"otp":_otpTextField.text} onCompletion:^(eResponseType responseType, id response)
      {
          [self hideProgressHudAfterDelay:0.1];
@@ -62,6 +63,7 @@
              // [self showAlert:[response objectForKey:kKEY_ErrorMessage]];
          }
      }];
+ */
 }
 
 - (void)didReceiveMemoryWarning {

@@ -70,16 +70,8 @@ static NSString *stringLeftMenuCellIdentifier  = @"LeftMenuCell";
     {
         case 0:
         {
-//
-//            if ([[UIViewController retrieveDataFromUserDefault:@"loginType"] isEqualToString:@"department"]) {// Normal Login
-//                
-//                ProfileViewController2 *vc = (ProfileViewController2 *)[UIViewController instantiateViewControllerWithIdentifier:@"ProfileViewController2" fromStoryboard:@"LeftMenuScenes"];
-//                [homeController.navigationController pushViewController:vc animated:YES];
-//            }else{ // G+ login
-//                
-                ProfileViewController *vc = (ProfileViewController *)[UIViewController instantiateViewControllerWithIdentifier:@"ProfileViewController" fromStoryboard:@"LeftMenuScenes"];
-                [homeController.navigationController pushViewController:vc animated:YES];
-            
+            ProfileViewController *vc = (ProfileViewController *)[UIViewController instantiateViewControllerWithIdentifier:@"ProfileViewController" fromStoryboard:@"LeftMenuScenes"];
+            [homeController.navigationController pushViewController:vc animated:YES];
         }
             break;
         case 1:
@@ -114,38 +106,34 @@ static NSString *stringLeftMenuCellIdentifier  = @"LeftMenuCell";
         case 5:
         {
             CommonWebViewController *controller = (CommonWebViewController*)[UIViewController instantiateViewControllerWithIdentifier:@"CommonWebViewController" fromStoryboard:@"Other"];
-            controller.title = @"About ICAI";
-            controller.urlString = @"http://icaicommercewizard.com";
+            controller.screenTitle = @"About ICAI";
+            controller.urlString = ABOUT_ICAI;
             [homeController.navigationController pushViewController:controller animated:YES];
-//            AboutViewController *vc = (AboutViewController *)[UIViewController instantiateViewControllerWithIdentifier:@"AboutViewController" fromStoryboard:@"LeftMenuScenes"];
-//            [homeController.navigationController pushViewController:vc animated:YES];
         }
             break;
 
         case 6:
         {
             CommonWebViewController *controller = (CommonWebViewController*)[UIViewController instantiateViewControllerWithIdentifier:@"CommonWebViewController" fromStoryboard:@"Other"];
-            controller.title = @"About Commerce Wizard";
-            controller.urlString = @"https://icaicommercewizard.com/commerce-wizard-mobile/cw_2016.html";
+            controller.screenTitle = @"About Commerce Wizard";
+            controller.urlString = About_Commerce_Wizard;
             [homeController.navigationController pushViewController:controller animated:YES];
-//            AboutExamViewController *vc = (AboutExamViewController *)[UIViewController instantiateViewControllerWithIdentifier:@"AboutExamViewController" fromStoryboard:@"LeftMenuScenes"];
-//            [homeController.navigationController pushViewController:vc animated:YES];
         }
             break;
         
         case 7:
         {
             CommonWebViewController *controller = (CommonWebViewController*)[UIViewController instantiateViewControllerWithIdentifier:@"CommonWebViewController" fromStoryboard:@"Other"];
-            controller.title = @"About CCC, ICAI";
-            controller.urlString = @"http://cccicai.in/";
+            controller.screenTitle = @"About CCC, ICAI";
+            controller.urlString = About_CCC;
             [homeController.navigationController pushViewController:controller animated:YES];
             break;
         }
         case 8:
         {
             CommonWebViewController *controller = (CommonWebViewController*)[UIViewController instantiateViewControllerWithIdentifier:@"CommonWebViewController" fromStoryboard:@"Other"];
-            controller.title = @"FAQ";
-            controller.urlString = @"https://icaicommercewizard.com/commerce-wizard-mobile/faq_mobile.html";
+            controller.screenTitle = @"FAQ";
+            controller.urlString = FAQ;
             [homeController.navigationController pushViewController:controller animated:YES];
         }
             break;
@@ -155,10 +143,6 @@ static NSString *stringLeftMenuCellIdentifier  = @"LeftMenuCell";
             [App_Delegate logout];
         }
             break;
-//
-//        case 10:
-//            [App_Delegate logout];
-//            break;
             
         default:
             break;

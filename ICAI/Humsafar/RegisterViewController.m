@@ -44,7 +44,7 @@
     self.imageView.layer.borderColor = [UIColor orangeColor].CGColor;
     self.imageView.layer.borderWidth = 3;
     
-    [[FFWebServiceHelper sharedManager] callWebServiceWithUrl:GetStates withParameter:nil onCompletion:^(eResponseType responseType, id response) {
+/*    [[FFWebServiceHelper sharedManager] callWebServiceWithUrl:GetStates withParameter:nil onCompletion:^(eResponseType responseType, id response) {
         
         if (responseType == eResponseTypeSuccessJSON) {
             arrayStatesData = [response objectForKey:kKEY_ResponseObject];
@@ -53,6 +53,7 @@
            // [self showAlert:[response objectForKey:kKEY_ErrorMessage]];
         }
     }];
+ */
 }
 
 - (void)didReceiveMemoryWarning {
@@ -118,7 +119,7 @@
             _txtFieldState.text = selectedValue;
             _txtFieldDist.text = @"";
         }
-        
+/*
          [[FFWebServiceHelper sharedManager] callWebServiceWithUrl:GetDistricts withParameter:@{@"stateId":selectedStateInfo[@"stateId"]} onCompletion:^(eResponseType responseType, id response) {
          
              if (responseType == eResponseTypeSuccessJSON) {
@@ -129,11 +130,12 @@
                  // [self showAlert:[response objectForKey:kKEY_ErrorMessage]];
              }
          }];
+ */
         
     } cancelBlock:^(ActionSheetStringPicker *picker) {
         NSLog(@"Block Picker Canceled");
     } origin:sender];
-    
+
 }
 
 - (IBAction)showDistrictPicker:(id)sender {
@@ -180,7 +182,7 @@
         NSDictionary *paramsDict = @{@"userName": _txtFieldName.text, @"emailId": _txtFieldEmail.text, @"profileImageURL": _imageUrl.absoluteString, @"mobileNumber": _txtFieldMobile.text, @"stateId": selectedStateInfo[@"stateId"], @"defaultDistrictId": selectedDistrictInfo[@"districtId"], @"deviceOS":@"iOS"};
         
             [self showProgressHudWithMessage:@"Registering user"];
-            
+/*
             [[FFWebServiceHelper sharedManager] callWebServiceWithUrl:RegisterUser withParameter:paramsDict onCompletion:^(eResponseType responseType, id response) {
                 
                 [self hideProgressHudAfterDelay:0.1];
@@ -213,6 +215,7 @@
                     }
                 }
             }];
+ */
     }
 }
 

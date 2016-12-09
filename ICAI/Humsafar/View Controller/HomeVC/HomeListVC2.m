@@ -69,7 +69,7 @@
 }
 
 -(void)fetchDataListFromServer {
-    
+/*
     NSString *strURL = @"";
     
     switch (self.homeListVC2Type) {
@@ -97,6 +97,7 @@
         
         [self.tblView reloadData];
     }];
+ */
 }
 
 #pragma mark - UITableView Delegate

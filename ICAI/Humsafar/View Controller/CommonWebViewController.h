@@ -10,8 +10,7 @@
 
 @interface CommonWebViewController : UIViewController
 
-@property(nonatomic) NSString *urlString;
-@property(nonatomic, strong) NSString *title;
-//@property (weak, nonatomic) IBOutlet UIActivityIndicatorView *activityIndicator;
+@property(nonatomic, strong) NSString *urlString;
+@property(nonatomic, strong) NSString *screenTitle;
 
 @end

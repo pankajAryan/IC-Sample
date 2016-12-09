@@ -55,7 +55,7 @@
         NSDictionary *paramsDict = @{@"userName": _txtFieldUsername.text, @"password": _txtFieldPassword.text, @"deviceOS":@"iOS"};
         
         [self showProgressHudWithMessage:@"SigningIn"];
-        
+/*
         [[FFWebServiceHelper sharedManager] callWebServiceWithUrl:departmentLogin withParameter:paramsDict onCompletion:^(eResponseType responseType, id response) {
             
             [self hideProgressHudAfterDelay:0.1];
@@ -97,7 +97,9 @@
                 }
             }
         }];
+ */
     }
+ 
 }
 
 /*

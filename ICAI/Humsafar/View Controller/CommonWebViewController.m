@@ -8,10 +8,14 @@
 
 #import "CommonWebViewController.h"
 
-@interface CommonWebViewController ()<UIWebViewDelegate>
+@interface CommonWebViewController ()<UIWebViewDelegate> {
+    
+    BOOL isShowingLoading;
+}
 
 @property (weak, nonatomic) IBOutlet UIWebView *webView;
 @property (weak, nonatomic) IBOutlet UILabel *lbl_title;
+
 
 @end
 
@@ -20,7 +24,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-    self.lbl_title.text = self.title;
+    self.lbl_title.text = self.screenTitle;
     [self.webView loadRequest:[NSURLRequest requestWithURL:[NSURL URLWithString:self.urlString]]];
 }
 
@@ -36,20 +40,27 @@
     [self.navigationController popViewControllerAnimated:YES];
 }
 
-#pragma mark - UIWebViewDelegates
 -(void)showLoading:(BOOL)isShow{
-    if (isShow)
+    
+    if (isShow) {
         [self showProgressHudWithMessage:nil];
-    else
+        isShowingLoading = YES;
+    }
+    else {
         [self hideProgressHudAfterDelay:0.0];
+        isShowingLoading = NO;
+    }
 }
 
 #pragma mark - UIWeb view delegate methods
 - (void)webViewDidStartLoad:(UIWebView *)webView{
-    [self showLoading:YES];
+    
+    if (!isShowingLoading) {
+        [self showLoading:YES];
+    }
 }
 
-- (void)webViewDidFinishLoad:(UIWebView *)webView{
+- (void)webViewDidFinishLoad:(UIWebView *)webView {
     [self showLoading:NO];
 }
 

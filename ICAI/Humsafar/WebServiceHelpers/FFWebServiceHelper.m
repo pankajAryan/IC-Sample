@@ -26,7 +26,7 @@
     return sharedInstance;
 }
 
-+ (NSURL *)urlWithString:(NSString *)serviceURL{
++ (NSURL *)javaServerUrlWithString:(NSString *)serviceURL{
     
     NSURL *completeURL;
     // create URL from string to test it contains the host name (complete URL)
@@ -40,7 +40,30 @@
     }else{
         // not complete URL
         // append base URL with next URL
-        urlString = [NSString stringWithFormat:@"%@%@",BASE_URL,serviceURL];
+        urlString = [NSString stringWithFormat:@"%@%@",JAVA_BASE_URL,serviceURL];
+    }
+    
+    // create URL object from string url
+    NSString* encodedStringURL = [urlString stringByAddingPercentEncodingWithAllowedCharacters:[NSCharacterSet URLQueryAllowedCharacterSet]];
+    completeURL = [NSURL URLWithString:encodedStringURL];
+    return completeURL;
+}
+
++ (NSURL *)phpServerUrlWithString:(NSString *)serviceURL{
+    
+    NSURL *completeURL;
+    // create URL from string to test it contains the host name (complete URL)
+    NSURL *checkURL = [NSURL URLWithString:serviceURL];
+    NSString *hostName = [checkURL host];
+    NSString *urlString;
+    
+    if (hostName) { // if host name exist
+        // its complete URL
+        urlString = serviceURL;
+    }else{
+        // not complete URL
+        // append base URL with next URL
+        urlString = [NSString stringWithFormat:@"%@%@",PHP_BASE_URL,serviceURL];
     }
     
     // create URL object from string url
@@ -82,7 +105,7 @@
 }
 */
 
--(void)callWebServiceWithUrl:(NSString *)serviceUrl withParameter:(NSDictionary *)parameters onCompletion:(void(^)(eResponseType responseType, id response))completionBlock {
+-(void)callWebServiceWithUrl:(NSURL *)serviceUrl withParameter:(NSDictionary *)parameters onCompletion:(void(^)(eResponseType responseType, id response))completionBlock {
     
     @try {
         
@@ -91,7 +114,7 @@
         if (reachability.currentReachabilityStatus != NotReachable)
         {
             NSMutableURLRequest *request = nil;
-            NSURL *url = [FFWebServiceHelper urlWithString:serviceUrl];
+            NSURL *url = serviceUrl;//[FFWebServiceHelper urlWithString:serviceUrl];
             
             NSLog(@"URL = %@",url);
             NSLog(@"Parameters = %@",parameters);
@@ -214,7 +237,7 @@
         
         if (reachability.currentReachabilityStatus != NotReachable)
         {
-            NSURL *url = [FFWebServiceHelper urlWithString:serviceUrl];
+            NSURL *url = [FFWebServiceHelper phpServerUrlWithString:serviceUrl];
             
             NSLog(@"URL = %@",url);
             NSLog(@"Parameters = %@",parameters);

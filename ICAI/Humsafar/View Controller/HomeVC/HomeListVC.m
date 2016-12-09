@@ -83,7 +83,7 @@
     }
     
     [self showProgressHudWithMessage:@"Loading..."];
-
+/*
     [[FFWebServiceHelper sharedManager] callWebServiceWithUrl:GetAlertsForCategory withParameter:@{@"category" : strCat, @"stateId" : [UIViewController retrieveDataFromUserDefault:@"selectedStateDict"][@"stateId"], @"districtId" : [UIViewController retrieveDataFromUserDefault:@"selectedDistrictDict"][@"districtId"]} onCompletion:^(eResponseType responseType, id response) {
         
         [self hideProgressHudAfterDelay:.1];
@@ -96,6 +96,7 @@
         
         [self.tblView reloadData];
     }];
+    */
 }
 
 #pragma mark - UITableView Delegate
