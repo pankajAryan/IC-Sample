@@ -13,5 +13,4 @@
 @property (weak, nonatomic) IBOutlet UITextField *txtFieldUsername;
 @property (weak, nonatomic) IBOutlet UITextField *txtFieldPassword;
 
-- (IBAction)googleSignInButtonDidTap:(id)sender;
 @end

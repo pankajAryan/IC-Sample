@@ -50,7 +50,6 @@
 		CE16DB031DBB6B2D00AB664C /* UIImageView+AFNetworking.m in Sources */ = {isa = PBXBuildFile; fileRef = CE16DB011DBB6B2D00AB664C /* UIImageView+AFNetworking.m */; };
 		CE2B397E1DAE6D1F00B266E1 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = CE2B397D1DAE6D1F00B266E1 /* main.m */; };
 		CE2B39811DAE6D1F00B266E1 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = CE2B39801DAE6D1F00B266E1 /* AppDelegate.m */; };
-		CE2B39841DAE6D1F00B266E1 /* IntroViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CE2B39831DAE6D1F00B266E1 /* IntroViewController.m */; };
 		CE2B39871DAE6D1F00B266E1 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CE2B39851DAE6D1F00B266E1 /* Main.storyboard */; };
 		CE2B398C1DAE6D1F00B266E1 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CE2B398A1DAE6D1F00B266E1 /* LaunchScreen.storyboard */; };
 		CE2B39A41DAE6F2D00B266E1 /* AbstractActionSheetPicker.m in Sources */ = {isa = PBXBuildFile; fileRef = CE2B39951DAE6F2D00B266E1 /* AbstractActionSheetPicker.m */; };
@@ -80,6 +79,10 @@
 		CE2B3A2C1DAE823D00B266E1 /* HexColor.m in Sources */ = {isa = PBXBuildFile; fileRef = CE2B3A291DAE823D00B266E1 /* HexColor.m */; };
 		CE8D5F521DE9AACF00D4846F /* beep1.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = CE8D5F511DE9AACF00D4846F /* beep1.mp3 */; };
 		CE8E59341DFC06510053E81D /* ContactUsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CE8E59331DFC06510053E81D /* ContactUsViewController.m */; };
+		CE8E59411DFC8F020053E81D /* NSData+Base64.m in Sources */ = {isa = PBXBuildFile; fileRef = CE8E59391DFC8F020053E81D /* NSData+Base64.m */; };
+		CE8E59441DFC8F020053E81D /* SecurityUtility.m in Sources */ = {isa = PBXBuildFile; fileRef = CE8E593F1DFC8F020053E81D /* SecurityUtility.m */; };
+		CE8E59481DFC95BC0053E81D /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CE8E59471DFC95BC0053E81D /* Security.framework */; };
+		CE8E594B1DFCA5C40053E81D /* NSData+AES.m in Sources */ = {isa = PBXBuildFile; fileRef = CE8E594A1DFCA5C40053E81D /* NSData+AES.m */; };
 		CE9316421DBB7E6800A84A91 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CE9316351DBB7E6800A84A91 /* UIKit.framework */; };
 		CE9316431DBB7E6800A84A91 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CE9316361DBB7E6800A84A91 /* SystemConfiguration.framework */; };
 		CE9316441DBB7E6800A84A91 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CE9316371DBB7E6800A84A91 /* QuartzCore.framework */; };
@@ -98,6 +101,10 @@
 		CE9316651DBBB82400A84A91 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = CE9316641DBBB82400A84A91 /* GoogleService-Info.plist */; };
 		CE9316691DBC0B7200A84A91 /* OTPViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CE9316681DBC0B7200A84A91 /* OTPViewController.m */; };
 		CEB08FF41DF35AD5008A83AB /* CommonWebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CEB08FF31DF35AD5008A83AB /* CommonWebViewController.m */; };
+		CEB1F3161DFCA9AE006A3402 /* GTMBase64.m in Sources */ = {isa = PBXBuildFile; fileRef = CEB1F30E1DFCA9AE006A3402 /* GTMBase64.m */; };
+		CEB1F3171DFCA9AE006A3402 /* NSData+AES.m in Sources */ = {isa = PBXBuildFile; fileRef = CEB1F3111DFCA9AE006A3402 /* NSData+AES.m */; };
+		CEB1F3181DFCA9AE006A3402 /* NSString+MD5.m in Sources */ = {isa = PBXBuildFile; fileRef = CEB1F3131DFCA9AE006A3402 /* NSString+MD5.m */; };
+		CEB1F3191DFCA9AE006A3402 /* SecurityUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = CEB1F3151DFCA9AE006A3402 /* SecurityUtil.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -181,8 +188,6 @@
 		CE2B397D1DAE6D1F00B266E1 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		CE2B397F1DAE6D1F00B266E1 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		CE2B39801DAE6D1F00B266E1 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		CE2B39821DAE6D1F00B266E1 /* IntroViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = IntroViewController.h; sourceTree = "<group>"; };
-		CE2B39831DAE6D1F00B266E1 /* IntroViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = IntroViewController.m; sourceTree = "<group>"; };
 		CE2B39861DAE6D1F00B266E1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		CE2B398B1DAE6D1F00B266E1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		CE2B398D1DAE6D1F00B266E1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -241,6 +246,13 @@
 		CE8D5F511DE9AACF00D4846F /* beep1.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = beep1.mp3; sourceTree = "<group>"; };
 		CE8E59321DFC06510053E81D /* ContactUsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ContactUsViewController.h; sourceTree = "<group>"; };
 		CE8E59331DFC06510053E81D /* ContactUsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ContactUsViewController.m; sourceTree = "<group>"; };
+		CE8E59381DFC8F020053E81D /* NSData+Base64.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSData+Base64.h"; sourceTree = "<group>"; };
+		CE8E59391DFC8F020053E81D /* NSData+Base64.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSData+Base64.m"; sourceTree = "<group>"; };
+		CE8E593E1DFC8F020053E81D /* SecurityUtility.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SecurityUtility.h; sourceTree = "<group>"; };
+		CE8E593F1DFC8F020053E81D /* SecurityUtility.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SecurityUtility.m; sourceTree = "<group>"; };
+		CE8E59471DFC95BC0053E81D /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
+		CE8E59491DFCA5C40053E81D /* NSData+AES.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSData+AES.h"; sourceTree = "<group>"; };
+		CE8E594A1DFCA5C40053E81D /* NSData+AES.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSData+AES.m"; sourceTree = "<group>"; };
 		CE9316351DBB7E6800A84A91 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		CE9316361DBB7E6800A84A91 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 		CE9316371DBB7E6800A84A91 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
@@ -262,6 +274,15 @@
 		CE9316681DBC0B7200A84A91 /* OTPViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OTPViewController.m; sourceTree = "<group>"; };
 		CEB08FF21DF35AD5008A83AB /* CommonWebViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CommonWebViewController.h; sourceTree = "<group>"; };
 		CEB08FF31DF35AD5008A83AB /* CommonWebViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CommonWebViewController.m; sourceTree = "<group>"; };
+		CEB1F30D1DFCA9AE006A3402 /* GTMBase64.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GTMBase64.h; sourceTree = "<group>"; };
+		CEB1F30E1DFCA9AE006A3402 /* GTMBase64.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GTMBase64.m; sourceTree = "<group>"; };
+		CEB1F30F1DFCA9AE006A3402 /* GTMDefines.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GTMDefines.h; sourceTree = "<group>"; };
+		CEB1F3101DFCA9AE006A3402 /* NSData+AES.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSData+AES.h"; sourceTree = "<group>"; };
+		CEB1F3111DFCA9AE006A3402 /* NSData+AES.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSData+AES.m"; sourceTree = "<group>"; };
+		CEB1F3121DFCA9AE006A3402 /* NSString+MD5.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+MD5.h"; sourceTree = "<group>"; };
+		CEB1F3131DFCA9AE006A3402 /* NSString+MD5.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+MD5.m"; sourceTree = "<group>"; };
+		CEB1F3141DFCA9AE006A3402 /* SecurityUtil.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SecurityUtil.h; sourceTree = "<group>"; };
+		CEB1F3151DFCA9AE006A3402 /* SecurityUtil.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SecurityUtil.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -269,6 +290,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CE8E59481DFC95BC0053E81D /* Security.framework in Frameworks */,
 				CE9316631DBBB6DD00A84A91 /* SafariServices.framework in Frameworks */,
 				CE9316611DBBB6D700A84A91 /* AddressBook.framework in Frameworks */,
 				CE9316451DBB7E6800A84A91 /* OpenGLES.framework in Frameworks */,
@@ -513,6 +535,8 @@
 		CE2B39701DAE6D1F00B266E1 = {
 			isa = PBXGroup;
 			children = (
+				CEB1F30B1DFCA9AE006A3402 /* Security */,
+				CE8E59351DFC8F020053E81D /* Encryption Utility */,
 				CE2B39CF1DAE7FCB00B266E1 /* Categories */,
 				CE2B39B01DAE71CC00B266E1 /* TPKeyboardAvoiding */,
 				CE2B39F31DAE812A00B266E1 /* TSMessages */,
@@ -722,20 +746,56 @@
 			name = ContactUs;
 			sourceTree = "<group>";
 		};
+		CE8E59351DFC8F020053E81D /* Encryption Utility */ = {
+			isa = PBXGroup;
+			children = (
+				CE8E59381DFC8F020053E81D /* NSData+Base64.h */,
+				CE8E59391DFC8F020053E81D /* NSData+Base64.m */,
+				CE8E593E1DFC8F020053E81D /* SecurityUtility.h */,
+				CE8E593F1DFC8F020053E81D /* SecurityUtility.m */,
+				CE8E59491DFCA5C40053E81D /* NSData+AES.h */,
+				CE8E594A1DFCA5C40053E81D /* NSData+AES.m */,
+			);
+			path = "Encryption Utility";
+			sourceTree = "<group>";
+		};
 		CE93165F1DBBB6D700A84A91 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				CE8E59471DFC95BC0053E81D /* Security.framework */,
 				CE9316621DBBB6DD00A84A91 /* SafariServices.framework */,
 				CE9316601DBBB6D700A84A91 /* AddressBook.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		CEB1F30B1DFCA9AE006A3402 /* Security */ = {
+			isa = PBXGroup;
+			children = (
+				CEB1F30C1DFCA9AE006A3402 /* GTMBase64 */,
+				CEB1F3101DFCA9AE006A3402 /* NSData+AES.h */,
+				CEB1F3111DFCA9AE006A3402 /* NSData+AES.m */,
+				CEB1F3121DFCA9AE006A3402 /* NSString+MD5.h */,
+				CEB1F3131DFCA9AE006A3402 /* NSString+MD5.m */,
+				CEB1F3141DFCA9AE006A3402 /* SecurityUtil.h */,
+				CEB1F3151DFCA9AE006A3402 /* SecurityUtil.m */,
+			);
+			path = Security;
+			sourceTree = "<group>";
+		};
+		CEB1F30C1DFCA9AE006A3402 /* GTMBase64 */ = {
+			isa = PBXGroup;
+			children = (
+				CEB1F30D1DFCA9AE006A3402 /* GTMBase64.h */,
+				CEB1F30E1DFCA9AE006A3402 /* GTMBase64.m */,
+				CEB1F30F1DFCA9AE006A3402 /* GTMDefines.h */,
+			);
+			path = GTMBase64;
+			sourceTree = "<group>";
+		};
 		CEC24E8F1DF292B00050B6CA /* LoginNregister */ = {
 			isa = PBXGroup;
 			children = (
-				CE2B39821DAE6D1F00B266E1 /* IntroViewController.h */,
-				CE2B39831DAE6D1F00B266E1 /* IntroViewController.m */,
 				CE2B39BD1DAE72AB00B266E1 /* LoginViewController.h */,
 				CE2B39BE1DAE72AB00B266E1 /* LoginViewController.m */,
 				CE2B39C01DAE736B00B266E1 /* RegisterViewController.h */,
@@ -838,9 +898,9 @@
 			files = (
 				CE0596DF1DB665B5001E62A9 /* AFURLConnectionOperation.m in Sources */,
 				CE0596DA1DB665B5001E62A9 /* AFHTTPRequestOperation.m in Sources */,
-				CE2B39841DAE6D1F00B266E1 /* IntroViewController.m in Sources */,
 				CE2B39E71DAE7FCB00B266E1 /* CLLocationManager+blocks.m in Sources */,
 				CE2B39EB1DAE7FCB00B266E1 /* UIFont+FF.m in Sources */,
+				CE8E59441DFC8F020053E81D /* SecurityUtility.m in Sources */,
 				4163DB8B1DF5495F00CCACCF /* HomeViewController.m in Sources */,
 				410D4B171DF28B1000FFB0D8 /* NotificationViewController.m in Sources */,
 				410D4B251DF28D8D00FFB0D8 /* AboutViewController.m in Sources */,
@@ -849,6 +909,7 @@
 				CE2B39E91DAE7FCB00B266E1 /* NSString+device.m in Sources */,
 				CE2B39CE1DAE7D2C00B266E1 /* RootViewController.m in Sources */,
 				CE2B39EA1DAE7FCB00B266E1 /* UIColor+FF.m in Sources */,
+				CEB1F3161DFCA9AE006A3402 /* GTMBase64.m in Sources */,
 				CE0596E61DB665D2001E62A9 /* Reachability.m in Sources */,
 				CE2B39A51DAE6F2D00B266E1 /* ActionSheetStringPicker.m in Sources */,
 				CE0596DD1DB665B5001E62A9 /* AFNetworkReachabilityManager.m in Sources */,
@@ -858,6 +919,7 @@
 				CE2B39811DAE6D1F00B266E1 /* AppDelegate.m in Sources */,
 				CE2B39BC1DAE71CC00B266E1 /* UIScrollView+TPKeyboardAvoidingAdditions.m in Sources */,
 				CE8E59341DFC06510053E81D /* ContactUsViewController.m in Sources */,
+				CE8E59411DFC8F020053E81D /* NSData+Base64.m in Sources */,
 				CE2B397E1DAE6D1F00B266E1 /* main.m in Sources */,
 				CE2B39B91DAE71CC00B266E1 /* TPKeyboardAvoidingCollectionView.m in Sources */,
 				CE0596BA1DB65E92001E62A9 /* GUITabPagerViewController.m in Sources */,
@@ -866,11 +928,13 @@
 				CE0596E11DB665B5001E62A9 /* AFURLResponseSerialization.m in Sources */,
 				CE2B39BB1DAE71CC00B266E1 /* TPKeyboardAvoidingTableView.m in Sources */,
 				CE2B39C21DAE736B00B266E1 /* RegisterViewController.m in Sources */,
+				CEB1F3171DFCA9AE006A3402 /* NSData+AES.m in Sources */,
 				CE16DAE91DBA043500AB664C /* FFValidationResult.m in Sources */,
 				410D4B2B1DF28E2300FFB0D8 /* AnalysisViewController.m in Sources */,
 				CE16DB031DBB6B2D00AB664C /* UIImageView+AFNetworking.m in Sources */,
 				CE0596DB1DB665B5001E62A9 /* AFHTTPRequestOperationManager.m in Sources */,
 				CE2B39A41DAE6F2D00B266E1 /* AbstractActionSheetPicker.m in Sources */,
+				CEB1F3181DFCA9AE006A3402 /* NSString+MD5.m in Sources */,
 				CE0596E01DB665B5001E62A9 /* AFURLRequestSerialization.m in Sources */,
 				CE2B39A61DAE6F2D00B266E1 /* SWActionSheet.m in Sources */,
 				CE16DAE41DBA022400AB664C /* UITextField+Validation.m in Sources */,
@@ -885,6 +949,7 @@
 				CE16DAFE1DBB42FD00AB664C /* TSMessage.m in Sources */,
 				4163DB921DF5499100CCACCF /* ForgotPassword.m in Sources */,
 				410D4B1F1DF28BFF00FFB0D8 /* PaymentViewController.m in Sources */,
+				CE8E594B1DFCA5C40053E81D /* NSData+AES.m in Sources */,
 				CE16DAFF1DBB42FD00AB664C /* TSMessageView.m in Sources */,
 				410D4B221DF28CC900FFB0D8 /* ApplicationFormViewController.m in Sources */,
 				CE0596BB1DB65E92001E62A9 /* GUITabScrollView.m in Sources */,
@@ -892,6 +957,7 @@
 				CE0596E21DB665B5001E62A9 /* AFURLSessionManager.m in Sources */,
 				CE0596DC1DB665B5001E62A9 /* AFHTTPSessionManager.m in Sources */,
 				CE2B39A91DAE6F2D00B266E1 /* RESideMenu.m in Sources */,
+				CEB1F3191DFCA9AE006A3402 /* SecurityUtil.m in Sources */,
 				CE2B39A81DAE6F2D00B266E1 /* RECommonFunctions.m in Sources */,
 				CE2B39BF1DAE72AB00B266E1 /* LoginViewController.m in Sources */,
 				CE2B39F11DAE7FCB00B266E1 /* UIViewController+Utility.m in Sources */,

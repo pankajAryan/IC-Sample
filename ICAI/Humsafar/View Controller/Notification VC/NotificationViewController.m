@@ -32,7 +32,7 @@
 
     [[FFWebServiceHelper sharedManager]
      callWebServiceWithUrl:[FFWebServiceHelper javaServerUrlWithString:GET_USER_ALERTS]
-                withParameter:@{ @"checkSource" : @"7MV8TLIt0A26Q9gg6Ttcn/4dSNaT1OPq"}
+                withParameter:@{CHECKSOURCE_KEY : CHECKSOURCE_VALUE}
                 onCompletion:^(eResponseType responseType, id response)
                 {
                     [self hideProgressHudAfterDelay:0.1];

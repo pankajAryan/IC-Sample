@@ -12,6 +12,11 @@
 #import "RootViewController.h"
 #import "ForgotPassword.h"
 
+#import "SecurityUtility.h"
+#import "NSData+AES.h"
+
+#import "SecurityUtil.h"
+#import "GTMBase64.h"
 
 //@interface LoginViewController () <GIDSignInDelegate, GIDSignInUIDelegate>
 @interface LoginViewController ()
@@ -21,25 +26,25 @@
 //@property (weak, nonatomic) IBOutlet GIDSignInButton *GSignIn;
 @end
 
+NSString *encryptionKey =   @"2b9cYGfQ%D-^hnCB";
+
 @implementation LoginViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-//    _buttonForgotPassword.layer.borderColor = [[UIColor lightGrayColor] CGColor];
 }
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
 }
 
 
 #pragma mark - Login Actions
 - (IBAction)btnForgotPasswordAction:(UIButton *)sender
 {
-    UIWindow *window =[[[UIApplication sharedApplication]delegate]window];
-    ForgotPassword *viewForgotPassword = [[ForgotPassword alloc] initWithFrame:self.view.bounds];
-    [window addSubview:viewForgotPassword];
+//    UIWindow *window =[[[UIApplication sharedApplication]delegate]window];
+//    ForgotPassword *viewForgotPassword = [[ForgotPassword alloc] initWithFrame:self.view.bounds];
+//    [window addSubview:viewForgotPassword];
 }
 
 - (IBAction)loginButtonDidTap:(id)sender {
@@ -47,57 +52,67 @@
     if (_txtFieldUsername.isEmptyField || _txtFieldPassword.isEmptyField) {
         [self showAlert:@"All input fields are mandatory!"];
     }
-//    else if (!_txtFieldUsername.isEmailValid) {
-//        [self showAlert:@"Invalid Email address!"];
-//    }
+    else if (!_txtFieldUsername.isEmailValid) {
+        [self showAlert:@"Invalid Email address!"];
+    }
     else {
         
-        NSDictionary *paramsDict = @{@"userName": _txtFieldUsername.text, @"password": _txtFieldPassword.text, @"deviceOS":@"iOS"};
+ //       NSData *inputData = [_txtFieldPassword.text dataUsingEncoding:NSUTF8StringEncoding];
+
+        NSData *aesdataresult = [SecurityUtil encryptAESData:_txtFieldPassword.text];
+        //NSString *ss=[SecurityUtil encodeBase64String:aesdataresult];
+        NSString *password = [SecurityUtil encodeBase64Data:aesdataresult];
+        NSLog(@"%@",password);
         
-        [self showProgressHudWithMessage:@"SigningIn"];
-/*
-        [[FFWebServiceHelper sharedManager] callWebServiceWithUrl:departmentLogin withParameter:paramsDict onCompletion:^(eResponseType responseType, id response) {
-            
-            [self hideProgressHudAfterDelay:0.1];
-            
-            if (responseType == eResponseTypeSuccessJSON)
-            {
-                NSDictionary *dictUserdata = [response objectForKey:@"responseObject"];
-                
-                [UIViewController saveDatatoUserDefault:[dictUserdata objectForKey:@"ssoId"] forKey:@"ssoId"];
+        NSDictionary *paramsDict = @{@"email":_txtFieldUsername.text, @"password":password};
+        
+        [self showProgressHudWithMessage:@"SigningIn..."];
 
-                [UIViewController saveDatatoUserDefault:[dictUserdata objectForKey:@"staffId"] forKey:@"userId"];
-                [UIViewController saveDatatoUserDefault:[dictUserdata objectForKey:@"name"] forKey:@"name"];
-                [UIViewController saveDatatoUserDefault:[dictUserdata objectForKey:@"email"] forKey:@"email"];
-                
-                if ([dictUserdata[@"mobile"] isKindOfClass:[NSString class]]) {
-                    [UIViewController saveDatatoUserDefault:dictUserdata[@"mobile"] forKey:@"mobile"];
-                }else{
-                    [UIViewController saveDatatoUserDefault:@"" forKey:@"mobile"];
-                }
-                
-                [UIViewController saveDatatoUserDefault:@"" forKey:@"userImageUrl"];
-                [UIViewController saveDatatoUserDefault:@{@"stateId" : @"29",@"stateName" : @"Rajasthan"} forKey:@"selectedStateDict"];
-                [UIViewController saveDatatoUserDefault:@{@"districtId" : @"1",@"districtName" : @"Ajmer",@"stateId" : @"29"} forKey:@"selectedDistrictDict"];
-                [UIViewController saveDatatoUserDefault:nil forKey:@"selectedStateDistrictArray"];
-                
-                
-                [UIViewController saveDatatoUserDefault:@"1" forKey:@"isUserLoggedIn"];
-                [UIViewController saveDatatoUserDefault:@"department" forKey:@"loginType"];
-
-                RootViewController *VC = [RootViewController instantiateViewControllerWithIdentifier:@"RootViewController" fromStoryboard:@"Main"];
-                
-                [self.navigationController pushViewController:VC animated:YES];
-            }
-            else {
-                if (responseType != eResponseTypeNoInternet)
+        [[FFWebServiceHelper sharedManager]
+                callWebServiceWithUrl:[FFWebServiceHelper phpServerUrlWithString:LOGIN]
+                withParameter:paramsDict
+                onCompletion:^(eResponseType responseType, id response)
                 {
-                    //[self showResponseErrorWithType:eResponseTypeFailJSON responseObject:response errorMessage:nil];
-//                    [self showAlert:[response objectForKey:kKEY_ErrorMessage]];
-                }
-            }
-        }];
- */
+                    [self hideProgressHudAfterDelay:0.1];
+                    
+                    if (responseType == eResponseTypeSuccessJSON)
+                    {
+                        NSDictionary *dictUserdata = [response objectForKey:@"responseObject"];
+                        
+                        [UIViewController saveDatatoUserDefault:[dictUserdata objectForKey:@"ssoId"] forKey:@"ssoId"];
+
+                        [UIViewController saveDatatoUserDefault:[dictUserdata objectForKey:@"staffId"] forKey:@"userId"];
+                        [UIViewController saveDatatoUserDefault:[dictUserdata objectForKey:@"name"] forKey:@"name"];
+                        [UIViewController saveDatatoUserDefault:[dictUserdata objectForKey:@"email"] forKey:@"email"];
+                        
+                        if ([dictUserdata[@"mobile"] isKindOfClass:[NSString class]]) {
+                            [UIViewController saveDatatoUserDefault:dictUserdata[@"mobile"] forKey:@"mobile"];
+                        }else{
+                            [UIViewController saveDatatoUserDefault:@"" forKey:@"mobile"];
+                        }
+                        
+                        [UIViewController saveDatatoUserDefault:@"" forKey:@"userImageUrl"];
+                        [UIViewController saveDatatoUserDefault:@{@"stateId" : @"29",@"stateName" : @"Rajasthan"} forKey:@"selectedStateDict"];
+                        [UIViewController saveDatatoUserDefault:@{@"districtId" : @"1",@"districtName" : @"Ajmer",@"stateId" : @"29"} forKey:@"selectedDistrictDict"];
+                        [UIViewController saveDatatoUserDefault:nil forKey:@"selectedStateDistrictArray"];
+                        
+                        
+                        [UIViewController saveDatatoUserDefault:@"1" forKey:@"isUserLoggedIn"];
+                        [UIViewController saveDatatoUserDefault:@"department" forKey:@"loginType"];
+
+                        RootViewController *VC = [RootViewController instantiateViewControllerWithIdentifier:@"RootViewController" fromStoryboard:@"Main"];
+                        
+                        [self.navigationController pushViewController:VC animated:YES];
+                    }
+                    else {
+                        if (responseType != eResponseTypeNoInternet)
+                        {
+                            //[self showResponseErrorWithType:eResponseTypeFailJSON responseObject:response errorMessage:nil];
+                            [self showAlert:[response objectForKey:kKEY_ErrorMessage]];
+                        }
+                    }
+                }];
+ 
     }
  
 }

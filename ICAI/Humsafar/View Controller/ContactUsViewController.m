@@ -62,7 +62,7 @@
     }
     else
     {
-        NSDictionary *paramsDict = @{@"type": _textFieldQuery.text, @"name": _textFieldName.text, @"message": _textFieldMessage.text, @"email" : _textFieldEmail.text, @"checkSource" : @"7MV8TLIt0A26Q9gg6Ttcn/4dSNaT1OPq"};
+        NSDictionary *paramsDict = @{@"type": _textFieldQuery.text, @"name": _textFieldName.text, @"message": _textFieldMessage.text, @"email" : _textFieldEmail.text, CHECKSOURCE_KEY : CHECKSOURCE_VALUE};
         
         [self showProgressHudWithMessage:@"Assigning.."];
         

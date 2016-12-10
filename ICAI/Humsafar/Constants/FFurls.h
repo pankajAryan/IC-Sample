@@ -3,9 +3,8 @@
 //
 //
 
-#define Mobile_Platform               @"ios"
-#define Mobile_city                   @"city"
-
+#define CHECKSOURCE_KEY         @"checkSource"
+#define CHECKSOURCE_VALUE       @"7MV8TLIt0A26Q9gg6Ttcn/4dSNaT1OPq"
 
 // ************ LIVE APP CONFIGURATION ***********************************************//
 
@@ -16,8 +15,7 @@
 
 // *********************|| Suffix to BASE_URL ||*************************************//
 
-
-#define Login                   @"studentLogin"
+#define LOGIN                   @"studentappglogin"
 
 #define Forgot_Password         @"studentappforgotpassword"
 
