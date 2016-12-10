@@ -15,6 +15,7 @@
     NSArray *notificationsArray;
 }
 
+@property (weak, nonatomic) IBOutlet UITableView *notificationsTableView;
 @property (weak, nonatomic) IBOutlet UIButton *btn_menu;
 
 @end
@@ -24,47 +25,55 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
+    [_notificationsTableView setRowHeight:UITableViewAutomaticDimension];
+    _notificationsTableView.estimatedRowHeight = 100;
+    
+    [self showProgressHudWithMessage:@"Assigning.."];
+
     [[FFWebServiceHelper sharedManager]
-                callWebServiceWithUrl:[FFWebServiceHelper javaServerUrlWithString:GET_USER_ALERTS]
+     callWebServiceWithUrl:[FFWebServiceHelper javaServerUrlWithString:GET_USER_ALERTS]
                 withParameter:@{ @"checkSource" : @"7MV8TLIt0A26Q9gg6Ttcn/4dSNaT1OPq"}
                 onCompletion:^(eResponseType responseType, id response)
                 {
+                    [self hideProgressHudAfterDelay:0.1];
+
                      if (responseType == eResponseTypeSuccessJSON)
                      {
                          notificationsArray = [response objectForKey:@"responseObject"];
+                         [_notificationsTableView reloadData];
                      }
                      else{
-                         [self showAlert:@"Something went wrong, Please try after sometime"];
+                         [self showAlert:@"Something went wrong, Please try after sometime."];
                      }
                 }];
-    
 }
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
 }
+
 - (IBAction)popVCAction:(id)sender {
     
     [self.navigationController popViewControllerAnimated:YES];
 }
 
 #pragma mark- TableView Datasource
-- (CGFloat)tableView:(UITableView *)tableView estimatedHeightForRowAtIndexPath:(NSIndexPath *)indexPath{
-    return 100;
-}
-
-- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
-    return UITableViewAutomaticDimension;
-}
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    return 6;
+    return notificationsArray.count;
 }
 
-- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
+    
     NotificationTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"NotificationTableViewCell"];
-    cell.labelQuestionDetail.text = @"test abc test abc test abc test abc test abc test abc test abc test abc test abc test abc";
+    
+    NSDictionary *notificationObject = [notificationsArray objectAtIndex:indexPath.row];
+    
+    cell.labelQuestionTitle.text = [notificationObject objectForKey:@"title"];
+    cell.labelQuestionDetail.text = [notificationObject objectForKey:@"message"];
+    cell.labelDate.text = [notificationObject objectForKey:@"date"];
+
     return cell;
 }
 

@@ -18,8 +18,6 @@
 		410D4B281DF28DE900FFB0D8 /* AboutExamViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 410D4B271DF28DE900FFB0D8 /* AboutExamViewController.m */; };
 		410D4B2B1DF28E2300FFB0D8 /* AnalysisViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 410D4B2A1DF28E2300FFB0D8 /* AnalysisViewController.m */; };
 		4163DB881DF5495F00CCACCF /* HomeCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 4163DB811DF5495F00CCACCF /* HomeCollectionViewCell.m */; };
-		4163DB891DF5495F00CCACCF /* HomeListVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 4163DB831DF5495F00CCACCF /* HomeListVC.m */; };
-		4163DB8A1DF5495F00CCACCF /* HomeListVC2.m in Sources */ = {isa = PBXBuildFile; fileRef = 4163DB851DF5495F00CCACCF /* HomeListVC2.m */; };
 		4163DB8B1DF5495F00CCACCF /* HomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4163DB871DF5495F00CCACCF /* HomeViewController.m */; };
 		4163DB921DF5499100CCACCF /* ForgotPassword.m in Sources */ = {isa = PBXBuildFile; fileRef = 4163DB911DF5499100CCACCF /* ForgotPassword.m */; };
 		4163DB941DF5499E00CCACCF /* ForgotPassword.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4163DB931DF5499E00CCACCF /* ForgotPassword.xib */; };
@@ -81,6 +79,7 @@
 		CE2B39F11DAE7FCB00B266E1 /* UIViewController+Utility.m in Sources */ = {isa = PBXBuildFile; fileRef = CE2B39E51DAE7FCB00B266E1 /* UIViewController+Utility.m */; };
 		CE2B3A2C1DAE823D00B266E1 /* HexColor.m in Sources */ = {isa = PBXBuildFile; fileRef = CE2B3A291DAE823D00B266E1 /* HexColor.m */; };
 		CE8D5F521DE9AACF00D4846F /* beep1.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = CE8D5F511DE9AACF00D4846F /* beep1.mp3 */; };
+		CE8E59341DFC06510053E81D /* ContactUsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CE8E59331DFC06510053E81D /* ContactUsViewController.m */; };
 		CE9316421DBB7E6800A84A91 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CE9316351DBB7E6800A84A91 /* UIKit.framework */; };
 		CE9316431DBB7E6800A84A91 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CE9316361DBB7E6800A84A91 /* SystemConfiguration.framework */; };
 		CE9316441DBB7E6800A84A91 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CE9316371DBB7E6800A84A91 /* QuartzCore.framework */; };
@@ -124,10 +123,6 @@
 		410D4B2A1DF28E2300FFB0D8 /* AnalysisViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AnalysisViewController.m; sourceTree = "<group>"; };
 		4163DB801DF5495F00CCACCF /* HomeCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HomeCollectionViewCell.h; sourceTree = "<group>"; };
 		4163DB811DF5495F00CCACCF /* HomeCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HomeCollectionViewCell.m; sourceTree = "<group>"; };
-		4163DB821DF5495F00CCACCF /* HomeListVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HomeListVC.h; sourceTree = "<group>"; };
-		4163DB831DF5495F00CCACCF /* HomeListVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HomeListVC.m; sourceTree = "<group>"; };
-		4163DB841DF5495F00CCACCF /* HomeListVC2.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HomeListVC2.h; sourceTree = "<group>"; };
-		4163DB851DF5495F00CCACCF /* HomeListVC2.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HomeListVC2.m; sourceTree = "<group>"; };
 		4163DB861DF5495F00CCACCF /* HomeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HomeViewController.h; sourceTree = "<group>"; };
 		4163DB871DF5495F00CCACCF /* HomeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HomeViewController.m; sourceTree = "<group>"; };
 		4163DB901DF5499100CCACCF /* ForgotPassword.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ForgotPassword.h; sourceTree = "<group>"; };
@@ -244,6 +239,8 @@
 		CE2B3A281DAE823D00B266E1 /* HexColor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HexColor.h; sourceTree = "<group>"; };
 		CE2B3A291DAE823D00B266E1 /* HexColor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HexColor.m; sourceTree = "<group>"; };
 		CE8D5F511DE9AACF00D4846F /* beep1.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = beep1.mp3; sourceTree = "<group>"; };
+		CE8E59321DFC06510053E81D /* ContactUsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ContactUsViewController.h; sourceTree = "<group>"; };
+		CE8E59331DFC06510053E81D /* ContactUsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ContactUsViewController.m; sourceTree = "<group>"; };
 		CE9316351DBB7E6800A84A91 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		CE9316361DBB7E6800A84A91 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 		CE9316371DBB7E6800A84A91 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
@@ -297,14 +294,15 @@
 			isa = PBXGroup;
 			children = (
 				4163DB7F1DF5495F00CCACCF /* HomeVC */,
+				410D4B0B1DF28B1000FFB0D8 /* Notification VC */,
+				CE8E59311DFC06000053E81D /* ContactUs */,
 				410D4B0A1DF28B1000FFB0D8 /* My Profile VC */,
+				410D4B101DF28B1000FFB0D8 /* Payment VC */,
+				410D4B111DF28B1000FFB0D8 /* TakeTest VC */,
 				410D4B061DF28B1000FFB0D8 /* AboutExamVC */,
 				410D4B071DF28B1000FFB0D8 /* AboutVC */,
 				410D4B081DF28B1000FFB0D8 /* Analysis VC */,
 				410D4B091DF28B1000FFB0D8 /* ApplicationFormVC */,
-				410D4B0B1DF28B1000FFB0D8 /* Notification VC */,
-				410D4B101DF28B1000FFB0D8 /* Payment VC */,
-				410D4B111DF28B1000FFB0D8 /* TakeTest VC */,
 				CEB08FF21DF35AD5008A83AB /* CommonWebViewController.h */,
 				CEB08FF31DF35AD5008A83AB /* CommonWebViewController.m */,
 			);
@@ -392,10 +390,6 @@
 			children = (
 				4163DB801DF5495F00CCACCF /* HomeCollectionViewCell.h */,
 				4163DB811DF5495F00CCACCF /* HomeCollectionViewCell.m */,
-				4163DB821DF5495F00CCACCF /* HomeListVC.h */,
-				4163DB831DF5495F00CCACCF /* HomeListVC.m */,
-				4163DB841DF5495F00CCACCF /* HomeListVC2.h */,
-				4163DB851DF5495F00CCACCF /* HomeListVC2.m */,
 				4163DB861DF5495F00CCACCF /* HomeViewController.h */,
 				4163DB871DF5495F00CCACCF /* HomeViewController.m */,
 			);
@@ -546,13 +540,13 @@
 				4163DBB31DF57A0100CCACCF /* Font */,
 				4163DB8E1DF5497E00CCACCF /* UIViews */,
 				CE0596BF1DB6654E001E62A9 /* WebServiceHelpers */,
+				CE2B39AC1DAE70DB00B266E1 /* Constants */,
 				CE16DAF11DBB405E00AB664C /* Storyboards */,
 				CE2B397F1DAE6D1F00B266E1 /* AppDelegate.h */,
 				CE2B39801DAE6D1F00B266E1 /* AppDelegate.m */,
 				CEC24E8F1DF292B00050B6CA /* LoginNregister */,
 				CE2B39C61DAE7B2F00B266E1 /* SideManuPanel */,
 				410D4B051DF28B1000FFB0D8 /* View Controller */,
-				CE2B39AC1DAE70DB00B266E1 /* Constants */,
 				CE16DAF41DBB426400AB664C /* Assets.xcassets */,
 				CE2B398A1DAE6D1F00B266E1 /* LaunchScreen.storyboard */,
 				CE2B398D1DAE6D1F00B266E1 /* Info.plist */,
@@ -719,6 +713,15 @@
 			path = Classes;
 			sourceTree = "<group>";
 		};
+		CE8E59311DFC06000053E81D /* ContactUs */ = {
+			isa = PBXGroup;
+			children = (
+				CE8E59321DFC06510053E81D /* ContactUsViewController.h */,
+				CE8E59331DFC06510053E81D /* ContactUsViewController.m */,
+			);
+			name = ContactUs;
+			sourceTree = "<group>";
+		};
 		CE93165F1DBBB6D700A84A91 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -854,11 +857,11 @@
 				CE2B3A2C1DAE823D00B266E1 /* HexColor.m in Sources */,
 				CE2B39811DAE6D1F00B266E1 /* AppDelegate.m in Sources */,
 				CE2B39BC1DAE71CC00B266E1 /* UIScrollView+TPKeyboardAvoidingAdditions.m in Sources */,
+				CE8E59341DFC06510053E81D /* ContactUsViewController.m in Sources */,
 				CE2B397E1DAE6D1F00B266E1 /* main.m in Sources */,
 				CE2B39B91DAE71CC00B266E1 /* TPKeyboardAvoidingCollectionView.m in Sources */,
 				CE0596BA1DB65E92001E62A9 /* GUITabPagerViewController.m in Sources */,
 				410D4B281DF28DE900FFB0D8 /* AboutExamViewController.m in Sources */,
-				4163DB8A1DF5495F00CCACCF /* HomeListVC2.m in Sources */,
 				410D4B1C1DF28B5800FFB0D8 /* ProfileViewController.m in Sources */,
 				CE0596E11DB665B5001E62A9 /* AFURLResponseSerialization.m in Sources */,
 				CE2B39BB1DAE71CC00B266E1 /* TPKeyboardAvoidingTableView.m in Sources */,
@@ -895,7 +898,6 @@
 				CE0596C41DB6655E001E62A9 /* FFWebServiceHelper.m in Sources */,
 				CE16DAFD1DBB42FD00AB664C /* TSBlurView.m in Sources */,
 				CE2B39EE1DAE7FCB00B266E1 /* UINavigationItem+FF.m in Sources */,
-				4163DB891DF5495F00CCACCF /* HomeListVC.m in Sources */,
 				4163DB881DF5495F00CCACCF /* HomeCollectionViewCell.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

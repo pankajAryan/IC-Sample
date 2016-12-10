@@ -9,14 +9,9 @@
 
 // ************ LIVE APP CONFIGURATION ***********************************************//
 
-#define BASE_URL            @"https://icaicommercewizard.com/"
-
-
-// ************|| DEVELOPMENT ENVIRONMENT CONFIGURATION ||***************************//
-
 #define PHP_BASE_URL        @"https://icaicommercewizard.com/"
 
-#define JAVA_BASE_URL       @"http://52.66.152.236:5151/CommerceWizard/rest/service/"
+#define JAVA_BASE_URL       @"http://52.66.152.236/CommerceWizard/rest/service/"
 
 
 // *********************|| Suffix to BASE_URL ||*************************************//

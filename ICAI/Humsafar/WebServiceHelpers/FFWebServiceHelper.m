@@ -143,7 +143,7 @@
             
             // typecasting "self" weak type - because
             //Capturing 'self' strongly in this block is likely to lead to a retain cycle
-            __weak typeof(self) weakSelf = self;
+//            __weak typeof(self) weakSelf = self;
             
             [_reqOperation setCompletionBlockWithSuccess:^(AFHTTPRequestOperation *operation, id responseObject)
              {

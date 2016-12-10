@@ -19,6 +19,8 @@
     viewContainer.layer.shadowOffset = CGSizeMake(0, 0);
     viewContainer.layer.shadowRadius = 1;
     viewContainer.layer.shadowOpacity = 1.0;
+    
+    viewContainer.layer.shadowColor = [[UIColor lightGrayColor] CGColor];
 }
 
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated {
