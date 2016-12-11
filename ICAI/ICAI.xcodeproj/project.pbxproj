@@ -24,6 +24,7 @@
 		4163DBB71DF57A0100CCACCF /* OpenSans-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 4163DBB41DF57A0100CCACCF /* OpenSans-Bold.ttf */; };
 		4163DBB81DF57A0100CCACCF /* OpenSans-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 4163DBB51DF57A0100CCACCF /* OpenSans-Regular.ttf */; };
 		4163DBB91DF57A0100CCACCF /* OpenSans-Semibold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 4163DBB61DF57A0100CCACCF /* OpenSans-Semibold.ttf */; };
+		7F163D681DFD667E00A34AE9 /* libPaymentsSDK.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 7F163D621DFD667E00A34AE9 /* libPaymentsSDK.a */; };
 		B7E8D3CB1DD3AB45001F005C /* Other.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B7E8D3CA1DD3AB45001F005C /* Other.storyboard */; };
 		CE0596BA1DB65E92001E62A9 /* GUITabPagerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CE0596B71DB65E92001E62A9 /* GUITabPagerViewController.m */; };
 		CE0596BB1DB65E92001E62A9 /* GUITabScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = CE0596B91DB65E92001E62A9 /* GUITabScrollView.m */; };
@@ -138,6 +139,12 @@
 		4163DBB41DF57A0100CCACCF /* OpenSans-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "OpenSans-Bold.ttf"; sourceTree = "<group>"; };
 		4163DBB51DF57A0100CCACCF /* OpenSans-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "OpenSans-Regular.ttf"; sourceTree = "<group>"; };
 		4163DBB61DF57A0100CCACCF /* OpenSans-Semibold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "OpenSans-Semibold.ttf"; sourceTree = "<group>"; };
+		7F163D621DFD667E00A34AE9 /* libPaymentsSDK.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libPaymentsSDK.a; sourceTree = "<group>"; };
+		7F163D631DFD667E00A34AE9 /* PaymentsSDK.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PaymentsSDK.h; sourceTree = "<group>"; };
+		7F163D641DFD667E00A34AE9 /* PGMerchantConfiguration.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PGMerchantConfiguration.h; sourceTree = "<group>"; };
+		7F163D651DFD667E00A34AE9 /* PGOrder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PGOrder.h; sourceTree = "<group>"; };
+		7F163D661DFD667E00A34AE9 /* PGServerEnvironment.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PGServerEnvironment.h; sourceTree = "<group>"; };
+		7F163D671DFD667E00A34AE9 /* PGTransactionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PGTransactionViewController.h; sourceTree = "<group>"; };
 		B7E8D3CA1DD3AB45001F005C /* Other.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Other.storyboard; sourceTree = "<group>"; };
 		CE0596B61DB65E92001E62A9 /* GUITabPagerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GUITabPagerViewController.h; sourceTree = "<group>"; };
 		CE0596B71DB65E92001E62A9 /* GUITabPagerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GUITabPagerViewController.m; sourceTree = "<group>"; };
@@ -296,6 +303,7 @@
 				CE9316451DBB7E6800A84A91 /* OpenGLES.framework in Frameworks */,
 				CE9316461DBB7E6800A84A91 /* libz.tbd in Frameworks */,
 				CE93164B1DBB7E6800A84A91 /* CoreLocation.framework in Frameworks */,
+				7F163D681DFD667E00A34AE9 /* libPaymentsSDK.a in Frameworks */,
 				CE9316491DBB7E6800A84A91 /* GLKit.framework in Frameworks */,
 				CE9316431DBB7E6800A84A91 /* SystemConfiguration.framework in Frameworks */,
 				CE9316481DBB7E6800A84A91 /* ImageIO.framework in Frameworks */,
@@ -446,6 +454,19 @@
 			path = Font;
 			sourceTree = "<group>";
 		};
+		7F163D611DFD667E00A34AE9 /* PaytmSDK */ = {
+			isa = PBXGroup;
+			children = (
+				7F163D621DFD667E00A34AE9 /* libPaymentsSDK.a */,
+				7F163D631DFD667E00A34AE9 /* PaymentsSDK.h */,
+				7F163D641DFD667E00A34AE9 /* PGMerchantConfiguration.h */,
+				7F163D651DFD667E00A34AE9 /* PGOrder.h */,
+				7F163D661DFD667E00A34AE9 /* PGServerEnvironment.h */,
+				7F163D671DFD667E00A34AE9 /* PGTransactionViewController.h */,
+			);
+			path = PaytmSDK;
+			sourceTree = "<group>";
+		};
 		CE0596B51DB65E92001E62A9 /* GUITabPager */ = {
 			isa = PBXGroup;
 			children = (
@@ -535,6 +556,7 @@
 		CE2B39701DAE6D1F00B266E1 = {
 			isa = PBXGroup;
 			children = (
+				7F163D611DFD667E00A34AE9 /* PaytmSDK */,
 				CEB1F30B1DFCA9AE006A3402 /* Security */,
 				CE8E59351DFC8F020053E81D /* Encryption Utility */,
 				CE2B39CF1DAE7FCB00B266E1 /* Categories */,
@@ -1102,6 +1124,10 @@
 				GCC_PREFIX_HEADER = Humsafar/PrefixHeader.pch;
 				INFOPLIST_FILE = Humsafar/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/PaytmSDK",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.test.humsafar;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
@@ -1125,6 +1151,10 @@
 				GCC_PREFIX_HEADER = Humsafar/PrefixHeader.pch;
 				INFOPLIST_FILE = Humsafar/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/PaytmSDK",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.test.humsafar;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
