@@ -1013,7 +1013,7 @@ Website: www.icai.org </string>
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                                 <connections>
-                                    <action selector="btnBeginAction:" destination="Ekm-VL-d9R" eventType="touchUpInside" id="cmu-ol-CR5"/>
+                                    <action selector="makePaymentAction:" destination="rCx-25-slN" eventType="touchUpInside" id="vFE-hz-qQm"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -1027,6 +1027,9 @@ Website: www.icai.org </string>
                             <constraint firstItem="xjc-7L-tle" firstAttribute="top" secondItem="z48-D2-V6b" secondAttribute="top" id="z3k-Ri-DVx"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="buttonMakePayment" destination="0BH-VA-z2m" id="OSn-73-Nob"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="tfG-mm-Xbk" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

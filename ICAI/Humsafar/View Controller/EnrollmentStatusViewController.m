@@ -10,6 +10,8 @@
 
 @interface EnrollmentStatusViewController ()
 
+@property (weak, nonatomic) IBOutlet UIButton *buttonMakePayment;
+
 @end
 
 @implementation EnrollmentStatusViewController
@@ -37,5 +39,7 @@
     // Pass the selected object to the new view controller.
 }
 */
+- (IBAction)makePaymentAction:(id)sender {
+}
 
 @end
