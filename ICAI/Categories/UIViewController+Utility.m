@@ -23,7 +23,7 @@
 
 +(BOOL)isNetworkAvailable
 {
-    Reachability *networkReachability = [Reachability reachabilityForInternetConnection];
+    NetworkReachability *networkReachability = [NetworkReachability reachabilityForInternetConnection];
     NetworkStatus networkStatus = [networkReachability currentReachabilityStatus];
     
     if (networkStatus == NotReachable)

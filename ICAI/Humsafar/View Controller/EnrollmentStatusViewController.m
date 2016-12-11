@@ -13,7 +13,6 @@
     NSMutableDictionary *paymentStatusDict;
     PGMerchantConfiguration *objMerchant;
     NSMutableDictionary *orderDict;
-    NSString *enrolmentId;
 }
 
 @property (weak, nonatomic) IBOutlet UIView *frontView;
@@ -37,7 +36,7 @@
     [self showProgressHudWithMessage:@"Please wait.."];
 
     [[FFWebServiceHelper sharedManager]
-                     callWebServiceWithUrl:[FFWebServiceHelper phpServerUrlWithString:@"studentappgetpaymentstatus"]
+                     callWebServiceWithUrl:[FFWebServiceHelper phpServerUrlWithString:Get_Payment_Status]
                      withParameter:@{@"application_id" : @"10015961"}
                      onCompletion:^(eResponseType responseType, id response)
                      {
@@ -56,15 +55,18 @@
                                  
                                  _imgViewPayStatus.image = [UIImage imageNamed:@"cross"];
                              }
+                             else {
+                                 NSString *application_id   = [paymentStatusDict objectForKey:@"application_id"];
+                                 [self showPaytmKaroWithInfo:@{@"application_id":application_id}];
+                             }
                              
                              _frontView.hidden = YES;
+                             _viewPaymentContainer.hidden = YES;
                          }
                          else {
                              [self showAlert:@"Something went wrong, Please try after sometime."];
                          }
                      }];
-    
-    enrolmentId = @"";
 }
 
 - (void)didReceiveMemoryWarning {
@@ -77,8 +79,11 @@
 }
 
 - (IBAction)makePaymentAction:(id)sender {
-    NSString *application_id   = [paymentStatusDict objectForKey:@"application_id"];
-    [self showPaytmKaroWithInfo:@{@"application_id":application_id}];
+    
+    NSString *strAmount = [paymentStatusDict objectForKey:@"txn_amount"];
+    NSString *strOrderId =[paymentStatusDict objectForKey:@"ORDERID"];
+    
+    [self callPaymentWithOrderId:strOrderId andAmount:strAmount];
 }
 
 
@@ -86,7 +91,7 @@
 
 -(void)didSucceedTransaction:(PGTransactionViewController *)controller response:(NSDictionary *)response
 {
-    NSString *amount = [paymentStatusDict objectForKey:@"txn_amount"];
+    NSString *amount  =  [paymentStatusDict objectForKey:@"txn_amount"];
     NSString *orderId = [paymentStatusDict objectForKey:@"ORDERID"];
     NSString *status = @"";
     NSString *payment_txnid = @"";
@@ -180,18 +185,15 @@
              [self hideProgressHudAfterDelay:0.1];
              if (responseType == eResponseTypeSuccessJSON)
              {
-                 if ([[response objectForKey:@"errorCode"] integerValue] == 0 && [[[response objectForKey:@"responseObject"] objectForKey:@"paymentInitiationStatus"] isEqualToString:@"SUCCESS"]) {
-                     NSString *strOrderId = (NSString*)[[response objectForKey:@"responseObject"] objectForKey:@"icai_transaction_id"];
-                     NSString *strAmount = (NSString*)[[response objectForKey:@"responseObject"] objectForKey:@"payable_amount"];
-                     //set flags that payment is initiated for particular product-id
-                     //and
-                     //call payment with info to pay to paytm
-                     [paymentStatusDict setObject:strAmount forKey:@"txn_amount"];
-                     [paymentStatusDict setObject:strAmount forKey:@"ORDERID"];
-                     [weakSelf callPaymentWithOrderId:strOrderId andAmount:strAmount];
-                 }else{
-                     [self showAlert:[response objectForKey:@"Error initiating payment! Please try after sometime."]];
-                 }
+                 NSString *strOrderId = (NSString*)[[response objectForKey:@"responseObject"] objectForKey:@"icai_transaction_id"];
+                 NSString *strAmount = (NSString*)[[response objectForKey:@"responseObject"] objectForKey:@"payable_amount"];
+                 
+                 _lblPayAmount.text = [NSString stringWithFormat:@"₹%@",strAmount];
+                 //set flags that payment is initiated for particular product-id
+                 //and
+                 //call payment with info to pay to paytm
+                 [paymentStatusDict setObject:strAmount forKey:@"txn_amount"];
+                 [paymentStatusDict setObject:strOrderId forKey:@"ORDERID"];
              }
              else{
                  [self showAlert:[response objectForKey:kKEY_ErrorMessage]];

@@ -33,10 +33,6 @@
 
 #define CONTACT_US_FORM         @"submitIssue"
 
-#define Payment_AppRepay            @"studentapprepay"
-
-#define Payment_AppPaymentStatus    @"studentapppaymentstatus"
-
 
 // Static Screens
 
@@ -50,6 +46,15 @@
 
 #define Application_Form_Download   @"https://icaicommercewizard.com/html2pdf/download_pdf.php?id=" // convertPassMd5(applicationId)
 
+
+
+// Payment APis in Order of implementation
+
+#define Get_Payment_Status          @"studentappgetpaymentstatus"   //1
+
+#define Payment_AppRepay            @"studentapprepay"              //2
+
+#define Payment_AppPaymentStatus    @"studentapppaymentstatus"      //3
 
 
 #pragma mark - PayTm Stuff

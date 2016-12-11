@@ -10,7 +10,7 @@
 //#import "FFValidationResult.h"
 #import "FFConstant.h"
 #import "MBProgressHUD.h"
-#import "Reachability.h"
+#import "NetworkReachability.h"
 
 @interface UIViewController (Utility)
 

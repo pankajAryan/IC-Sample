@@ -5,7 +5,7 @@
 #import "FFWebServiceHelper.h"
 //#import "FFSession.h"
 //#import "NSObject+FFLocalStorage.h"
-#import "Reachability.h"
+#import "NetworkReachability.h"
 #import "AFHTTPSessionManager.h"
 
 @interface FFWebServiceHelper ()
@@ -109,7 +109,7 @@
     
     @try {
         
-        Reachability *reachability = [Reachability reachabilityWithHostName:@"www.google.com"]; // To test the reachability.
+        NetworkReachability *reachability = [NetworkReachability reachabilityWithHostName:@"www.google.com"]; // To test the reachability.
         
         if (reachability.currentReachabilityStatus != NotReachable)
         {
@@ -233,7 +233,7 @@
 
     
     @try {
-        Reachability *reachability = [Reachability reachabilityWithHostName:@"www.google.com"]; // To test the reachability.
+        NetworkReachability *reachability = [NetworkReachability reachabilityWithHostName:@"www.google.com"]; // To test the reachability.
         
         if (reachability.currentReachabilityStatus != NotReachable)
         {

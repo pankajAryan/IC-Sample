@@ -984,7 +984,7 @@ Website: www.icai.org </string>
                                         </connections>
                                     </button>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Payment Status" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="juO-Sk-2EV">
-                                        <rect key="frame" x="57" y="27.5" width="248" height="23.5"/>
+                                        <rect key="frame" x="57" y="27" width="248" height="24"/>
                                         <fontDescription key="fontDescription" name="OpenSans-Semibold" family="Open Sans" pointSize="17"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <nil key="highlightedColor"/>
@@ -1027,7 +1027,7 @@ Website: www.icai.org </string>
                                 </userDefinedRuntimeAttributes>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ddu-qR-bib">
-                                <rect key="frame" x="16" y="213" width="98.5" height="18"/>
+                                <rect key="frame" x="16" y="213" width="99" height="18"/>
                                 <fontDescription key="fontDescription" name="OpenSans" family="Open Sans" pointSize="13"/>
                                 <color key="textColor" red="0.96862745100000003" green="0.0" blue="0.032632492829999998" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
@@ -1042,7 +1042,7 @@ Website: www.icai.org </string>
                                 </userDefinedRuntimeAttributes>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="EmailId:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AOx-Yg-igk">
-                                <rect key="frame" x="16" y="241" width="98.5" height="18"/>
+                                <rect key="frame" x="16" y="241" width="99" height="18"/>
                                 <fontDescription key="fontDescription" name="OpenSans" family="Open Sans" pointSize="13"/>
                                 <color key="textColor" red="0.96862745100000003" green="0.0" blue="0.032632492829999998" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
@@ -1057,7 +1057,7 @@ Website: www.icai.org </string>
                                 </userDefinedRuntimeAttributes>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Payment Status:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iQI-Nf-N7w">
-                                <rect key="frame" x="16" y="269" width="98.5" height="18"/>
+                                <rect key="frame" x="16" y="269" width="99" height="18"/>
                                 <fontDescription key="fontDescription" name="OpenSans" family="Open Sans" pointSize="13"/>
                                 <color key="textColor" red="0.96862745100000003" green="0.0" blue="0.032632492829999998" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>

@@ -2,10 +2,7 @@
 //  PGTransactionViewController.h
 //  PaymentsSDK
 //
-//  Created by Pradeep Udupi on 12/12/12.
-//  Copyright (c) 2012-2013 Paytm Mobile Solutions Ltd. All rights reserved.
-//  Written under contract by Robosoft Technologies Pvt Ltd.
-//
+//  Copyright (c) 2012-2015 Paytm Mobile Solutions Ltd. All rights reserved.
 
 #import <UIKit/UIKit.h>
 
@@ -76,7 +73,7 @@ typedef enum {
 /*
  Set this to true to enable the logging of the communication
  */
-@property (nonatomic, assign) BOOL loggingEnabled;
+@property (nonatomic, assign, setter=setLoggingEnabled:) BOOL loggingEnabled;
 
 /*
  Set a server Type on which the transaction should run

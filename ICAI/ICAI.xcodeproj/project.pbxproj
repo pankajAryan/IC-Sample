@@ -35,7 +35,7 @@
 		CE0596E01DB665B5001E62A9 /* AFURLRequestSerialization.m in Sources */ = {isa = PBXBuildFile; fileRef = CE0596D51DB665B5001E62A9 /* AFURLRequestSerialization.m */; };
 		CE0596E11DB665B5001E62A9 /* AFURLResponseSerialization.m in Sources */ = {isa = PBXBuildFile; fileRef = CE0596D71DB665B5001E62A9 /* AFURLResponseSerialization.m */; };
 		CE0596E21DB665B5001E62A9 /* AFURLSessionManager.m in Sources */ = {isa = PBXBuildFile; fileRef = CE0596D91DB665B5001E62A9 /* AFURLSessionManager.m */; };
-		CE0596E61DB665D2001E62A9 /* Reachability.m in Sources */ = {isa = PBXBuildFile; fileRef = CE0596E51DB665D2001E62A9 /* Reachability.m */; };
+		CE0596E61DB665D2001E62A9 /* NetworkReachability.m in Sources */ = {isa = PBXBuildFile; fileRef = CE0596E51DB665D2001E62A9 /* NetworkReachability.m */; };
 		CE0ACA571DFD69E800F4B143 /* EnrollmentStatusViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CE0ACA561DFD69E700F4B143 /* EnrollmentStatusViewController.m */; };
 		CE16DAE41DBA022400AB664C /* UITextField+Validation.m in Sources */ = {isa = PBXBuildFile; fileRef = CE16DAE31DBA022400AB664C /* UITextField+Validation.m */; };
 		CE16DAE91DBA043500AB664C /* FFValidationResult.m in Sources */ = {isa = PBXBuildFile; fileRef = CE16DAE81DBA043500AB664C /* FFValidationResult.m */; };
@@ -162,8 +162,8 @@
 		CE0596D71DB665B5001E62A9 /* AFURLResponseSerialization.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFURLResponseSerialization.m; sourceTree = "<group>"; };
 		CE0596D81DB665B5001E62A9 /* AFURLSessionManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFURLSessionManager.h; sourceTree = "<group>"; };
 		CE0596D91DB665B5001E62A9 /* AFURLSessionManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFURLSessionManager.m; sourceTree = "<group>"; };
-		CE0596E41DB665D2001E62A9 /* Reachability.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Reachability.h; sourceTree = "<group>"; };
-		CE0596E51DB665D2001E62A9 /* Reachability.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Reachability.m; sourceTree = "<group>"; };
+		CE0596E41DB665D2001E62A9 /* NetworkReachability.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NetworkReachability.h; sourceTree = "<group>"; };
+		CE0596E51DB665D2001E62A9 /* NetworkReachability.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NetworkReachability.m; sourceTree = "<group>"; };
 		CE0ACA551DFD69E700F4B143 /* EnrollmentStatusViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EnrollmentStatusViewController.h; sourceTree = "<group>"; };
 		CE0ACA561DFD69E700F4B143 /* EnrollmentStatusViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EnrollmentStatusViewController.m; sourceTree = "<group>"; };
 		CE16DAE21DBA022400AB664C /* UITextField+Validation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UITextField+Validation.h"; sourceTree = "<group>"; };
@@ -475,8 +475,8 @@
 		CE0596E31DB665D2001E62A9 /* Reachability */ = {
 			isa = PBXGroup;
 			children = (
-				CE0596E41DB665D2001E62A9 /* Reachability.h */,
-				CE0596E51DB665D2001E62A9 /* Reachability.m */,
+				CE0596E41DB665D2001E62A9 /* NetworkReachability.h */,
+				CE0596E51DB665D2001E62A9 /* NetworkReachability.m */,
 			);
 			path = Reachability;
 			sourceTree = "<group>";
@@ -517,7 +517,6 @@
 		CE2B39701DAE6D1F00B266E1 = {
 			isa = PBXGroup;
 			children = (
-				7F163D611DFD667E00A34AE9 /* PaytmSDK */,
 				CEB1F30B1DFCA9AE006A3402 /* Security */,
 				CE8E59351DFC8F020053E81D /* Encryption Utility */,
 				CE2B39CF1DAE7FCB00B266E1 /* Categories */,
@@ -745,6 +744,7 @@
 		CE93165F1DBBB6D700A84A91 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				7F163D611DFD667E00A34AE9 /* PaytmSDK */,
 				CE8E59471DFC95BC0053E81D /* Security.framework */,
 				CE9316621DBBB6DD00A84A91 /* SafariServices.framework */,
 				CE9316601DBBB6D700A84A91 /* AddressBook.framework */,
@@ -892,7 +892,7 @@
 				CE2B39CE1DAE7D2C00B266E1 /* RootViewController.m in Sources */,
 				CE2B39EA1DAE7FCB00B266E1 /* UIColor+FF.m in Sources */,
 				CEB1F3161DFCA9AE006A3402 /* GTMBase64.m in Sources */,
-				CE0596E61DB665D2001E62A9 /* Reachability.m in Sources */,
+				CE0596E61DB665D2001E62A9 /* NetworkReachability.m in Sources */,
 				CE2B39A51DAE6F2D00B266E1 /* ActionSheetStringPicker.m in Sources */,
 				CE0596DD1DB665B5001E62A9 /* AFNetworkReachabilityManager.m in Sources */,
 				CE0596DE1DB665B5001E62A9 /* AFSecurityPolicy.m in Sources */,
