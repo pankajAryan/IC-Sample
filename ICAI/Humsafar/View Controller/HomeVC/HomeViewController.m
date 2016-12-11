@@ -10,6 +10,7 @@
 #import "UIViewController+RESideMenu.h"
 #import "HomeCollectionViewCell.h"
 #import "InstructionViewController.h"
+#import "SecurityUtil.h"
 
 @interface HomeViewController ()<UICollectionViewDelegate>
 
@@ -48,12 +49,13 @@
     [self showAlert:@"Coming soon..."];
 }
 
-- (IBAction)enrollmentPaymentStatusAction:(id)sender {
-    
-    
-}
-
 - (IBAction)applicationFormDidTap:(id)sender {
+    
+    NSString *applicationId = [SecurityUtil encryptMD5String:@"10015961"];
+
+    NSString *urlString = [NSString stringWithFormat:@"%@%@",Application_Form_Download,applicationId];
+
+    [[UIApplication sharedApplication] openURL:[NSURL URLWithString:urlString] options:@{} completionHandler:nil];
 }
 
 /*

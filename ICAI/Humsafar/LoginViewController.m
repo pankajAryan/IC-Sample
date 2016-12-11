@@ -42,10 +42,6 @@ NSString *encryptionKey =   @"2b9cYGfQ%D-^hnCB";
 #pragma mark - Login Actions
 - (IBAction)btnForgotPasswordAction:(UIButton *)sender
 {
-//    UIWindow *window =[[[UIApplication sharedApplication]delegate]window];
-//    ForgotPassword *viewForgotPassword = [[ForgotPassword alloc] initWithFrame:self.view.bounds];
-//    [window addSubview:viewForgotPassword];
-    
     UIAlertController *alertController = [UIAlertController
                                           alertControllerWithTitle:@""
                                           message:@"Enter your registered email-Id"

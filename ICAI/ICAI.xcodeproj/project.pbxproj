@@ -12,11 +12,7 @@
 		410D4B181DF28B1000FFB0D8 /* InstructionTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 410D4B131DF28B1000FFB0D8 /* InstructionTableViewCell.m */; };
 		410D4B191DF28B1000FFB0D8 /* InstructionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 410D4B151DF28B1000FFB0D8 /* InstructionViewController.m */; };
 		410D4B1C1DF28B5800FFB0D8 /* ProfileViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 410D4B1B1DF28B5800FFB0D8 /* ProfileViewController.m */; };
-		410D4B1F1DF28BFF00FFB0D8 /* PaymentViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 410D4B1E1DF28BFF00FFB0D8 /* PaymentViewController.m */; };
 		410D4B221DF28CC900FFB0D8 /* ApplicationFormViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 410D4B211DF28CC900FFB0D8 /* ApplicationFormViewController.m */; };
-		410D4B251DF28D8D00FFB0D8 /* AboutViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 410D4B241DF28D8D00FFB0D8 /* AboutViewController.m */; };
-		410D4B281DF28DE900FFB0D8 /* AboutExamViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 410D4B271DF28DE900FFB0D8 /* AboutExamViewController.m */; };
-		410D4B2B1DF28E2300FFB0D8 /* AnalysisViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 410D4B2A1DF28E2300FFB0D8 /* AnalysisViewController.m */; };
 		4163DB881DF5495F00CCACCF /* HomeCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 4163DB811DF5495F00CCACCF /* HomeCollectionViewCell.m */; };
 		4163DB8B1DF5495F00CCACCF /* HomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4163DB871DF5495F00CCACCF /* HomeViewController.m */; };
 		4163DB921DF5499100CCACCF /* ForgotPassword.m in Sources */ = {isa = PBXBuildFile; fileRef = 4163DB911DF5499100CCACCF /* ForgotPassword.m */; };
@@ -119,16 +115,8 @@
 		410D4B151DF28B1000FFB0D8 /* InstructionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InstructionViewController.m; sourceTree = "<group>"; };
 		410D4B1A1DF28B5800FFB0D8 /* ProfileViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProfileViewController.h; sourceTree = "<group>"; };
 		410D4B1B1DF28B5800FFB0D8 /* ProfileViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProfileViewController.m; sourceTree = "<group>"; };
-		410D4B1D1DF28BFF00FFB0D8 /* PaymentViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PaymentViewController.h; sourceTree = "<group>"; };
-		410D4B1E1DF28BFF00FFB0D8 /* PaymentViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PaymentViewController.m; sourceTree = "<group>"; };
 		410D4B201DF28CC900FFB0D8 /* ApplicationFormViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ApplicationFormViewController.h; sourceTree = "<group>"; };
 		410D4B211DF28CC900FFB0D8 /* ApplicationFormViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ApplicationFormViewController.m; sourceTree = "<group>"; };
-		410D4B231DF28D8D00FFB0D8 /* AboutViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AboutViewController.h; sourceTree = "<group>"; };
-		410D4B241DF28D8D00FFB0D8 /* AboutViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AboutViewController.m; sourceTree = "<group>"; };
-		410D4B261DF28DE900FFB0D8 /* AboutExamViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AboutExamViewController.h; sourceTree = "<group>"; };
-		410D4B271DF28DE900FFB0D8 /* AboutExamViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AboutExamViewController.m; sourceTree = "<group>"; };
-		410D4B291DF28E2300FFB0D8 /* AnalysisViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AnalysisViewController.h; sourceTree = "<group>"; };
-		410D4B2A1DF28E2300FFB0D8 /* AnalysisViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AnalysisViewController.m; sourceTree = "<group>"; };
 		4163DB801DF5495F00CCACCF /* HomeCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HomeCollectionViewCell.h; sourceTree = "<group>"; };
 		4163DB811DF5495F00CCACCF /* HomeCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HomeCollectionViewCell.m; sourceTree = "<group>"; };
 		4163DB861DF5495F00CCACCF /* HomeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HomeViewController.h; sourceTree = "<group>"; };
@@ -323,43 +311,12 @@
 				CE8E59311DFC06000053E81D /* ContactUs */,
 				CE0ACA541DFD696500F4B143 /* PAYMENT VC */,
 				410D4B0A1DF28B1000FFB0D8 /* My Profile VC */,
-				410D4B101DF28B1000FFB0D8 /* Payment VC */,
 				410D4B111DF28B1000FFB0D8 /* TakeTest VC */,
-				410D4B061DF28B1000FFB0D8 /* AboutExamVC */,
-				410D4B071DF28B1000FFB0D8 /* AboutVC */,
-				410D4B081DF28B1000FFB0D8 /* Analysis VC */,
 				410D4B091DF28B1000FFB0D8 /* ApplicationFormVC */,
 				CEB08FF21DF35AD5008A83AB /* CommonWebViewController.h */,
 				CEB08FF31DF35AD5008A83AB /* CommonWebViewController.m */,
 			);
 			path = "View Controller";
-			sourceTree = "<group>";
-		};
-		410D4B061DF28B1000FFB0D8 /* AboutExamVC */ = {
-			isa = PBXGroup;
-			children = (
-				410D4B261DF28DE900FFB0D8 /* AboutExamViewController.h */,
-				410D4B271DF28DE900FFB0D8 /* AboutExamViewController.m */,
-			);
-			path = AboutExamVC;
-			sourceTree = "<group>";
-		};
-		410D4B071DF28B1000FFB0D8 /* AboutVC */ = {
-			isa = PBXGroup;
-			children = (
-				410D4B231DF28D8D00FFB0D8 /* AboutViewController.h */,
-				410D4B241DF28D8D00FFB0D8 /* AboutViewController.m */,
-			);
-			path = AboutVC;
-			sourceTree = "<group>";
-		};
-		410D4B081DF28B1000FFB0D8 /* Analysis VC */ = {
-			isa = PBXGroup;
-			children = (
-				410D4B291DF28E2300FFB0D8 /* AnalysisViewController.h */,
-				410D4B2A1DF28E2300FFB0D8 /* AnalysisViewController.m */,
-			);
-			path = "Analysis VC";
 			sourceTree = "<group>";
 		};
 		410D4B091DF28B1000FFB0D8 /* ApplicationFormVC */ = {
@@ -389,15 +346,6 @@
 				410D4B0F1DF28B1000FFB0D8 /* NotificationViewController.m */,
 			);
 			path = "Notification VC";
-			sourceTree = "<group>";
-		};
-		410D4B101DF28B1000FFB0D8 /* Payment VC */ = {
-			isa = PBXGroup;
-			children = (
-				410D4B1D1DF28BFF00FFB0D8 /* PaymentViewController.h */,
-				410D4B1E1DF28BFF00FFB0D8 /* PaymentViewController.m */,
-			);
-			path = "Payment VC";
 			sourceTree = "<group>";
 		};
 		410D4B111DF28B1000FFB0D8 /* TakeTest VC */ = {
@@ -916,7 +864,6 @@
 				CE8E59441DFC8F020053E81D /* SecurityUtility.m in Sources */,
 				4163DB8B1DF5495F00CCACCF /* HomeViewController.m in Sources */,
 				410D4B171DF28B1000FFB0D8 /* NotificationViewController.m in Sources */,
-				410D4B251DF28D8D00FFB0D8 /* AboutViewController.m in Sources */,
 				410D4B161DF28B1000FFB0D8 /* NotificationTableViewCell.m in Sources */,
 				410D4B191DF28B1000FFB0D8 /* InstructionViewController.m in Sources */,
 				CE2B39E91DAE7FCB00B266E1 /* NSString+device.m in Sources */,
@@ -936,14 +883,12 @@
 				CE2B397E1DAE6D1F00B266E1 /* main.m in Sources */,
 				CE2B39B91DAE71CC00B266E1 /* TPKeyboardAvoidingCollectionView.m in Sources */,
 				CE0596BA1DB65E92001E62A9 /* GUITabPagerViewController.m in Sources */,
-				410D4B281DF28DE900FFB0D8 /* AboutExamViewController.m in Sources */,
 				410D4B1C1DF28B5800FFB0D8 /* ProfileViewController.m in Sources */,
 				CE0596E11DB665B5001E62A9 /* AFURLResponseSerialization.m in Sources */,
 				CE2B39BB1DAE71CC00B266E1 /* TPKeyboardAvoidingTableView.m in Sources */,
 				CE2B39C21DAE736B00B266E1 /* RegisterViewController.m in Sources */,
 				CEB1F3171DFCA9AE006A3402 /* NSData+AES.m in Sources */,
 				CE16DAE91DBA043500AB664C /* FFValidationResult.m in Sources */,
-				410D4B2B1DF28E2300FFB0D8 /* AnalysisViewController.m in Sources */,
 				CE16DB031DBB6B2D00AB664C /* UIImageView+AFNetworking.m in Sources */,
 				CE0ACA571DFD69E800F4B143 /* EnrollmentStatusViewController.m in Sources */,
 				CE0596DB1DB665B5001E62A9 /* AFHTTPRequestOperationManager.m in Sources */,
@@ -962,7 +907,6 @@
 				CE2B39F01DAE7FCB00B266E1 /* UIView+FF.m in Sources */,
 				CE16DAFE1DBB42FD00AB664C /* TSMessage.m in Sources */,
 				4163DB921DF5499100CCACCF /* ForgotPassword.m in Sources */,
-				410D4B1F1DF28BFF00FFB0D8 /* PaymentViewController.m in Sources */,
 				CE8E594B1DFCA5C40053E81D /* NSData+AES.m in Sources */,
 				CE16DAFF1DBB42FD00AB664C /* TSMessageView.m in Sources */,
 				410D4B221DF28CC900FFB0D8 /* ApplicationFormViewController.m in Sources */,
@@ -1115,6 +1059,7 @@
 				);
 				GCC_PREFIX_HEADER = Humsafar/PrefixHeader.pch;
 				INFOPLIST_FILE = Humsafar/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.test.humsafar;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -1138,6 +1083,7 @@
 				);
 				GCC_PREFIX_HEADER = Humsafar/PrefixHeader.pch;
 				INFOPLIST_FILE = Humsafar/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.test.humsafar;
 				PRODUCT_NAME = "$(TARGET_NAME)";

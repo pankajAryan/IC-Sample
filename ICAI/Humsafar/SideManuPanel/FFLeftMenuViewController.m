@@ -9,24 +9,20 @@
 #import "FFLeftMenuViewController.h"
 
 #import "HomeViewController.h"
-#import "RESideMenu.h"
-#import "UIViewController+RESideMenu.h"
-//#import "MyFeedsVC.h"
-//#import "MyIncentiveVC.h"
-//#import "MyVehicleProfileVC.h"
-//#import "FaqViewController.h"
 #import "ProfileViewController.h"
 #import "NotificationViewController.h"
-#import "PaymentViewController.h"
+#import "EnrollmentStatusViewController.h"
 #import "InstructionViewController.h"
 #import "ApplicationFormViewController.h"
-#import "AboutViewController.h"
-#import "AboutExamViewController.h"
-#import "AnalysisViewController.h"
+#import "CommonWebViewController.h"
+
+#import "SecurityUtil.h"
+#import "RESideMenu.h"
+#import "UIViewController+RESideMenu.h"
 #import "UIImageView+AFNetworking.h"
 #import <MediaPlayer/MediaPlayer.h>
 #import <AVFoundation/AVFoundation.h>
-#import "CommonWebViewController.h"
+
 
 static NSString *stringLeftMenuCellIdentifier  = @"LeftMenuCell";
 
@@ -76,7 +72,7 @@ static NSString *stringLeftMenuCellIdentifier  = @"LeftMenuCell";
             break;
         case 1:
         {
-            PaymentViewController *vc = (PaymentViewController *)[UIViewController instantiateViewControllerWithIdentifier:@"PaymentViewController" fromStoryboard:@"LeftMenuScenes"];
+            EnrollmentStatusViewController *vc = (EnrollmentStatusViewController *)[UIViewController instantiateViewControllerWithIdentifier:@"EnrollmentStatusViewController" fromStoryboard:@"Home"];
             [homeController.navigationController pushViewController:vc animated:YES];
         }
             break;
@@ -90,8 +86,11 @@ static NSString *stringLeftMenuCellIdentifier  = @"LeftMenuCell";
             
         case 3:
             {
-                ApplicationFormViewController *vc = (ApplicationFormViewController *)[UIViewController instantiateViewControllerWithIdentifier:@"ApplicationFormViewController" fromStoryboard:@"LeftMenuScenes"];
-                [homeController.navigationController pushViewController:vc animated:YES];
+                NSString *applicationId = [SecurityUtil encryptMD5String:@"10015961"];
+                
+                NSString *urlString = [NSString stringWithFormat:@"%@%@",Application_Form_Download,applicationId];
+                
+                [[UIApplication sharedApplication] openURL:[NSURL URLWithString:urlString] options:@{} completionHandler:nil];
             }
             
             break;

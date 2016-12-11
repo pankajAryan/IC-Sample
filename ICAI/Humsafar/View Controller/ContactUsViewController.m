@@ -64,7 +64,7 @@
     {
         NSDictionary *paramsDict = @{@"type": _textFieldQuery.text, @"name": _textFieldName.text, @"message": _textFieldMessage.text, @"email" : _textFieldEmail.text, CHECKSOURCE_KEY : CHECKSOURCE_VALUE};
         
-        [self showProgressHudWithMessage:@"Assigning.."];
+        [self showProgressHudWithMessage:@"Please wait.."];
         
         [[FFWebServiceHelper sharedManager]
                  callWebServiceWithUrl:[FFWebServiceHelper javaServerUrlWithString:GET_USER_ALERTS]

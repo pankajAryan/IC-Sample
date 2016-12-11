@@ -28,10 +28,10 @@
     [_notificationsTableView setRowHeight:UITableViewAutomaticDimension];
     _notificationsTableView.estimatedRowHeight = 100;
     
-    [self showProgressHudWithMessage:@"Assigning.."];
+    [self showProgressHudWithMessage:@"Please wait.."];
 
     [[FFWebServiceHelper sharedManager]
-     callWebServiceWithUrl:[FFWebServiceHelper javaServerUrlWithString:GET_USER_ALERTS]
+                callWebServiceWithUrl:[FFWebServiceHelper javaServerUrlWithString:GET_USER_ALERTS]
                 withParameter:@{CHECKSOURCE_KEY : CHECKSOURCE_VALUE}
                 onCompletion:^(eResponseType responseType, id response)
                 {
