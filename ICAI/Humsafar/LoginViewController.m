@@ -45,6 +45,66 @@ NSString *encryptionKey =   @"2b9cYGfQ%D-^hnCB";
 //    UIWindow *window =[[[UIApplication sharedApplication]delegate]window];
 //    ForgotPassword *viewForgotPassword = [[ForgotPassword alloc] initWithFrame:self.view.bounds];
 //    [window addSubview:viewForgotPassword];
+    
+    UIAlertController *alertController = [UIAlertController
+                                          alertControllerWithTitle:@""
+                                          message:@"Enter your registered email-Id"
+                                          preferredStyle:UIAlertControllerStyleAlert];
+    
+    [alertController addTextFieldWithConfigurationHandler:^(UITextField *textField)
+     {
+         textField.placeholder = @"email";
+     }];
+    
+    UIAlertAction *okAction = [UIAlertAction
+                               actionWithTitle:NSLocalizedString(@"Submit", @"OK action")
+                               style:UIAlertActionStyleDefault
+                               handler:^(UIAlertAction *action)
+                               {
+                                   UITextField *email = alertController.textFields.firstObject;
+                                   [self resetPasswordWebserviceCall:email];
+                               }];
+    
+    UIAlertAction *cancelAction = [UIAlertAction actionWithTitle:@"Cancel"
+                                                 style:UIAlertActionStyleCancel
+                                                 handler:^(UIAlertAction *action)
+                                                 {
+                                                     NSLog(@"Cancel action");
+                                                 }];
+    
+    [alertController addAction:cancelAction];
+    [alertController addAction:okAction];
+    
+    [self presentViewController:alertController animated:YES completion:nil];
+}
+
+- (void)resetPasswordWebserviceCall:(UITextField*)emailField {
+    
+    if (emailField.isEmptyField) {
+        [self showAlert:@"All input fields are mandatory!"];
+    }
+    else if (!emailField.isEmailValid) {
+        [self showAlert:@"Invalid Email address!"];
+    }
+    else {
+        [self showProgressHudWithMessage:@"Please wait..."];
+
+        [[FFWebServiceHelper sharedManager]
+                         callWebServiceWithUrl:[FFWebServiceHelper phpServerUrlWithString:Forgot_Password]
+                         withParameter:@{@"user_email" : emailField.text}
+                         onCompletion:^(eResponseType responseType, id response)
+                         {
+                             [self hideProgressHudAfterDelay:0.1];
+                             
+                             if (responseType == eResponseTypeSuccessJSON)
+                             {
+                                 [self showAlert:[response objectForKey:kKEY_ErrorMessage]];
+                             }
+                             else{
+                                 [self showAlert:[response objectForKey:kKEY_ErrorMessage]];
+                             }
+                         }];
+    }
 }
 
 - (IBAction)loginButtonDidTap:(id)sender {
@@ -56,13 +116,8 @@ NSString *encryptionKey =   @"2b9cYGfQ%D-^hnCB";
         [self showAlert:@"Invalid Email address!"];
     }
     else {
-        
- //       NSData *inputData = [_txtFieldPassword.text dataUsingEncoding:NSUTF8StringEncoding];
-
         NSData *aesdataresult = [SecurityUtil encryptAESData:_txtFieldPassword.text];
-        //NSString *ss=[SecurityUtil encodeBase64String:aesdataresult];
         NSString *password = [SecurityUtil encodeBase64Data:aesdataresult];
-        NSLog(@"%@",password);
         
         NSDictionary *paramsDict = @{@"email":_txtFieldUsername.text, @"password":password};
         
@@ -112,9 +167,7 @@ NSString *encryptionKey =   @"2b9cYGfQ%D-^hnCB";
                         }
                     }
                 }];
- 
     }
- 
 }
 
 /*
