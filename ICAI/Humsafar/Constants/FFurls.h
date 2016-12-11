@@ -33,6 +33,10 @@
 
 #define CONTACT_US_FORM         @"submitIssue"
 
+#define Payment_AppRepay            @"studentapprepay"
+
+#define Payment_AppPaymentStatus    @"studentapppaymentstatus"
+
 
 // Static Screens
 
@@ -45,6 +49,23 @@
 #define FAQ                         @"https://icaicommercewizard.com/commerce-wizard-mobile/faq_mobile.html"
 
 #define Application_Form_Download   @"https://icaicommercewizard.com/html2pdf/download_pdf.php?id=" // convertPassMd5(applicationId)
+
+
+
+#pragma mark - PayTm Stuff
+
+#define kChecksumGenerationURL @"http://52.66.152.236/CommerceWizard/paytmCheckSumGenerator.jsp"
+#define kChecksumValidationURL @"http://52.66.152.236/CommerceWizard/paytmCheckSumVerify.jsp"
+#define kMID @"Instit11802217165966"
+#define kREQUESTTYPE @"DEFAULT"
+#define kCHANNELID @"WAP"
+#define kINDUSTRYTYPEID @"Education"
+#define kWEBSITE @"Institutewap"
+#define kTXNAMOUNT @"1"
+#define kTHEME @"merchant"
+#define kMOBILENO @"9999423173"
+#define kEMAIL @"mobiquel@gmail.com"
+
 
 
 
