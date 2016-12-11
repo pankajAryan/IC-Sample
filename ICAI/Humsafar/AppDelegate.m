@@ -22,8 +22,6 @@
     
     [self registerForRemoteNotifications];
 
-//    [GMSServices provideAPIKey:@"AIzaSyAn04qD5eAnR2YV_h-J8xNoLz4rzBvN_ow"];
-
     NSString *userId = [UIViewController retrieveDataFromUserDefault:@"userId"];
     BOOL isLoggedIn = [[UIViewController retrieveDataFromUserDefault:@"isUserLoggedIn"] boolValue];
 
