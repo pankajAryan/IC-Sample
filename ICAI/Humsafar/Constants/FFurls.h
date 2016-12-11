@@ -33,6 +33,10 @@
 
 #define CONTACT_US_FORM         @"submitIssue"
 
+#define Payment_AppRepay            @"studentapprepay"
+
+#define Payment_AppPaymentStatus    @"studentapppaymentstatus"
+
 
 // Static Screens
 

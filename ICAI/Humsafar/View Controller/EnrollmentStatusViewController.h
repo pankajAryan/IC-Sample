@@ -7,7 +7,12 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "PaymentsSDK.h"
 
-@interface EnrollmentStatusViewController : UIViewController
+@interface EnrollmentStatusViewController : UIViewController<PGTransactionDelegate>{
+
+}
+@property(nonatomic,strong)NSMutableDictionary *dictProductInfo;
+- (IBAction)action_cancelPayment:(id)sender;
 
 @end
