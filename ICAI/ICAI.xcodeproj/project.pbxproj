@@ -39,6 +39,7 @@
 		CE0596E11DB665B5001E62A9 /* AFURLResponseSerialization.m in Sources */ = {isa = PBXBuildFile; fileRef = CE0596D71DB665B5001E62A9 /* AFURLResponseSerialization.m */; };
 		CE0596E21DB665B5001E62A9 /* AFURLSessionManager.m in Sources */ = {isa = PBXBuildFile; fileRef = CE0596D91DB665B5001E62A9 /* AFURLSessionManager.m */; };
 		CE0596E61DB665D2001E62A9 /* Reachability.m in Sources */ = {isa = PBXBuildFile; fileRef = CE0596E51DB665D2001E62A9 /* Reachability.m */; };
+		CE0ACA571DFD69E800F4B143 /* EnrollmentStatusViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CE0ACA561DFD69E700F4B143 /* EnrollmentStatusViewController.m */; };
 		CE16DAE41DBA022400AB664C /* UITextField+Validation.m in Sources */ = {isa = PBXBuildFile; fileRef = CE16DAE31DBA022400AB664C /* UITextField+Validation.m */; };
 		CE16DAE91DBA043500AB664C /* FFValidationResult.m in Sources */ = {isa = PBXBuildFile; fileRef = CE16DAE81DBA043500AB664C /* FFValidationResult.m */; };
 		CE16DAF01DBB3D0300AB664C /* LeftMenuScenes.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CE16DAEF1DBB3D0300AB664C /* LeftMenuScenes.storyboard */; };
@@ -168,6 +169,8 @@
 		CE0596D91DB665B5001E62A9 /* AFURLSessionManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFURLSessionManager.m; sourceTree = "<group>"; };
 		CE0596E41DB665D2001E62A9 /* Reachability.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Reachability.h; sourceTree = "<group>"; };
 		CE0596E51DB665D2001E62A9 /* Reachability.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Reachability.m; sourceTree = "<group>"; };
+		CE0ACA551DFD69E700F4B143 /* EnrollmentStatusViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EnrollmentStatusViewController.h; sourceTree = "<group>"; };
+		CE0ACA561DFD69E700F4B143 /* EnrollmentStatusViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EnrollmentStatusViewController.m; sourceTree = "<group>"; };
 		CE16DAE21DBA022400AB664C /* UITextField+Validation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UITextField+Validation.h"; sourceTree = "<group>"; };
 		CE16DAE31DBA022400AB664C /* UITextField+Validation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UITextField+Validation.m"; sourceTree = "<group>"; };
 		CE16DAE51DBA028400AB664C /* FFValidationResult.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FFValidationResult.h; sourceTree = "<group>"; };
@@ -318,6 +321,7 @@
 				4163DB7F1DF5495F00CCACCF /* HomeVC */,
 				410D4B0B1DF28B1000FFB0D8 /* Notification VC */,
 				CE8E59311DFC06000053E81D /* ContactUs */,
+				CE0ACA541DFD696500F4B143 /* PAYMENT VC */,
 				410D4B0A1DF28B1000FFB0D8 /* My Profile VC */,
 				410D4B101DF28B1000FFB0D8 /* Payment VC */,
 				410D4B111DF28B1000FFB0D8 /* TakeTest VC */,
@@ -506,6 +510,15 @@
 				CE0596E51DB665D2001E62A9 /* Reachability.m */,
 			);
 			path = Reachability;
+			sourceTree = "<group>";
+		};
+		CE0ACA541DFD696500F4B143 /* PAYMENT VC */ = {
+			isa = PBXGroup;
+			children = (
+				CE0ACA551DFD69E700F4B143 /* EnrollmentStatusViewController.h */,
+				CE0ACA561DFD69E700F4B143 /* EnrollmentStatusViewController.m */,
+			);
+			name = "PAYMENT VC";
 			sourceTree = "<group>";
 		};
 		CE16DAF11DBB405E00AB664C /* Storyboards */ = {
@@ -932,6 +945,7 @@
 				CE16DAE91DBA043500AB664C /* FFValidationResult.m in Sources */,
 				410D4B2B1DF28E2300FFB0D8 /* AnalysisViewController.m in Sources */,
 				CE16DB031DBB6B2D00AB664C /* UIImageView+AFNetworking.m in Sources */,
+				CE0ACA571DFD69E800F4B143 /* EnrollmentStatusViewController.m in Sources */,
 				CE0596DB1DB665B5001E62A9 /* AFHTTPRequestOperationManager.m in Sources */,
 				CE2B39A41DAE6F2D00B266E1 /* AbstractActionSheetPicker.m in Sources */,
 				CEB1F3181DFCA9AE006A3402 /* NSString+MD5.m in Sources */,

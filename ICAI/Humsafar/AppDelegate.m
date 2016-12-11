@@ -22,12 +22,10 @@
     
     [self registerForRemoteNotifications];
 
-//    [GMSServices provideAPIKey:@"AIzaSyAn04qD5eAnR2YV_h-J8xNoLz4rzBvN_ow"];
-
     NSString *userId = [UIViewController retrieveDataFromUserDefault:@"userId"];
     BOOL isLoggedIn = [[UIViewController retrieveDataFromUserDefault:@"isUserLoggedIn"] boolValue];
 
-    if (isLoggedIn && (userId && userId.length)) {
+    if (!(isLoggedIn && (userId && userId.length))) {
         
         self.rootNavController = (UINavigationController*)self.window.rootViewController; // it'll return UINavigationController which is set as Initial view controller in storyboard.
         
