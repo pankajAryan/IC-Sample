@@ -21,6 +21,12 @@
 		4163DBB81DF57A0100CCACCF /* OpenSans-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 4163DBB51DF57A0100CCACCF /* OpenSans-Regular.ttf */; };
 		4163DBB91DF57A0100CCACCF /* OpenSans-Semibold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 4163DBB61DF57A0100CCACCF /* OpenSans-Semibold.ttf */; };
 		7F163D681DFD667E00A34AE9 /* libPaymentsSDK.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 7F163D621DFD667E00A34AE9 /* libPaymentsSDK.a */; };
+		B78EB22D1DFF298D00F7E6F7 /* countriesList.plist in Resources */ = {isa = PBXBuildFile; fileRef = B78EB22C1DFF298D00F7E6F7 /* countriesList.plist */; };
+		B78EB22F1DFF2ACA00F7E6F7 /* statesList.plist in Resources */ = {isa = PBXBuildFile; fileRef = B78EB22E1DFF2ACA00F7E6F7 /* statesList.plist */; };
+		B78EB2311DFF2B2300F7E6F7 /* classList.plist in Resources */ = {isa = PBXBuildFile; fileRef = B78EB2301DFF2B2300F7E6F7 /* classList.plist */; };
+		B78EB2331DFF2B3100F7E6F7 /* queryTypeList.plist in Resources */ = {isa = PBXBuildFile; fileRef = B78EB2321DFF2B3100F7E6F7 /* queryTypeList.plist */; };
+		B78EB2351DFF2B3B00F7E6F7 /* boardList.plist in Resources */ = {isa = PBXBuildFile; fileRef = B78EB2341DFF2B3B00F7E6F7 /* boardList.plist */; };
+		B78EB2371DFF2BFD00F7E6F7 /* genderList.plist in Resources */ = {isa = PBXBuildFile; fileRef = B78EB2361DFF2BFD00F7E6F7 /* genderList.plist */; };
 		B7E8D3CB1DD3AB45001F005C /* Other.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B7E8D3CA1DD3AB45001F005C /* Other.storyboard */; };
 		CE0596BA1DB65E92001E62A9 /* GUITabPagerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CE0596B71DB65E92001E62A9 /* GUITabPagerViewController.m */; };
 		CE0596BB1DB65E92001E62A9 /* GUITabScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = CE0596B91DB65E92001E62A9 /* GUITabScrollView.m */; };
@@ -134,6 +140,12 @@
 		7F163D651DFD667E00A34AE9 /* PGOrder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PGOrder.h; sourceTree = "<group>"; };
 		7F163D661DFD667E00A34AE9 /* PGServerEnvironment.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PGServerEnvironment.h; sourceTree = "<group>"; };
 		7F163D671DFD667E00A34AE9 /* PGTransactionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PGTransactionViewController.h; sourceTree = "<group>"; };
+		B78EB22C1DFF298D00F7E6F7 /* countriesList.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = countriesList.plist; sourceTree = "<group>"; };
+		B78EB22E1DFF2ACA00F7E6F7 /* statesList.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = statesList.plist; sourceTree = "<group>"; };
+		B78EB2301DFF2B2300F7E6F7 /* classList.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = classList.plist; sourceTree = "<group>"; };
+		B78EB2321DFF2B3100F7E6F7 /* queryTypeList.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = queryTypeList.plist; sourceTree = "<group>"; };
+		B78EB2341DFF2B3B00F7E6F7 /* boardList.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = boardList.plist; sourceTree = "<group>"; };
+		B78EB2361DFF2BFD00F7E6F7 /* genderList.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = genderList.plist; sourceTree = "<group>"; };
 		B7E8D3CA1DD3AB45001F005C /* Other.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Other.storyboard; sourceTree = "<group>"; };
 		CE0596B61DB65E92001E62A9 /* GUITabPagerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GUITabPagerViewController.h; sourceTree = "<group>"; };
 		CE0596B71DB65E92001E62A9 /* GUITabPagerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GUITabPagerViewController.m; sourceTree = "<group>"; };
@@ -628,6 +640,12 @@
 			children = (
 				CE2B39AE1DAE70DB00B266E1 /* FFConstant.h */,
 				CE2B39AF1DAE70DB00B266E1 /* FFurls.h */,
+				B78EB2321DFF2B3100F7E6F7 /* queryTypeList.plist */,
+				B78EB2341DFF2B3B00F7E6F7 /* boardList.plist */,
+				B78EB2301DFF2B2300F7E6F7 /* classList.plist */,
+				B78EB2361DFF2BFD00F7E6F7 /* genderList.plist */,
+				B78EB22C1DFF298D00F7E6F7 /* countriesList.plist */,
+				B78EB22E1DFF2ACA00F7E6F7 /* statesList.plist */,
 			);
 			path = Constants;
 			sourceTree = "<group>";
@@ -859,15 +877,21 @@
 				4163DBB71DF57A0100CCACCF /* OpenSans-Bold.ttf in Resources */,
 				CE16DAF51DBB426400AB664C /* Assets.xcassets in Resources */,
 				CE2B398C1DAE6D1F00B266E1 /* LaunchScreen.storyboard in Resources */,
+				B78EB22F1DFF2ACA00F7E6F7 /* statesList.plist in Resources */,
 				4163DBB91DF57A0100CCACCF /* OpenSans-Semibold.ttf in Resources */,
 				B7E8D3CB1DD3AB45001F005C /* Other.storyboard in Resources */,
 				CE2B39871DAE6D1F00B266E1 /* Main.storyboard in Resources */,
 				CE16DAF31DBB423500AB664C /* TSMessagesDefaultDesign.json in Resources */,
 				CE8D5F521DE9AACF00D4846F /* beep1.mp3 in Resources */,
+				B78EB2351DFF2B3B00F7E6F7 /* boardList.plist in Resources */,
+				B78EB2371DFF2BFD00F7E6F7 /* genderList.plist in Resources */,
+				B78EB22D1DFF298D00F7E6F7 /* countriesList.plist in Resources */,
 				CE9316651DBBB82400A84A91 /* GoogleService-Info.plist in Resources */,
 				4163DB941DF5499E00CCACCF /* ForgotPassword.xib in Resources */,
 				CE2B39C81DAE7B7E00B266E1 /* Home.storyboard in Resources */,
+				B78EB2331DFF2B3100F7E6F7 /* queryTypeList.plist in Resources */,
 				4163DBB81DF57A0100CCACCF /* OpenSans-Regular.ttf in Resources */,
+				B78EB2311DFF2B2300F7E6F7 /* classList.plist in Resources */,
 				CE16DAF01DBB3D0300AB664C /* LeftMenuScenes.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
