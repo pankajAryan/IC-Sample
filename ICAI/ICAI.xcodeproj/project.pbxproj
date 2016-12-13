@@ -43,6 +43,7 @@
 		CE0596E21DB665B5001E62A9 /* AFURLSessionManager.m in Sources */ = {isa = PBXBuildFile; fileRef = CE0596D91DB665B5001E62A9 /* AFURLSessionManager.m */; };
 		CE0596E61DB665D2001E62A9 /* NetworkReachability.m in Sources */ = {isa = PBXBuildFile; fileRef = CE0596E51DB665D2001E62A9 /* NetworkReachability.m */; };
 		CE0ACA571DFD69E800F4B143 /* EnrollmentStatusViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CE0ACA561DFD69E700F4B143 /* EnrollmentStatusViewController.m */; };
+		CE11DE801E007DD900C9CC81 /* NSData+CommonCrypto.m in Sources */ = {isa = PBXBuildFile; fileRef = CE11DE7D1E007DD900C9CC81 /* NSData+CommonCrypto.m */; };
 		CE16DAE41DBA022400AB664C /* UITextField+Validation.m in Sources */ = {isa = PBXBuildFile; fileRef = CE16DAE31DBA022400AB664C /* UITextField+Validation.m */; };
 		CE16DAE91DBA043500AB664C /* FFValidationResult.m in Sources */ = {isa = PBXBuildFile; fileRef = CE16DAE81DBA043500AB664C /* FFValidationResult.m */; };
 		CE16DAF01DBB3D0300AB664C /* LeftMenuScenes.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CE16DAEF1DBB3D0300AB664C /* LeftMenuScenes.storyboard */; };
@@ -106,7 +107,6 @@
 		CE9316691DBC0B7200A84A91 /* OTPViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CE9316681DBC0B7200A84A91 /* OTPViewController.m */; };
 		CEB08FF41DF35AD5008A83AB /* CommonWebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CEB08FF31DF35AD5008A83AB /* CommonWebViewController.m */; };
 		CEB1F3161DFCA9AE006A3402 /* GTMBase64.m in Sources */ = {isa = PBXBuildFile; fileRef = CEB1F30E1DFCA9AE006A3402 /* GTMBase64.m */; };
-		CEB1F3171DFCA9AE006A3402 /* NSData+AES.m in Sources */ = {isa = PBXBuildFile; fileRef = CEB1F3111DFCA9AE006A3402 /* NSData+AES.m */; };
 		CEB1F3181DFCA9AE006A3402 /* NSString+MD5.m in Sources */ = {isa = PBXBuildFile; fileRef = CEB1F3131DFCA9AE006A3402 /* NSString+MD5.m */; };
 		CEB1F3191DFCA9AE006A3402 /* SecurityUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = CEB1F3151DFCA9AE006A3402 /* SecurityUtil.m */; };
 /* End PBXBuildFile section */
@@ -115,7 +115,7 @@
 		410D4B0C1DF28B1000FFB0D8 /* NotificationTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NotificationTableViewCell.h; sourceTree = "<group>"; };
 		410D4B0D1DF28B1000FFB0D8 /* NotificationTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NotificationTableViewCell.m; sourceTree = "<group>"; };
 		410D4B0E1DF28B1000FFB0D8 /* NotificationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NotificationViewController.h; sourceTree = "<group>"; };
-		410D4B0F1DF28B1000FFB0D8 /* NotificationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NotificationViewController.m; sourceTree = "<group>"; };
+		410D4B0F1DF28B1000FFB0D8 /* NotificationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; lineEnding = 0; path = NotificationViewController.m; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
 		410D4B121DF28B1000FFB0D8 /* InstructionTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InstructionTableViewCell.h; sourceTree = "<group>"; };
 		410D4B131DF28B1000FFB0D8 /* InstructionTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InstructionTableViewCell.m; sourceTree = "<group>"; };
 		410D4B141DF28B1000FFB0D8 /* InstructionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InstructionViewController.h; sourceTree = "<group>"; };
@@ -178,6 +178,8 @@
 		CE0596E51DB665D2001E62A9 /* NetworkReachability.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NetworkReachability.m; sourceTree = "<group>"; };
 		CE0ACA551DFD69E700F4B143 /* EnrollmentStatusViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EnrollmentStatusViewController.h; sourceTree = "<group>"; };
 		CE0ACA561DFD69E700F4B143 /* EnrollmentStatusViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EnrollmentStatusViewController.m; sourceTree = "<group>"; };
+		CE11DE7C1E007DD900C9CC81 /* NSData+CommonCrypto.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSData+CommonCrypto.h"; sourceTree = "<group>"; };
+		CE11DE7D1E007DD900C9CC81 /* NSData+CommonCrypto.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSData+CommonCrypto.m"; sourceTree = "<group>"; };
 		CE16DAE21DBA022400AB664C /* UITextField+Validation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UITextField+Validation.h"; sourceTree = "<group>"; };
 		CE16DAE31DBA022400AB664C /* UITextField+Validation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UITextField+Validation.m"; sourceTree = "<group>"; };
 		CE16DAE51DBA028400AB664C /* FFValidationResult.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FFValidationResult.h; sourceTree = "<group>"; };
@@ -255,7 +257,7 @@
 		CE2B3A291DAE823D00B266E1 /* HexColor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HexColor.m; sourceTree = "<group>"; };
 		CE8D5F511DE9AACF00D4846F /* beep1.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = beep1.mp3; sourceTree = "<group>"; };
 		CE8E59321DFC06510053E81D /* ContactUsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ContactUsViewController.h; sourceTree = "<group>"; };
-		CE8E59331DFC06510053E81D /* ContactUsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ContactUsViewController.m; sourceTree = "<group>"; };
+		CE8E59331DFC06510053E81D /* ContactUsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; lineEnding = 0; path = ContactUsViewController.m; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
 		CE8E59381DFC8F020053E81D /* NSData+Base64.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSData+Base64.h"; sourceTree = "<group>"; };
 		CE8E59391DFC8F020053E81D /* NSData+Base64.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSData+Base64.m"; sourceTree = "<group>"; };
 		CE8E593E1DFC8F020053E81D /* SecurityUtility.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SecurityUtility.h; sourceTree = "<group>"; };
@@ -287,8 +289,6 @@
 		CEB1F30D1DFCA9AE006A3402 /* GTMBase64.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GTMBase64.h; sourceTree = "<group>"; };
 		CEB1F30E1DFCA9AE006A3402 /* GTMBase64.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GTMBase64.m; sourceTree = "<group>"; };
 		CEB1F30F1DFCA9AE006A3402 /* GTMDefines.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GTMDefines.h; sourceTree = "<group>"; };
-		CEB1F3101DFCA9AE006A3402 /* NSData+AES.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSData+AES.h"; sourceTree = "<group>"; };
-		CEB1F3111DFCA9AE006A3402 /* NSData+AES.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSData+AES.m"; sourceTree = "<group>"; };
 		CEB1F3121DFCA9AE006A3402 /* NSString+MD5.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+MD5.h"; sourceTree = "<group>"; };
 		CEB1F3131DFCA9AE006A3402 /* NSString+MD5.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+MD5.m"; sourceTree = "<group>"; };
 		CEB1F3141DFCA9AE006A3402 /* SecurityUtil.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SecurityUtil.h; sourceTree = "<group>"; };
@@ -500,6 +500,15 @@
 				CE0ACA561DFD69E700F4B143 /* EnrollmentStatusViewController.m */,
 			);
 			name = "PAYMENT VC";
+			sourceTree = "<group>";
+		};
+		CE11DE791E007DD900C9CC81 /* CommonCrypto */ = {
+			isa = PBXGroup;
+			children = (
+				CE11DE7C1E007DD900C9CC81 /* NSData+CommonCrypto.h */,
+				CE11DE7D1E007DD900C9CC81 /* NSData+CommonCrypto.m */,
+			);
+			path = CommonCrypto;
 			sourceTree = "<group>";
 		};
 		CE16DAF11DBB405E00AB664C /* Storyboards */ = {
@@ -773,9 +782,8 @@
 		CEB1F30B1DFCA9AE006A3402 /* Security */ = {
 			isa = PBXGroup;
 			children = (
+				CE11DE791E007DD900C9CC81 /* CommonCrypto */,
 				CEB1F30C1DFCA9AE006A3402 /* GTMBase64 */,
-				CEB1F3101DFCA9AE006A3402 /* NSData+AES.h */,
-				CEB1F3111DFCA9AE006A3402 /* NSData+AES.m */,
 				CEB1F3121DFCA9AE006A3402 /* NSString+MD5.h */,
 				CEB1F3131DFCA9AE006A3402 /* NSString+MD5.m */,
 				CEB1F3141DFCA9AE006A3402 /* SecurityUtil.h */,
@@ -933,7 +941,6 @@
 				CE0596E11DB665B5001E62A9 /* AFURLResponseSerialization.m in Sources */,
 				CE2B39BB1DAE71CC00B266E1 /* TPKeyboardAvoidingTableView.m in Sources */,
 				CE2B39C21DAE736B00B266E1 /* RegisterViewController.m in Sources */,
-				CEB1F3171DFCA9AE006A3402 /* NSData+AES.m in Sources */,
 				CE16DAE91DBA043500AB664C /* FFValidationResult.m in Sources */,
 				CE16DB031DBB6B2D00AB664C /* UIImageView+AFNetworking.m in Sources */,
 				CE0ACA571DFD69E800F4B143 /* EnrollmentStatusViewController.m in Sources */,
@@ -943,6 +950,7 @@
 				CE0596E01DB665B5001E62A9 /* AFURLRequestSerialization.m in Sources */,
 				CE2B39A61DAE6F2D00B266E1 /* SWActionSheet.m in Sources */,
 				CE16DAE41DBA022400AB664C /* UITextField+Validation.m in Sources */,
+				CE11DE801E007DD900C9CC81 /* NSData+CommonCrypto.m in Sources */,
 				CE2B39A71DAE6F2D00B266E1 /* MBProgressHUD.m in Sources */,
 				CE2B39CB1DAE7BF300B266E1 /* FFLeftMenuViewController.m in Sources */,
 				CE2B39AA1DAE6F2D00B266E1 /* UIViewController+RESideMenu.m in Sources */,
