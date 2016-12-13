@@ -44,6 +44,11 @@
 @end
 @implementation MyTextField
 
+- (BOOL)canPerformAction:(SEL)action withSender:(id)sender {
+    
+    return NO;
+}
+
 @end
 
 
@@ -348,11 +353,6 @@
 
 -(BOOL)validationCheck {
     
-    if (!checkBoxSelected) {
-        [self showAlert:@"Please check T&C!"];
-        return NO;
-    }
-    
     for (DataHolder *modal in self.dataHolderArray) {
         
         if (modal.displayText.length == 0 ) {
@@ -368,6 +368,11 @@
         return NO;
     }
     
+    if (!checkBoxSelected) {
+        [self showAlert:@"Please check T&C!"];
+        return NO;
+    }
+
     
     return YES;
 }
