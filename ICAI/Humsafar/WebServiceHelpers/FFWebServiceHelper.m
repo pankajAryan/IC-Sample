@@ -8,7 +8,7 @@
 #import "NetworkReachability.h"
 #import "AFHTTPSessionManager.h"
 
-@interface FFWebServiceHelper ()
+@interface FFWebServiceHelper () 
 
 @end
 
@@ -26,7 +26,7 @@
     return sharedInstance;
 }
 
-+ (NSURL *)javaServerUrlWithString:(NSString *)serviceURL{
+- (NSURL *)javaServerUrlWithString:(NSString *)serviceURL{
     
     NSURL *completeURL;
     // create URL from string to test it contains the host name (complete URL)
@@ -40,7 +40,14 @@
     }else{
         // not complete URL
         // append base URL with next URL
-        urlString = [NSString stringWithFormat:@"%@%@",JAVA_BASE_URL,serviceURL];
+        
+        //dynamicBaseUrl = [UIViewController retrieveDataFromUserDefault:@"server_url"];
+        
+        if ((_dynamicBaseUrl !=nil) && _dynamicBaseUrl.length) {
+            urlString = [NSString stringWithFormat:@"%@%@",_dynamicBaseUrl,serviceURL];
+        }
+        else
+            urlString = [NSString stringWithFormat:@"%@%@",JAVA_BASE_URL,serviceURL];
     }
     
     // create URL object from string url

@@ -33,6 +33,20 @@
 //    [self setTitleLabel];
     [_btn_menu addTarget:self action:@selector(presentLeftMenuViewController:) forControlEvents:UIControlEventTouchUpInside];
 
+    [self showProgressHudWithMessage:@"Please wait.."];
+    
+    [[FFWebServiceHelper sharedManager]
+                    callWebServiceWithUrl:[NSURL URLWithString:GET_JAVA_BASE_URL]
+                    withParameter:nil
+                    onCompletion:^(eResponseType responseType, id response)
+                    {
+                        [self hideProgressHudAfterDelay:0.0];
+                         
+                        if (responseType == eResponseTypeSuccessJSON)
+                        {
+                            [FFWebServiceHelper sharedManager].dynamicBaseUrl = [response objectForKey:@"server_url"];
+                        }
+                    }];
 }
 
 - (void)didReceiveMemoryWarning {

@@ -8,9 +8,11 @@
 
 // ************ LIVE APP CONFIGURATION ***********************************************//
 
-#define PHP_BASE_URL        @"https://icaicommercewizard.com/"
+#define GET_JAVA_BASE_URL       @"http://icaicommercewizard.com/app_api/server_url.json"
 
-#define JAVA_BASE_URL       @"http://52.66.152.236/CommerceWizard/rest/service/"
+#define PHP_BASE_URL            @"https://icaicommercewizard.com/"
+
+#define JAVA_BASE_URL           @"http://icaicommercewizard.com:8080/CommerceWizard/rest/service/"
 
 
 // *********************|| Suffix to BASE_URL ||*************************************//
