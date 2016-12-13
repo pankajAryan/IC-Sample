@@ -13,7 +13,7 @@
 #define PHP_BASE_URL            @"https://icaicommercewizard.com/"
 
 #define JAVA_BASE_URL           @"http://icaicommercewizard.com:8080/CommerceWizard/rest/service/"
-
+ 
 
 // *********************|| Suffix to BASE_URL ||*************************************//
 
