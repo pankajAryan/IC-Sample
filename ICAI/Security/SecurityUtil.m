@@ -8,8 +8,9 @@
 
 #import "SecurityUtil.h"
 #import "GTMBase64.h"
-#import "NSData+AES.h"
+//#import "NSData+AES.h"
 #import "NSString+MD5.h"
+#import "NSData+CommonCrypto.h"
 
 #define APP_PUBLIC_PASSWORD     @"2b9cYGfQ%D-^hnCB"
 
@@ -48,14 +49,14 @@
     //将nsstring转化为nsdata
     NSData *data = [string dataUsingEncoding:NSUTF8StringEncoding];
     //使用密码对nsdata进行加密
-    NSData *encryptedData = [data AES256EncryptWithKey:APP_PUBLIC_PASSWORD];
+    NSData *encryptedData = [data AES256EncryptedDataUsingKey:APP_PUBLIC_PASSWORD error:nil];//AES256EncryptWithKey:APP_PUBLIC_PASSWORD];
     return encryptedData;
 }
 
 //将带密码的data转成string
 +(NSString*)decryptAESData:(NSData*)data {
     //使用密码对data进行解密
-    NSData *decryData = [data AES256DecryptWithKey:APP_PUBLIC_PASSWORD];
+    NSData *decryData = [data decryptedAES256DataUsingKey:APP_PUBLIC_PASSWORD error:nil];//AES256DecryptWithKey:APP_PUBLIC_PASSWORD ];
     //将解了密码的nsdata转化为nsstring
     NSString *string = [[NSString alloc] initWithData:decryData encoding:NSUTF8StringEncoding];
     return string;

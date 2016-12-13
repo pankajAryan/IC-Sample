@@ -67,7 +67,7 @@
         [self showProgressHudWithMessage:@"Please wait.."];
         
         [[FFWebServiceHelper sharedManager]
-                 callWebServiceWithUrl:[[FFWebServiceHelper sharedManager]javaServerUrlWithString:GET_USER_ALERTS]
+                 callWebServiceWithUrl:[[FFWebServiceHelper sharedManager] javaServerUrlWithString:GET_USER_ALERTS]
                  withParameter:paramsDict
                  onCompletion:^(eResponseType responseType, id response)
                  {
