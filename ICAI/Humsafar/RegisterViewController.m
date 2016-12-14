@@ -364,14 +364,11 @@
 
 -(void)getTestCenterFromServer {
     
-    [self showProgressHudWithMessage:@"Please wait..."];
-    
     [[FFWebServiceHelper sharedManager]
      callWebServiceWithUrl:[[FFWebServiceHelper sharedManager] javaServerUrlWithString:Test_Centre_List]
      withParameter:@{CHECKSOURCE_KEY : CHECKSOURCE_VALUE}
      onCompletion:^(eResponseType responseType, id response)
      {
-         [self hideProgressHudAfterDelay:0.1];
          
          if (responseType == eResponseTypeSuccessJSON)
          {
