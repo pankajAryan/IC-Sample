@@ -22,10 +22,9 @@
     
     [self registerForRemoteNotifications];
 
-    NSString *userId = [UIViewController retrieveDataFromUserDefault:@"userId"];
     BOOL isLoggedIn = [[UIViewController retrieveDataFromUserDefault:@"isUserLoggedIn"] boolValue];
 
-    if (isLoggedIn && (userId && userId.length)) {
+    if (isLoggedIn) {
         
         self.rootNavController = (UINavigationController*)self.window.rootViewController; // it'll return UINavigationController which is set as Initial view controller in storyboard.
         
@@ -40,8 +39,7 @@
 }
 
 - (void)logout {
-//    [[GIDSignIn sharedInstance] signOut];
-    [UIViewController saveDatatoUserDefault:@"" forKey:@"userId"];
+
     [UIViewController saveDatatoUserDefault:@"0" forKey:@"isUserLoggedIn"];
 
     UINavigationController *rootVC = [UINavigationController instantiateViewControllerWithIdentifier:@"rootNavController" fromStoryboard:@"Main"];
@@ -51,14 +49,6 @@
         [self.window makeKeyAndVisible];
     });
 }
-//- (BOOL)application:(UIApplication *)app
-//            openURL:(NSURL *)url
-//            options:(NSDictionary *)options {
-//    return [[GIDSignIn sharedInstance] handleURL:url
-//                               sourceApplication:options[UIApplicationOpenURLOptionsSourceApplicationKey]
-//                                      annotation:options[UIApplicationOpenURLOptionsAnnotationKey]];
-//}
-
 
 #pragma mark -
 

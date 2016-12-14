@@ -243,7 +243,8 @@
              NSDictionary *dictUserdata = [response objectForKey:@"responseObject"];
              
              [UIViewController saveDatatoUserDefault:[dictUserdata objectForKey:@"application_id"] forKey:@"application_id"];
-             
+             [UIViewController saveDatatoUserDefault:@"1" forKey:@"isUserLoggedIn"];
+
              [UIViewController saveDatatoUserDefault:[dictUserdata objectForKey:@"student_name"] forKey:@"student_name"];
              [UIViewController saveDatatoUserDefault:[dictUserdata objectForKey:@"student_email"] forKey:@"student_email"];
              [UIViewController saveDatatoUserDefault:[dictUserdata objectForKey:@"gender"] forKey:@"gender"];
