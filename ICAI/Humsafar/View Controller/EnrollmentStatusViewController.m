@@ -33,11 +33,13 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
+    NSString *applicationId = [UIViewController retrieveDataFromUserDefault:@"application_id"];
+    
     [self showProgressHudWithMessage:@"Please wait.."];
 
     [[FFWebServiceHelper sharedManager]
                      callWebServiceWithUrl:[FFWebServiceHelper phpServerUrlWithString:Get_Payment_Status]
-                     withParameter:@{@"application_id" : @"10015961"}
+                     withParameter:@{@"application_id" : applicationId}
                      onCompletion:^(eResponseType responseType, id response)
                      {
                          [self hideProgressHudAfterDelay:0.1];
@@ -235,10 +237,10 @@
     //Order configuration in the order object
     orderDict[@"MID"]           = kMID;
     orderDict[@"ORDER_ID"]      = orderId;
-    orderDict[@"CUST_ID"]       = strUserId;
+    orderDict[@"CUST_ID"]       = strUserId; // applicationId
     orderDict[@"TXN_AMOUNT"]    = [NSString stringWithFormat:@"%0.2f",[strAmount floatValue]];
     orderDict[@"EMAIL"]         = kEMAIL;
-    orderDict[@"MOBILE_NO"]     = kMOBILENO;
+    orderDict[@"MOBILE_NO"]     = kMOBILENO; // all 9
     
     PGOrder *order = [PGOrder orderWithParams:orderDict];
     

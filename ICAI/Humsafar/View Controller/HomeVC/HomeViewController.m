@@ -65,9 +65,12 @@
 
 - (IBAction)applicationFormDidTap:(id)sender {
     
-    NSString *applicationId = [SecurityUtil encryptMD5String:@"10015961"];
-
-    NSString *urlString = [NSString stringWithFormat:@"%@%@",Application_Form_Download,applicationId];
+    NSString *applicationId = [UIViewController retrieveDataFromUserDefault:@"application_id"];
+    NSString *urlString = [UIViewController retrieveDataFromUserDefault:@"application_download"];
+    
+    if (!urlString) {
+        urlString = [NSString stringWithFormat:@"%@%@",Application_Form_Download,[SecurityUtil encryptMD5String:applicationId]];
+    }
 
     [[UIApplication sharedApplication] openURL:[NSURL URLWithString:urlString] options:@{} completionHandler:nil];
 }

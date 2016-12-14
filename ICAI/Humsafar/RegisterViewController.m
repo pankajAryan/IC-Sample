@@ -225,6 +225,8 @@
 
 -(void)createAccount:(NSMutableDictionary*)paraDict {
 
+    [self showProgressHudWithMessage:@"Please wait.."];
+
     [[FFWebServiceHelper sharedManager]
      callWebServiceWithUrl:[FFWebServiceHelper phpServerUrlWithString:Registeration]
      withParameter:paraDict
@@ -261,77 +263,85 @@
 
 -(void)updateProfile:(NSMutableDictionary*)paraDict {
     
-    paraDict[@"application_id"] = @"10018619";//
+    NSString *applicationId = [UIViewController retrieveDataFromUserDefault:@"application_id"];
+
+    paraDict[@"application_id"] = applicationId;
     paraDict[CHECKSOURCE_KEY] = CHECKSOURCE_VALUE;
     
+    [self showProgressHudWithMessage:@"Please wait.."];
+
     [[FFWebServiceHelper sharedManager]
-     callWebServiceWithUrl:[[FFWebServiceHelper sharedManager] javaServerUrlWithString:UpdateUserProfile]
-     withParameter:paraDict
-     onCompletion:^(eResponseType responseType, id response)
-     {
-         [self hideProgressHudAfterDelay:0.1];
-         
-         if (responseType == eResponseTypeSuccessJSON)
-         {
-             [self showAlert:[response objectForKey:kKEY_ErrorMessage]];
-             
-             //             {
-             //                 "errorCode": 0,
-             //                 "errorMessage": "You're registered successfully. Taking you to pay the enrollment fee!",
-             //                 "responseObject": {
-             //                     "application_id": 10018619,
-             //                     "student_name": "q",
-             //                     "student_email": "rahul@yopmail.com",
-             //                     "gender": "Male",
-             //                     "application_download": "https:\/\/icaicommercewizard.com\/html2pdf\/download_pdf.php?id=39a1af6c07726bed7e6ebb59190dbe03",
-             //                     "payable_amount": 100,
-             //                     "icai_transaction_id": "10044493"
-             //                 }
-             //             }
-             
-         }
-         else{
-             if ([response respondsToSelector:@selector(objectForKey:)]) {
-                 [self showAlert:[response objectForKey:kKEY_ErrorMessage]];
-             }
-         }
-     }];
+                     callWebServiceWithUrl:[[FFWebServiceHelper sharedManager] javaServerUrlWithString:UpdateUserProfile]
+                     withParameter:paraDict
+                     onCompletion:^(eResponseType responseType, id response)
+                     {
+                         [self hideProgressHudAfterDelay:0.1];
+                         
+                         if (responseType == eResponseTypeSuccessJSON)
+                         {
+                             [self showAlert:[response objectForKey:kKEY_ErrorMessage]];
+                             
+                             //             {
+                             //                 "errorCode": 0,
+                             //                 "errorMessage": "You're registered successfully. Taking you to pay the enrollment fee!",
+                             //                 "responseObject": {
+                             //                     "application_id": 10018619,
+                             //                     "student_name": "q",
+                             //                     "student_email": "rahul@yopmail.com",
+                             //                     "gender": "Male",
+                             //                     "application_download": "https:\/\/icaicommercewizard.com\/html2pdf\/download_pdf.php?id=39a1af6c07726bed7e6ebb59190dbe03",
+                             //                     "payable_amount": 100,
+                             //                     "icai_transaction_id": "10044493"
+                             //                 }
+                             //             }
+                             
+                         }
+                         else{
+                             if ([response respondsToSelector:@selector(objectForKey:)]) {
+                                 [self showAlert:[response objectForKey:kKEY_ErrorMessage]];
+                             }
+                         }
+                     }];
 }
 
 -(void)getProfile:(NSMutableDictionary*)paraDict {
     
+    NSString *applicationId = [UIViewController retrieveDataFromUserDefault:@"application_id"];
+
+    [self showProgressHudWithMessage:@"Please wait.."];
+
     [[FFWebServiceHelper sharedManager]
-     callWebServiceWithUrl:[[FFWebServiceHelper sharedManager] javaServerUrlWithString:GET_PROFILE]
-     withParameter:@{@"application_id" : @"10018619", CHECKSOURCE_KEY : CHECKSOURCE_VALUE}
-     onCompletion:^(eResponseType responseType, id response)
-     {
-         [self hideProgressHudAfterDelay:0.1];
-         
-         if (responseType == eResponseTypeSuccessJSON)
-         {
-             [self showAlert:[response objectForKey:kKEY_ErrorMessage]];
-             
-             //             {
-             //                 "errorCode": 0,
-             //                 "errorMessage": "You're registered successfully. Taking you to pay the enrollment fee!",
-             //                 "responseObject": {
-             //                     "application_id": 10018619,
-             //                     "student_name": "q",
-             //                     "student_email": "rahul@yopmail.com",
-             //                     "gender": "Male",
-             //                     "application_download": "https:\/\/icaicommercewizard.com\/html2pdf\/download_pdf.php?id=39a1af6c07726bed7e6ebb59190dbe03",
-             //                     "payable_amount": 100,
-             //                     "icai_transaction_id": "10044493"
-             //                 }
-             //             }
-             
-         }
-         else{
-             if ([response respondsToSelector:@selector(objectForKey:)]) {
-                 [self showAlert:[response objectForKey:kKEY_ErrorMessage]];
-             }
-         }
-     }];
+                     callWebServiceWithUrl:[[FFWebServiceHelper sharedManager] javaServerUrlWithString:GET_PROFILE]
+                     withParameter:@{@"application_id" : applicationId, CHECKSOURCE_KEY : CHECKSOURCE_VALUE}
+                     onCompletion:^(eResponseType responseType, id response)
+                     {
+                         [self hideProgressHudAfterDelay:0.1];
+                         
+                         if (responseType == eResponseTypeSuccessJSON)
+                         {
+                             [self showAlert:[response objectForKey:kKEY_ErrorMessage]];
+                             
+                             //             {
+                             //                 "errorCode": 0,
+                             //                 "errorMessage": "You're registered successfully. Taking you to pay the enrollment fee!",
+                             //                 "responseObject": {
+                             //                     "application_id": 10018619,
+                             //                     "student_name": "q",
+                             //                     "student_email": "rahul@yopmail.com",
+                             //                     "gender": "Male",
+                             //                     "application_download": "https:\/\/icaicommercewizard.com\/html2pdf\/download_pdf.php?id=39a1af6c07726bed7e6ebb59190dbe03",
+                             //                     "payable_amount": 100,
+                             //                     "icai_transaction_id": "10044493"
+                             //                 }
+                             //             }
+                             
+                         }
+                         else{
+                             if ([response respondsToSelector:@selector(objectForKey:)]) {
+                                 [self showAlert:[response objectForKey:kKEY_ErrorMessage]];
+                             }
+                         }
+                     }];
 }
 
 -(void)dobSelectedDate

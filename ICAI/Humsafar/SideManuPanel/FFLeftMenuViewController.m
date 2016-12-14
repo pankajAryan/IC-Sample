@@ -86,9 +86,12 @@ static NSString *stringLeftMenuCellIdentifier  = @"LeftMenuCell";
             
         case 3:
             {
-                NSString *applicationId = [SecurityUtil encryptMD5String:@"10015961"];
+                NSString *applicationId = [UIViewController retrieveDataFromUserDefault:@"application_id"];
+                NSString *urlString = [UIViewController retrieveDataFromUserDefault:@"application_download"];
                 
-                NSString *urlString = [NSString stringWithFormat:@"%@%@",Application_Form_Download,applicationId];
+                if (!urlString) {
+                    urlString = [NSString stringWithFormat:@"%@%@",Application_Form_Download,[SecurityUtil encryptMD5String:applicationId]];
+                }
                 
                 [[UIApplication sharedApplication] openURL:[NSURL URLWithString:urlString] options:@{} completionHandler:nil];
             }
