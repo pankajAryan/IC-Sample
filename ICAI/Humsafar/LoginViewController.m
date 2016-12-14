@@ -136,9 +136,9 @@ NSString *encryptionKey =   @"2b9cYGfQ%D-^hnCB";
                         [UIViewController saveDatatoUserDefault:[dictUserdata objectForKey:@"student_email"] forKey:@"student_email"];
                         [UIViewController saveDatatoUserDefault:[dictUserdata objectForKey:@"gender"] forKey:@"gender"];
                         
-                        [UIViewController saveDatatoUserDefault:@"application_download" forKey:@"application_download"];
+                        [UIViewController saveDatatoUserDefault:[dictUserdata objectForKey:@"application_download"] forKey:@"application_download"];
                         
-                        [UIViewController saveDatatoUserDefault:@"payable_amount" forKey:@"payable_amount"];
+                        [UIViewController saveDatatoUserDefault:[dictUserdata objectForKey:@"payable_amount"] forKey:@"payable_amount"];
 
                         RootViewController *VC = [RootViewController instantiateViewControllerWithIdentifier:@"RootViewController" fromStoryboard:@"Main"];
                         

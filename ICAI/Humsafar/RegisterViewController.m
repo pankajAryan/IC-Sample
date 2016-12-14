@@ -240,17 +240,20 @@
          
          if (responseType == eResponseTypeSuccessJSON)
          {
-             [self showAlert:[response objectForKey:kKEY_ErrorMessage]];
-             
              NSDictionary *dictUserdata = [response objectForKey:@"responseObject"];
+             
              [UIViewController saveDatatoUserDefault:[dictUserdata objectForKey:@"application_id"] forKey:@"application_id"];
+             
              [UIViewController saveDatatoUserDefault:[dictUserdata objectForKey:@"student_name"] forKey:@"student_name"];
              [UIViewController saveDatatoUserDefault:[dictUserdata objectForKey:@"student_email"] forKey:@"student_email"];
              [UIViewController saveDatatoUserDefault:[dictUserdata objectForKey:@"gender"] forKey:@"gender"];
-             [UIViewController saveDatatoUserDefault:@"application_download" forKey:@"application_download"];
-             [UIViewController saveDatatoUserDefault:@"payable_amount" forKey:@"payable_amount"];
+             
+             [UIViewController saveDatatoUserDefault:[dictUserdata objectForKey:@"application_download"] forKey:@"application_download"];
+             
+             [UIViewController saveDatatoUserDefault:[dictUserdata objectForKey:@"payable_amount"] forKey:@"payable_amount"];
              
              RootViewController *VC = [RootViewController instantiateViewControllerWithIdentifier:@"RootViewController" fromStoryboard:@"Main"];
+             
              [self.navigationController pushViewController:VC animated:YES];
          }
          else{
@@ -279,7 +282,7 @@
                          
                          if (responseType == eResponseTypeSuccessJSON)
                          {
-                             [self showAlert:[response objectForKey:kKEY_ErrorMessage]];
+                             [self showAlert:@"Profile updated."];
                              
                              //             {
                              //                 "errorCode": 0,
@@ -319,21 +322,6 @@
                          
                          if (responseType == eResponseTypeSuccessJSON)
                          {
-                             [self showAlert:[response objectForKey:kKEY_ErrorMessage]];
-                             
-                             //             {
-                             //                 "errorCode": 0,
-                             //                 "errorMessage": "You're registered successfully. Taking you to pay the enrollment fee!",
-                             //                 "responseObject": {
-                             //                     "application_id": 10018619,
-                             //                     "student_name": "q",
-                             //                     "student_email": "rahul@yopmail.com",
-                             //                     "gender": "Male",
-                             //                     "application_download": "https:\/\/icaicommercewizard.com\/html2pdf\/download_pdf.php?id=39a1af6c07726bed7e6ebb59190dbe03",
-                             //                     "payable_amount": 100,
-                             //                     "icai_transaction_id": "10044493"
-                             //                 }
-                             //             }
                              
                          }
                          else{

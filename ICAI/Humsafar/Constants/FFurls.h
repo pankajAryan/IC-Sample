@@ -56,22 +56,23 @@
 
 #define Payment_AppRepay            @"studentapprepay"              //2
 
-#define Payment_AppPaymentStatus    @"studentapppaymentstatus"      //3
+#define SEND_AppPaymentStatus    @"studentapppaymentstatus"      //3
 
 
 #pragma mark - PayTm Stuff
 
-#define kChecksumGenerationURL @"http://52.66.152.236/CommerceWizard/paytmCheckSumGenerator.jsp"
-#define kChecksumValidationURL @"http://52.66.152.236/CommerceWizard/paytmCheckSumVerify.jsp"
+#define kChecksumGenerationURL @"http://icaicommercewizard.com:8080/CommerceWizard/paytmCheckSumGenerator.jsp"
+#define kChecksumValidationURL @"http://icaicommercewizard.com:8080/CommerceWizard/paytmCheckSumVerify.jsp"
+
 #define kMID @"Instit11802217165966"
 #define kREQUESTTYPE @"DEFAULT"
 #define kCHANNELID @"WAP"
 #define kINDUSTRYTYPEID @"Education"
 #define kWEBSITE @"Institutewap"
-#define kTXNAMOUNT @"1"
+//#define kTXNAMOUNT @"1"
 #define kTHEME @"merchant"
-#define kMOBILENO @"9999423173"
-#define kEMAIL @"mobiquel@gmail.com"
+#define kMOBILENO @"9999999999"
+//#define kEMAIL @"mobiquel@gmail.com"
 
 
 
