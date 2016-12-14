@@ -36,7 +36,17 @@
 #define CONTACT_US_FORM         @"submitIssue"
 
 
-// Static Screens
+// QUIZ Screens
+
+#define GET_QUIZZES            @"getQuizzesForStudent"
+
+#define QUIZ_RESULT            @"getQuizResult"
+
+#define QUIZ_ATTEMPT           @"getQuizAttempt"
+
+
+
+// WEBVIEW Screens
 
 #define ABOUT_ICAI                  @"https://icaicommercewizard.com/commerce-wizard-mobile/about_mobile.html";
 
@@ -50,7 +60,7 @@
 
 
 
-// Payment APis in Order of implementation
+// PAYMENT APIs in Order of implementation
 
 #define Get_Payment_Status          @"studentappgetpaymentstatus"   //1
 

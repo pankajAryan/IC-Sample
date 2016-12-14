@@ -12,7 +12,7 @@
 #import "ProfileViewController.h"
 #import "NotificationViewController.h"
 #import "EnrollmentStatusViewController.h"
-#import "InstructionViewController.h"
+#import "TestListViewController.h"
 #import "ApplicationFormViewController.h"
 #import "CommonWebViewController.h"
 #import "RegisterViewController.h"
@@ -36,10 +36,10 @@ static NSString *stringLeftMenuCellIdentifier  = @"LeftMenuCell";
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     
-//    self.imgVw_userImg.layer.cornerRadius = 28;
-//    self.imgVw_userImg.layer.masksToBounds = YES;
-//    self.imgVw_userImg.layer.borderColor = [UIColor orangeColor].CGColor;
-//    self.imgVw_userImg.layer.borderWidth = 3;
+    self.imgVw_userImg.layer.cornerRadius = 34;
+    self.imgVw_userImg.layer.masksToBounds = YES;
+    self.imgVw_userImg.layer.borderColor = [UIColor orangeColor].CGColor;
+    self.imgVw_userImg.layer.borderWidth = 3;
     
 }
 
@@ -51,8 +51,15 @@ static NSString *stringLeftMenuCellIdentifier  = @"LeftMenuCell";
 -(void)viewWillAppear:(BOOL)animated{
     [super viewWillAppear:animated];
     
-//    self.lbl_name.text = [UIViewController retrieveDataFromUserDefault:@"name"];
-//    [self.imgVw_userImg setImageWithURL:[NSURL URLWithString:[UIViewController retrieveDataFromUserDefault:@"userImageUrl"]] placeholderImage:nil];
+    self.lbl_name.text = [UIViewController retrieveDataFromUserDefault:@"student_name"];
+    
+    NSString *gender = [UIViewController retrieveDataFromUserDefault:@"gender"];
+    
+    if ([gender.lowercaseString isEqualToString:@"male"]) {
+        self.imgVw_userImg.image = [UIImage imageNamed:@"user"];
+    }else{
+        self.imgVw_userImg.image = [UIImage imageNamed:@"ProfileImagePlaceholder"];
+    }
 }
 
 #pragma mark- TableView Delegate
@@ -80,7 +87,7 @@ static NSString *stringLeftMenuCellIdentifier  = @"LeftMenuCell";
 
         case 2:
         {
-            InstructionViewController *vc = (InstructionViewController *)[UIViewController instantiateViewControllerWithIdentifier:@"InstructionViewController" fromStoryboard:@"Home"];
+            TestListViewController *vc = (TestListViewController *)[UIViewController instantiateViewControllerWithIdentifier:@"TestListViewController" fromStoryboard:@"Home"];
             [homeController.navigationController pushViewController:vc animated:YES];
         }
             break;

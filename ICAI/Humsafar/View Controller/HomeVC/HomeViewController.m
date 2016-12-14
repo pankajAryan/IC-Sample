@@ -9,7 +9,8 @@
 #import "HomeViewController.h"
 #import "UIViewController+RESideMenu.h"
 #import "HomeCollectionViewCell.h"
-#import "InstructionViewController.h"
+#import "TestListViewController.h"
+
 #import "SecurityUtil.h"
 
 @interface HomeViewController ()<UICollectionViewDelegate>
@@ -60,7 +61,9 @@
 }
 
 - (IBAction)takeTestAction:(id)sender {
-    [self showAlert:@"Coming soon..."];
+    
+    TestListViewController *vc = (TestListViewController *)[UIViewController instantiateViewControllerWithIdentifier:@"TestListViewController" fromStoryboard:@"Home"];
+    [self.navigationController pushViewController:vc animated:YES];
 }
 
 - (IBAction)applicationFormDidTap:(id)sender {

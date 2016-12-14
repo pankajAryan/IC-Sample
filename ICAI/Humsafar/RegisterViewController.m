@@ -80,7 +80,11 @@
     UIToolbar *toolBar;
 }
 @property (nonatomic) NSArray *dataHolderArray;
+
 @property (weak, nonatomic) IBOutlet UITableView *tblView;
+@property (weak, nonatomic) IBOutlet UILabel *lbl_title;
+@property (strong, nonatomic) IBOutlet UIView *tblFooterView;
+@property (strong, nonatomic) IBOutlet UIView *tblHeaderView;
 
 @end
 
@@ -122,11 +126,15 @@
                         [[DataHolder alloc] initWithPlaceHolder:@"Preferred Test center *" andIsActAsBtn:YES]
                         ];
     
-    
     [self getTestCenterFromServer];
     
     if (self.applicationID != nil) {
         [self getProfile];
+        self.lbl_title.text = @"My Profile";
+    }else{
+        self.lbl_title.text = @"Student Registration";
+        self.tblView.tableFooterView = self.tblFooterView;
+        self.tblView.tableHeaderView = self.tblHeaderView;
     }
 
 }
@@ -134,32 +142,6 @@
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
-}
-
-#pragma mark -
-
--(void)getTestCenterFromServer {
-    
-    [self showProgressHudWithMessage:@"Please wait..."];
-    
-    [[FFWebServiceHelper sharedManager]
-     callWebServiceWithUrl:[[FFWebServiceHelper sharedManager] javaServerUrlWithString:Test_Centre_List]
-     withParameter:@{CHECKSOURCE_KEY : CHECKSOURCE_VALUE}
-     onCompletion:^(eResponseType responseType, id response)
-     {
-         [self hideProgressHudAfterDelay:0.1];
-         
-         if (responseType == eResponseTypeSuccessJSON)
-         {
-             testCentersArray = [response objectForKey:kKEY_ResponseObject];
-             //[self showAlert:[response objectForKey:kKEY_ErrorMessage]];
-         }
-         else{
-             if ([response respondsToSelector:@selector(objectForKey:)]) {
-                 [self showAlert:[response objectForKey:kKEY_ErrorMessage]];
-             }
-         }
-     }];
 }
 
 #pragma mark - Button Action
@@ -186,6 +168,18 @@
         return;
     }
     
+    if (self.applicationID == nil) {
+        [self createAccount];
+    }else{
+        [self updateProfile];
+    }
+    
+}
+
+#pragma mark -
+
+-(void)createAccount {
+
     NSMutableArray *paramArray = [NSMutableArray new];
     
     [paramArray addObject:@"user_email"];
@@ -219,16 +213,6 @@
     
     paraDict[@"registration_mode"] = @"USER_ONLINE";
     
-    if (self.applicationID == nil) {
-        [self createAccount:paraDict];
-    }else{
-        [self updateProfile:paraDict];
-    }
-    
-}
-
--(void)createAccount:(NSMutableDictionary*)paraDict {
-
     [self showProgressHudWithMessage:@"Please wait.."];
 
     [[FFWebServiceHelper sharedManager]
@@ -265,13 +249,42 @@
      }];
 }
 
--(void)updateProfile:(NSMutableDictionary*)paraDict {
+-(void)updateProfile {
     
-    NSString *applicationId = [UIViewController retrieveDataFromUserDefault:@"application_id"];
-
-    paraDict[@"application_id"] = applicationId;
+    NSMutableArray *paramArray = [NSMutableArray new];
+    
+    [paramArray addObject:@"studentEmail"];
+    [paramArray addObject:@"studentName"];
+    [paramArray addObject:@"studentMiddleName"];
+    [paramArray addObject:@"studentLastName"];
+    [paramArray addObject:@"studentGender"];
+    [paramArray addObject:@"fatherName"];
+    [paramArray addObject:@"motherName"];
+    [paramArray addObject:@"studentDOB"];
+    [paramArray addObject:@"mobileNo"];
+    [paramArray addObject:@"residentialAddress"];
+    [paramArray addObject:@"city"];
+    [paramArray addObject:@"district"];
+    [paramArray addObject:@"zipcode"];
+    [paramArray addObject:@"state"];
+    [paramArray addObject:@"country"];
+    [paramArray addObject:@"className"];
+    [paramArray addObject:@"boardName"];
+    [paramArray addObject:@"otherBoard"];
+    [paramArray addObject:@"schoolName"];
+    [paramArray addObject:@"schoolAddress"];
+    [paramArray addObject:@"testCentre"];
+    
+    NSMutableDictionary *paraDict = [NSMutableDictionary new];
+    
+    for (int i=0; i< self.dataHolderArray.count; i++) {
+        DataHolder *modal = self.dataHolderArray[i];
+        paraDict[paramArray[i]] = modal.displayText.length > 0 ? modal.displayText : @"";
+    }
+    
+    paraDict[@"applicationId"] = self.applicationID;
     paraDict[CHECKSOURCE_KEY] = CHECKSOURCE_VALUE;
-    
+
     [self showProgressHudWithMessage:@"Please wait.."];
 
     [[FFWebServiceHelper sharedManager]
@@ -284,21 +297,6 @@
                          if (responseType == eResponseTypeSuccessJSON)
                          {
                              [self showAlert:@"Profile updated."];
-                             
-                             //             {
-                             //                 "errorCode": 0,
-                             //                 "errorMessage": "You're registered successfully. Taking you to pay the enrollment fee!",
-                             //                 "responseObject": {
-                             //                     "application_id": 10018619,
-                             //                     "student_name": "q",
-                             //                     "student_email": "rahul@yopmail.com",
-                             //                     "gender": "Male",
-                             //                     "application_download": "https:\/\/icaicommercewizard.com\/html2pdf\/download_pdf.php?id=39a1af6c07726bed7e6ebb59190dbe03",
-                             //                     "payable_amount": 100,
-                             //                     "icai_transaction_id": "10044493"
-                             //                 }
-                             //             }
-                             
                          }
                          else{
                              if ([response respondsToSelector:@selector(objectForKey:)]) {
@@ -310,20 +308,49 @@
 
 -(void)getProfile {
     
-    NSString *applicationId = [UIViewController retrieveDataFromUserDefault:@"application_id"];
-
     [self showProgressHudWithMessage:@"Please wait.."];
 
     [[FFWebServiceHelper sharedManager]
                      callWebServiceWithUrl:[[FFWebServiceHelper sharedManager] javaServerUrlWithString:GET_PROFILE]
-                     withParameter:@{@"application_id" : applicationId, CHECKSOURCE_KEY : CHECKSOURCE_VALUE}
+                     withParameter:@{@"applicationId" : self.applicationID, CHECKSOURCE_KEY : CHECKSOURCE_VALUE}
                      onCompletion:^(eResponseType responseType, id response)
                      {
                          [self hideProgressHudAfterDelay:0.1];
                          
                          if (responseType == eResponseTypeSuccessJSON)
                          {
+                             NSDictionary *responseObj = response[kKEY_ResponseObject];
                              
+                             NSMutableArray *paramArray = [NSMutableArray new];
+                             
+                             [paramArray addObject:@"studentEmail"];
+                             [paramArray addObject:@"studentName"];
+                             [paramArray addObject:@"studentMiddleName"];
+                             [paramArray addObject:@"studentLastName"];
+                             [paramArray addObject:@"studentGender"];
+                             [paramArray addObject:@"fatherName"];
+                             [paramArray addObject:@"motherName"];
+                             [paramArray addObject:@"studentDOB"];
+                             [paramArray addObject:@"mobileNo"];
+                             [paramArray addObject:@"residentialAddress"];
+                             [paramArray addObject:@"city"];
+                             [paramArray addObject:@"district"];
+                             [paramArray addObject:@"zipcode"];
+                             [paramArray addObject:@"state"];
+                             [paramArray addObject:@"country"];
+                             [paramArray addObject:@"className"];
+                             [paramArray addObject:@"boardName"];
+                             [paramArray addObject:@"otherBoard"];
+                             [paramArray addObject:@"schoolName"];
+                             [paramArray addObject:@"schoolAddress"];
+                             [paramArray addObject:@"testCentre"];
+                             
+                             for (int i=0; i< self.dataHolderArray.count; i++) {
+                                 DataHolder *modal = self.dataHolderArray[i];
+                                 modal.displayText = responseObj[paramArray[i]];
+                             }
+                             
+                             [self.tblView reloadData];
                          }
                          else{
                              if ([response respondsToSelector:@selector(objectForKey:)]) {
@@ -331,6 +358,29 @@
                              }
                          }
                      }];
+}
+
+#pragma mark -
+
+-(void)getTestCenterFromServer {
+    
+    [[FFWebServiceHelper sharedManager]
+     callWebServiceWithUrl:[[FFWebServiceHelper sharedManager] javaServerUrlWithString:Test_Centre_List]
+     withParameter:@{CHECKSOURCE_KEY : CHECKSOURCE_VALUE}
+     onCompletion:^(eResponseType responseType, id response)
+     {
+         
+         if (responseType == eResponseTypeSuccessJSON)
+         {
+             testCentersArray = [response objectForKey:kKEY_ResponseObject];
+             //[self showAlert:[response objectForKey:kKEY_ErrorMessage]];
+         }
+         else{
+             if ([response respondsToSelector:@selector(objectForKey:)]) {
+                 [self showAlert:[response objectForKey:kKEY_ErrorMessage]];
+             }
+         }
+     }];
 }
 
 -(void)dobSelectedDate
@@ -535,13 +585,12 @@
         }
     }
     
-    
-    if (!checkBoxSelected) {
-        [self showAlert:@"Please check T&C!"];
-        return NO;
+    if (self.applicationID == nil) {// for create account
+        if (!checkBoxSelected) {
+            [self showAlert:@"Please check T&C!"];
+            return NO;
+        }
     }
-    
-   
     
     return YES;
 }
