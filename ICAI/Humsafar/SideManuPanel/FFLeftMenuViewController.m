@@ -15,7 +15,7 @@
 #import "InstructionViewController.h"
 #import "ApplicationFormViewController.h"
 #import "CommonWebViewController.h"
-
+#import "RegisterViewController.h"
 #import "SecurityUtil.h"
 #import "RESideMenu.h"
 #import "UIViewController+RESideMenu.h"
@@ -66,7 +66,8 @@ static NSString *stringLeftMenuCellIdentifier  = @"LeftMenuCell";
     {
         case 0:
         {
-            ProfileViewController *vc = (ProfileViewController *)[UIViewController instantiateViewControllerWithIdentifier:@"ProfileViewController" fromStoryboard:@"LeftMenuScenes"];
+            RegisterViewController *vc = [RegisterViewController instantiateViewControllerWithIdentifier:@"RegisterViewController" fromStoryboard:@"Main"];
+            vc.applicationID = [UIViewController retrieveDataFromUserDefault:@"application_id"];
             [homeController.navigationController pushViewController:vc animated:YES];
         }
             break;

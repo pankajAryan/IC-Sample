@@ -9,14 +9,7 @@
 #import <UIKit/UIKit.h>
 
 @interface RegisterViewController : UIViewController
-{
-    NSArray *arrayStatesData;
-    NSArray *arrayDistrictsData;
-}
 
-@property (nonatomic, strong) NSString *name;
-@property (nonatomic, strong) NSString *email;
-@property (nonatomic, strong) NSURL *imageUrl;
-
+@property (nonatomic, strong) NSString *applicationID;
 
 @end

@@ -124,6 +124,10 @@
     
     
     [self getTestCenterFromServer];
+    
+    if (self.applicationID != nil) {
+        [self getProfile];
+    }
 
 }
 
@@ -215,7 +219,7 @@
     
     paraDict[@"registration_mode"] = @"USER_ONLINE";
     
-    if (true) {
+    if (self.applicationID == nil) {
         [self createAccount:paraDict];
     }else{
         [self updateProfile:paraDict];
@@ -238,20 +242,16 @@
          {
              [self showAlert:[response objectForKey:kKEY_ErrorMessage]];
              
-             //             {
-             //                 "errorCode": 0,
-             //                 "errorMessage": "You're registered successfully. Taking you to pay the enrollment fee!",
-             //                 "responseObject": {
-             //                     "application_id": 10018619,
-             //                     "student_name": "q",
-             //                     "student_email": "rahul@yopmail.com",
-             //                     "gender": "Male",
-             //                     "application_download": "https:\/\/icaicommercewizard.com\/html2pdf\/download_pdf.php?id=39a1af6c07726bed7e6ebb59190dbe03",
-             //                     "payable_amount": 100,
-             //                     "icai_transaction_id": "10044493"
-             //                 }
-             //             }
+             NSDictionary *dictUserdata = [response objectForKey:@"responseObject"];
+             [UIViewController saveDatatoUserDefault:[dictUserdata objectForKey:@"application_id"] forKey:@"application_id"];
+             [UIViewController saveDatatoUserDefault:[dictUserdata objectForKey:@"student_name"] forKey:@"student_name"];
+             [UIViewController saveDatatoUserDefault:[dictUserdata objectForKey:@"student_email"] forKey:@"student_email"];
+             [UIViewController saveDatatoUserDefault:[dictUserdata objectForKey:@"gender"] forKey:@"gender"];
+             [UIViewController saveDatatoUserDefault:@"application_download" forKey:@"application_download"];
+             [UIViewController saveDatatoUserDefault:@"payable_amount" forKey:@"payable_amount"];
              
+             RootViewController *VC = [RootViewController instantiateViewControllerWithIdentifier:@"RootViewController" fromStoryboard:@"Main"];
+             [self.navigationController pushViewController:VC animated:YES];
          }
          else{
              if ([response respondsToSelector:@selector(objectForKey:)]) {
@@ -304,7 +304,7 @@
                      }];
 }
 
--(void)getProfile:(NSMutableDictionary*)paraDict {
+-(void)getProfile {
     
     NSString *applicationId = [UIViewController retrieveDataFromUserDefault:@"application_id"];
 
@@ -376,6 +376,13 @@
     cell.txt_value.placeholder = modal.placeHolderText;
     cell.txt_value.tag = indexPath.row;
     cell.txt_value.associatedModal = modal;
+    cell.txt_value.enabled = YES;
+    
+    if (indexPath.row == 0) {
+        if (self.applicationID != nil) {
+            cell.txt_value.enabled = NO;
+        }
+    }
     
     return cell;
 }
@@ -457,6 +464,9 @@
     if (textField.tag == 7) {//DOB
         [textField setInputAccessoryView:toolBar];
         [textField setInputView:datePicker];
+    }else{
+        [textField setInputAccessoryView:nil];
+        [textField setInputView:nil];
     }
     
     return !modal.isActAsBtn;
