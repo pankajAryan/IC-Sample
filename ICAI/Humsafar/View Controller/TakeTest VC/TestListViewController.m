@@ -9,30 +9,26 @@
 #import "TestListViewController.h"
 #import "TestListTableViewCell.h"
 #import "InstructionViewController.h"
+#import "QuizResultViewController.h"
 
-@interface TestListViewController () <UITableViewDataSource> {
-    
-    NSString *studentID;
-}
+@interface TestListViewController () <UITableViewDataSource, UITableViewDelegate>
 
 @property (weak, nonatomic) IBOutlet UITableView *tableView_TestList;
+
 @end
 
 @implementation TestListViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
-    _tableView_TestList.rowHeight = UITableViewAutomaticDimension;
-    _tableView_TestList.estimatedRowHeight = 88;
     
     NSString *applicationId = [UIViewController retrieveDataFromUserDefault:@"application_id"];
 
     [self showProgressHudWithMessage:@"Please wait.."];
 
     [[FFWebServiceHelper sharedManager]
-                 callWebServiceWithUrl:[[FFWebServiceHelper sharedManager] javaServerUrlWithString:GET_QUIZZES]
-     withParameter:@{@"studentId":applicationId,@"categoryId":@"1",@"source":@"app",CHECKSOURCE_KEY : CHECKSOURCE_VALUE}
+                callWebServiceWithUrl:[[FFWebServiceHelper sharedManager] javaServerUrlWithString:GET_QUIZZES]
+                withParameter:@{@"studentId":applicationId,@"categoryId":@"1",@"source":@"app",CHECKSOURCE_KEY : CHECKSOURCE_VALUE}
                  onCompletion:^(eResponseType responseType, id response)
                  {
                      [self hideProgressHudAfterDelay:0.1];
@@ -40,8 +36,6 @@
                      if (responseType == eResponseTypeSuccessJSON)
                      {
                          arrayTestList = [response objectForKey:@"responseObject"];
-                         
-                         studentID = [[arrayTestList objectAtIndex:0] objectForKey:@"studentId"];
 
                          [_tableView_TestList reloadData];
                      }
@@ -58,7 +52,10 @@
     
     if ([[testObject objectForKey:@"isAttempted"] compare:@"T" options:NSCaseInsensitiveSearch] == NSOrderedSame) {
             // View Score flow
-        
+        QuizResultViewController *vc = (QuizResultViewController *)[UIViewController instantiateViewControllerWithIdentifier:@"QuizResultViewController" fromStoryboard:@"Home"];
+        vc.quizDict = testObject;
+
+        [self.navigationController pushViewController:vc animated:YES];
     }
     else {  // Take Test flow
         InstructionViewController *vc = (InstructionViewController *)[UIViewController instantiateViewControllerWithIdentifier:@"InstructionViewController" fromStoryboard:@"Home"];
@@ -90,7 +87,7 @@
     
     NSDictionary *testObject = [arrayTestList objectAtIndex:indexPath.row];
     
-    cell.lblTestTitle.text = [NSString stringWithFormat:@"Test Number: %li",indexPath.row+1];
+    cell.lblTestTitle.text = [NSString stringWithFormat:@"Test Number: %i",indexPath.row+1];
     cell.lblQuesCount.text = [NSString stringWithFormat:@"Number of questions: %@",[testObject objectForKey:@"noOfQuestions"]];
     cell.lblDuration.text = [NSString stringWithFormat:@"Duration: %@ minutes",[testObject objectForKey:@"timeMinutes"]];
     
@@ -104,6 +101,11 @@
     cell.buttonTestAction.tag = indexPath.row;
     
     return cell;
+}
+
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
+    
+    return 94;
 }
 
 @end

@@ -47,6 +47,7 @@
 		CE11DE831E01CCA200C9CC81 /* TestListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CE11DE821E01CCA200C9CC81 /* TestListViewController.m */; };
 		CE11DE871E01CD6400C9CC81 /* TestListTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = CE11DE861E01CD6400C9CC81 /* TestListTableViewCell.m */; };
 		CE11DE8A1E01E2BC00C9CC81 /* QuizViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CE11DE891E01E2BC00C9CC81 /* QuizViewController.m */; };
+		CE15D37A1E032AD10073AB4F /* QuizResultViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CE15D3791E032AD10073AB4F /* QuizResultViewController.m */; };
 		CE16DAE41DBA022400AB664C /* UITextField+Validation.m in Sources */ = {isa = PBXBuildFile; fileRef = CE16DAE31DBA022400AB664C /* UITextField+Validation.m */; };
 		CE16DAE91DBA043500AB664C /* FFValidationResult.m in Sources */ = {isa = PBXBuildFile; fileRef = CE16DAE81DBA043500AB664C /* FFValidationResult.m */; };
 		CE16DAF31DBB423500AB664C /* TSMessagesDefaultDesign.json in Resources */ = {isa = PBXBuildFile; fileRef = CE16DAF21DBB423500AB664C /* TSMessagesDefaultDesign.json */; };
@@ -188,6 +189,8 @@
 		CE11DE861E01CD6400C9CC81 /* TestListTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TestListTableViewCell.m; sourceTree = "<group>"; };
 		CE11DE881E01E2BC00C9CC81 /* QuizViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QuizViewController.h; sourceTree = "<group>"; };
 		CE11DE891E01E2BC00C9CC81 /* QuizViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QuizViewController.m; sourceTree = "<group>"; };
+		CE15D3781E032AD10073AB4F /* QuizResultViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QuizResultViewController.h; sourceTree = "<group>"; };
+		CE15D3791E032AD10073AB4F /* QuizResultViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QuizResultViewController.m; sourceTree = "<group>"; };
 		CE16DAE21DBA022400AB664C /* UITextField+Validation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UITextField+Validation.h"; sourceTree = "<group>"; };
 		CE16DAE31DBA022400AB664C /* UITextField+Validation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UITextField+Validation.m"; sourceTree = "<group>"; };
 		CE16DAE51DBA028400AB664C /* FFValidationResult.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FFValidationResult.h; sourceTree = "<group>"; };
@@ -387,6 +390,8 @@
 				410D4B151DF28B1000FFB0D8 /* InstructionViewController.m */,
 				CE11DE881E01E2BC00C9CC81 /* QuizViewController.h */,
 				CE11DE891E01E2BC00C9CC81 /* QuizViewController.m */,
+				CE15D3781E032AD10073AB4F /* QuizResultViewController.h */,
+				CE15D3791E032AD10073AB4F /* QuizResultViewController.m */,
 			);
 			path = "TakeTest VC";
 			sourceTree = "<group>";
@@ -952,6 +957,7 @@
 				CE0596DE1DB665B5001E62A9 /* AFSecurityPolicy.m in Sources */,
 				CEB08FF41DF35AD5008A83AB /* CommonWebViewController.m in Sources */,
 				CE2B3A2C1DAE823D00B266E1 /* HexColor.m in Sources */,
+				CE15D37A1E032AD10073AB4F /* QuizResultViewController.m in Sources */,
 				CE2B39811DAE6D1F00B266E1 /* AppDelegate.m in Sources */,
 				CE2B39BC1DAE71CC00B266E1 /* UIScrollView+TPKeyboardAvoidingAdditions.m in Sources */,
 				CE8E59341DFC06510053E81D /* ContactUsViewController.m in Sources */,
