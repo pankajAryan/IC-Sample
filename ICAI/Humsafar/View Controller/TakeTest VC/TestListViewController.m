@@ -103,6 +103,8 @@
     return cell;
 }
 
+#pragma mark- Delegate
+
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
     
     return 94;

@@ -56,7 +56,7 @@ static NSString *stringLeftMenuCellIdentifier  = @"LeftMenuCell";
     NSString *gender = [UIViewController retrieveDataFromUserDefault:@"gender"];
     
     if ([gender.lowercaseString isEqualToString:@"male"]) {
-        self.imgVw_userImg.image = [UIImage imageNamed:@"user"];
+        self.imgVw_userImg.image = [UIImage imageNamed:@"boy"];
     }else{
         self.imgVw_userImg.image = [UIImage imageNamed:@"ProfileImagePlaceholder"];
     }

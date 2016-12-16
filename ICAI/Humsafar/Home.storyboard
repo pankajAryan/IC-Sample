@@ -1622,31 +1622,103 @@ Website: www.icai.org </string>
                                     <constraint firstAttribute="bottom" secondItem="SrD-1i-BrQ" secondAttribute="bottom" constant="6" id="zuO-gs-P8K"/>
                                 </constraints>
                             </view>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="DGq-TN-HQI">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="DGq-TN-HQI">
                                 <rect key="frame" x="0.0" y="144" width="320" height="352"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="5Cj-8N-sL7">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="questionCell" id="5Cj-8N-sL7">
                                         <rect key="frame" x="0.0" y="28" width="320" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="5Cj-8N-sL7" id="Ohk-19-fod">
-                                            <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                                             <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="uPT-fY-zGB">
+                                                    <rect key="frame" x="7" y="7" width="306" height="30"/>
+                                                    <color key="backgroundColor" red="0.85222945449999998" green="0.85222945449999998" blue="0.85222945449999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                </view>
+                                                <label opaque="NO" userInteractionEnabled="NO" tag="21" contentMode="left" horizontalHuggingPriority="750" verticalHuggingPriority="1000" verticalCompressionResistancePriority="1000" text="ques text" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eay-T7-oRj">
+                                                    <rect key="frame" x="16" y="12" width="288" height="20"/>
+                                                    <fontDescription key="fontDescription" name="OpenSans" family="Open Sans" pointSize="14"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                    <userDefinedRuntimeAttributes>
+                                                        <userDefinedRuntimeAttribute type="string" keyPath="text" value=""/>
+                                                    </userDefinedRuntimeAttributes>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstAttribute="bottom" secondItem="uPT-fY-zGB" secondAttribute="bottom" constant="7" id="BkG-YT-vO3"/>
+                                                <constraint firstAttribute="trailing" secondItem="uPT-fY-zGB" secondAttribute="trailing" constant="7" id="F32-gf-aKl"/>
+                                                <constraint firstItem="eay-T7-oRj" firstAttribute="top" secondItem="Ohk-19-fod" secondAttribute="topMargin" constant="4" id="J4s-4u-0yT"/>
+                                                <constraint firstAttribute="bottomMargin" secondItem="eay-T7-oRj" secondAttribute="bottom" constant="4" id="MSo-MK-8ro"/>
+                                                <constraint firstItem="uPT-fY-zGB" firstAttribute="leading" secondItem="Ohk-19-fod" secondAttribute="leading" constant="7" id="PBK-Mo-HxJ"/>
+                                                <constraint firstAttribute="trailingMargin" secondItem="eay-T7-oRj" secondAttribute="trailing" constant="8" id="QB8-6Z-ad3"/>
+                                                <constraint firstItem="eay-T7-oRj" firstAttribute="leading" secondItem="Ohk-19-fod" secondAttribute="leadingMargin" constant="8" id="Spe-VI-ZeM"/>
+                                                <constraint firstItem="uPT-fY-zGB" firstAttribute="top" secondItem="Ohk-19-fod" secondAttribute="top" constant="7" id="phq-jz-d0R"/>
+                                            </constraints>
                                         </tableViewCellContentView>
                                     </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="y1k-H5-wjj">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="answerCell" id="y1k-H5-wjj">
                                         <rect key="frame" x="0.0" y="72" width="320" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="y1k-H5-wjj" id="hO8-43-s7J">
-                                            <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                                             <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <view tag="21" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qXR-OM-3kc">
+                                                    <rect key="frame" x="7" y="7" width="306" height="30"/>
+                                                    <subviews>
+                                                        <label opaque="NO" userInteractionEnabled="NO" tag="23" contentMode="left" horizontalHuggingPriority="750" verticalHuggingPriority="1000" verticalCompressionResistancePriority="1000" text="option 1" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qbf-Ai-Rfc">
+                                                            <rect key="frame" x="39" y="5" width="257" height="20"/>
+                                                            <fontDescription key="fontDescription" name="OpenSans" family="Open Sans" pointSize="13"/>
+                                                            <nil key="textColor"/>
+                                                            <nil key="highlightedColor"/>
+                                                            <userDefinedRuntimeAttributes>
+                                                                <userDefinedRuntimeAttribute type="string" keyPath="text" value=""/>
+                                                            </userDefinedRuntimeAttributes>
+                                                        </label>
+                                                        <button opaque="NO" userInteractionEnabled="NO" tag="22" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wsC-4z-oPN">
+                                                            <rect key="frame" x="9" y="3" width="24" height="24"/>
+                                                            <constraints>
+                                                                <constraint firstAttribute="width" constant="24" id="lID-Pg-9tL"/>
+                                                                <constraint firstAttribute="height" constant="24" id="rlJ-xD-Y1e"/>
+                                                            </constraints>
+                                                            <state key="normal" image="radio"/>
+                                                            <state key="selected" image="radio_on"/>
+                                                        </button>
+                                                    </subviews>
+                                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                                    <constraints>
+                                                        <constraint firstItem="wsC-4z-oPN" firstAttribute="centerY" secondItem="qXR-OM-3kc" secondAttribute="centerY" id="AN0-Fh-K0b"/>
+                                                        <constraint firstItem="qbf-Ai-Rfc" firstAttribute="leading" secondItem="wsC-4z-oPN" secondAttribute="trailing" constant="6" id="AeA-dL-UWb"/>
+                                                        <constraint firstAttribute="bottom" secondItem="qbf-Ai-Rfc" secondAttribute="bottom" constant="5" id="Jex-lL-z4c"/>
+                                                        <constraint firstItem="qbf-Ai-Rfc" firstAttribute="top" secondItem="qXR-OM-3kc" secondAttribute="top" constant="5" id="OIG-JT-byR"/>
+                                                        <constraint firstAttribute="trailing" secondItem="qbf-Ai-Rfc" secondAttribute="trailing" constant="10" id="Z9k-fE-DC4"/>
+                                                        <constraint firstItem="wsC-4z-oPN" firstAttribute="leading" secondItem="qXR-OM-3kc" secondAttribute="leading" constant="9" id="nbg-sh-32B"/>
+                                                    </constraints>
+                                                </view>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="qXR-OM-3kc" firstAttribute="leading" secondItem="hO8-43-s7J" secondAttribute="leading" constant="7" id="Eum-Xs-3Rc"/>
+                                                <constraint firstAttribute="trailing" secondItem="qXR-OM-3kc" secondAttribute="trailing" constant="7" id="YaD-GC-17n"/>
+                                                <constraint firstAttribute="bottom" secondItem="qXR-OM-3kc" secondAttribute="bottom" constant="7" id="biF-GD-1rt"/>
+                                                <constraint firstItem="qXR-OM-3kc" firstAttribute="top" secondItem="hO8-43-s7J" secondAttribute="top" constant="7" id="gLh-Qv-RGl"/>
+                                            </constraints>
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                 </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="BUW-DU-rXJ" id="vvZ-MZ-25G"/>
+                                    <outlet property="delegate" destination="BUW-DU-rXJ" id="z84-mL-Ujf"/>
+                                </connections>
                             </tableView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DNy-nF-Xch">
-                                <rect key="frame" x="260" y="500" width="40" height="40"/>
-                                <state key="normal" image="arrow_left"/>
+                                <rect key="frame" x="260" y="501" width="40" height="40"/>
+                                <state key="normal" image="next"/>
+                                <connections>
+                                    <action selector="nextButtonAction:" destination="BUW-DU-rXJ" eventType="touchUpInside" id="P3d-2R-QGM"/>
+                                </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Next" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="N3r-Tw-QGX">
                                 <rect key="frame" x="258" y="545" width="44" height="16"/>
@@ -1659,8 +1731,11 @@ Website: www.icai.org </string>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="R3J-8I-lNx">
-                                <rect key="frame" x="190" y="500" width="40" height="40"/>
-                                <state key="normal" image="arrow_left"/>
+                                <rect key="frame" x="190" y="501" width="40" height="40"/>
+                                <state key="normal" image="ic_finish"/>
+                                <connections>
+                                    <action selector="submitButtonAction:" destination="BUW-DU-rXJ" eventType="touchUpInside" id="LYd-lS-8k8"/>
+                                </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Submit" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pVR-ij-XCr">
                                 <rect key="frame" x="186" y="545" width="48" height="16"/>
@@ -1673,11 +1748,14 @@ Website: www.icai.org </string>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Y83-3B-pQg">
-                                <rect key="frame" x="120" y="500" width="40" height="40"/>
+                                <rect key="frame" x="120" y="501" width="40" height="40"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="40" id="SQO-Qh-NjN"/>
                                 </constraints>
-                                <state key="normal" image="arrow_left"/>
+                                <state key="normal" image="ic_reset"/>
+                                <connections>
+                                    <action selector="resetButtonAction:" destination="BUW-DU-rXJ" eventType="touchUpInside" id="ehC-Cr-jbc"/>
+                                </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Reset" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iqt-l0-icx">
                                 <rect key="frame" x="118" y="546" width="44" height="16"/>
@@ -1690,12 +1768,15 @@ Website: www.icai.org </string>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LWt-UJ-n5r">
-                                <rect key="frame" x="20" y="500" width="40" height="40"/>
+                                <rect key="frame" x="20" y="501" width="40" height="40"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="40" id="6My-7z-I6W"/>
                                     <constraint firstAttribute="width" constant="40" id="7wD-5O-Nsb"/>
                                 </constraints>
-                                <state key="normal" image="arrow_left"/>
+                                <state key="normal" image="previous"/>
+                                <connections>
+                                    <action selector="previousButtonAction:" destination="BUW-DU-rXJ" eventType="touchUpInside" id="Hqk-zF-FdH"/>
+                                </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Previous" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6DJ-HJ-WEp">
                                 <rect key="frame" x="14" y="546" width="52" height="16"/>
@@ -1708,13 +1789,13 @@ Website: www.icai.org </string>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
-                        <color key="backgroundColor" red="0.95294117649999999" green="0.95294117649999999" blue="0.95294117649999999" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="R3J-8I-lNx" firstAttribute="top" secondItem="DNy-nF-Xch" secondAttribute="top" id="431-Nq-SmQ"/>
                             <constraint firstItem="vsS-Ge-AH1" firstAttribute="top" secondItem="7gf-qF-8MA" secondAttribute="bottom" id="5km-b3-G1X"/>
                             <constraint firstItem="RzN-lD-HHm" firstAttribute="top" secondItem="N3r-Tw-QGX" secondAttribute="bottom" constant="7" id="7He-6R-lfa"/>
                             <constraint firstItem="Y83-3B-pQg" firstAttribute="bottom" secondItem="R3J-8I-lNx" secondAttribute="bottom" id="81h-zs-coN"/>
-                            <constraint firstItem="N3r-Tw-QGX" firstAttribute="top" secondItem="DNy-nF-Xch" secondAttribute="bottom" constant="5" id="8YN-ui-oAH"/>
+                            <constraint firstItem="N3r-Tw-QGX" firstAttribute="top" secondItem="DNy-nF-Xch" secondAttribute="bottom" constant="4" id="8YN-ui-oAH"/>
                             <constraint firstItem="LWt-UJ-n5r" firstAttribute="top" secondItem="Y83-3B-pQg" secondAttribute="top" id="9M0-xX-uqU"/>
                             <constraint firstItem="N3r-Tw-QGX" firstAttribute="leading" secondItem="pVR-ij-XCr" secondAttribute="trailing" constant="24" id="9x5-Q2-lh6"/>
                             <constraint firstItem="Y83-3B-pQg" firstAttribute="top" secondItem="R3J-8I-lNx" secondAttribute="top" id="EQi-Xd-spW"/>
@@ -1737,7 +1818,7 @@ Website: www.icai.org </string>
                             <constraint firstItem="DGq-TN-HQI" firstAttribute="leading" secondItem="jjG-qP-oba" secondAttribute="leading" id="jwb-jB-Ymy"/>
                             <constraint firstItem="7gf-qF-8MA" firstAttribute="leading" secondItem="Gbk-9B-by7" secondAttribute="leading" id="mPW-jS-Ked"/>
                             <constraint firstItem="6DJ-HJ-WEp" firstAttribute="baseline" secondItem="iqt-l0-icx" secondAttribute="baseline" id="ocM-0t-bgg"/>
-                            <constraint firstItem="Y83-3B-pQg" firstAttribute="top" secondItem="DGq-TN-HQI" secondAttribute="bottom" constant="4" id="p9Y-qn-dov"/>
+                            <constraint firstItem="Y83-3B-pQg" firstAttribute="top" secondItem="DGq-TN-HQI" secondAttribute="bottom" constant="5" id="p9Y-qn-dov"/>
                             <constraint firstItem="N3r-Tw-QGX" firstAttribute="centerX" secondItem="DNy-nF-Xch" secondAttribute="centerX" id="pB9-F4-6PV"/>
                             <constraint firstItem="DNy-nF-Xch" firstAttribute="leading" secondItem="R3J-8I-lNx" secondAttribute="trailing" constant="30" id="qjk-60-pNB"/>
                             <constraint firstItem="vsS-Ge-AH1" firstAttribute="leading" secondItem="Gbk-9B-by7" secondAttribute="leading" id="sA7-x5-ZTB"/>
@@ -1746,6 +1827,12 @@ Website: www.icai.org </string>
                             <constraint firstItem="LWt-UJ-n5r" firstAttribute="centerX" secondItem="6DJ-HJ-WEp" secondAttribute="centerX" id="yOZ-Eg-c2S"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="lblQuizNumber" destination="SrD-1i-BrQ" id="z5H-um-GHH"/>
+                        <outlet property="lblQuizTitle" destination="EWZ-dG-5lM" id="Dqt-cL-mw2"/>
+                        <outlet property="lblTime" destination="Pn9-Ok-TWR" id="Pj0-yc-Sec"/>
+                        <outlet property="tableViewQA" destination="DGq-TN-HQI" id="yGd-e6-bSQ"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0UA-CE-EYP" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -1759,13 +1846,18 @@ Website: www.icai.org </string>
         <image name="ProfileImagePlaceholder" width="68" height="68"/>
         <image name="User_notification" width="32" height="32"/>
         <image name="application" width="73" height="73"/>
-        <image name="arrow_left" width="58" height="58"/>
         <image name="clock" width="73" height="73"/>
         <image name="contact_us" width="32" height="32"/>
         <image name="cross" width="73" height="73"/>
+        <image name="ic_finish" width="36" height="36"/>
+        <image name="ic_reset" width="36" height="36"/>
         <image name="logo_login" width="136" height="127"/>
         <image name="menu" width="32" height="32"/>
+        <image name="next" width="41" height="41"/>
+        <image name="previous" width="41" height="41"/>
         <image name="profile_bg" width="295" height="100"/>
+        <image name="radio" width="14" height="14"/>
+        <image name="radio_on" width="14" height="14"/>
         <image name="ruppe" width="73" height="73"/>
         <image name="user" width="73" height="73"/>
     </resources>
