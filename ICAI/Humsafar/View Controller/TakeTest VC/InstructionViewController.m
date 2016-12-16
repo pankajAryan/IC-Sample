@@ -8,6 +8,7 @@
 
 #import "InstructionViewController.h"
 #import "InstructionTableViewCell.h"
+#import "QuizViewController.h"
 
 @interface InstructionViewController ()
 @property (weak, nonatomic) IBOutlet UITableView *tableviewInstruction;
@@ -41,6 +42,11 @@
 
 #pragma mark- IBActions
 - (IBAction)btnBeginAction:(UIButton *)sender {
+    
+    QuizViewController *vc = (QuizViewController *)[UIViewController instantiateViewControllerWithIdentifier:@"QuizViewController" fromStoryboard:@"Home"];
+    //vc.quizDict = self.quizDict;
+    
+    [self.navigationController pushViewController:vc animated:YES];
 }
 
 

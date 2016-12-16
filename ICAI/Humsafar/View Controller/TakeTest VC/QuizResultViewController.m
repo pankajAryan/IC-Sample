@@ -7,6 +7,7 @@
 //
 
 #import "QuizResultViewController.h"
+#import "QuizViewController.h"
 
 @interface QuizResultViewController ()
 
@@ -59,6 +60,10 @@
 
 - (IBAction)viewAttempDetails:(id)sender {
     
+    QuizViewController *vc = (QuizViewController *)[UIViewController instantiateViewControllerWithIdentifier:@"QuizViewController" fromStoryboard:@"Home"];
+    //vc.quizDict = self.quizDict;
+    
+    [self.navigationController pushViewController:vc animated:YES];
 }
 
 
