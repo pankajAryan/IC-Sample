@@ -9,7 +9,12 @@
 #import "QuizViewController.h"
 #import "AnswerTableViewCell.h"
 
-@interface QuizViewController () <UITableViewDelegate, UITableViewDataSource>
+@interface QuizViewController () <UITableViewDelegate, UITableViewDataSource> {
+    
+    NSString *studentID;
+    NSString *quizID;
+    NSString *questionIDs;
+}
 
 @end
 
@@ -21,9 +26,9 @@
     [_tableViewQA setRowHeight:UITableViewAutomaticDimension];
     _tableViewQA.estimatedRowHeight = 44;
     
-    NSString *studentID = [_quizDict objectForKey:@"studentId"];
-    NSString *quizID = [_quizDict objectForKey:@"quizId"];
-    NSString *questionIDs = [_quizDict objectForKey:@"questionIds"];
+    studentID = [_quizDict objectForKey:@"studentId"];
+    quizID = [_quizDict objectForKey:@"quizId"];
+    questionIDs = [_quizDict objectForKey:@"questionIds"];
 
 }
 
