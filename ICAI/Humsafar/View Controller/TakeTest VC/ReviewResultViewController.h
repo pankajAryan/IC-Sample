@@ -14,6 +14,11 @@
 
 @property (weak, nonatomic) IBOutlet UILabel *lblQuizTitle;
 @property (weak, nonatomic) IBOutlet UILabel *lblQuizNumber;
+@property (weak, nonatomic) IBOutlet UILabel *lblPrev;
+@property (weak, nonatomic) IBOutlet UIButton *btnPrev;
+@property (weak, nonatomic) IBOutlet UIButton *btnNext;
+@property (weak, nonatomic) IBOutlet UILabel *lblNext;
+
 
 @property (weak, nonatomic) IBOutlet UITableView *tableViewQA;
 
