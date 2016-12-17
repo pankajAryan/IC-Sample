@@ -83,7 +83,7 @@
         optionCell.lblAnswer.text = @"Amar akbar anthony";
         optionCell.radioButton.tag = indexPath.row;
         
-        optionCell.viewOptionContainer.backgroundColor = [UIColor colorFromHexString:@""];
+        //optionCell.viewOptionContainer.backgroundColor = [UIColor colorFromHexString:@""];
 //        Red color code
 //        e74c3c
 //        

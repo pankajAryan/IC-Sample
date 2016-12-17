@@ -60,7 +60,7 @@
 
 - (IBAction)viewAttempDetails:(id)sender {
     
-    ReviewResultViewController *vc = (ReviewResultViewController *)[UIViewController instantiateViewControllerWithIdentifier:@"ReviewResultViewController" fromStoryboard:@"Home"];
+    ReviewResultViewController *vc = (ReviewResultViewController *)[UIViewController instantiateViewControllerWithIdentifier:@"ReviewResultViewController" fromStoryboard:@"Other"];
     vc.quizDict = self.quizDict;
     
     [self.navigationController pushViewController:vc animated:YES];
