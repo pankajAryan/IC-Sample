@@ -85,6 +85,8 @@
 		CE2B39F01DAE7FCB00B266E1 /* UIView+FF.m in Sources */ = {isa = PBXBuildFile; fileRef = CE2B39E31DAE7FCB00B266E1 /* UIView+FF.m */; };
 		CE2B39F11DAE7FCB00B266E1 /* UIViewController+Utility.m in Sources */ = {isa = PBXBuildFile; fileRef = CE2B39E51DAE7FCB00B266E1 /* UIViewController+Utility.m */; };
 		CE2B3A2C1DAE823D00B266E1 /* HexColor.m in Sources */ = {isa = PBXBuildFile; fileRef = CE2B3A291DAE823D00B266E1 /* HexColor.m */; };
+		CE819E781E052F170044689B /* AnswerTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = CE819E771E052F170044689B /* AnswerTableViewCell.m */; };
+		CE819E7B1E0541AB0044689B /* ReviewResultViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CE819E7A1E0541AB0044689B /* ReviewResultViewController.m */; };
 		CE8D5F521DE9AACF00D4846F /* beep1.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = CE8D5F511DE9AACF00D4846F /* beep1.mp3 */; };
 		CE8E59341DFC06510053E81D /* ContactUsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CE8E59331DFC06510053E81D /* ContactUsViewController.m */; };
 		CE8E59411DFC8F020053E81D /* NSData+Base64.m in Sources */ = {isa = PBXBuildFile; fileRef = CE8E59391DFC8F020053E81D /* NSData+Base64.m */; };
@@ -265,6 +267,10 @@
 		CE2B39E51DAE7FCB00B266E1 /* UIViewController+Utility.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+Utility.m"; sourceTree = "<group>"; };
 		CE2B3A281DAE823D00B266E1 /* HexColor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HexColor.h; sourceTree = "<group>"; };
 		CE2B3A291DAE823D00B266E1 /* HexColor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HexColor.m; sourceTree = "<group>"; };
+		CE819E761E052F170044689B /* AnswerTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AnswerTableViewCell.h; sourceTree = "<group>"; };
+		CE819E771E052F170044689B /* AnswerTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AnswerTableViewCell.m; sourceTree = "<group>"; };
+		CE819E791E0541AB0044689B /* ReviewResultViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ReviewResultViewController.h; sourceTree = "<group>"; };
+		CE819E7A1E0541AB0044689B /* ReviewResultViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ReviewResultViewController.m; sourceTree = "<group>"; };
 		CE8D5F511DE9AACF00D4846F /* beep1.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = beep1.mp3; sourceTree = "<group>"; };
 		CE8E59321DFC06510053E81D /* ContactUsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ContactUsViewController.h; sourceTree = "<group>"; };
 		CE8E59331DFC06510053E81D /* ContactUsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; lineEnding = 0; path = ContactUsViewController.m; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
@@ -392,6 +398,8 @@
 				CE11DE891E01E2BC00C9CC81 /* QuizViewController.m */,
 				CE15D3781E032AD10073AB4F /* QuizResultViewController.h */,
 				CE15D3791E032AD10073AB4F /* QuizResultViewController.m */,
+				CE819E791E0541AB0044689B /* ReviewResultViewController.h */,
+				CE819E7A1E0541AB0044689B /* ReviewResultViewController.m */,
 			);
 			path = "TakeTest VC";
 			sourceTree = "<group>";
@@ -535,6 +543,8 @@
 				410D4B131DF28B1000FFB0D8 /* InstructionTableViewCell.m */,
 				CE11DE851E01CD6400C9CC81 /* TestListTableViewCell.h */,
 				CE11DE861E01CD6400C9CC81 /* TestListTableViewCell.m */,
+				CE819E761E052F170044689B /* AnswerTableViewCell.h */,
+				CE819E771E052F170044689B /* AnswerTableViewCell.m */,
 			);
 			name = TableViewCells;
 			sourceTree = "<group>";
@@ -952,6 +962,7 @@
 				CE2B39EA1DAE7FCB00B266E1 /* UIColor+FF.m in Sources */,
 				CEB1F3161DFCA9AE006A3402 /* GTMBase64.m in Sources */,
 				CE0596E61DB665D2001E62A9 /* NetworkReachability.m in Sources */,
+				CE819E7B1E0541AB0044689B /* ReviewResultViewController.m in Sources */,
 				CE2B39A51DAE6F2D00B266E1 /* ActionSheetStringPicker.m in Sources */,
 				CE0596DD1DB665B5001E62A9 /* AFNetworkReachabilityManager.m in Sources */,
 				CE0596DE1DB665B5001E62A9 /* AFSecurityPolicy.m in Sources */,
@@ -995,6 +1006,7 @@
 				CE16DAFF1DBB42FD00AB664C /* TSMessageView.m in Sources */,
 				410D4B221DF28CC900FFB0D8 /* ApplicationFormViewController.m in Sources */,
 				CE0596BB1DB65E92001E62A9 /* GUITabScrollView.m in Sources */,
+				CE819E781E052F170044689B /* AnswerTableViewCell.m in Sources */,
 				410D4B181DF28B1000FFB0D8 /* InstructionTableViewCell.m in Sources */,
 				CE0596E21DB665B5001E62A9 /* AFURLSessionManager.m in Sources */,
 				CE0596DC1DB665B5001E62A9 /* AFHTTPSessionManager.m in Sources */,

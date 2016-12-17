@@ -1,19 +1,19 @@
 //
-//  QuizViewController.m
+//  ReviewResultViewController.m
 //  ICAI
 //
-//  Created by Pankaj Yadav on 15/12/16.
+//  Created by Pankaj Yadav on 17/12/16.
 //  Copyright © 2016 mobiquel. All rights reserved.
 //
 
-#import "QuizViewController.h"
+#import "ReviewResultViewController.h"
 #import "AnswerTableViewCell.h"
 
-@interface QuizViewController () <UITableViewDelegate, UITableViewDataSource>
+@interface ReviewResultViewController () <UITableViewDataSource>
 
 @end
 
-@implementation QuizViewController
+@implementation ReviewResultViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -57,30 +57,21 @@
         optionCell.lblAnswer.text = @"Amar akbar anthony";
         optionCell.radioButton.tag = indexPath.row;
         
+        optionCell.viewOptionContainer.backgroundColor = [UIColor colorFromHexString:@""];
+//        Red color code
+//        e74c3c
+//        
+//        Green color code
+//        2ecc71
+        
         return optionCell;
     }
     
     return cell;
 }
 
-#pragma mark- Delegate
-
-- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-    
-    //        UIView *bgView = [cell viewWithTag:21];
-    AnswerTableViewCell *cell = [tableView cellForRowAtIndexPath:indexPath];
-    
-    if (!cell.radioButton.isSelected) {
-        cell.radioButton.selected = YES;
-        // TODO: call webservice to submit selected option
-    }
-}
-
 
 #pragma mark - IBActions
-
-- (IBAction)answerDidTap:(id)sender {
-}
 
 - (IBAction)nextButtonAction:(id)sender {
 }
@@ -88,10 +79,6 @@
 - (IBAction)previousButtonAction:(id)sender {
 }
 
-- (IBAction)resetButtonAction:(id)sender {
-}
 
-- (IBAction)submitButtonAction:(id)sender {
-}
 
 @end
