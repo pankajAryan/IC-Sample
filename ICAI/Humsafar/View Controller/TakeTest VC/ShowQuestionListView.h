@@ -7,9 +7,13 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "QuizViewController.h"
 
 @interface ShowQuestionListView : UIView
 
--(void)reloadList:(NSArray*)array;
+@property (weak,nonatomic) QuizViewController *vc;
+@property (weak, nonatomic) IBOutlet UIButton *btn;
+
+-(void)reloadList:(NSInteger)questionCount;
 
 @end

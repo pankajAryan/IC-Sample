@@ -10,6 +10,7 @@
 #import "AnswerTableViewCell.h"
 #import "ShowQuestionListView.h"
 #import "DataModels.h"
+#import "QuizResultViewController.h"
 
 @interface QuizViewController () <UITableViewDelegate, UITableViewDataSource> {
     
@@ -46,7 +47,7 @@
     [self showProgressHudWithMessage:@"Please wait.."];
     
     [[FFWebServiceHelper sharedManager]
-     callWebServiceWithUrl:[[FFWebServiceHelper sharedManager] javaServerUrlWithString:QUIZ_ATTEMPT]
+     callWebServiceWithUrl:[[FFWebServiceHelper sharedManager] javaServerUrlWithString:QUIZ_GetQuizForCategoryUpdated]
      withParameter:@{@"studentId":studentID, @"quizId":quizID, @"questionIds":questionIDs, CHECKSOURCE_KEY : CHECKSOURCE_VALUE}
      onCompletion:^(eResponseType responseType, id response)
      {
@@ -84,36 +85,116 @@
     
     UITableViewCell *cell = nil;
     
+    QuesInfoObject *quesInfo = [quizBaseObject.responseArray objectAtIndex:currentQuizIndex-1];
+    
     if (indexPath.row == 0)
     {
         cell = [tableView dequeueReusableCellWithIdentifier:@"questionCell"];
         
         UILabel *question = [cell viewWithTag:21];
-        question.text = @"My name is anthony gonsalvis, which movie is this?";
+        question.text = quesInfo.questionText;
+        
+        return cell;
     }
-    else {
+    else
+    {
         AnswerTableViewCell *optionCell = [tableView dequeueReusableCellWithIdentifier:@"answerCell"];
         
-        optionCell.lblAnswer.text = @"Amar akbar anthony";
-        optionCell.radioButton.tag = indexPath.row;
+        optionCell.radioButton.selected = NO;
+        optionCell.viewOptionContainer.backgroundColor = [UIColor whiteColor];
+        
+        switch (indexPath.row)
+        {
+            case 1:
+                optionCell.lblAnswer.text = quesInfo.option1;
+                
+                if ([quesInfo.optionMarked.uppercaseString isEqualToString:@"A"]) {
+                    
+                    optionCell.radioButton.selected = YES;
+                }
+                
+                break;
+            case 2:
+                optionCell.lblAnswer.text = quesInfo.option2;
+                
+                if ([quesInfo.optionMarked.uppercaseString isEqualToString:@"B"]) {
+                    
+                    optionCell.radioButton.selected = YES;
+                }
+                
+                break;
+            case 3:
+                optionCell.lblAnswer.text = quesInfo.option3;
+                
+                if ([quesInfo.optionMarked.uppercaseString isEqualToString:@"C"]) {
+                    
+                    optionCell.radioButton.selected = YES;
+                }
+                
+                break;
+            case 4:
+                optionCell.lblAnswer.text = quesInfo.option4;
+                
+                if ([quesInfo.optionMarked.uppercaseString isEqualToString:@"D"]) {
+                    
+                    optionCell.radioButton.selected = YES;
+                }
+                
+                break;
+                
+            default:
+                break;
+        }
         
         return optionCell;
     }
-    
-    return cell;
 }
-
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-    
-    //        UIView *bgView = [cell viewWithTag:21];
-    AnswerTableViewCell *cell = [tableView cellForRowAtIndexPath:indexPath];
-    
-    if (!cell.radioButton.isSelected) {
-        cell.radioButton.selected = YES;
-    }
-}
 
+    if (indexPath.row == 0) {
+        return;
+    }
+    
+    NSString *ontionMarked = @"";
+    
+    switch (indexPath.row)
+    {
+        case 1:
+            ontionMarked = @"A";
+            break;
+        case 2:
+            ontionMarked = @"B";
+            break;
+        case 3:
+            ontionMarked = @"C";
+            break;
+        case 4:
+            ontionMarked = @"D";
+            break;
+    }
+    
+    QuesInfoObject *quesInfo = [quizBaseObject.responseArray objectAtIndex:currentQuizIndex-1];
+    
+    [self showProgressHudWithMessage:@"Please wait.."];
+    
+    [[FFWebServiceHelper sharedManager]
+     callWebServiceWithUrl:[[FFWebServiceHelper sharedManager] javaServerUrlWithString:QUIZ_SubmitQuestionAttempt]
+     withParameter:@{@"studentId":studentID, @"quizId":quizID, @"questionId":quesInfo.questionId, @"optionMarked" : ontionMarked, @"correctOption" :quesInfo.correctOption}
+     onCompletion:^(eResponseType responseType, id response)
+     {
+         [self hideProgressHudAfterDelay:0.1];
+         
+         if (responseType == eResponseTypeSuccessJSON)
+         {
+             quesInfo.optionMarked = ontionMarked;
+             [_tableViewQA reloadData];
+         }
+         else{
+             [self showAlert:@"Something went wrong, Please try after sometime."];
+         }
+     }];
+}
 
 #pragma mark - IBActions
 
@@ -123,36 +204,162 @@
     CGFloat x = ScreenWidth;
     self.questionListView.frame = CGRectMake(x, 64, ScreenWidth, ScreenHeight-64);
     [self.view addSubview:self.questionListView];
-    [self.questionListView reloadList:@[@"1",@"1",@"1",@"1"]];
+    self.questionListView.vc = self;
+    [self.questionListView reloadList:quizBaseObject.responseArray.count];
+    self.questionListView.btn.alpha = 0.0;
 
     [UIView animateWithDuration:1.0 animations:^{
         self.questionListView.frame = CGRectMake(0, 64, ScreenWidth, ScreenHeight-64);
+        self.questionListView.btn.alpha = 1.0;
+
     } completion:^(BOOL finished) {
 
     }];
+}
+
+-(void)selctedQuestionIndex:(NSInteger)index {
+    
+    currentQuizIndex = index;
+    
+    if (currentQuizIndex == 1) {
+        _btnPrev.hidden = YES;
+        _lblPrev.hidden = YES;
+        
+        _btnNext.hidden = NO;
+        _lblNext.hidden = NO;
+    }else if (currentQuizIndex == quizBaseObject.responseArray.count) {
+        _btnNext.hidden = YES;
+        _lblNext.hidden = YES;
+        
+        _btnPrev.hidden = NO;
+        _lblPrev.hidden = NO;
+    }else{
+        _btnPrev.hidden = NO;
+        _lblPrev.hidden = NO;
+        
+        _btnNext.hidden = NO;
+        _lblNext.hidden = NO;
+    }
+    
+    QuesInfoObject *quesInfo = [quizBaseObject.responseArray objectAtIndex:currentQuizIndex-1];
+    _lblQuizTitle.text = quesInfo.moduleName;
+    _lblQuizNumber.text = [NSString stringWithFormat:@"%li/%@",currentQuizIndex,[_quizDict objectForKey:@"noOfQuestions"]];
+    [_tableViewQA reloadData];
 }
 
 - (IBAction)answerDidTap:(id)sender {
 }
 
 - (IBAction)nextButtonAction:(id)sender {
+    
+    currentQuizIndex++ ;
+    
+    if (currentQuizIndex == 2) {
+        _btnPrev.hidden = NO;
+        _lblPrev.hidden = NO;
+    }
+    
+    if (currentQuizIndex == quizBaseObject.responseArray.count) {
+        _btnNext.hidden = YES;
+        _lblNext.hidden = YES;
+    }
+    
+    QuesInfoObject *quesInfo = [quizBaseObject.responseArray objectAtIndex:currentQuizIndex-1];
+    _lblQuizTitle.text = quesInfo.moduleName;
+    _lblQuizNumber.text = [NSString stringWithFormat:@"%li/%@",currentQuizIndex,[_quizDict objectForKey:@"noOfQuestions"]];
+    [_tableViewQA reloadData];
 }
 
 - (IBAction)previousButtonAction:(id)sender {
+    
+    currentQuizIndex-- ;
+    
+    if (currentQuizIndex == 1) {
+        _btnPrev.hidden = YES;
+        _lblPrev.hidden = YES;
+    }
+    
+    if (currentQuizIndex == quizBaseObject.responseArray.count -1) {
+        _btnNext.hidden = NO;
+        _lblNext.hidden = NO;
+    }
+    
+    QuesInfoObject *quesInfo = [quizBaseObject.responseArray objectAtIndex:currentQuizIndex-1];
+    _lblQuizTitle.text = quesInfo.moduleName;
+    _lblQuizNumber.text = [NSString stringWithFormat:@"%li/%@",currentQuizIndex,[_quizDict objectForKey:@"noOfQuestions"]];
+    [_tableViewQA reloadData];
 }
 
 - (IBAction)resetButtonAction:(id)sender {
+    
+    QuesInfoObject *quesInfo = [quizBaseObject.responseArray objectAtIndex:currentQuizIndex-1];
+    
+    if (quesInfo.optionMarked == nil) {
+        return;
+    }
+    
+    [self showProgressHudWithMessage:@"Please wait.."];
+    
+    [[FFWebServiceHelper sharedManager]
+     callWebServiceWithUrl:[[FFWebServiceHelper sharedManager] javaServerUrlWithString:QUIZ_clearQuestionAttempt]
+     withParameter:@{@"studentId":studentID, @"quizId":quizID, @"questionId":quesInfo.questionId}
+     onCompletion:^(eResponseType responseType, id response)
+     {
+         [self hideProgressHudAfterDelay:0.1];
+         
+         if (responseType == eResponseTypeSuccessJSON)
+         {
+             quesInfo.optionMarked = nil;
+             [_tableViewQA reloadData];
+         }
+         else{
+             [self showAlert:@"Something went wrong, Please try after sometime."];
+         }
+     }];
 }
 
 - (IBAction)submitButtonAction:(id)sender {
     
-    //showDelegatedAlert with Title: @"Submit/End Quiz"
-// And message:@"Are you sure you want to submit and end the quiz ?"
-    // No and Yes will be buttons
+    UIAlertController *alertController = [UIAlertController alertControllerWithTitle:@"Submit/End Quiz" message:@"Are you sure you want to submit and end the quiz ?" preferredStyle:UIAlertControllerStyleAlert];
     
-//    QuizResultViewController *vc = (QuizResultViewController *)[UIViewController instantiateViewControllerWithIdentifier:@"QuizResultViewController" fromStoryboard:@"Home"];
-//    vc.quizDict = self.quizDict;
-//    [self.navigationController pushViewController:vc animated:YES];
+    [alertController addAction:[UIAlertAction actionWithTitle:@"No" style:UIAlertActionStyleDefault handler:^(UIAlertAction *action) {
+        [alertController dismissViewControllerAnimated:YES completion:nil];
+        
+    }]];
+    
+    [alertController addAction:[UIAlertAction actionWithTitle:@"Yes" style:UIAlertActionStyleDefault handler:^(UIAlertAction *action) {
+        
+        [alertController dismissViewControllerAnimated:YES completion:nil];
+        
+        [self showProgressHudWithMessage:@"Please wait.."];
+        
+        [[FFWebServiceHelper sharedManager]
+         callWebServiceWithUrl:[[FFWebServiceHelper sharedManager] javaServerUrlWithString:QUIZ_submitQuiz]
+         withParameter:@{@"studentId":studentID, @"quizId":quizID}
+         onCompletion:^(eResponseType responseType, id response)
+         {
+             [self hideProgressHudAfterDelay:0.1];
+             
+             if (responseType == eResponseTypeSuccessJSON)
+             {
+                 QuizResultViewController *vc = (QuizResultViewController *)[UIViewController instantiateViewControllerWithIdentifier:@"QuizResultViewController" fromStoryboard:@"Home"];
+                 vc.quizDict = self.quizDict;
+                 
+                 NSMutableArray *vcArray = self.navigationController.viewControllers.mutableCopy;
+                 [vcArray removeLastObject];
+                 [vcArray removeLastObject];
+                 [vcArray addObject:vc];
+                 self.navigationController.viewControllers = vcArray;
+             }
+             else{
+                 [self showAlert:@"Something went wrong, Please try after sometime."];
+             }
+         }];
+        
+    }]];
+    
+    [self presentViewController:alertController animated:YES completion:nil];
+    
 }
 
 @end

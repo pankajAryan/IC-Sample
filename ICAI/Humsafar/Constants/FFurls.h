@@ -45,6 +45,14 @@
 #define QUIZ_ATTEMPT           @"getQuizAttempt"
 
 
+#define QUIZ_GetQuizForCategoryUpdated           @"getQuizForCategoryUpdated"
+#define QUIZ_SubmitQuestionAttempt               @"submitQuestionAttempt"
+#define QUIZ_clearQuestionAttempt                @"clearQuestionAttempt"
+#define QUIZ_submitQuiz                          @"submitQuiz"
+
+
+
+
 
 // WEBVIEW Screens
 

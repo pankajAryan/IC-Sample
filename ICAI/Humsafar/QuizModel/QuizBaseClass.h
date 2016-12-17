@@ -15,6 +15,12 @@
 @property (nonatomic, strong) NSString *errorMessage;
 @property (nonatomic, strong) NSArray *responseArray;
 
+@property (nonatomic, strong) NSString *categoryId;
+@property (nonatomic, strong) NSString *quizId;
+@property (nonatomic, strong) NSString *studentId;
+@property (nonatomic, strong) NSString *timeRemaining;
+
+
 + (instancetype)modelObjectWithDictionary:(NSDictionary *)dict;
 - (instancetype)initWithDictionary:(NSDictionary *)dict;
 - (NSDictionary *)dictionaryRepresentation;

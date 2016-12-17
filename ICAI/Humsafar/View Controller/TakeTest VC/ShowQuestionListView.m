@@ -10,23 +10,22 @@
 
 @interface ShowQuestionListView ()<UITableViewDataSource,UITableViewDelegate>
 
-@property (nonatomic) NSArray *array;
-
+@property (assign,nonatomic) NSInteger questionCount;
 @property (weak, nonatomic) IBOutlet UITableView *tblView;
 
 @end
 
 @implementation ShowQuestionListView
 
--(void)reloadList:(NSArray*)array{
+-(void)reloadList:(NSInteger)questionCount{
     
-    self.array = array;
+    self.questionCount = questionCount;
     self.tblView.delegate = self;
     self.tblView.dataSource = self;
     self.tblView.tableFooterView = [UIView new];
     [self.tblView reloadData];
 }
-- (IBAction)tapGesture:(UITapGestureRecognizer *)sender {
+- (IBAction)tapOnBtn:(UIButton *)sender {
     
     [self removeFromSuperview];
 }
@@ -35,7 +34,7 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    return [self.array count];
+    return self.questionCount;
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
@@ -50,13 +49,17 @@
     if (cell == nil) {
         cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"qcList"];
     }
-    cell.textLabel.text = @"Rahul";
+    cell.textLabel.text = [NSString stringWithFormat:@"%ld",indexPath.row+1];
     
     return cell;
 }
 
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
+ 
+    [self.vc selctedQuestionIndex:indexPath.row+1];
+    [self removeFromSuperview];
+
 }
 
 

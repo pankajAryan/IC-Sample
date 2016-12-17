@@ -1655,7 +1655,7 @@ Website: www.icai.org </string>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LWt-UJ-n5r">
+                            <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LWt-UJ-n5r">
                                 <constraints>
                                     <constraint firstAttribute="height" constant="40" id="6My-7z-I6W"/>
                                     <constraint firstAttribute="width" constant="40" id="7wD-5O-Nsb"/>
@@ -1665,7 +1665,7 @@ Website: www.icai.org </string>
                                     <action selector="previousButtonAction:" destination="BUW-DU-rXJ" eventType="touchUpInside" id="Hqk-zF-FdH"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Previous" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6DJ-HJ-WEp">
+                            <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Previous" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6DJ-HJ-WEp">
                                 <constraints>
                                     <constraint firstAttribute="height" constant="16" id="Uwh-9Q-Q0I"/>
                                     <constraint firstAttribute="width" constant="52" id="aTs-VF-Vz7"/>
@@ -1714,6 +1714,10 @@ Website: www.icai.org </string>
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="btnNext" destination="DNy-nF-Xch" id="L4B-OY-DzM"/>
+                        <outlet property="btnPrev" destination="LWt-UJ-n5r" id="eQd-js-c5p"/>
+                        <outlet property="lblNext" destination="N3r-Tw-QGX" id="UCv-JG-Wn0"/>
+                        <outlet property="lblPrev" destination="6DJ-HJ-WEp" id="f0T-kE-uU8"/>
                         <outlet property="lblQuizNumber" destination="SrD-1i-BrQ" id="z5H-um-GHH"/>
                         <outlet property="lblQuizTitle" destination="EWZ-dG-5lM" id="Dqt-cL-mw2"/>
                         <outlet property="lblTime" destination="Pn9-Ok-TWR" id="Pj0-yc-Sec"/>
@@ -1726,28 +1730,33 @@ Website: www.icai.org </string>
                     <rect key="frame" x="0.0" y="0.0" width="240" height="344"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <subviews>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="c9S-Dp-2rN">
+                            <color key="backgroundColor" white="0.0" alpha="0.30599850171232879" colorSpace="calibratedWhite"/>
+                            <connections>
+                                <action selector="tapOnBtn:" destination="CTe-6I-wUm" eventType="touchUpInside" id="5DI-fe-I5M"/>
+                            </connections>
+                        </button>
                         <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="wHv-mp-fwf">
                             <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         </tableView>
                     </subviews>
-                    <color key="backgroundColor" white="0.0" alpha="0.5" colorSpace="calibratedWhite"/>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                     <gestureRecognizers/>
                     <constraints>
+                        <constraint firstItem="c9S-Dp-2rN" firstAttribute="leading" secondItem="CTe-6I-wUm" secondAttribute="leading" id="1uh-48-YeV"/>
                         <constraint firstItem="wHv-mp-fwf" firstAttribute="width" secondItem="CTe-6I-wUm" secondAttribute="width" multiplier="0.35" id="3uD-Qy-gLr"/>
+                        <constraint firstItem="c9S-Dp-2rN" firstAttribute="top" secondItem="CTe-6I-wUm" secondAttribute="top" id="81P-gw-FUg"/>
                         <constraint firstAttribute="trailing" secondItem="wHv-mp-fwf" secondAttribute="trailing" id="Sf1-4Q-9qS"/>
+                        <constraint firstItem="wHv-mp-fwf" firstAttribute="leading" secondItem="c9S-Dp-2rN" secondAttribute="trailing" id="VyQ-r0-k4W"/>
                         <constraint firstItem="wHv-mp-fwf" firstAttribute="top" secondItem="CTe-6I-wUm" secondAttribute="top" id="W2D-bL-OvZ"/>
+                        <constraint firstAttribute="bottom" secondItem="c9S-Dp-2rN" secondAttribute="bottom" id="fwv-ca-glY"/>
                         <constraint firstAttribute="bottom" secondItem="wHv-mp-fwf" secondAttribute="bottom" id="jH0-0y-bls"/>
                     </constraints>
                     <connections>
+                        <outlet property="btn" destination="c9S-Dp-2rN" id="PSU-6X-6cG"/>
                         <outlet property="tblView" destination="wHv-mp-fwf" id="7MF-xf-k8c"/>
-                        <outletCollection property="gestureRecognizers" destination="wJ3-I8-apM" appends="YES" id="ffd-wI-MBD"/>
                     </connections>
                 </view>
-                <tapGestureRecognizer id="wJ3-I8-apM">
-                    <connections>
-                        <action selector="tapGesture:" destination="CTe-6I-wUm" id="La9-Xj-lNm"/>
-                    </connections>
-                </tapGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="2881.875" y="228.16901408450704"/>
         </scene>

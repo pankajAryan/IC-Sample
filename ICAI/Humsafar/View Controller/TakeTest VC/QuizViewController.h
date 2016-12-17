@@ -27,5 +27,6 @@
 - (IBAction)resetButtonAction:(id)sender;
 - (IBAction)submitButtonAction:(id)sender;
 
+-(void)selctedQuestionIndex:(NSInteger)index;
 
 @end
