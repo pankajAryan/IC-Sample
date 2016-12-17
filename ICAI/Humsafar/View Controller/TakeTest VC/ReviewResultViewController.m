@@ -20,7 +20,33 @@
     // Do any additional setup after loading the view.
     [_tableViewQA setRowHeight:UITableViewAutomaticDimension];
     _tableViewQA.estimatedRowHeight = 44;
-    // questionIds
+    
+    NSString *studentID = [_quizDict objectForKey:@"studentId"];
+    NSString *quizID = [_quizDict objectForKey:@"quizId"];
+    NSString *questionIDs = [_quizDict objectForKey:@"questionIds"];
+    
+    [self showProgressHudWithMessage:@"Please wait.."];
+    
+    [[FFWebServiceHelper sharedManager]
+                 callWebServiceWithUrl:[[FFWebServiceHelper sharedManager] javaServerUrlWithString:QUIZ_ATTEMPT]
+                 withParameter:@{@"studentId":studentID, @"quizId":quizID, @"questionIds":questionIDs, CHECKSOURCE_KEY : CHECKSOURCE_VALUE}
+                 onCompletion:^(eResponseType responseType, id response)
+                 {
+                     [self hideProgressHudAfterDelay:0.1];
+                     
+                     if (responseType == eResponseTypeSuccessJSON)
+                     {
+                         NSDictionary *quizResultInfo = [response objectForKey:@"responseObject"];
+                         
+//                         _lblCorrect.text = [quizResultInfo objectForKey:@"correct"];
+//                         _lblIncorrect.text = [quizResultInfo objectForKey:@"incorrect"];
+//                         _lblUnattempted.text = [quizResultInfo objectForKey:@"notAttempted"];
+//                         _lblScore.text = [quizResultInfo objectForKey:@"score"];
+                     }
+                     else{
+                         [self showAlert:@"Something went wrong, Please try after sometime."];
+                     }
+                 }];
 }
 
 - (IBAction)popVCAction:(id)sender {
