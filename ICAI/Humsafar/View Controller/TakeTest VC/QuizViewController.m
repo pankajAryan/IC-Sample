@@ -149,6 +149,10 @@
     //showDelegatedAlert with Title: @"Submit/End Quiz"
 // And message:@"Are you sure you want to submit and end the quiz ?"
     // No and Yes will be buttons
+    
+//    QuizResultViewController *vc = (QuizResultViewController *)[UIViewController instantiateViewControllerWithIdentifier:@"QuizResultViewController" fromStoryboard:@"Home"];
+//    vc.quizDict = self.quizDict;
+//    [self.navigationController pushViewController:vc animated:YES];
 }
 
 @end
