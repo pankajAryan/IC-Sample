@@ -159,16 +159,16 @@
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="VKc-P1-NX8">
-                                <rect key="frame" x="0.0" y="61" width="320" height="83"/>
+                                <rect key="frame" x="0.0" y="61" width="320" height="80"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="1000" horizontalCompressionResistancePriority="251" verticalCompressionResistancePriority="1000" text="Fundamentals of accounting" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EPA-nF-u5U">
-                                        <rect key="frame" x="8" y="5" width="304" height="22"/>
+                                        <rect key="frame" x="8" y="5" width="304" height="19"/>
                                         <fontDescription key="fontDescription" name="OpenSans-Bold" family="Open Sans" pointSize="16"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Qusetions" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sQw-CM-wL8">
-                                        <rect key="frame" x="108.5" y="31" width="103" height="18"/>
+                                        <rect key="frame" x="108.5" y="28" width="103" height="18"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="18" id="QYa-j2-ZqN"/>
                                             <constraint firstAttribute="width" constant="103" id="bf5-72-dvk"/>
@@ -178,7 +178,7 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1/40" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qHf-sa-0wT">
-                                        <rect key="frame" x="108.5" y="49" width="103" height="28"/>
+                                        <rect key="frame" x="108.5" y="46" width="103" height="28"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="103" id="PMA-7J-Ho0"/>
                                             <constraint firstAttribute="height" constant="28" id="h3X-h3-H9W"/>
@@ -201,7 +201,7 @@
                                 </constraints>
                             </view>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Dpk-DC-w9y">
-                                <rect key="frame" x="0.0" y="144" width="320" height="352"/>
+                                <rect key="frame" x="0.0" y="141" width="320" height="355"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="questionCell" id="9hm-3f-C6y">
@@ -287,7 +287,7 @@
                                         <connections>
                                             <outlet property="lblAnswer" destination="2zK-ca-uio" id="Cbp-WX-6Ew"/>
                                             <outlet property="radioButton" destination="PSQ-FH-6Fh" id="LAg-R2-NBl"/>
-                                            <outlet property="viewOptionContainer" destination="tcA-5i-f6q" id="yMu-Wk-UFt"/>
+                                            <outlet property="viewOptionContainer" destination="tcp-BF-BfI" id="SzW-B3-YB5"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -341,7 +341,7 @@
                                 </connections>
                             </button>
                             <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Reset" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ao6-kX-JwY">
-                                <rect key="frame" x="118" y="546" width="44" height="16"/>
+                                <rect key="frame" x="118" y="543" width="44" height="16"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="44" id="Zg0-xW-h9C"/>
                                     <constraint firstAttribute="height" constant="16" id="tcP-Fn-lNc"/>
@@ -362,7 +362,7 @@
                                 </connections>
                             </button>
                             <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Previous" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="01n-K2-5TC">
-                                <rect key="frame" x="14" y="546" width="52" height="16"/>
+                                <rect key="frame" x="14" y="543" width="52" height="16"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="52" id="HI5-ma-O29"/>
                                     <constraint firstAttribute="height" constant="16" id="dYU-z0-qIc"/>
