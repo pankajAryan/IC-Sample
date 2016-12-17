@@ -98,7 +98,7 @@
                 optionCell.lblAnswer.text = quesInfo.option1;
                 
                 if ([quesInfo.correctOption.uppercaseString isEqualToString:@"A"]) {
-                    optionCell.viewOptionContainer.backgroundColor = [UIColor colorFromHexString:greenBGColor];
+                    optionCell.viewOptionContainer.backgroundColor = [UIColor greenBGColor];
                 }
                 
                 if ([quesInfo.optionMarked.uppercaseString isEqualToString:@"A"]) {
@@ -106,7 +106,7 @@
                     optionCell.radioButton.selected = YES;
                     
                     if (![quesInfo.optionMarked isEqualToString:quesInfo.correctOption]) {
-                        optionCell.viewOptionContainer.backgroundColor = [UIColor colorFromHexString:redBGColor];
+                        optionCell.viewOptionContainer.backgroundColor = [UIColor redBGColor];
                     }
                 }
 
@@ -115,7 +115,7 @@
                 optionCell.lblAnswer.text = quesInfo.option2;
                 
                 if ([quesInfo.correctOption.uppercaseString isEqualToString:@"B"]) {
-                    optionCell.viewOptionContainer.backgroundColor = [UIColor colorFromHexString:greenBGColor];
+                    optionCell.viewOptionContainer.backgroundColor = [UIColor greenBGColor];
                 }
                 
                 if ([quesInfo.optionMarked.uppercaseString isEqualToString:@"B"]) {
@@ -123,7 +123,7 @@
                     optionCell.radioButton.selected = YES;
                     
                     if (![quesInfo.optionMarked isEqualToString:quesInfo.correctOption]) {
-                        optionCell.viewOptionContainer.backgroundColor = [UIColor colorFromHexString:redBGColor];
+                        optionCell.viewOptionContainer.backgroundColor = [UIColor redBGColor];
                     }
                 }
                 
@@ -132,7 +132,7 @@
                 optionCell.lblAnswer.text = quesInfo.option3;
                 
                 if ([quesInfo.correctOption.uppercaseString isEqualToString:@"C"]) {
-                    optionCell.viewOptionContainer.backgroundColor = [UIColor colorFromHexString:greenBGColor];
+                    optionCell.viewOptionContainer.backgroundColor = [UIColor greenBGColor];
                 }
                 
                 if ([quesInfo.optionMarked.uppercaseString isEqualToString:@"C"]) {
@@ -140,7 +140,7 @@
                     optionCell.radioButton.selected = YES;
                     
                     if (![quesInfo.optionMarked isEqualToString:quesInfo.correctOption]) {
-                        optionCell.viewOptionContainer.backgroundColor = [UIColor colorFromHexString:redBGColor];
+                        optionCell.viewOptionContainer.backgroundColor = [UIColor redBGColor];
                     }
                 }
                 
@@ -149,7 +149,7 @@
                 optionCell.lblAnswer.text = quesInfo.option4;
                 
                 if ([quesInfo.correctOption.uppercaseString isEqualToString:@"D"]) {
-                    optionCell.viewOptionContainer.backgroundColor = [UIColor colorFromHexString:greenBGColor];
+                    optionCell.viewOptionContainer.backgroundColor = [UIColor greenBGColor];
                 }
                 
                 if ([quesInfo.optionMarked.uppercaseString isEqualToString:@"D"]) {
@@ -157,7 +157,7 @@
                     optionCell.radioButton.selected = YES;
                     
                     if (![quesInfo.optionMarked isEqualToString:quesInfo.correctOption]) {
-                        optionCell.viewOptionContainer.backgroundColor = [UIColor colorFromHexString:redBGColor];
+                        optionCell.viewOptionContainer.backgroundColor = [UIColor redBGColor];
                     }
                 }
                 
