@@ -22,4 +22,8 @@
 
 +(UIColor *)ffTextFieldPlaceholderColor;
 
++(UIColor *)greenBGColor;
+
++(UIColor *)redBGColor;
+
 @end

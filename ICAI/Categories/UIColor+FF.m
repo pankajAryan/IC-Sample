@@ -21,6 +21,17 @@
     return [UIColor colorWithRed:((rgbValue & 0xFF0000) >> 16)/255.0 green:((rgbValue & 0xFF00) >> 8)/255.0 blue:(rgbValue & 0xFF)/255.0 alpha:1.0];
 }
 
++(UIColor *)greenBGColor
+{
+    return [UIColor colorWithRed:150.0/255 green:229.0/255 blue:184.0/255 alpha:1.0]; // 150,229,184
+}
+
++(UIColor *)redBGColor
+{
+    return [UIColor colorWithRed:243.0/255 green:165.0/255 blue:157.0/255 alpha:1.0]; // 243,165,157
+}
+
+
 +(UIColor *)ffOrangeColor
 {
     return [UIColor colorWithRed:255.0/255 green:150.0/255 blue:0/255 alpha:1.0];
