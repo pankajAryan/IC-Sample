@@ -1,11 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11542" systemVersion="16A323" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
-    <device id="retina4_0" orientation="portrait">
-        <adaptation id="fullscreen"/>
-    </device>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11201" systemVersion="16A323" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11524"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
         <capability name="Alignment constraints to the first baseline" minToolsVersion="6.0"/>
         <capability name="Alignment constraints with different attributes" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
@@ -33,57 +30,48 @@
                         <viewControllerLayoutGuide type="bottom" id="GMR-ol-0Ni"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="m3V-p2-hBG">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="profile_bg" translatesAutoresizingMaskIntoConstraints="NO" id="zhh-jZ-fFN">
-                                <rect key="frame" x="0.0" y="0.0" width="240" height="100"/>
-                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="profile_bg" translatesAutoresizingMaskIntoConstraints="NO" id="zhh-jZ-fFN"/>
                             <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleAspectFit" image="ProfileImagePlaceholder" translatesAutoresizingMaskIntoConstraints="NO" id="DVX-Ze-1Yu">
-                                <rect key="frame" x="20" y="16" width="68" height="68"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="68" id="jq8-pQ-rfo"/>
                                     <constraint firstAttribute="width" constant="68" id="tGL-wi-vDD"/>
                                 </constraints>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Welcome" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="c2c-ak-dY3">
-                                <rect key="frame" x="103" y="26" width="64.5" height="20.5"/>
                                 <fontDescription key="fontDescription" name="OpenSans" family="Open Sans" pointSize="15"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Monika Singh" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MDq-Tq-ReY">
-                                <rect key="frame" x="103" y="46.5" width="153.5" height="23.5"/>
                                 <fontDescription key="fontDescription" name="OpenSans-Semibold" family="Open Sans" pointSize="17"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="51" sectionHeaderHeight="1" sectionFooterHeight="1" translatesAutoresizingMaskIntoConstraints="NO" id="Ogu-ET-guo">
-                                <rect key="frame" x="0.0" y="120" width="240" height="448"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="LeftMenuCell" id="BNZ-V5-oEg">
-                                        <rect key="frame" x="0.0" y="1" width="240" height="51"/>
+                                        <rect key="frame" x="0.0" y="1" width="282" height="51"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="BNZ-V5-oEg" id="ssx-fF-ITG">
-                                            <rect key="frame" x="0.0" y="0.0" width="240" height="50"/>
+                                            <frame key="frameInset" width="282" height="50"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" tag="21" contentMode="scaleAspectFit" image="User_notification" translatesAutoresizingMaskIntoConstraints="NO" id="ZQn-2b-UFm">
-                                                    <rect key="frame" x="15" y="14" width="24" height="24"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="24" id="tzM-5f-yYI"/>
                                                         <constraint firstAttribute="height" constant="24" id="vPC-sm-EUT"/>
                                                     </constraints>
                                                 </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" tag="22" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mYm-C9-n6J">
-                                                    <rect key="frame" x="54" y="17" width="178" height="17"/>
                                                     <fontDescription key="fontDescription" type="system" weight="medium" pointSize="14"/>
                                                     <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wYV-uZ-hZE">
-                                                    <rect key="frame" x="0.0" y="50" width="240" height="1"/>
                                                     <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="1" id="ZSL-oL-ssM"/>
@@ -147,34 +135,29 @@
                         <viewControllerLayoutGuide type="bottom" id="vUy-iA-Uaf"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="4Fv-Fj-WPa">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="sdF-3L-rag">
-                                <rect key="frame" x="0.0" y="0.0" width="320" height="60"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="center" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RKL-2U-O2I">
-                                        <rect key="frame" x="0.0" y="19" width="56" height="40"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="56" id="tWO-XO-5Ng"/>
                                         </constraints>
                                         <state key="normal" image="menu"/>
                                     </button>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Home" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HMB-KF-wjT">
-                                        <rect key="frame" x="57" y="26" width="52.5" height="25"/>
                                         <fontDescription key="fontDescription" name="OpenSans-Semibold" family="Open Sans" pointSize="18"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <button opaque="NO" contentMode="scaleAspectFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vr1-Ft-Mcj">
-                                        <rect key="frame" x="234" y="22.5" width="32" height="32"/>
                                         <state key="normal" image="Notification_BarButton"/>
                                         <connections>
                                             <segue destination="huF-kV-eMp" kind="show" id="utN-wY-9Xo"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="T3p-sk-Yp8">
-                                        <rect key="frame" x="274" y="22.5" width="32" height="32"/>
                                         <state key="normal" image="contact_us"/>
                                         <connections>
                                             <segue destination="oIH-l3-q4h" kind="show" id="bwb-QB-FIz"/>
@@ -195,23 +178,18 @@
                                     <constraint firstAttribute="trailing" secondItem="T3p-sk-Yp8" secondAttribute="trailing" constant="14" id="xGn-O0-9AJ"/>
                                 </constraints>
                             </view>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Main_bg" translatesAutoresizingMaskIntoConstraints="NO" id="30I-th-LU1">
-                                <rect key="frame" x="0.0" y="60" width="320" height="508"/>
-                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Main_bg" translatesAutoresizingMaskIntoConstraints="NO" id="30I-th-LU1"/>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logo_login" translatesAutoresizingMaskIntoConstraints="NO" id="ZI0-vP-rtX">
-                                <rect key="frame" x="92" y="68" width="136" height="149"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="149" id="F33-Ks-UfZ"/>
                                 </constraints>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="1000" horizontalCompressionResistancePriority="251" verticalCompressionResistancePriority="1000" text="Organized by CareerCounselling Committee, ICAI" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ryr-ig-FGl">
-                                <rect key="frame" x="26" y="237" width="268" height="38.5"/>
                                 <fontDescription key="fontDescription" name="OpenSans" family="Open Sans" pointSize="14"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="2016" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Bu1-GB-Ql4">
-                                <rect key="frame" x="125" y="212" width="70" height="21"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="70" id="cry-V8-VUp"/>
                                     <constraint firstAttribute="height" constant="21" id="rHH-55-zyZ"/>
@@ -221,16 +199,11 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="GcR-1p-YQJ">
-                                <rect key="frame" x="8" y="285.5" width="304" height="274"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fXf-Il-Rxf">
-                                        <rect key="frame" x="8" y="8" width="140" height="124"/>
                                         <subviews>
-                                            <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" image="user" translatesAutoresizingMaskIntoConstraints="NO" id="DiH-4U-cBe">
-                                                <rect key="frame" x="33.5" y="8" width="73" height="73"/>
-                                            </imageView>
+                                            <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" image="user" translatesAutoresizingMaskIntoConstraints="NO" id="DiH-4U-cBe"/>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="My Profile" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="A2S-EO-BcZ">
-                                                <rect key="frame" x="21" y="85" width="98" height="24"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" constant="98" id="XFC-D6-Erv"/>
                                                     <constraint firstAttribute="height" constant="24" id="YMm-ey-hFY"/>
@@ -239,7 +212,6 @@
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JKu-kA-d6W">
-                                                <rect key="frame" x="33.5" y="8" width="73" height="73"/>
                                                 <connections>
                                                     <action selector="myProfileButtonAction:" destination="nD6-Qy-aWc" eventType="touchUpInside" id="a6C-Va-PRy"/>
                                                 </connections>
@@ -259,13 +231,9 @@
                                         </constraints>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wzK-J4-oRD">
-                                        <rect key="frame" x="156" y="8" width="140" height="124"/>
                                         <subviews>
-                                            <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" image="clock" translatesAutoresizingMaskIntoConstraints="NO" id="Jpn-7J-0ga">
-                                                <rect key="frame" x="33.5" y="8" width="73" height="73"/>
-                                            </imageView>
+                                            <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" image="clock" translatesAutoresizingMaskIntoConstraints="NO" id="Jpn-7J-0ga"/>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Take Test" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NN6-ud-2ZX">
-                                                <rect key="frame" x="21" y="85" width="98" height="24"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="24" id="B9u-Gm-t2P"/>
                                                     <constraint firstAttribute="width" constant="98" id="anY-eW-HBB"/>
@@ -274,7 +242,6 @@
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="McT-hz-Lad">
-                                                <rect key="frame" x="33.5" y="8" width="73" height="73"/>
                                                 <connections>
                                                     <action selector="takeTestAction:" destination="nD6-Qy-aWc" eventType="touchUpInside" id="pre-rs-cbw"/>
                                                 </connections>
@@ -294,13 +261,9 @@
                                         </constraints>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="oQ4-wh-Ux6">
-                                        <rect key="frame" x="8" y="138" width="140" height="124"/>
                                         <subviews>
-                                            <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" image="ruppe" translatesAutoresizingMaskIntoConstraints="NO" id="f7w-4n-GUM">
-                                                <rect key="frame" x="33.5" y="-1" width="73" height="73"/>
-                                            </imageView>
+                                            <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" image="ruppe" translatesAutoresizingMaskIntoConstraints="NO" id="f7w-4n-GUM"/>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Enrollment Status" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NUM-2O-jCj">
-                                                <rect key="frame" x="13" y="72" width="114" height="48"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" constant="114" id="dnf-mN-CTo"/>
                                                 </constraints>
@@ -308,7 +271,6 @@
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ks6-Wq-Irj">
-                                                <rect key="frame" x="33.5" y="-1" width="73" height="73"/>
                                                 <connections>
                                                     <segue destination="rCx-25-slN" kind="show" id="E8s-cW-rpO"/>
                                                 </connections>
@@ -328,13 +290,9 @@
                                         </constraints>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Xni-0P-G6w">
-                                        <rect key="frame" x="156" y="138" width="140" height="124"/>
                                         <subviews>
-                                            <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" image="application" translatesAutoresizingMaskIntoConstraints="NO" id="lms-ib-2FB">
-                                                <rect key="frame" x="33.5" y="-1" width="73" height="73"/>
-                                            </imageView>
+                                            <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" image="application" translatesAutoresizingMaskIntoConstraints="NO" id="lms-ib-2FB"/>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Application Form" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Fcl-38-BZl">
-                                                <rect key="frame" x="13" y="72" width="114" height="48"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" constant="114" id="jPp-e3-dkG"/>
                                                 </constraints>
@@ -342,7 +300,6 @@
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UaM-Lz-n94">
-                                                <rect key="frame" x="33.5" y="-1" width="73" height="73"/>
                                                 <connections>
                                                     <action selector="applicationFormDidTap:" destination="nD6-Qy-aWc" eventType="touchUpInside" id="v7m-vU-90F"/>
                                                 </connections>
@@ -423,14 +380,12 @@
                         <viewControllerLayoutGuide type="bottom" id="oVb-Ok-SQJ"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="8C7-X1-Sf2">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="UOn-7i-doj">
-                                <rect key="frame" x="0.0" y="0.0" width="320" height="60"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Kyw-81-daZ">
-                                        <rect key="frame" x="0.0" y="17" width="56" height="40"/>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="56" id="Z3J-G6-5ZG"/>
@@ -441,7 +396,6 @@
                                         </connections>
                                     </button>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Test Instructions" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dBX-Ge-QLL">
-                                        <rect key="frame" x="57" y="22" width="197" height="29"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="197" id="KbV-P3-pfy"/>
                                         </constraints>
@@ -462,7 +416,6 @@
                                 </constraints>
                             </view>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kbb-xx-Xbl">
-                                <rect key="frame" x="34" y="502" width="252" height="40"/>
                                 <color key="backgroundColor" red="0.96862745100000003" green="0.0" blue="0.032632492829999998" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="40" id="AWz-Co-lz9"/>
@@ -481,7 +434,6 @@
                                 </connections>
                             </button>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" textAlignment="natural" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dgP-PM-wqm">
-                                <rect key="frame" x="8" y="68" width="304" height="414"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -517,21 +469,18 @@
                         <viewControllerLayoutGuide type="bottom" id="TsU-Et-2bQ"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="DWD-be-FMB">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="MyA-bD-XwK">
-                                <rect key="frame" x="0.0" y="0.0" width="320" height="60"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="center" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jMo-xw-xGE">
-                                        <rect key="frame" x="0.0" y="20" width="56" height="41"/>
                                         <state key="normal" image="Back"/>
                                         <connections>
                                             <action selector="popVCAction:" destination="huF-kV-eMp" eventType="touchUpInside" id="LGc-Nc-NHU"/>
                                         </connections>
                                     </button>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Notifications" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ayq-0H-Ayy">
-                                        <rect key="frame" x="57" y="28" width="121" height="25"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="121" id="ewm-SB-p4K"/>
                                             <constraint firstAttribute="height" constant="25" id="vwX-Uj-z2R"/>
@@ -553,21 +502,19 @@
                                 </constraints>
                             </view>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="94" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="cgq-2d-FqL">
-                                <rect key="frame" x="0.0" y="60" width="320" height="508"/>
                                 <color key="backgroundColor" red="0.96078431372549022" green="0.96078431372549022" blue="0.96078431372549022" alpha="1" colorSpace="calibratedRGB"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" restorationIdentifier="NotificationTableViewCell" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="NotificationTableViewCell" id="5DH-eX-U5h" customClass="NotificationTableViewCell">
-                                        <rect key="frame" x="0.0" y="28" width="320" height="94"/>
+                                        <rect key="frame" x="0.0" y="28" width="375" height="94"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="5DH-eX-U5h" id="G2X-xc-vi8">
-                                            <rect key="frame" x="0.0" y="0.0" width="320" height="94"/>
+                                            <frame key="frameInset" width="375" height="94"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6h2-qw-Mxw">
-                                                    <rect key="frame" x="10" y="10" width="300" height="82"/>
                                                     <subviews>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="1000" verticalCompressionResistancePriority="1000" text="Question title here" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KiZ-Yj-YMo">
-                                                            <rect key="frame" x="8" y="8" width="284" height="20"/>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="1000" verticalCompressionResistancePriority="1000" misplaced="YES" text="Question title here" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KiZ-Yj-YMo">
+                                                            <frame key="frameInset" minX="8" minY="8" width="284" height="20"/>
                                                             <fontDescription key="fontDescription" name="OpenSans-Semibold" family="Open Sans" pointSize="14"/>
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
@@ -575,8 +522,8 @@
                                                                 <userDefinedRuntimeAttribute type="string" keyPath="text" value=""/>
                                                             </userDefinedRuntimeAttributes>
                                                         </label>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="1000" verticalCompressionResistancePriority="1000" text="test abc" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7kk-tS-Stf">
-                                                            <rect key="frame" x="9" y="34" width="282" height="18"/>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="1000" verticalCompressionResistancePriority="1000" misplaced="YES" text="test abc" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7kk-tS-Stf">
+                                                            <frame key="frameInset" minX="9" minY="34" width="282" height="18"/>
                                                             <fontDescription key="fontDescription" name="OpenSans" family="Open Sans" pointSize="13"/>
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
@@ -585,7 +532,6 @@
                                                             </userDefinedRuntimeAttributes>
                                                         </label>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Posted on: " lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lgF-c5-QTX">
-                                                            <rect key="frame" x="9" y="58" width="59" height="15"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="width" constant="59" id="3Dg-9b-8xf"/>
                                                                 <constraint firstAttribute="height" constant="15" id="NCb-9o-BCu"/>
@@ -595,7 +541,6 @@
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xRl-dD-at1">
-                                                            <rect key="frame" x="69" y="58" width="190" height="15"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="width" constant="190" id="3nr-T5-e7j"/>
                                                                 <constraint firstAttribute="height" constant="15" id="rH9-Hk-Nx4"/>
@@ -672,21 +617,18 @@
                         <viewControllerLayoutGuide type="bottom" id="bLg-Sc-Psf"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="RBf-re-tE1">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Tud-mU-q1e">
-                                <rect key="frame" x="0.0" y="0.0" width="320" height="60"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="center" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0He-Is-cE4">
-                                        <rect key="frame" x="0.0" y="20" width="56" height="41"/>
                                         <state key="normal" image="Back"/>
                                         <connections>
                                             <action selector="popVCAction:" destination="oIH-l3-q4h" eventType="touchUpInside" id="J0w-iF-qup"/>
                                         </connections>
                                     </button>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Contact Us" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="951-6R-Bf6">
-                                        <rect key="frame" x="57" y="28" width="121" height="25"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="121" id="DGP-fn-6GH"/>
                                             <constraint firstAttribute="height" constant="25" id="YH5-QC-Fli"/>
@@ -708,10 +650,8 @@
                                 </constraints>
                             </view>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsVerticalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lAb-dD-cDF" customClass="TPKeyboardAvoidingScrollView">
-                                <rect key="frame" x="0.0" y="60" width="320" height="508"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Doubts/Queries/Suggestions" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QXn-jc-lIf">
-                                        <rect key="frame" x="16" y="8" width="288" height="25"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="25" id="Km1-ty-q24"/>
                                             <constraint firstAttribute="width" constant="288" id="WWJ-nG-uvE"/>
@@ -721,14 +661,12 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="GkI-pp-MBQ">
-                                        <rect key="frame" x="16" y="35" width="288" height="1"/>
                                         <color key="backgroundColor" red="0.79219444513320925" green="0.79219444513320925" blue="0.79219444513320925" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="1" id="KWu-7r-vRT"/>
                                         </constraints>
                                     </view>
                                     <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" editable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ycP-nY-aU5">
-                                        <rect key="frame" x="16" y="40" width="288" height="215"/>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="215" id="Gif-cJ-LKn"/>
@@ -748,10 +686,8 @@ Website: www.icai.org </string>
                                         <dataDetectorType key="dataDetectorTypes" phoneNumber="YES" link="YES"/>
                                     </textView>
                                     <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Sh7-XS-k4O">
-                                        <rect key="frame" x="16" y="253" width="288" height="240"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Select query type" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NCr-6U-2NV">
-                                                <rect key="frame" x="14" y="12" width="160" height="21"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" constant="160" id="3iv-yT-yjc"/>
                                                     <constraint firstAttribute="height" constant="21" id="nbY-Tu-cpb"/>
@@ -761,7 +697,6 @@ Website: www.icai.org </string>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="SOh-pV-R2A">
-                                                <rect key="frame" x="14" y="30" width="260" height="30"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="30" id="jsx-Ft-veM"/>
                                                 </constraints>
@@ -770,20 +705,17 @@ Website: www.icai.org </string>
                                                 <textInputTraits key="textInputTraits"/>
                                             </textField>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kkh-si-vCX">
-                                                <rect key="frame" x="14" y="12" width="260" height="50"/>
                                                 <connections>
                                                     <action selector="openQueryTypePicker:" destination="oIH-l3-q4h" eventType="touchUpInside" id="Sfv-8f-VSG"/>
                                                 </connections>
                                             </button>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DNb-XS-uZb" userLabel="lineLbl">
-                                                <rect key="frame" x="14" y="61" width="260" height="0.0"/>
                                                 <color key="backgroundColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter your name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="cAu-VX-Xan">
-                                                <rect key="frame" x="14" y="71" width="260" height="30"/>
                                                 <color key="backgroundColor" red="0.95294117649999999" green="0.95294117649999999" blue="0.95294117649999999" alpha="1" colorSpace="calibratedRGB"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="30" id="Udr-Op-H3L"/>
@@ -793,21 +725,18 @@ Website: www.icai.org </string>
                                                 <textInputTraits key="textInputTraits"/>
                                             </textField>
                                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter email address" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="pVH-9k-x3S">
-                                                <rect key="frame" x="14" y="109" width="260" height="30"/>
                                                 <color key="backgroundColor" red="0.95294117649999999" green="0.95294117649999999" blue="0.95294117649999999" alpha="1" colorSpace="calibratedRGB"/>
                                                 <nil key="textColor"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits" keyboardType="emailAddress"/>
                                             </textField>
                                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter message" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="hpq-FF-MMI">
-                                                <rect key="frame" x="14" y="147" width="260" height="30"/>
                                                 <color key="backgroundColor" red="0.95294117649999999" green="0.95294117649999999" blue="0.95294117649999999" alpha="1" colorSpace="calibratedRGB"/>
                                                 <nil key="textColor"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits"/>
                                             </textField>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IDm-m4-shE">
-                                                <rect key="frame" x="14" y="193" width="260" height="34"/>
                                                 <color key="backgroundColor" red="0.96862745100000003" green="0.0" blue="0.032632492829999998" alpha="1" colorSpace="calibratedRGB"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="34" id="gKf-NC-EGI"/>
@@ -905,14 +834,12 @@ Website: www.icai.org </string>
                         <viewControllerLayoutGuide type="bottom" id="jFW-u3-p0k"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="z48-D2-V6b">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xjc-7L-tle">
-                                <rect key="frame" x="0.0" y="0.0" width="320" height="60"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="center" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9CX-Fz-Kzs">
-                                        <rect key="frame" x="0.0" y="20" width="56" height="40"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="56" id="6PQ-WX-O5y"/>
                                         </constraints>
@@ -924,7 +851,6 @@ Website: www.icai.org </string>
                                         </connections>
                                     </button>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Payment Status" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="juO-Sk-2EV">
-                                        <rect key="frame" x="57" y="27.5" width="248" height="23.5"/>
                                         <fontDescription key="fontDescription" name="OpenSans-Semibold" family="Open Sans" pointSize="17"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <nil key="highlightedColor"/>
@@ -942,14 +868,12 @@ Website: www.icai.org </string>
                                 </constraints>
                             </view>
                             <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" image="cross" translatesAutoresizingMaskIntoConstraints="NO" id="QC2-Wg-HCU">
-                                <rect key="frame" x="123.5" y="90" width="73" height="73"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="73" id="LDL-AS-vi4"/>
                                     <constraint firstAttribute="width" constant="73" id="zGQ-9r-anh"/>
                                 </constraints>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Application ID:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="28q-a2-y1d">
-                                <rect key="frame" x="16.5" y="185" width="103" height="18"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="103" id="IK5-o1-uv0"/>
                                 </constraints>
@@ -958,7 +882,6 @@ Website: www.icai.org </string>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="1000" verticalCompressionResistancePriority="1000" text="id" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="d60-5w-OQd">
-                                <rect key="frame" x="129.5" y="185" width="174.5" height="18"/>
                                 <fontDescription key="fontDescription" name="OpenSans" family="Open Sans" pointSize="13"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -967,13 +890,11 @@ Website: www.icai.org </string>
                                 </userDefinedRuntimeAttributes>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ddu-qR-bib">
-                                <rect key="frame" x="16.5" y="213" width="98.5" height="18"/>
                                 <fontDescription key="fontDescription" name="OpenSans" family="Open Sans" pointSize="13"/>
                                 <color key="textColor" red="0.96862745100000003" green="0.0" blue="0.032632492829999998" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="1000" verticalCompressionResistancePriority="1000" text="name" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="C8M-pf-8f5">
-                                <rect key="frame" x="129.5" y="213" width="174.5" height="18"/>
                                 <fontDescription key="fontDescription" name="OpenSans" family="Open Sans" pointSize="13"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -982,13 +903,11 @@ Website: www.icai.org </string>
                                 </userDefinedRuntimeAttributes>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="EmailId:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AOx-Yg-igk">
-                                <rect key="frame" x="16.5" y="241" width="98.5" height="18"/>
                                 <fontDescription key="fontDescription" name="OpenSans" family="Open Sans" pointSize="13"/>
                                 <color key="textColor" red="0.96862745100000003" green="0.0" blue="0.032632492829999998" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="1000" verticalCompressionResistancePriority="1000" text="email" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lSg-0f-E2R">
-                                <rect key="frame" x="129.5" y="241" width="174.5" height="18"/>
                                 <fontDescription key="fontDescription" name="OpenSans" family="Open Sans" pointSize="13"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -997,13 +916,11 @@ Website: www.icai.org </string>
                                 </userDefinedRuntimeAttributes>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Payment Status:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iQI-Nf-N7w">
-                                <rect key="frame" x="16.5" y="269" width="98.5" height="18"/>
                                 <fontDescription key="fontDescription" name="OpenSans" family="Open Sans" pointSize="13"/>
                                 <color key="textColor" red="0.96862745100000003" green="0.0" blue="0.032632492829999998" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="1000" verticalCompressionResistancePriority="1000" text="pending" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iIS-6L-qvS">
-                                <rect key="frame" x="129.5" y="269" width="174.5" height="18"/>
                                 <fontDescription key="fontDescription" name="OpenSans" family="Open Sans" pointSize="13"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -1012,10 +929,8 @@ Website: www.icai.org </string>
                                 </userDefinedRuntimeAttributes>
                             </label>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="l2w-8X-DXc">
-                                <rect key="frame" x="34" y="315" width="252" height="90"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="To pay: " textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7Ph-BZ-iXF">
-                                        <rect key="frame" x="49" y="6" width="67" height="21"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="67" id="Sea-Wf-EwI"/>
                                             <constraint firstAttribute="height" constant="21" id="fvn-NP-Mi7"/>
@@ -1025,7 +940,6 @@ Website: www.icai.org </string>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="1000" verticalCompressionResistancePriority="1000" text="₹100" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8YB-lQ-Tha">
-                                        <rect key="frame" x="125" y="6" width="115" height="21"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="21" id="Ox1-Ng-jAX"/>
                                             <constraint firstAttribute="width" constant="115" id="RKL-Ti-c91"/>
@@ -1038,7 +952,6 @@ Website: www.icai.org </string>
                                         </userDefinedRuntimeAttributes>
                                     </label>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0BH-VA-z2m">
-                                        <rect key="frame" x="0.0" y="47" width="252" height="40"/>
                                         <color key="backgroundColor" red="0.96862745100000003" green="0.0" blue="0.032632492829999998" alpha="1" colorSpace="calibratedRGB"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="252" id="Pdf-VU-kdh"/>
@@ -1066,7 +979,6 @@ Website: www.icai.org </string>
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="FOd-Ff-gf7">
-                                <rect key="frame" x="0.0" y="60" width="320" height="508"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </view>
                         </subviews>
@@ -1138,21 +1050,18 @@ Website: www.icai.org </string>
                         <viewControllerLayoutGuide type="bottom" id="krb-Mu-hmN"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="JFh-gJ-O0U">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4Tc-qO-yth">
-                                <rect key="frame" x="0.0" y="0.0" width="320" height="60"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="center" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yp3-Rf-Uta">
-                                        <rect key="frame" x="0.0" y="20" width="56" height="41"/>
                                         <state key="normal" image="Back"/>
                                         <connections>
                                             <action selector="popVCAction:" destination="lWW-62-F7a" eventType="touchUpInside" id="4CY-tO-Wss"/>
                                         </connections>
                                     </button>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Test List" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="u4l-aJ-7Cc">
-                                        <rect key="frame" x="57" y="28" width="121" height="25"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="121" id="1NA-c5-g0m"/>
                                             <constraint firstAttribute="height" constant="25" id="kPD-Hh-PYr"/>
@@ -1174,21 +1083,18 @@ Website: www.icai.org </string>
                                 </constraints>
                             </view>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" allowsSelection="NO" rowHeight="94" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="VCo-0K-66P">
-                                <rect key="frame" x="0.0" y="60" width="320" height="508"/>
                                 <color key="backgroundColor" red="0.96078431369999995" green="0.96078431369999995" blue="0.96078431369999995" alpha="1" colorSpace="calibratedRGB"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" restorationIdentifier="NotificationTableViewCell" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="TestListTableViewCell" id="hPQ-3Z-yJz" customClass="TestListTableViewCell">
-                                        <rect key="frame" x="0.0" y="28" width="320" height="94"/>
+                                        <rect key="frame" x="0.0" y="28" width="375" height="94"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="hPQ-3Z-yJz" id="7YD-Cy-aB7">
-                                            <rect key="frame" x="0.0" y="0.0" width="320" height="94"/>
+                                            <frame key="frameInset" width="375" height="94"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="iZO-9U-8Xv">
-                                                    <rect key="frame" x="8" y="10" width="304" height="82"/>
                                                     <subviews>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Test Number: 1" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3ZH-fP-kiw">
-                                                            <rect key="frame" x="8" y="7" width="190" height="20.5"/>
                                                             <fontDescription key="fontDescription" name="OpenSans-Bold" family="Open Sans" pointSize="15"/>
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
@@ -1197,7 +1103,6 @@ Website: www.icai.org </string>
                                                             </userDefinedRuntimeAttributes>
                                                         </label>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="1000" text="Number of quse" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="maX-A7-fkl">
-                                                            <rect key="frame" x="9" y="34.5" width="189" height="18"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="height" constant="18" id="AJZ-k5-33z"/>
                                                             </constraints>
@@ -1209,7 +1114,6 @@ Website: www.icai.org </string>
                                                             </userDefinedRuntimeAttributes>
                                                         </label>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Duration: " lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LfO-fa-8Fg">
-                                                            <rect key="frame" x="9" y="57.5" width="189" height="18"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="height" constant="18" id="zJK-dd-dJI"/>
                                                             </constraints>
@@ -1218,7 +1122,6 @@ Website: www.icai.org </string>
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3fw-IW-HdZ">
-                                                            <rect key="frame" x="206" y="23" width="90" height="36"/>
                                                             <color key="backgroundColor" red="0.0" green="0.50196081400000003" blue="0.25098040700000002" alpha="1" colorSpace="calibratedRGB"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="width" constant="90" id="mC4-K9-2tn"/>
@@ -1300,14 +1203,12 @@ Website: www.icai.org </string>
                         <viewControllerLayoutGuide type="bottom" id="0dW-0D-Xy1"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="lgr-eB-nH9">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hes-O1-xxj">
-                                <rect key="frame" x="0.0" y="0.0" width="320" height="60"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Z7D-cs-ReM">
-                                        <rect key="frame" x="0.0" y="17" width="56" height="40"/>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="56" id="Vtl-Us-VNX"/>
@@ -1318,7 +1219,6 @@ Website: www.icai.org </string>
                                         </connections>
                                     </button>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Quiz Result" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VzD-ek-Apr">
-                                        <rect key="frame" x="57" y="22" width="197" height="29"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="197" id="NpC-bd-7g4"/>
                                         </constraints>
@@ -1339,20 +1239,16 @@ Website: www.icai.org </string>
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Yt5-aG-BQG">
-                                <rect key="frame" x="16" y="125" width="288" height="178"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dlS-Jv-wy2">
-                                        <rect key="frame" x="8" y="37" width="272" height="2"/>
                                         <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                     </view>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Hi Vibhor" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BZd-0g-H3e">
-                                        <rect key="frame" x="8" y="8" width="272" height="22"/>
                                         <fontDescription key="fontDescription" name="OpenSans-Semibold" family="Open Sans" pointSize="16"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Correct:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qP7-Wp-M5b">
-                                        <rect key="frame" x="12" y="47" width="113" height="22"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="22" id="Wom-cI-JNn"/>
                                             <constraint firstAttribute="width" constant="113" id="hG2-eI-fcP"/>
@@ -1362,13 +1258,11 @@ Website: www.icai.org </string>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="5" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="c6s-GC-k23">
-                                        <rect key="frame" x="167" y="47" width="109" height="22"/>
                                         <fontDescription key="fontDescription" name="OpenSans" family="Open Sans" pointSize="14"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Incorrect:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kGn-Db-gOi">
-                                        <rect key="frame" x="12" y="77" width="113" height="22"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="22" id="EZP-KT-mPQ"/>
                                         </constraints>
@@ -1377,13 +1271,11 @@ Website: www.icai.org </string>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="4" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="j1R-7D-zus">
-                                        <rect key="frame" x="167" y="77" width="109" height="22"/>
                                         <fontDescription key="fontDescription" name="OpenSans" family="Open Sans" pointSize="14"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Unattempted:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UQa-3b-sG8">
-                                        <rect key="frame" x="12" y="107" width="113" height="22"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="22" id="Hx6-ij-omh"/>
                                         </constraints>
@@ -1392,17 +1284,14 @@ Website: www.icai.org </string>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="31" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vX1-xC-SL0">
-                                        <rect key="frame" x="167" y="107" width="109" height="22"/>
                                         <fontDescription key="fontDescription" name="OpenSans" family="Open Sans" pointSize="14"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="tLb-xv-PTW">
-                                        <rect key="frame" x="8" y="136" width="272" height="1"/>
                                         <color key="backgroundColor" red="0.96862745100000003" green="0.0" blue="0.031372549020000001" alpha="1" colorSpace="calibratedRGB"/>
                                     </view>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Total Score:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Bqa-bi-wiC">
-                                        <rect key="frame" x="12" y="145" width="113" height="22"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="22" id="Hg8-vM-hNc"/>
                                         </constraints>
@@ -1411,7 +1300,6 @@ Website: www.icai.org </string>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="4" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8Dx-mS-VFZ">
-                                        <rect key="frame" x="167" y="145" width="109" height="22"/>
                                         <fontDescription key="fontDescription" name="OpenSans" family="Open Sans" pointSize="14"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
@@ -1462,7 +1350,6 @@ Website: www.icai.org </string>
                                 </constraints>
                             </view>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DDV-02-3d5">
-                                <rect key="frame" x="34" y="353" width="252" height="40"/>
                                 <color key="backgroundColor" red="0.96862745100000003" green="0.0" blue="0.032632492829999998" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="40" id="46Y-h8-byz"/>
@@ -1510,14 +1397,12 @@ Website: www.icai.org </string>
                         <viewControllerLayoutGuide type="bottom" id="RzN-lD-HHm"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="Gbk-9B-by7">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7gf-qF-8MA">
-                                <rect key="frame" x="0.0" y="0.0" width="320" height="60"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aHY-Yt-4of">
-                                        <rect key="frame" x="0.0" y="17" width="56" height="40"/>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="56" id="AaV-zD-u3o"/>
@@ -1528,7 +1413,6 @@ Website: www.icai.org </string>
                                         </connections>
                                     </button>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Quiz" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gx3-EH-JYD">
-                                        <rect key="frame" x="57" y="22" width="197" height="29"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="197" id="3uY-FU-UfN"/>
                                         </constraints>
@@ -1536,20 +1420,34 @@ Website: www.icai.org </string>
                                         <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <nil key="highlightedColor"/>
                                     </label>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JLM-12-lzy">
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="70" id="Dv4-yc-KJu"/>
+                                            <constraint firstAttribute="height" constant="30" id="ROv-4z-7K3"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="OpenSans-Semibold" family="Open Sans" pointSize="14"/>
+                                        <state key="normal" title="ShowList">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="showQuestionList" destination="BUW-DU-rXJ" eventType="touchUpInside" id="wML-8D-mYk"/>
+                                        </connections>
+                                    </button>
                                 </subviews>
                                 <color key="backgroundColor" red="0.96862745100000003" green="0.0" blue="0.032632492829999998" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstItem="aHY-Yt-4of" firstAttribute="leading" secondItem="7gf-qF-8MA" secondAttribute="leading" id="2AN-Mj-4Vt"/>
                                     <constraint firstAttribute="height" constant="60" id="6wQ-cL-UfM"/>
                                     <constraint firstAttribute="bottom" secondItem="gx3-EH-JYD" secondAttribute="bottom" constant="9" id="KgG-XY-TEy"/>
+                                    <constraint firstItem="JLM-12-lzy" firstAttribute="centerY" secondItem="gx3-EH-JYD" secondAttribute="centerY" id="ZR6-iO-j1D"/>
                                     <constraint firstItem="aHY-Yt-4of" firstAttribute="top" secondItem="7gf-qF-8MA" secondAttribute="top" constant="17" id="ikN-tI-04Z"/>
                                     <constraint firstItem="gx3-EH-JYD" firstAttribute="top" secondItem="7gf-qF-8MA" secondAttribute="top" constant="22" id="nRe-jO-EIs"/>
                                     <constraint firstItem="gx3-EH-JYD" firstAttribute="leading" secondItem="aHY-Yt-4of" secondAttribute="trailing" constant="1" id="oex-MR-GgR"/>
+                                    <constraint firstAttribute="trailing" secondItem="JLM-12-lzy" secondAttribute="trailing" constant="8" id="uAl-zC-mKx"/>
                                     <constraint firstAttribute="bottom" secondItem="aHY-Yt-4of" secondAttribute="bottom" constant="3" id="xcw-UF-paD"/>
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vsS-Ge-AH1">
-                                <rect key="frame" x="0.0" y="60" width="320" height="1"/>
                                 <color key="backgroundColor" red="0.83144516706466676" green="0.092086407528880074" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <color key="tintColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
@@ -1557,16 +1455,13 @@ Website: www.icai.org </string>
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="jjG-qP-oba">
-                                <rect key="frame" x="0.0" y="61" width="320" height="83"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="1000" horizontalCompressionResistancePriority="251" verticalCompressionResistancePriority="1000" text="Fundamentals of accounting" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EWZ-dG-5lM">
-                                        <rect key="frame" x="8" y="5" width="304" height="22"/>
                                         <fontDescription key="fontDescription" name="OpenSans-Bold" family="Open Sans" pointSize="16"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Qusetions" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Fle-u2-x8P">
-                                        <rect key="frame" x="36" y="31" width="103" height="18"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="18" id="Wo7-pL-Zyu"/>
                                             <constraint firstAttribute="width" constant="103" id="tUl-D7-hJN"/>
@@ -1576,7 +1471,6 @@ Website: www.icai.org </string>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Time" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="osL-bW-j9B">
-                                        <rect key="frame" x="181" y="31" width="103" height="18"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="103" id="CZH-Q3-03U"/>
                                             <constraint firstAttribute="height" constant="18" id="Fd5-Gi-2gX"/>
@@ -1586,7 +1480,6 @@ Website: www.icai.org </string>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1/40" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SrD-1i-BrQ">
-                                        <rect key="frame" x="36" y="49" width="103" height="28"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="103" id="WRS-0l-bL1"/>
                                             <constraint firstAttribute="height" constant="28" id="bHk-Ru-lgI"/>
@@ -1596,7 +1489,6 @@ Website: www.icai.org </string>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="29:56" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Pn9-Ok-TWR">
-                                        <rect key="frame" x="181" y="49" width="103" height="28"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="103" id="Jfh-Wx-RmJ"/>
                                             <constraint firstAttribute="height" constant="28" id="qAJ-U7-6xT"/>
@@ -1623,22 +1515,19 @@ Website: www.icai.org </string>
                                 </constraints>
                             </view>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="DGq-TN-HQI">
-                                <rect key="frame" x="0.0" y="144" width="320" height="352"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="questionCell" id="5Cj-8N-sL7">
-                                        <rect key="frame" x="0.0" y="28" width="320" height="44"/>
+                                        <rect key="frame" x="0.0" y="28" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="5Cj-8N-sL7" id="Ohk-19-fod">
-                                            <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                                            <frame key="frameInset" width="375" height="44"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="uPT-fY-zGB">
-                                                    <rect key="frame" x="7" y="7" width="306" height="30"/>
                                                     <color key="backgroundColor" red="0.85222945449999998" green="0.85222945449999998" blue="0.85222945449999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 </view>
                                                 <label opaque="NO" userInteractionEnabled="NO" tag="21" contentMode="left" horizontalHuggingPriority="750" verticalHuggingPriority="1000" verticalCompressionResistancePriority="1000" text="ques text" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eay-T7-oRj">
-                                                    <rect key="frame" x="16" y="12" width="288" height="20"/>
                                                     <fontDescription key="fontDescription" name="OpenSans" family="Open Sans" pointSize="14"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
@@ -1660,17 +1549,15 @@ Website: www.icai.org </string>
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="answerCell" id="y1k-H5-wjj" customClass="AnswerTableViewCell">
-                                        <rect key="frame" x="0.0" y="72" width="320" height="44"/>
+                                        <rect key="frame" x="0.0" y="72" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="y1k-H5-wjj" id="hO8-43-s7J">
-                                            <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                                            <frame key="frameInset" width="375" height="44"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <view tag="21" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qXR-OM-3kc">
-                                                    <rect key="frame" x="7" y="7" width="306" height="30"/>
                                                     <subviews>
                                                         <label opaque="NO" userInteractionEnabled="NO" tag="23" contentMode="left" horizontalHuggingPriority="750" verticalHuggingPriority="1000" verticalCompressionResistancePriority="1000" text="option 1" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qbf-Ai-Rfc">
-                                                            <rect key="frame" x="39" y="5" width="257" height="20"/>
                                                             <fontDescription key="fontDescription" name="OpenSans" family="Open Sans" pointSize="13"/>
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
@@ -1679,7 +1566,6 @@ Website: www.icai.org </string>
                                                             </userDefinedRuntimeAttributes>
                                                         </label>
                                                         <button opaque="NO" userInteractionEnabled="NO" tag="22" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wsC-4z-oPN">
-                                                            <rect key="frame" x="9" y="3" width="24" height="24"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="width" constant="24" id="lID-Pg-9tL"/>
                                                                 <constraint firstAttribute="height" constant="24" id="rlJ-xD-Y1e"/>
@@ -1722,14 +1608,12 @@ Website: www.icai.org </string>
                                 </connections>
                             </tableView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DNy-nF-Xch">
-                                <rect key="frame" x="260" y="501" width="40" height="40"/>
                                 <state key="normal" image="next"/>
                                 <connections>
                                     <action selector="nextButtonAction:" destination="BUW-DU-rXJ" eventType="touchUpInside" id="P3d-2R-QGM"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Next" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="N3r-Tw-QGX">
-                                <rect key="frame" x="258" y="545" width="44" height="16"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="16" id="0iT-nS-Euq"/>
                                     <constraint firstAttribute="width" constant="44" id="kbz-80-7uF"/>
@@ -1739,14 +1623,12 @@ Website: www.icai.org </string>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="R3J-8I-lNx">
-                                <rect key="frame" x="190" y="501" width="40" height="40"/>
                                 <state key="normal" image="ic_finish"/>
                                 <connections>
                                     <action selector="submitButtonAction:" destination="BUW-DU-rXJ" eventType="touchUpInside" id="LYd-lS-8k8"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Submit" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pVR-ij-XCr">
-                                <rect key="frame" x="186" y="545" width="48" height="16"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="48" id="XPn-qe-iou"/>
                                     <constraint firstAttribute="height" constant="16" id="ahi-Xo-qde"/>
@@ -1756,7 +1638,6 @@ Website: www.icai.org </string>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Y83-3B-pQg">
-                                <rect key="frame" x="120" y="501" width="40" height="40"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="40" id="SQO-Qh-NjN"/>
                                 </constraints>
@@ -1766,7 +1647,6 @@ Website: www.icai.org </string>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Reset" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iqt-l0-icx">
-                                <rect key="frame" x="118" y="546" width="44" height="16"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="16" id="2lT-Y3-p23"/>
                                     <constraint firstAttribute="width" constant="44" id="Y5B-LR-XEU"/>
@@ -1776,7 +1656,6 @@ Website: www.icai.org </string>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LWt-UJ-n5r">
-                                <rect key="frame" x="20" y="501" width="40" height="40"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="40" id="6My-7z-I6W"/>
                                     <constraint firstAttribute="width" constant="40" id="7wD-5O-Nsb"/>
@@ -1787,7 +1666,6 @@ Website: www.icai.org </string>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Previous" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6DJ-HJ-WEp">
-                                <rect key="frame" x="14" y="546" width="52" height="16"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="16" id="Uwh-9Q-Q0I"/>
                                     <constraint firstAttribute="width" constant="52" id="aTs-VF-Vz7"/>
@@ -1839,10 +1717,37 @@ Website: www.icai.org </string>
                         <outlet property="lblQuizNumber" destination="SrD-1i-BrQ" id="z5H-um-GHH"/>
                         <outlet property="lblQuizTitle" destination="EWZ-dG-5lM" id="Dqt-cL-mw2"/>
                         <outlet property="lblTime" destination="Pn9-Ok-TWR" id="Pj0-yc-Sec"/>
+                        <outlet property="questionListView" destination="CTe-6I-wUm" id="iEf-AE-vy6"/>
                         <outlet property="tableViewQA" destination="DGq-TN-HQI" id="yGd-e6-bSQ"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0UA-CE-EYP" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <view contentMode="scaleToFill" id="CTe-6I-wUm" customClass="ShowQuestionListView">
+                    <rect key="frame" x="0.0" y="0.0" width="240" height="344"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <subviews>
+                        <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="wHv-mp-fwf">
+                            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        </tableView>
+                    </subviews>
+                    <color key="backgroundColor" white="0.0" alpha="0.5" colorSpace="calibratedWhite"/>
+                    <gestureRecognizers/>
+                    <constraints>
+                        <constraint firstItem="wHv-mp-fwf" firstAttribute="width" secondItem="CTe-6I-wUm" secondAttribute="width" multiplier="0.35" id="3uD-Qy-gLr"/>
+                        <constraint firstAttribute="trailing" secondItem="wHv-mp-fwf" secondAttribute="trailing" id="Sf1-4Q-9qS"/>
+                        <constraint firstItem="wHv-mp-fwf" firstAttribute="top" secondItem="CTe-6I-wUm" secondAttribute="top" id="W2D-bL-OvZ"/>
+                        <constraint firstAttribute="bottom" secondItem="wHv-mp-fwf" secondAttribute="bottom" id="jH0-0y-bls"/>
+                    </constraints>
+                    <connections>
+                        <outlet property="tblView" destination="wHv-mp-fwf" id="7MF-xf-k8c"/>
+                        <outletCollection property="gestureRecognizers" destination="wJ3-I8-apM" appends="YES" id="ffd-wI-MBD"/>
+                    </connections>
+                </view>
+                <tapGestureRecognizer id="wJ3-I8-apM">
+                    <connections>
+                        <action selector="tapGesture:" destination="CTe-6I-wUm" id="La9-Xj-lNm"/>
+                    </connections>
+                </tapGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="2881.875" y="228.16901408450704"/>
         </scene>

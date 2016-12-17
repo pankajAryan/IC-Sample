@@ -21,6 +21,7 @@
 		4163DBB81DF57A0100CCACCF /* OpenSans-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 4163DBB51DF57A0100CCACCF /* OpenSans-Regular.ttf */; };
 		4163DBB91DF57A0100CCACCF /* OpenSans-Semibold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 4163DBB61DF57A0100CCACCF /* OpenSans-Semibold.ttf */; };
 		7F163D681DFD667E00A34AE9 /* libPaymentsSDK.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 7F163D621DFD667E00A34AE9 /* libPaymentsSDK.a */; };
+		B72DEDBB1E0571A40081339A /* ShowQuestionListView.m in Sources */ = {isa = PBXBuildFile; fileRef = B72DEDBA1E0571A40081339A /* ShowQuestionListView.m */; };
 		B78EB22D1DFF298D00F7E6F7 /* countriesList.plist in Resources */ = {isa = PBXBuildFile; fileRef = B78EB22C1DFF298D00F7E6F7 /* countriesList.plist */; };
 		B78EB22F1DFF2ACA00F7E6F7 /* statesList.plist in Resources */ = {isa = PBXBuildFile; fileRef = B78EB22E1DFF2ACA00F7E6F7 /* statesList.plist */; };
 		B78EB2311DFF2B2300F7E6F7 /* classList.plist in Resources */ = {isa = PBXBuildFile; fileRef = B78EB2301DFF2B2300F7E6F7 /* classList.plist */; };
@@ -145,6 +146,8 @@
 		7F163D651DFD667E00A34AE9 /* PGOrder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PGOrder.h; sourceTree = "<group>"; };
 		7F163D661DFD667E00A34AE9 /* PGServerEnvironment.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PGServerEnvironment.h; sourceTree = "<group>"; };
 		7F163D671DFD667E00A34AE9 /* PGTransactionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PGTransactionViewController.h; sourceTree = "<group>"; };
+		B72DEDB91E0571A30081339A /* ShowQuestionListView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ShowQuestionListView.h; sourceTree = "<group>"; };
+		B72DEDBA1E0571A40081339A /* ShowQuestionListView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ShowQuestionListView.m; sourceTree = "<group>"; };
 		B78EB22C1DFF298D00F7E6F7 /* countriesList.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = countriesList.plist; sourceTree = "<group>"; };
 		B78EB22E1DFF2ACA00F7E6F7 /* statesList.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = statesList.plist; sourceTree = "<group>"; };
 		B78EB2301DFF2B2300F7E6F7 /* classList.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = classList.plist; sourceTree = "<group>"; };
@@ -400,6 +403,8 @@
 				CE15D3791E032AD10073AB4F /* QuizResultViewController.m */,
 				CE819E791E0541AB0044689B /* ReviewResultViewController.h */,
 				CE819E7A1E0541AB0044689B /* ReviewResultViewController.m */,
+				B72DEDB91E0571A30081339A /* ShowQuestionListView.h */,
+				B72DEDBA1E0571A40081339A /* ShowQuestionListView.m */,
 			);
 			path = "TakeTest VC";
 			sourceTree = "<group>";
@@ -982,6 +987,7 @@
 				CE2B39C21DAE736B00B266E1 /* RegisterViewController.m in Sources */,
 				CE16DAE91DBA043500AB664C /* FFValidationResult.m in Sources */,
 				CE11DE8A1E01E2BC00C9CC81 /* QuizViewController.m in Sources */,
+				B72DEDBB1E0571A40081339A /* ShowQuestionListView.m in Sources */,
 				CE16DB031DBB6B2D00AB664C /* UIImageView+AFNetworking.m in Sources */,
 				CE0ACA571DFD69E800F4B143 /* EnrollmentStatusViewController.m in Sources */,
 				CE0596DB1DB665B5001E62A9 /* AFHTTPRequestOperationManager.m in Sources */,

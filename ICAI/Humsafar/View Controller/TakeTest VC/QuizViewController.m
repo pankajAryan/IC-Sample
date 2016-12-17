@@ -8,6 +8,7 @@
 
 #import "QuizViewController.h"
 #import "AnswerTableViewCell.h"
+#import "ShowQuestionListView.h"
 
 @interface QuizViewController () <UITableViewDelegate, UITableViewDataSource> {
     
@@ -15,6 +16,10 @@
     NSString *quizID;
     NSString *questionIDs;
 }
+
+@property (strong, nonatomic) IBOutlet ShowQuestionListView *questionListView;
+
+
 
 @end
 
@@ -29,6 +34,8 @@
     studentID = [_quizDict objectForKey:@"studentId"];
     quizID = [_quizDict objectForKey:@"quizId"];
     questionIDs = [_quizDict objectForKey:@"questionIds"];
+    
+    UIBarButtonItem *barBtn = [[UIBarButtonItem alloc] initWithTitle:@"ShowList" style:UIBarButtonItemStylePlain target:self action:@selector(showQuestionList)];
 
 }
 
@@ -72,7 +79,6 @@
     return cell;
 }
 
-#pragma mark- Delegate
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     
@@ -81,12 +87,26 @@
     
     if (!cell.radioButton.isSelected) {
         cell.radioButton.selected = YES;
-        // TODO: call webservice to submit selected option
     }
 }
 
 
 #pragma mark - IBActions
+
+-(IBAction)showQuestionList {
+    
+    [self.questionListView removeFromSuperview];
+    CGFloat x = ScreenWidth;
+    self.questionListView.frame = CGRectMake(x, 64, ScreenWidth, ScreenHeight-64);
+    [self.view addSubview:self.questionListView];
+    [self.questionListView reloadList:@[@"1",@"1",@"1",@"1"]];
+
+    [UIView animateWithDuration:1.0 animations:^{
+        self.questionListView.frame = CGRectMake(0, 64, ScreenWidth, ScreenHeight-64);
+    } completion:^(BOOL finished) {
+
+    }];
+}
 
 - (IBAction)answerDidTap:(id)sender {
 }
