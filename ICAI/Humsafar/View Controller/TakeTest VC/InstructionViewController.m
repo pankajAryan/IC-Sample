@@ -44,8 +44,7 @@
 - (IBAction)btnBeginAction:(UIButton *)sender {
     
     QuizViewController *vc = (QuizViewController *)[UIViewController instantiateViewControllerWithIdentifier:@"QuizViewController" fromStoryboard:@"Home"];
-    //vc.quizDict = self.quizDict;
-    
+    vc.quizDict = self.quizDict;
     [self.navigationController pushViewController:vc animated:YES];
 }
 

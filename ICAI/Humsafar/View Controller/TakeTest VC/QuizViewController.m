@@ -20,7 +20,11 @@
     // Do any additional setup after loading the view.
     [_tableViewQA setRowHeight:UITableViewAutomaticDimension];
     _tableViewQA.estimatedRowHeight = 44;
-    // questionIds
+    
+    NSString *studentID = [_quizDict objectForKey:@"studentId"];
+    NSString *quizID = [_quizDict objectForKey:@"quizId"];
+    NSString *questionIDs = [_quizDict objectForKey:@"questionIds"];
+
 }
 
 - (IBAction)popVCAction:(id)sender {

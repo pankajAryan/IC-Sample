@@ -10,4 +10,6 @@
 
 @interface InstructionViewController : UIViewController
 
+@property (strong, nonatomic) NSDictionary *quizDict;
+
 @end
