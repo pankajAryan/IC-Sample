@@ -14,6 +14,8 @@
 
 #import "AppDelegate.h"
 
+#define redBGColor      @"F3A59D"
+#define greenBGColor    @"96E5B8"
 
 #pragma mark - UI page Layouts
 

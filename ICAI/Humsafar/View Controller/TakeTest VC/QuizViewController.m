@@ -9,12 +9,16 @@
 #import "QuizViewController.h"
 #import "AnswerTableViewCell.h"
 #import "ShowQuestionListView.h"
+#import "DataModels.h"
 
 @interface QuizViewController () <UITableViewDelegate, UITableViewDataSource> {
     
     NSString *studentID;
     NSString *quizID;
     NSString *questionIDs;
+    
+    NSInteger currentQuizIndex;
+    QuizBaseClass *quizBaseObject;
 }
 
 @property (strong, nonatomic) IBOutlet ShowQuestionListView *questionListView;
@@ -28,15 +32,35 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    currentQuizIndex = 1;
     [_tableViewQA setRowHeight:UITableViewAutomaticDimension];
     _tableViewQA.estimatedRowHeight = 44;
+    
+    _lblQuizNumber.text = [NSString stringWithFormat:@"%li/%@",currentQuizIndex,[_quizDict objectForKey:@"noOfQuestions"]];
+    _lblTime.text = [NSString stringWithFormat:@"%@",[_quizDict objectForKey:@"timeMinutes"]]; //TODO: Start a countdown timer and change _lblTime's text accordingly.
     
     studentID = [_quizDict objectForKey:@"studentId"];
     quizID = [_quizDict objectForKey:@"quizId"];
     questionIDs = [_quizDict objectForKey:@"questionIds"];
     
-    UIBarButtonItem *barBtn = [[UIBarButtonItem alloc] initWithTitle:@"ShowList" style:UIBarButtonItemStylePlain target:self action:@selector(showQuestionList)];
-
+    [self showProgressHudWithMessage:@"Please wait.."];
+    
+    [[FFWebServiceHelper sharedManager]
+     callWebServiceWithUrl:[[FFWebServiceHelper sharedManager] javaServerUrlWithString:QUIZ_ATTEMPT]
+     withParameter:@{@"studentId":studentID, @"quizId":quizID, @"questionIds":questionIDs, CHECKSOURCE_KEY : CHECKSOURCE_VALUE}
+     onCompletion:^(eResponseType responseType, id response)
+     {
+         [self hideProgressHudAfterDelay:0.1];
+         
+         if (responseType == eResponseTypeSuccessJSON)
+         {
+             quizBaseObject = [QuizBaseClass modelObjectWithDictionary:response];
+             [_tableViewQA reloadData];
+         }
+         else{
+             [self showAlert:@"Something went wrong, Please try after sometime."];
+         }
+     }];
 }
 
 - (IBAction)popVCAction:(id)sender {
@@ -53,7 +77,7 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    return 5;
+    return (quizBaseObject.responseArray.count != 0) ? 5 : 0;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
@@ -121,6 +145,10 @@
 }
 
 - (IBAction)submitButtonAction:(id)sender {
+    
+    //showDelegatedAlert with Title: @"Submit/End Quiz"
+// And message:@"Are you sure you want to submit and end the quiz ?"
+    // No and Yes will be buttons
 }
 
 @end

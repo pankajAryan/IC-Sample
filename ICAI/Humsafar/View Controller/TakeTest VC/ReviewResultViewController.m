@@ -8,8 +8,13 @@
 
 #import "ReviewResultViewController.h"
 #import "AnswerTableViewCell.h"
+#import "DataModels.h"
 
-@interface ReviewResultViewController () <UITableViewDataSource>
+@interface ReviewResultViewController () <UITableViewDataSource> {
+    
+    NSInteger currentQuizIndex;
+    QuizBaseClass *quizBaseObject;
+}
 
 @end
 
@@ -18,8 +23,11 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    currentQuizIndex = 1;
     [_tableViewQA setRowHeight:UITableViewAutomaticDimension];
     _tableViewQA.estimatedRowHeight = 44;
+    
+    _lblQuizNumber.text = [NSString stringWithFormat:@"%li/%@",currentQuizIndex,[_quizDict objectForKey:@"noOfQuestions"]];
     
     NSString *studentID = [_quizDict objectForKey:@"studentId"];
     NSString *quizID = [_quizDict objectForKey:@"quizId"];
@@ -36,12 +44,8 @@
                      
                      if (responseType == eResponseTypeSuccessJSON)
                      {
-                         NSDictionary *quizResultInfo = [response objectForKey:@"responseObject"];
-                         
-//                         _lblCorrect.text = [quizResultInfo objectForKey:@"correct"];
-//                         _lblIncorrect.text = [quizResultInfo objectForKey:@"incorrect"];
-//                         _lblUnattempted.text = [quizResultInfo objectForKey:@"notAttempted"];
-//                         _lblScore.text = [quizResultInfo objectForKey:@"score"];
+                         quizBaseObject = [QuizBaseClass modelObjectWithDictionary:response];
+                         [_tableViewQA reloadData];
                      }
                      else{
                          [self showAlert:@"Something went wrong, Please try after sometime."];
@@ -63,46 +67,151 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    return 5;
+    return (quizBaseObject.responseArray.count != 0) ? 5 : 0;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     
     UITableViewCell *cell = nil;
     
+    QuesInfoObject *quesInfo = [quizBaseObject.responseArray objectAtIndex:currentQuizIndex-1];
+
     if (indexPath.row == 0)
     {
         cell = [tableView dequeueReusableCellWithIdentifier:@"questionCell"];
         
         UILabel *question = [cell viewWithTag:21];
-        question.text = @"My name is anthony gonsalvis, which movie is this?";
+        question.text = quesInfo.questionText;
+        
+        return cell;
     }
-    else {
+    else
+    {
         AnswerTableViewCell *optionCell = [tableView dequeueReusableCellWithIdentifier:@"answerCell"];
         
-        optionCell.lblAnswer.text = @"Amar akbar anthony";
-        optionCell.radioButton.tag = indexPath.row;
-        
-        //optionCell.viewOptionContainer.backgroundColor = [UIColor colorFromHexString:@""];
-//        Red color code
-//        e74c3c
-//        
-//        Green color code
-//        2ecc71
+        optionCell.radioButton.selected = NO;
+        optionCell.viewOptionContainer.backgroundColor = [UIColor whiteColor];
+
+        switch (indexPath.row)
+        {
+            case 1:
+                optionCell.lblAnswer.text = quesInfo.option1;
+                
+                if ([quesInfo.correctOption.uppercaseString isEqualToString:@"A"]) {
+                    optionCell.viewOptionContainer.backgroundColor = [UIColor colorFromHexString:greenBGColor];
+                }
+                
+                if ([quesInfo.optionMarked.uppercaseString isEqualToString:@"A"]) {
+                    
+                    optionCell.radioButton.selected = YES;
+                    
+                    if (![quesInfo.optionMarked isEqualToString:quesInfo.correctOption]) {
+                        optionCell.viewOptionContainer.backgroundColor = [UIColor colorFromHexString:redBGColor];
+                    }
+                }
+
+                break;
+            case 2:
+                optionCell.lblAnswer.text = quesInfo.option2;
+                
+                if ([quesInfo.correctOption.uppercaseString isEqualToString:@"B"]) {
+                    optionCell.viewOptionContainer.backgroundColor = [UIColor colorFromHexString:greenBGColor];
+                }
+                
+                if ([quesInfo.optionMarked.uppercaseString isEqualToString:@"B"]) {
+                    
+                    optionCell.radioButton.selected = YES;
+                    
+                    if (![quesInfo.optionMarked isEqualToString:quesInfo.correctOption]) {
+                        optionCell.viewOptionContainer.backgroundColor = [UIColor colorFromHexString:redBGColor];
+                    }
+                }
+                
+                break;
+            case 3:
+                optionCell.lblAnswer.text = quesInfo.option3;
+                
+                if ([quesInfo.correctOption.uppercaseString isEqualToString:@"C"]) {
+                    optionCell.viewOptionContainer.backgroundColor = [UIColor colorFromHexString:greenBGColor];
+                }
+                
+                if ([quesInfo.optionMarked.uppercaseString isEqualToString:@"C"]) {
+                    
+                    optionCell.radioButton.selected = YES;
+                    
+                    if (![quesInfo.optionMarked isEqualToString:quesInfo.correctOption]) {
+                        optionCell.viewOptionContainer.backgroundColor = [UIColor colorFromHexString:redBGColor];
+                    }
+                }
+                
+                break;
+            case 4:
+                optionCell.lblAnswer.text = quesInfo.option4;
+                
+                if ([quesInfo.correctOption.uppercaseString isEqualToString:@"D"]) {
+                    optionCell.viewOptionContainer.backgroundColor = [UIColor colorFromHexString:greenBGColor];
+                }
+                
+                if ([quesInfo.optionMarked.uppercaseString isEqualToString:@"D"]) {
+                    
+                    optionCell.radioButton.selected = YES;
+                    
+                    if (![quesInfo.optionMarked isEqualToString:quesInfo.correctOption]) {
+                        optionCell.viewOptionContainer.backgroundColor = [UIColor colorFromHexString:redBGColor];
+                    }
+                }
+                
+                break;
+   
+            default:
+                break;
+        }
         
         return optionCell;
     }
-    
-    return cell;
 }
 
 
 #pragma mark - IBActions
 
 - (IBAction)nextButtonAction:(id)sender {
+    
+    currentQuizIndex++ ;
+    
+    if (currentQuizIndex == 2) {
+        _btnPrev.hidden = NO;
+        _lblPrev.hidden = NO;
+    }
+    
+    if (currentQuizIndex == quizBaseObject.responseArray.count) {
+        _btnNext.hidden = YES;
+        _lblNext.hidden = YES;
+    }
+    
+     QuesInfoObject *quesInfo = [quizBaseObject.responseArray objectAtIndex:currentQuizIndex-1];
+    _lblQuizTitle.text = quesInfo.moduleName;
+    _lblQuizNumber.text = [NSString stringWithFormat:@"%li/%@",currentQuizIndex,[_quizDict objectForKey:@"noOfQuestions"]];
+    [_tableViewQA reloadData];
 }
 
 - (IBAction)previousButtonAction:(id)sender {
+    
+    currentQuizIndex-- ;
+    
+    if (currentQuizIndex == 1) {
+        _btnPrev.hidden = YES;
+        _lblPrev.hidden = YES;
+    }
+    
+    if (currentQuizIndex == quizBaseObject.responseArray.count -1) {
+        _btnNext.hidden = NO;
+        _lblNext.hidden = NO;
+    }
+    
+    QuesInfoObject *quesInfo = [quizBaseObject.responseArray objectAtIndex:currentQuizIndex-1];
+    _lblQuizTitle.text = quesInfo.moduleName;
+    _lblQuizNumber.text = [NSString stringWithFormat:@"%li/%@",currentQuizIndex,[_quizDict objectForKey:@"noOfQuestions"]];
+    [_tableViewQA reloadData];
 }
 
 

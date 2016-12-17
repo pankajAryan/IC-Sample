@@ -129,7 +129,7 @@
                                             <action selector="popVCAction:" destination="T4P-P8-ote" eventType="touchUpInside" id="pb3-yy-4hN"/>
                                         </connections>
                                     </button>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Quiz" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PqT-Fw-glO">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="My Attempt" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PqT-Fw-glO">
                                         <rect key="frame" x="57" y="22" width="197" height="29"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="197" id="bVf-3l-Ilh"/>
@@ -139,7 +139,7 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                 </subviews>
-                                <color key="backgroundColor" red="0.96862745100000003" green="0.0" blue="0.032632492829999998" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="backgroundColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstItem="zAk-Yb-z3A" firstAttribute="leading" secondItem="7bi-JY-maF" secondAttribute="leading" id="9BU-lI-pby"/>
                                     <constraint firstAttribute="bottom" secondItem="PqT-Fw-glO" secondAttribute="bottom" constant="9" id="Piz-SO-GdH"/>
@@ -188,7 +188,7 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                 </subviews>
-                                <color key="backgroundColor" red="0.96862745100000003" green="0.0" blue="0.031372549020000001" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="backgroundColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstItem="sQw-CM-wL8" firstAttribute="centerX" secondItem="VKc-P1-NX8" secondAttribute="centerX" id="0Lk-MZ-x4O"/>
                                     <constraint firstItem="sQw-CM-wL8" firstAttribute="leading" secondItem="qHf-sa-0wT" secondAttribute="leading" id="9kf-DS-pRs"/>
@@ -350,7 +350,7 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7KU-fJ-1t3">
+                            <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7KU-fJ-1t3">
                                 <rect key="frame" x="20" y="501" width="40" height="40"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="40" id="rOy-Cq-2Sn"/>
@@ -361,7 +361,7 @@
                                     <action selector="previousButtonAction:" destination="T4P-P8-ote" eventType="touchUpInside" id="Bba-w3-FVv"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Previous" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="01n-K2-5TC">
+                            <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Previous" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="01n-K2-5TC">
                                 <rect key="frame" x="14" y="546" width="52" height="16"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="52" id="HI5-ma-O29"/>
@@ -411,6 +411,10 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="btnNext" destination="701-OL-WqN" id="hbt-uk-LgF"/>
+                        <outlet property="btnPrev" destination="7KU-fJ-1t3" id="ieK-X6-4f8"/>
+                        <outlet property="lblNext" destination="UMr-WY-4Po" id="qd6-V5-oXz"/>
+                        <outlet property="lblPrev" destination="01n-K2-5TC" id="YbY-ti-k5M"/>
                         <outlet property="lblQuizNumber" destination="qHf-sa-0wT" id="Ruv-z2-70X"/>
                         <outlet property="lblQuizTitle" destination="EPA-nF-u5U" id="qp2-jX-1YK"/>
                         <outlet property="tableViewQA" destination="Dpk-DC-w9y" id="PMD-vl-UpW"/>

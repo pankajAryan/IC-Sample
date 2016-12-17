@@ -88,6 +88,8 @@
 		CE2B3A2C1DAE823D00B266E1 /* HexColor.m in Sources */ = {isa = PBXBuildFile; fileRef = CE2B3A291DAE823D00B266E1 /* HexColor.m */; };
 		CE819E781E052F170044689B /* AnswerTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = CE819E771E052F170044689B /* AnswerTableViewCell.m */; };
 		CE819E7B1E0541AB0044689B /* ReviewResultViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CE819E7A1E0541AB0044689B /* ReviewResultViewController.m */; };
+		CE819E821E057C550044689B /* QuizBaseClass.m in Sources */ = {isa = PBXBuildFile; fileRef = CE819E7F1E057C550044689B /* QuizBaseClass.m */; };
+		CE819E831E057C550044689B /* QuesInfoObject.m in Sources */ = {isa = PBXBuildFile; fileRef = CE819E811E057C550044689B /* QuesInfoObject.m */; };
 		CE8D5F521DE9AACF00D4846F /* beep1.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = CE8D5F511DE9AACF00D4846F /* beep1.mp3 */; };
 		CE8E59341DFC06510053E81D /* ContactUsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CE8E59331DFC06510053E81D /* ContactUsViewController.m */; };
 		CE8E59411DFC8F020053E81D /* NSData+Base64.m in Sources */ = {isa = PBXBuildFile; fileRef = CE8E59391DFC8F020053E81D /* NSData+Base64.m */; };
@@ -274,6 +276,11 @@
 		CE819E771E052F170044689B /* AnswerTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AnswerTableViewCell.m; sourceTree = "<group>"; };
 		CE819E791E0541AB0044689B /* ReviewResultViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ReviewResultViewController.h; sourceTree = "<group>"; };
 		CE819E7A1E0541AB0044689B /* ReviewResultViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ReviewResultViewController.m; sourceTree = "<group>"; };
+		CE819E7D1E057C550044689B /* DataModels.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DataModels.h; sourceTree = "<group>"; };
+		CE819E7E1E057C550044689B /* QuizBaseClass.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QuizBaseClass.h; sourceTree = "<group>"; };
+		CE819E7F1E057C550044689B /* QuizBaseClass.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QuizBaseClass.m; sourceTree = "<group>"; };
+		CE819E801E057C550044689B /* QuesInfoObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QuesInfoObject.h; sourceTree = "<group>"; };
+		CE819E811E057C550044689B /* QuesInfoObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QuesInfoObject.m; sourceTree = "<group>"; };
 		CE8D5F511DE9AACF00D4846F /* beep1.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = beep1.mp3; sourceTree = "<group>"; };
 		CE8E59321DFC06510053E81D /* ContactUsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ContactUsViewController.h; sourceTree = "<group>"; };
 		CE8E59331DFC06510053E81D /* ContactUsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; lineEnding = 0; path = ContactUsViewController.m; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
@@ -610,6 +617,7 @@
 				4163DB8E1DF5497E00CCACCF /* UIViews */,
 				CE0596BF1DB6654E001E62A9 /* WebServiceHelpers */,
 				CE2B39AC1DAE70DB00B266E1 /* Constants */,
+				CE819E7C1E057C550044689B /* QuizModel */,
 				CE16DAF11DBB405E00AB664C /* Storyboards */,
 				CE2B397F1DAE6D1F00B266E1 /* AppDelegate.h */,
 				CE2B39801DAE6D1F00B266E1 /* AppDelegate.m */,
@@ -785,6 +793,18 @@
 				CE2B3A291DAE823D00B266E1 /* HexColor.m */,
 			);
 			path = Classes;
+			sourceTree = "<group>";
+		};
+		CE819E7C1E057C550044689B /* QuizModel */ = {
+			isa = PBXGroup;
+			children = (
+				CE819E7D1E057C550044689B /* DataModels.h */,
+				CE819E7E1E057C550044689B /* QuizBaseClass.h */,
+				CE819E7F1E057C550044689B /* QuizBaseClass.m */,
+				CE819E801E057C550044689B /* QuesInfoObject.h */,
+				CE819E811E057C550044689B /* QuesInfoObject.m */,
+			);
+			path = QuizModel;
 			sourceTree = "<group>";
 		};
 		CE8E59311DFC06000053E81D /* ContactUs */ = {
@@ -984,6 +1004,7 @@
 				410D4B1C1DF28B5800FFB0D8 /* ProfileViewController.m in Sources */,
 				CE0596E11DB665B5001E62A9 /* AFURLResponseSerialization.m in Sources */,
 				CE2B39BB1DAE71CC00B266E1 /* TPKeyboardAvoidingTableView.m in Sources */,
+				CE819E821E057C550044689B /* QuizBaseClass.m in Sources */,
 				CE2B39C21DAE736B00B266E1 /* RegisterViewController.m in Sources */,
 				CE16DAE91DBA043500AB664C /* FFValidationResult.m in Sources */,
 				CE11DE8A1E01E2BC00C9CC81 /* QuizViewController.m in Sources */,
@@ -1012,6 +1033,7 @@
 				CE16DAFF1DBB42FD00AB664C /* TSMessageView.m in Sources */,
 				410D4B221DF28CC900FFB0D8 /* ApplicationFormViewController.m in Sources */,
 				CE0596BB1DB65E92001E62A9 /* GUITabScrollView.m in Sources */,
+				CE819E831E057C550044689B /* QuesInfoObject.m in Sources */,
 				CE819E781E052F170044689B /* AnswerTableViewCell.m in Sources */,
 				410D4B181DF28B1000FFB0D8 /* InstructionTableViewCell.m in Sources */,
 				CE0596E21DB665B5001E62A9 /* AFURLSessionManager.m in Sources */,
