@@ -203,6 +203,7 @@
          
          if (responseType == eResponseTypeSuccessJSON)
          {
+             [self showSuccessTSMessage:@"Option marked successfully."];
              quesInfo.optionMarked = ontionMarked;
              [_tableViewQA reloadData];
          }
@@ -226,7 +227,7 @@
 -(void)showQuestionList {
     
     self.showListBtn.selected = YES;
-    [self.questionListView reloadList:quizBaseObject.responseArray.count];
+    [self.questionListView reloadList:quizBaseObject.responseArray];
     self.questionListView.btn.alpha = 0.0;
     
     [UIView animateWithDuration:0.50 animations:^{
@@ -395,6 +396,8 @@
          
          if (responseType == eResponseTypeSuccessJSON)
          {
+             [self showAlert:@"You have successfully submitted the quiz."];
+
              QuizResultViewController *vc = (QuizResultViewController *)[UIViewController instantiateViewControllerWithIdentifier:@"QuizResultViewController" fromStoryboard:@"Home"];
              vc.quizDict = self.quizDict;
              
@@ -412,17 +415,16 @@
 
 -(void)updateTimerLabel {
     
-    NSInteger time = -[quizStartDateTime timeIntervalSinceNow];
+    NSInteger time = quizTime*60 + [quizStartDateTime timeIntervalSinceNow];
     
     self.lblTime.text = [NSString stringWithFormat:@"%02ld:%02ld",time/60,time % 60];
     
-    if ( time >= quizTime*60) {//quizTime in min
+    if ( time <= 0) {//quizTime in min
         
         [timer invalidate];
         timer = nil;
         
-        self.lblTime.text = [NSString stringWithFormat:@"%.2f",quizTime];
-//        [self quizTimefinish];
+        self.lblTime.text = [NSString stringWithFormat:@"00:00"];
         [self submitQuiz];
 
     }

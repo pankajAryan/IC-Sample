@@ -7,19 +7,20 @@
 //
 
 #import "ShowQuestionListView.h"
+#import "QuesInfoObject.h"
 
 @interface ShowQuestionListView ()<UITableViewDataSource,UITableViewDelegate>
 
-@property (assign,nonatomic) NSInteger questionCount;
+@property (strong,nonatomic) NSArray *questionArray;
 @property (weak, nonatomic) IBOutlet UITableView *tblView;
 
 @end
 
 @implementation ShowQuestionListView
 
--(void)reloadList:(NSInteger)questionCount{
+-(void)reloadList:(NSArray*)questionArray{
     
-    self.questionCount = questionCount;
+    self.questionArray = questionArray;
     self.tblView.delegate = self;
     self.tblView.dataSource = self;
     self.tblView.tableFooterView = [UIView new];
@@ -34,7 +35,7 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    return self.questionCount;
+    return [self.questionArray count];
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
@@ -49,7 +50,20 @@
     if (cell == nil) {
         cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"qcList"];
     }
+    
+    QuesInfoObject *quesInfo = [self.questionArray objectAtIndex:indexPath.row];
+    
+    cell.contentView.backgroundColor = [UIColor darkGrayColor];
+    cell.backgroundColor = [UIColor darkGrayColor];
+
+    cell.textLabel.textColor = [UIColor whiteColor];
     cell.textLabel.text = [NSString stringWithFormat:@"%ld",indexPath.row+1];
+    cell.tintColor = [UIColor whiteColor];
+    if (quesInfo.optionMarked != nil) {
+        cell.accessoryType = UITableViewCellAccessoryCheckmark;
+    }else{
+        cell.accessoryType = UITableViewCellAccessoryNone;
+    }
     
     return cell;
 }

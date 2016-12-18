@@ -14,6 +14,6 @@
 @property (weak,nonatomic) QuizViewController *vc;
 @property (weak, nonatomic) IBOutlet UIButton *btn;
 
--(void)reloadList:(NSInteger)questionCount;
+-(void)reloadList:(NSArray*)questionList;
 
 @end
