@@ -50,6 +50,14 @@
 
     [self showProgressHudWithMessage:@"Please wait.."];
     
+    
+    //
+    CGFloat x = ScreenWidth;
+    self.questionListView.frame = CGRectMake(x, 64, ScreenWidth, ScreenHeight-64);
+    [self.view addSubview:self.questionListView];
+    self.questionListView.vc = self;
+    //
+    
     [[FFWebServiceHelper sharedManager]
      callWebServiceWithUrl:[[FFWebServiceHelper sharedManager] javaServerUrlWithString:QUIZ_GetQuizForCategoryUpdated]
      withParameter:@{@"studentId":studentID, @"quizId":quizID, @"questionIds":questionIDs, CHECKSOURCE_KEY : CHECKSOURCE_VALUE}
@@ -206,23 +214,35 @@
 
 #pragma mark - IBActions
 
--(IBAction)showQuestionList {
+-(IBAction)showHideQuestionList:(UIButton*)sender {
+
+    if (sender.selected) {
+        [self hideQuestionList];
+    }else{
+        [self showQuestionList];
+    }
+}
+
+-(void)showQuestionList {
     
-    [self.questionListView removeFromSuperview];
-    CGFloat x = ScreenWidth;
-    self.questionListView.frame = CGRectMake(x, 64, ScreenWidth, ScreenHeight-64);
-    [self.view addSubview:self.questionListView];
-    self.questionListView.vc = self;
+    self.showListBtn.selected = YES;
     [self.questionListView reloadList:quizBaseObject.responseArray.count];
     self.questionListView.btn.alpha = 0.0;
-
+    
     [UIView animateWithDuration:0.50 animations:^{
         self.questionListView.frame = CGRectMake(0, 64, ScreenWidth, ScreenHeight-64);
         self.questionListView.btn.alpha = 1.0;
+    } completion:nil];
+}
 
-    } completion:^(BOOL finished) {
+-(void)hideQuestionList {
 
-    }];
+    self.showListBtn.selected = NO;
+    self.questionListView.btn.alpha = 1.0;
+    [UIView animateWithDuration:0.50 animations:^{
+        self.questionListView.frame = CGRectMake(ScreenWidth, 64, ScreenWidth, ScreenHeight-64);
+        self.questionListView.btn.alpha = 0.0;
+    } completion:nil];
 }
 
 -(void)selctedQuestionIndex:(NSInteger)index {

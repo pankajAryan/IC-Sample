@@ -21,6 +21,8 @@
 @property (weak, nonatomic) IBOutlet UILabel *lblNext;
 
 @property (weak, nonatomic) IBOutlet UITableView *tableViewQA;
+@property (weak, nonatomic) IBOutlet UIButton *showListBtn;
+
 
 - (IBAction)nextButtonAction:(id)sender;
 - (IBAction)previousButtonAction:(id)sender;
@@ -28,5 +30,6 @@
 - (IBAction)submitButtonAction:(id)sender;
 
 -(void)selctedQuestionIndex:(NSInteger)index;
+-(void)hideQuestionList;
 
 @end

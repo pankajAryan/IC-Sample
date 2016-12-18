@@ -27,7 +27,7 @@
 }
 - (IBAction)tapOnBtn:(UIButton *)sender {
     
-    [self removeFromSuperview];
+    [self.vc hideQuestionList];
 }
 
 #pragma mark - TableView Datasource
@@ -58,8 +58,7 @@
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
  
     [self.vc selctedQuestionIndex:indexPath.row+1];
-    [self removeFromSuperview];
-
+    [self.vc hideQuestionList];
 }
 
 
