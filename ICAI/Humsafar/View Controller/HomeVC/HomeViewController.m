@@ -10,6 +10,7 @@
 #import "UIViewController+RESideMenu.h"
 #import "HomeCollectionViewCell.h"
 #import "TestListViewController.h"
+#import "RegisterViewController.h"
 
 #import "SecurityUtil.h"
 
@@ -58,6 +59,10 @@
 #pragma mark - Button Actions
 
 - (IBAction)myProfileButtonAction:(id)sender {
+    
+    RegisterViewController *vc = [RegisterViewController instantiateViewControllerWithIdentifier:@"RegisterViewController" fromStoryboard:@"Main"];
+    vc.applicationID = [UIViewController retrieveDataFromUserDefault:@"application_id"];
+    [self.navigationController pushViewController:vc animated:YES];
 }
 
 - (IBAction)takeTestAction:(id)sender {

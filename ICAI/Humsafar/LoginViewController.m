@@ -44,7 +44,7 @@ NSString *encryptionKey =   @"2b9cYGfQ%D-^hnCB";
 {
     UIAlertController *alertController = [UIAlertController
                                           alertControllerWithTitle:@""
-                                          message:@"Enter your registered email-Id"
+                                          message:@"Enter your registered email Id"
                                           preferredStyle:UIAlertControllerStyleAlert];
     
     [alertController addTextFieldWithConfigurationHandler:^(UITextField *textField)
@@ -53,7 +53,7 @@ NSString *encryptionKey =   @"2b9cYGfQ%D-^hnCB";
      }];
     
     UIAlertAction *okAction = [UIAlertAction
-                               actionWithTitle:NSLocalizedString(@"Submit", @"OK action")
+                               actionWithTitle:@"Submit"
                                style:UIAlertActionStyleDefault
                                handler:^(UIAlertAction *action)
                                {

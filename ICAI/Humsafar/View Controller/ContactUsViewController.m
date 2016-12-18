@@ -58,7 +58,7 @@
         [self showAlert:@"All input fields are mandatory!"];
     }
     else if (![_textFieldEmail isEmailValid]) {
-        [self showAlert:@"Please enter a valid email-Id!"];
+        [self showAlert:@"Please enter a valid email Id!"];
     }
     else
     {

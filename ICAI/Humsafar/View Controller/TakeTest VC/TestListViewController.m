@@ -19,30 +19,29 @@
 
 @implementation TestListViewController
 
-- (void)viewDidLoad {
-    [super viewDidLoad];
+- (void)viewWillAppear:(BOOL)animated {
     
     NSString *applicationId = [UIViewController retrieveDataFromUserDefault:@"application_id"];
-
+    
     [self showProgressHudWithMessage:@"Please wait.."];
-
+    
     [[FFWebServiceHelper sharedManager]
-                callWebServiceWithUrl:[[FFWebServiceHelper sharedManager] javaServerUrlWithString:GET_QUIZZES]
-                withParameter:@{@"studentId":applicationId,@"categoryId":@"1",@"source":@"app",CHECKSOURCE_KEY : CHECKSOURCE_VALUE}
-                 onCompletion:^(eResponseType responseType, id response)
-                 {
-                     [self hideProgressHudAfterDelay:0.1];
-                     
-                     if (responseType == eResponseTypeSuccessJSON)
-                     {
-                         arrayTestList = [response objectForKey:@"responseObject"];
-
-                         [_tableView_TestList reloadData];
-                     }
-                     else{
-                         [self showAlert:@"Something went wrong, Please try after sometime."];
-                     }
-                 }];
+     callWebServiceWithUrl:[[FFWebServiceHelper sharedManager] javaServerUrlWithString:GET_QUIZZES]
+     withParameter:@{@"studentId":applicationId,@"categoryId":@"1",@"source":@"app",CHECKSOURCE_KEY : CHECKSOURCE_VALUE}
+     onCompletion:^(eResponseType responseType, id response)
+     {
+         [self hideProgressHudAfterDelay:0.1];
+         
+         if (responseType == eResponseTypeSuccessJSON)
+         {
+             arrayTestList = [response objectForKey:@"responseObject"];
+             
+             [_tableView_TestList reloadData];
+         }
+         else{
+             [self showAlert:@"Something went wrong, Please try after sometime."];
+         }
+     }];
 }
 
 - (IBAction)testDesignatedAction:(id)sender {
