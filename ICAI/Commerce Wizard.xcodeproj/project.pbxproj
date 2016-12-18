@@ -213,7 +213,7 @@
 		CE16DB001DBB6B2D00AB664C /* UIImageView+AFNetworking.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImageView+AFNetworking.h"; sourceTree = "<group>"; };
 		CE16DB011DBB6B2D00AB664C /* UIImageView+AFNetworking.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImageView+AFNetworking.m"; sourceTree = "<group>"; };
 		CE16DB021DBB6B2D00AB664C /* UIKit+AFNetworking.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIKit+AFNetworking.h"; sourceTree = "<group>"; };
-		CE2B39791DAE6D1F00B266E1 /* ICAI.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ICAI.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		CE2B39791DAE6D1F00B266E1 /* Commerce Wizard.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Commerce Wizard.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		CE2B397D1DAE6D1F00B266E1 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		CE2B397F1DAE6D1F00B266E1 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		CE2B39801DAE6D1F00B266E1 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -605,7 +605,7 @@
 		CE2B397A1DAE6D1F00B266E1 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				CE2B39791DAE6D1F00B266E1 /* ICAI.app */,
+				CE2B39791DAE6D1F00B266E1 /* Commerce Wizard.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -880,9 +880,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		CE2B39781DAE6D1F00B266E1 /* ICAI */ = {
+		CE2B39781DAE6D1F00B266E1 /* Commerce Wizard */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = CE2B39901DAE6D1F00B266E1 /* Build configuration list for PBXNativeTarget "ICAI" */;
+			buildConfigurationList = CE2B39901DAE6D1F00B266E1 /* Build configuration list for PBXNativeTarget "Commerce Wizard" */;
 			buildPhases = (
 				CE2B39751DAE6D1F00B266E1 /* Sources */,
 				CE2B39761DAE6D1F00B266E1 /* Frameworks */,
@@ -892,9 +892,9 @@
 			);
 			dependencies = (
 			);
-			name = ICAI;
+			name = "Commerce Wizard";
 			productName = Humsafar;
-			productReference = CE2B39791DAE6D1F00B266E1 /* ICAI.app */;
+			productReference = CE2B39791DAE6D1F00B266E1 /* Commerce Wizard.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -921,7 +921,7 @@
 					};
 				};
 			};
-			buildConfigurationList = CE2B39741DAE6D1F00B266E1 /* Build configuration list for PBXProject "ICAI" */;
+			buildConfigurationList = CE2B39741DAE6D1F00B266E1 /* Build configuration list for PBXProject "Commerce Wizard" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
@@ -934,7 +934,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				CE2B39781DAE6D1F00B266E1 /* ICAI */,
+				CE2B39781DAE6D1F00B266E1 /* Commerce Wizard */,
 			);
 		};
 /* End PBXProject section */
@@ -1227,7 +1227,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		CE2B39741DAE6D1F00B266E1 /* Build configuration list for PBXProject "ICAI" */ = {
+		CE2B39741DAE6D1F00B266E1 /* Build configuration list for PBXProject "Commerce Wizard" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				CE2B398E1DAE6D1F00B266E1 /* Debug */,
@@ -1236,7 +1236,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		CE2B39901DAE6D1F00B266E1 /* Build configuration list for PBXNativeTarget "ICAI" */ = {
+		CE2B39901DAE6D1F00B266E1 /* Build configuration list for PBXNativeTarget "Commerce Wizard" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				CE2B39911DAE6D1F00B266E1 /* Debug */,

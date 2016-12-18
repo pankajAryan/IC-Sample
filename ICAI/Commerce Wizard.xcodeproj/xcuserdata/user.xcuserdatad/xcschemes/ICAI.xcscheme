@@ -15,9 +15,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "CE2B39781DAE6D1F00B266E1"
-               BuildableName = "ICAI.app"
-               BlueprintName = "ICAI"
-               ReferencedContainer = "container:ICAI.xcodeproj">
+               BuildableName = "Commerce Wizard.app"
+               BlueprintName = "Commerce Wizard"
+               ReferencedContainer = "container:Commerce Wizard.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -33,9 +33,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "CE2B39781DAE6D1F00B266E1"
-            BuildableName = "ICAI.app"
-            BlueprintName = "ICAI"
-            ReferencedContainer = "container:ICAI.xcodeproj">
+            BuildableName = "Commerce Wizard.app"
+            BlueprintName = "Commerce Wizard"
+            ReferencedContainer = "container:Commerce Wizard.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
       <AdditionalOptions>
@@ -56,9 +56,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "CE2B39781DAE6D1F00B266E1"
-            BuildableName = "ICAI.app"
-            BlueprintName = "ICAI"
-            ReferencedContainer = "container:ICAI.xcodeproj">
+            BuildableName = "Commerce Wizard.app"
+            BlueprintName = "Commerce Wizard"
+            ReferencedContainer = "container:Commerce Wizard.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
       <AdditionalOptions>
@@ -75,9 +75,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "CE2B39781DAE6D1F00B266E1"
-            BuildableName = "ICAI.app"
-            BlueprintName = "ICAI"
-            ReferencedContainer = "container:ICAI.xcodeproj">
+            BuildableName = "Commerce Wizard.app"
+            BlueprintName = "Commerce Wizard"
+            ReferencedContainer = "container:Commerce Wizard.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </ProfileAction>
