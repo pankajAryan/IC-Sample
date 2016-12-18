@@ -73,8 +73,8 @@
 }
 
 - (IBAction)popVCAction:(id)sender {
-    
-    [self.navigationController popViewControllerAnimated:YES];
+
+    [self submitButtonAction:nil];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -402,7 +402,9 @@
         timer = nil;
         
         self.lblTime.text = [NSString stringWithFormat:@"%.2f",quizTime];
-        [self quizTimefinish];
+//        [self quizTimefinish];
+        [self submitQuiz];
+
     }
 }
 
