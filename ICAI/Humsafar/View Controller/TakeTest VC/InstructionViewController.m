@@ -13,6 +13,8 @@
 @interface InstructionViewController ()
 @property (weak, nonatomic) IBOutlet UITableView *tableviewInstruction;
 
+@property (weak, nonatomic) IBOutlet UITextView *txtView_instruction;
+
 @end
 
 @implementation InstructionViewController
@@ -28,6 +30,8 @@
 //    tableviewInstruction.layer.shadowOffset = CGSizeMake(0, 0);
 //    tableviewInstruction.layer.shadowRadius = 1;
 //    tableviewInstruction.layer.shadowOpacity = 1.0;
+    
+    self.txtView_instruction.text = [NSString stringWithFormat:@"You need a stable internet connection to attempt this test.\n\nEvery answer marked will be auto-recorded.\n\nThis test consists of %ld questions.\n\nYou get +1 for every correct answer & -0.25 for every wrong answer. No marks will be deducted for not attempting a question.\n\nTotal test duration is %ld minutes.\n\nYou can submit the test by clicking on End Test or it will auto-submit if it times out.",[[_quizDict objectForKey:@"noOfQuestions"] integerValue],[[_quizDict objectForKey:@"timeMinutes"] integerValue]];
 }
 
 - (IBAction)popVCAction:(id)sender {

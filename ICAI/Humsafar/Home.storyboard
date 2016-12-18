@@ -455,6 +455,9 @@
                             <constraint firstItem="kbb-xx-Xbl" firstAttribute="top" secondItem="dgP-PM-wqm" secondAttribute="bottom" constant="20" id="sKv-Gh-VwB"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="txtView_instruction" destination="dgP-PM-wqm" id="Jrr-ex-VUY"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="t7S-G4-zh0" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

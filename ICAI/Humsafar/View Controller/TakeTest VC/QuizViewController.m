@@ -20,6 +20,9 @@
     
     NSInteger currentQuizIndex;
     QuizBaseClass *quizBaseObject;
+    NSTimer *timer;
+    NSDate *quizStartDateTime;
+    double quizTime;
 }
 
 @property (strong, nonatomic) IBOutlet ShowQuestionListView *questionListView;
@@ -38,12 +41,13 @@
     _tableViewQA.estimatedRowHeight = 44;
     
     _lblQuizNumber.text = [NSString stringWithFormat:@"%li/%@",currentQuizIndex,[_quizDict objectForKey:@"noOfQuestions"]];
-    _lblTime.text = [NSString stringWithFormat:@"%@",[_quizDict objectForKey:@"timeMinutes"]]; //TODO: Start a countdown timer and change _lblTime's text accordingly.
-    
+
     studentID = [_quizDict objectForKey:@"studentId"];
     quizID = [_quizDict objectForKey:@"quizId"];
     questionIDs = [_quizDict objectForKey:@"questionIds"];
-    
+    quizTime = [[_quizDict objectForKey:@"timeMinutes"] doubleValue];
+    self.lblTime.text = [NSString stringWithFormat:@"%.2f",quizTime];
+
     [self showProgressHudWithMessage:@"Please wait.."];
     
     [[FFWebServiceHelper sharedManager]
@@ -57,6 +61,10 @@
          {
              quizBaseObject = [QuizBaseClass modelObjectWithDictionary:response];
              [_tableViewQA reloadData];
+             
+             timer = [NSTimer scheduledTimerWithTimeInterval:1 target:self selector:@selector(updateTimerLabel) userInfo:nil repeats:YES];
+
+             quizStartDateTime = [NSDate date];
          }
          else{
              [self showAlert:@"Something went wrong, Please try after sometime."];
@@ -208,7 +216,7 @@
     [self.questionListView reloadList:quizBaseObject.responseArray.count];
     self.questionListView.btn.alpha = 0.0;
 
-    [UIView animateWithDuration:1.0 animations:^{
+    [UIView animateWithDuration:0.50 animations:^{
         self.questionListView.frame = CGRectMake(0, 64, ScreenWidth, ScreenHeight-64);
         self.questionListView.btn.alpha = 1.0;
 
@@ -330,36 +338,73 @@
     [alertController addAction:[UIAlertAction actionWithTitle:@"Yes" style:UIAlertActionStyleDefault handler:^(UIAlertAction *action) {
         
         [alertController dismissViewControllerAnimated:YES completion:nil];
-        
-        [self showProgressHudWithMessage:@"Please wait.."];
-        
-        [[FFWebServiceHelper sharedManager]
-         callWebServiceWithUrl:[[FFWebServiceHelper sharedManager] javaServerUrlWithString:QUIZ_submitQuiz]
-         withParameter:@{@"studentId":studentID, @"quizId":quizID}
-         onCompletion:^(eResponseType responseType, id response)
-         {
-             [self hideProgressHudAfterDelay:0.1];
-             
-             if (responseType == eResponseTypeSuccessJSON)
-             {
-                 QuizResultViewController *vc = (QuizResultViewController *)[UIViewController instantiateViewControllerWithIdentifier:@"QuizResultViewController" fromStoryboard:@"Home"];
-                 vc.quizDict = self.quizDict;
-                 
-                 NSMutableArray *vcArray = self.navigationController.viewControllers.mutableCopy;
-                 [vcArray removeLastObject];
-                 [vcArray removeLastObject];
-                 [vcArray addObject:vc];
-                 self.navigationController.viewControllers = vcArray;
-             }
-             else{
-                 [self showAlert:@"Something went wrong, Please try after sometime."];
-             }
-         }];
-        
+        [self submitQuiz];
     }]];
     
     [self presentViewController:alertController animated:YES completion:nil];
     
 }
+-(void)quizTimefinish {
+    
+    // dismiss all the previously presented vc, then show this alert
+    [self dismissViewControllerAnimated:YES completion:nil];
+    
+    UIAlertController *alertController = [UIAlertController alertControllerWithTitle:@"Submit/End Quiz" message:@"Your time is finished." preferredStyle:UIAlertControllerStyleAlert];
+    
+    [alertController addAction:[UIAlertAction actionWithTitle:@"Submit" style:UIAlertActionStyleDefault handler:^(UIAlertAction *action) {
+        
+        [alertController dismissViewControllerAnimated:YES completion:nil];
+        [self submitQuiz];
+    }]];
+    
+    [self presentViewController:alertController animated:YES completion:nil];
+    
+    
+}
+
+-(void)submitQuiz {
+    
+    [self showProgressHudWithMessage:@"Please wait.."];
+    
+    [[FFWebServiceHelper sharedManager]
+     callWebServiceWithUrl:[[FFWebServiceHelper sharedManager] javaServerUrlWithString:QUIZ_submitQuiz]
+     withParameter:@{@"studentId":studentID, @"quizId":quizID}
+     onCompletion:^(eResponseType responseType, id response)
+     {
+         [self hideProgressHudAfterDelay:0.1];
+         
+         if (responseType == eResponseTypeSuccessJSON)
+         {
+             QuizResultViewController *vc = (QuizResultViewController *)[UIViewController instantiateViewControllerWithIdentifier:@"QuizResultViewController" fromStoryboard:@"Home"];
+             vc.quizDict = self.quizDict;
+             
+             NSMutableArray *vcArray = self.navigationController.viewControllers.mutableCopy;
+             [vcArray removeLastObject];
+             [vcArray removeLastObject];
+             [vcArray addObject:vc];
+             self.navigationController.viewControllers = vcArray;
+         }
+         else{
+             [self showAlert:@"Something went wrong, Please try after sometime."];
+         }
+     }];
+}
+
+-(void)updateTimerLabel {
+    
+    NSInteger time = -[quizStartDateTime timeIntervalSinceNow];
+    
+    self.lblTime.text = [NSString stringWithFormat:@"%02ld:%02ld",time/60,time % 60];
+    
+    if ( time >= quizTime*60) {//quizTime in min
+        
+        [timer invalidate];
+        timer = nil;
+        
+        self.lblTime.text = [NSString stringWithFormat:@"%.2f",quizTime];
+        [self quizTimefinish];
+    }
+}
+
 
 @end
