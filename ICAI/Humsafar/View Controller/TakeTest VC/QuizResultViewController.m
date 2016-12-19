@@ -22,7 +22,7 @@
     NSString *quizID = [_quizDict objectForKey:@"quizId"];
     NSString *studentID = [_quizDict objectForKey:@"studentId"];
     
-    [self showProgressHudWithMessage:@"Please wait.."];
+    [self showProgressHudWithMessage:@"Loading..."];
     
     [[FFWebServiceHelper sharedManager]
              callWebServiceWithUrl:[[FFWebServiceHelper sharedManager] javaServerUrlWithString:QUIZ_RESULT]

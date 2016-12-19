@@ -213,7 +213,7 @@
     
     paraDict[@"registration_mode"] = @"USER_ONLINE";
     
-    [self showProgressHudWithMessage:@"Please wait.."];
+    [self showProgressHudWithMessage:@"Loading..."];
 
     [[FFWebServiceHelper sharedManager]
      callWebServiceWithUrl:[FFWebServiceHelper phpServerUrlWithString:Registeration]
@@ -285,7 +285,7 @@
     paraDict[@"applicationId"] = self.applicationID;
     paraDict[CHECKSOURCE_KEY] = CHECKSOURCE_VALUE;
 
-    [self showProgressHudWithMessage:@"Please wait.."];
+    [self showProgressHudWithMessage:@"Loading..."];
 
     [[FFWebServiceHelper sharedManager]
                      callWebServiceWithUrl:[[FFWebServiceHelper sharedManager] javaServerUrlWithString:UpdateUserProfile]
@@ -308,7 +308,7 @@
 
 -(void)getProfile {
     
-    [self showProgressHudWithMessage:@"Please wait.."];
+    [self showProgressHudWithMessage:@"Loading..."];
 
     [[FFWebServiceHelper sharedManager]
                      callWebServiceWithUrl:[[FFWebServiceHelper sharedManager] javaServerUrlWithString:GET_PROFILE]

@@ -23,7 +23,7 @@
     
     NSString *applicationId = [UIViewController retrieveDataFromUserDefault:@"application_id"];
     
-    [self showProgressHudWithMessage:@"Please wait.."];
+    [self showProgressHudWithMessage:@"Loading..."];
     
     [[FFWebServiceHelper sharedManager]
      callWebServiceWithUrl:[[FFWebServiceHelper sharedManager] javaServerUrlWithString:GET_QUIZZES]

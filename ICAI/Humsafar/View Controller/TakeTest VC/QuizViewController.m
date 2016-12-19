@@ -48,7 +48,7 @@
     quizTime = [[_quizDict objectForKey:@"timeMinutes"] doubleValue];
     self.lblTime.text = [NSString stringWithFormat:@"%.2f",quizTime];
 
-    [self showProgressHudWithMessage:@"Please wait.."];
+    [self showProgressHudWithMessage:@"Loading..."];
     
     
     //
@@ -192,7 +192,7 @@
     
     QuesInfoObject *quesInfo = [quizBaseObject.responseArray objectAtIndex:currentQuizIndex-1];
     
-    [self showProgressHudWithMessage:@"Please wait.."];
+    [self showProgressHudWithMessage:@"Loading..."];
     
     [[FFWebServiceHelper sharedManager]
      callWebServiceWithUrl:[[FFWebServiceHelper sharedManager] javaServerUrlWithString:QUIZ_SubmitQuestionAttempt]
@@ -327,7 +327,7 @@
         return;
     }
     
-    [self showProgressHudWithMessage:@"Please wait.."];
+    [self showProgressHudWithMessage:@"Loading..."];
     
     [[FFWebServiceHelper sharedManager]
      callWebServiceWithUrl:[[FFWebServiceHelper sharedManager] javaServerUrlWithString:QUIZ_clearQuestionAttempt]
@@ -385,7 +385,7 @@
 
 -(void)submitQuiz {
     
-    [self showProgressHudWithMessage:@"Please wait.."];
+    [self showProgressHudWithMessage:@"Loading..."];
     
     [[FFWebServiceHelper sharedManager]
      callWebServiceWithUrl:[[FFWebServiceHelper sharedManager] javaServerUrlWithString:QUIZ_submitQuiz]

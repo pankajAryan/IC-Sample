@@ -28,7 +28,7 @@
     [_notificationsTableView setRowHeight:UITableViewAutomaticDimension];
     _notificationsTableView.estimatedRowHeight = 100;
     
-    [self showProgressHudWithMessage:@"Please wait.."];
+    [self showProgressHudWithMessage:@"Loading..."];
 
     [[FFWebServiceHelper sharedManager]
                 callWebServiceWithUrl:[[FFWebServiceHelper sharedManager] javaServerUrlWithString:GET_USER_ALERTS]

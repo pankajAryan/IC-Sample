@@ -33,7 +33,7 @@
     NSString *quizID = [_quizDict objectForKey:@"quizId"];
     NSString *questionIDs = [_quizDict objectForKey:@"questionIds"];
     
-    [self showProgressHudWithMessage:@"Please wait.."];
+    [self showProgressHudWithMessage:@"Loading..."];
     
     [[FFWebServiceHelper sharedManager]
                  callWebServiceWithUrl:[[FFWebServiceHelper sharedManager] javaServerUrlWithString:QUIZ_ATTEMPT]

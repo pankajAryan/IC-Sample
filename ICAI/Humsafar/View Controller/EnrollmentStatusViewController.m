@@ -35,7 +35,7 @@
     
     NSString *applicationId = [UIViewController retrieveDataFromUserDefault:@"application_id"];
     
-    [self showProgressHudWithMessage:@"Please wait.."];
+    [self showProgressHudWithMessage:@"Loading..."];
 
     [[FFWebServiceHelper sharedManager]
                      callWebServiceWithUrl:[FFWebServiceHelper phpServerUrlWithString:Get_Payment_Status]
@@ -81,7 +81,7 @@
 
 - (IBAction)makePaymentAction:(id)sender {
     
-    NSString *applicationId   = [paymentStatusDict objectForKey:@"application_id"];
+    NSString *applicationId = [UIViewController retrieveDataFromUserDefault:@"application_id"];
     
     [self showProgressHudWithMessage:@"Please wait..."];
     
@@ -138,7 +138,7 @@
     orderDict[@"THEME"] = kTHEME;
     orderDict[@"REQUEST_TYPE"] = kREQUESTTYPE;
     
-    NSString *applicationId   = [paymentStatusDict objectForKey:@"application_id"];
+    NSString *applicationId = [UIViewController retrieveDataFromUserDefault:@"application_id"];
     NSString *strAmount     = amount;
     
     if (applicationId == nil || strAmount == nil) {
@@ -205,7 +205,7 @@
                      {
                          if ([[response objectForKey:@"errorCode"] integerValue] == 0) {
                              //unlock product
-                             [self showAlert:[response objectForKey:@"Product purchased successfully!"]];
+                             [self showAlert:@"Payment processed successfully!"];
                              
                              _imgViewPayStatus.image = [UIImage imageNamed:@"ruppe"];
                              _viewPaymentContainer.hidden = YES;
@@ -258,8 +258,8 @@
 -(void)removeController:(PGTransactionViewController *)controller
 {
     if (self.navigationController != nil){
-        [self.navigationController popViewControllerAnimated:NO];
         [self.navigationController popViewControllerAnimated:YES];
+        //[self.navigationController popViewControllerAnimated:YES];
     }
     else
         [controller dismissViewControllerAnimated:YES

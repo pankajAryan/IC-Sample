@@ -35,7 +35,7 @@
 //    [self setTitleLabel];
     [_btn_menu addTarget:self action:@selector(presentLeftMenuViewController:) forControlEvents:UIControlEventTouchUpInside];
 
-    [self showProgressHudWithMessage:@"Please wait.."];
+    [self showProgressHudWithMessage:@"Loading..."];
     
     [[FFWebServiceHelper sharedManager]
                     callWebServiceWithUrl:[NSURL URLWithString:GET_JAVA_BASE_URL]
