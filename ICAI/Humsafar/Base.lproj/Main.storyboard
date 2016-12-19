@@ -22,7 +22,7 @@
         <scene sceneID="b17-mF-tbD">
             <objects>
                 <navigationController storyboardIdentifier="rootNavController" navigationBarHidden="YES" id="mTF-Hz-ZyW" sceneMemberID="viewController">
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="924-ay-fJH">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="924-ay-fJH">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -129,25 +129,30 @@
                                         </constraints>
                                     </view>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="zui-3C-MZ2">
-                                        <rect key="frame" x="51" y="417" width="218" height="28.5"/>
+                                        <rect key="frame" x="44.5" y="417" width="231" height="30"/>
                                         <state key="normal">
                                             <attributedString key="attributedTitle">
                                                 <fragment content="Not yet registered? ">
                                                     <attributes>
                                                         <color key="NSColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                                        <font key="NSFont" size="14" name=".AppleSystemUIFont"/>
+                                                        <font key="NSFont" size="15" name=".AppleSystemUIFont"/>
                                                         <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
                                                     </attributes>
                                                 </fragment>
                                                 <fragment content="Register Now!">
                                                     <attributes>
                                                         <color key="NSColor" red="0.96862745098039216" green="0.0" blue="0.031372549019607843" alpha="1" colorSpace="calibratedRGB"/>
-                                                        <font key="NSFont" size="14" name=".AppleSystemUIFont"/>
+                                                        <font key="NSFont" size="15" name=".AppleSystemUIFont"/>
                                                         <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
                                                     </attributes>
                                                 </fragment>
                                             </attributedString>
                                         </state>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="layer.borderWidth">
+                                                <integer key="value" value="1"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
                                         <connections>
                                             <segue destination="dmc-vK-a5u" kind="show" id="hXN-Ih-VGz"/>
                                         </connections>
