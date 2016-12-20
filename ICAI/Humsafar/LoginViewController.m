@@ -83,7 +83,7 @@ NSString *encryptionKey =   @"2b9cYGfQ%D-^hnCB";
         [self showAlert:@"Invalid Email address!"];
     }
     else {
-        [self showProgressHudWithMessage:@"Please wait..."];
+        [self showProgressHudWithMessage:@"Loading..."];
 
         [[FFWebServiceHelper sharedManager]
                          callWebServiceWithUrl:[FFWebServiceHelper phpServerUrlWithString:Forgot_Password]

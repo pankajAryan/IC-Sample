@@ -83,7 +83,7 @@
     
     NSString *applicationId = [UIViewController retrieveDataFromUserDefault:@"application_id"];
     
-    [self showProgressHudWithMessage:@"Please wait..."];
+    [self showProgressHudWithMessage:@"Loading..."];
     
     //requestInitiatePaymentWithParameters
     [[FFWebServiceHelper sharedManager]
@@ -156,7 +156,7 @@
     PGOrder *order = [PGOrder orderWithParams:orderDict];
     
     PGTransactionViewController *txnController = [[PGTransactionViewController alloc] initTransactionForOrder:order];
-    txnController.useStaging = true;
+    txnController.useStaging = false;
     txnController.serverType = eServerTypeProduction;
     txnController.merchant = objMerchant;
     txnController.topBar = self.navigationController.navigationBar;
@@ -192,7 +192,7 @@
     NSString *bankResponseMessage = [response objectForKey:@"RESPMSG"];
     NSString *currency          = [response objectForKey:@"CURRENCY"];
     
-    [self showProgressHudWithMessage:@"Please wait..."];
+    [self showProgressHudWithMessage:@"Processing payment..."];
     
     [[FFWebServiceHelper sharedManager]
             callWebServiceWithUrl:[FFWebServiceHelper phpServerUrlWithString:SEND_AppPaymentStatus]
