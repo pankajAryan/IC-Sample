@@ -149,7 +149,7 @@
     orderDict[@"MID"]           = kMID;
     orderDict[@"ORDER_ID"]      = orderId;
     orderDict[@"CUST_ID"]       = applicationId;
-    orderDict[@"TXN_AMOUNT"]    = @"1.00";//[NSString stringWithFormat:@"%0.2f",[strAmount floatValue]];
+    orderDict[@"TXN_AMOUNT"]    = [NSString stringWithFormat:@"%0.2f",[strAmount floatValue]];
     orderDict[@"EMAIL"]         = _lblEmail.text;
     orderDict[@"MOBILE_NO"]     = kMOBILENO;
     
