@@ -11,7 +11,6 @@
 		410D4B171DF28B1000FFB0D8 /* NotificationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 410D4B0F1DF28B1000FFB0D8 /* NotificationViewController.m */; };
 		410D4B181DF28B1000FFB0D8 /* InstructionTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 410D4B131DF28B1000FFB0D8 /* InstructionTableViewCell.m */; };
 		410D4B191DF28B1000FFB0D8 /* InstructionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 410D4B151DF28B1000FFB0D8 /* InstructionViewController.m */; };
-		410D4B1C1DF28B5800FFB0D8 /* ProfileViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 410D4B1B1DF28B5800FFB0D8 /* ProfileViewController.m */; };
 		410D4B221DF28CC900FFB0D8 /* ApplicationFormViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 410D4B211DF28CC900FFB0D8 /* ApplicationFormViewController.m */; };
 		4163DB881DF5495F00CCACCF /* HomeCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 4163DB811DF5495F00CCACCF /* HomeCollectionViewCell.m */; };
 		4163DB8B1DF5495F00CCACCF /* HomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4163DB871DF5495F00CCACCF /* HomeViewController.m */; };
@@ -128,8 +127,6 @@
 		410D4B131DF28B1000FFB0D8 /* InstructionTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InstructionTableViewCell.m; sourceTree = "<group>"; };
 		410D4B141DF28B1000FFB0D8 /* InstructionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InstructionViewController.h; sourceTree = "<group>"; };
 		410D4B151DF28B1000FFB0D8 /* InstructionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InstructionViewController.m; sourceTree = "<group>"; };
-		410D4B1A1DF28B5800FFB0D8 /* ProfileViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProfileViewController.h; sourceTree = "<group>"; };
-		410D4B1B1DF28B5800FFB0D8 /* ProfileViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProfileViewController.m; sourceTree = "<group>"; };
 		410D4B201DF28CC900FFB0D8 /* ApplicationFormViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ApplicationFormViewController.h; sourceTree = "<group>"; };
 		410D4B211DF28CC900FFB0D8 /* ApplicationFormViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ApplicationFormViewController.m; sourceTree = "<group>"; };
 		4163DB801DF5495F00CCACCF /* HomeCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HomeCollectionViewCell.h; sourceTree = "<group>"; };
@@ -358,7 +355,6 @@
 				410D4B0B1DF28B1000FFB0D8 /* Notification VC */,
 				CE8E59311DFC06000053E81D /* ContactUs */,
 				CE0ACA541DFD696500F4B143 /* PAYMENT VC */,
-				410D4B0A1DF28B1000FFB0D8 /* My Profile VC */,
 				410D4B111DF28B1000FFB0D8 /* TakeTest VC */,
 				410D4B091DF28B1000FFB0D8 /* ApplicationFormVC */,
 				CEB08FF21DF35AD5008A83AB /* CommonWebViewController.h */,
@@ -374,15 +370,6 @@
 				410D4B211DF28CC900FFB0D8 /* ApplicationFormViewController.m */,
 			);
 			path = ApplicationFormVC;
-			sourceTree = "<group>";
-		};
-		410D4B0A1DF28B1000FFB0D8 /* My Profile VC */ = {
-			isa = PBXGroup;
-			children = (
-				410D4B1A1DF28B5800FFB0D8 /* ProfileViewController.h */,
-				410D4B1B1DF28B5800FFB0D8 /* ProfileViewController.m */,
-			);
-			path = "My Profile VC";
 			sourceTree = "<group>";
 		};
 		410D4B0B1DF28B1000FFB0D8 /* Notification VC */ = {
@@ -1001,7 +988,6 @@
 				CE2B397E1DAE6D1F00B266E1 /* main.m in Sources */,
 				CE2B39B91DAE71CC00B266E1 /* TPKeyboardAvoidingCollectionView.m in Sources */,
 				CE0596BA1DB65E92001E62A9 /* GUITabPagerViewController.m in Sources */,
-				410D4B1C1DF28B5800FFB0D8 /* ProfileViewController.m in Sources */,
 				CE0596E11DB665B5001E62A9 /* AFURLResponseSerialization.m in Sources */,
 				CE2B39BB1DAE71CC00B266E1 /* TPKeyboardAvoidingTableView.m in Sources */,
 				CE819E821E057C550044689B /* QuizBaseClass.m in Sources */,

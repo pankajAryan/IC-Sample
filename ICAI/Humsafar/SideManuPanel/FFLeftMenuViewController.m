@@ -9,7 +9,6 @@
 #import "FFLeftMenuViewController.h"
 
 #import "HomeViewController.h"
-#import "ProfileViewController.h"
 #import "NotificationViewController.h"
 #import "EnrollmentStatusViewController.h"
 #import "TestListViewController.h"

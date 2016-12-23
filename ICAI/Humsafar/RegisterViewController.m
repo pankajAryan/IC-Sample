@@ -107,7 +107,7 @@
                         [[DataHolder alloc] initWithPlaceHolder:@"First Name *" andIsActAsBtn:NO],
                         [[DataHolder alloc] initWithPlaceHolder:@"Middle Name *" andIsActAsBtn:NO],
                         [[DataHolder alloc] initWithPlaceHolder:@"Last Name *" andIsActAsBtn:NO],
-                        [[DataHolder alloc] initWithPlaceHolder:@"Gender *" andIsActAsBtn:YES],
+                        [[DataHolder alloc] initWithPlaceHolder:@"Gender" andIsActAsBtn:YES],
                         [[DataHolder alloc] initWithPlaceHolder:@"Father's name *" andIsActAsBtn:NO],
                         [[DataHolder alloc] initWithPlaceHolder:@"Mother's name *" andIsActAsBtn:NO],
                         [[DataHolder alloc] initWithPlaceHolder:@"Date Of Birth *" andIsActAsBtn:NO],
@@ -568,7 +568,14 @@
                 [self showAlert:@"Invalid Email address!"];
                 return NO;
             }
-        }else if (i == 17) {
+        }
+        else if (i == 4) {
+            DataHolder *modal = self.dataHolderArray[i];
+            if (modal.displayText.length == 0) {
+                modal.displayText = @"Female";
+            }
+        }
+        else if (i == 17) {
             DataHolder *data = self.dataHolderArray[i-1];//16
             if ([data.displayText isEqualToString:@"Other"]) {
                 if (modal.displayText.length == 0) {
