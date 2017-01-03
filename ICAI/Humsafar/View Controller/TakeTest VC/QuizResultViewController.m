@@ -42,6 +42,9 @@
                      _lblUnattempted.text = [quizResultInfo objectForKey:@"notAttempted"];
                      _lblScore.text = [quizResultInfo objectForKey:@"score"];
                  }
+                 else if (responseType == eResponseTypeFailJSON){
+                     [self showAlert:[response objectForKey:kKEY_ErrorMessage]];
+                 }
                  else{
                      [self showAlert:@"Something went wrong, Please try after sometime."];
                  }

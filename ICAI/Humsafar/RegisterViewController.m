@@ -241,10 +241,11 @@
              
              [self.navigationController pushViewController:VC animated:YES];
          }
+         else if (responseType == eResponseTypeFailJSON){
+             [self showAlert:[response objectForKey:kKEY_ErrorMessage]];
+         }
          else{
-             if ([response respondsToSelector:@selector(objectForKey:)]) {
-                 [self showAlert:[response objectForKey:kKEY_ErrorMessage]];
-             }
+             [self showAlert:@"Something went wrong, Please try after sometime."];
          }
      }];
 }
@@ -298,10 +299,11 @@
                          {
                              [self showAlert:@"Profile updated."];
                          }
+                         else if (responseType == eResponseTypeFailJSON){
+                             [self showAlert:[response objectForKey:kKEY_ErrorMessage]];
+                         }
                          else{
-                             if ([response respondsToSelector:@selector(objectForKey:)]) {
-                                 [self showAlert:[response objectForKey:kKEY_ErrorMessage]];
-                             }
+                             [self showAlert:@"Something went wrong, Please try after sometime."];
                          }
                      }];
 }
@@ -352,10 +354,11 @@
                              
                              [self.tblView reloadData];
                          }
+                         else if (responseType == eResponseTypeFailJSON){
+                             [self showAlert:[response objectForKey:kKEY_ErrorMessage]];
+                         }
                          else{
-                             if ([response respondsToSelector:@selector(objectForKey:)]) {
-                                 [self showAlert:[response objectForKey:kKEY_ErrorMessage]];
-                             }
+                             [self showAlert:@"Something went wrong, Please try after sometime."];
                          }
                      }];
 }
@@ -375,10 +378,11 @@
              testCentersArray = [response objectForKey:kKEY_ResponseObject];
              //[self showAlert:[response objectForKey:kKEY_ErrorMessage]];
          }
+         else if (responseType == eResponseTypeFailJSON){
+             [self showAlert:[response objectForKey:kKEY_ErrorMessage]];
+         }
          else{
-             if ([response respondsToSelector:@selector(objectForKey:)]) {
-                 [self showAlert:[response objectForKey:kKEY_ErrorMessage]];
-             }
+             [self showAlert:@"Something went wrong, Please try after sometime."];
          }
      }];
 }

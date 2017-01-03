@@ -47,6 +47,9 @@
                          quizBaseObject = [QuizBaseClass modelObjectWithDictionary:response];
                          [_tableViewQA reloadData];
                      }
+                     else if (responseType == eResponseTypeFailJSON){
+                         [self showAlert:[response objectForKey:kKEY_ErrorMessage]];
+                     }
                      else{
                          [self showAlert:@"Something went wrong, Please try after sometime."];
                      }

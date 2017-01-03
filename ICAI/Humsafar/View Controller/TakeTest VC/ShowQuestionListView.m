@@ -57,7 +57,7 @@
     cell.backgroundColor = [UIColor darkGrayColor];
 
     cell.textLabel.textColor = [UIColor whiteColor];
-    cell.textLabel.text = [NSString stringWithFormat:@"%ld",indexPath.row+1];
+    cell.textLabel.text = [NSString stringWithFormat:@"%d",indexPath.row+1];
     //cell.tintColor = [UIColor whiteColor];
     if (quesInfo.optionMarked != nil) {
         cell.accessoryType = UITableViewCellAccessoryCheckmark;

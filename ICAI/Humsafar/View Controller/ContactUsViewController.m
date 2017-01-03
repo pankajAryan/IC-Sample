@@ -77,6 +77,9 @@
                      {
                          [self showDelegatedAlertwithTitle:nil message:@"Your request has been submitted." tag:1];
                      }
+                     else if (responseType == eResponseTypeFailJSON){
+                         [self showAlert:[response objectForKey:kKEY_ErrorMessage]];
+                     }
                      else{
                          [self showAlert:@"Something went wrong, Please try after sometime."];
                      }

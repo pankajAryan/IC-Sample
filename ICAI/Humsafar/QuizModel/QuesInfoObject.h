@@ -17,6 +17,7 @@
 @property (nonatomic, strong) NSString *moduleName;
 @property (nonatomic, strong) NSString *option2;
 @property (nonatomic, strong) NSString *optionMarked;
+@property (nonatomic, strong) NSString *isFreezed;
 @property (nonatomic, strong) NSString *level;
 @property (nonatomic, strong) NSString *questionInstruction;
 @property (nonatomic, strong) NSString *questionText;

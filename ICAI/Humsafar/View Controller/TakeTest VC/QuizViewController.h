@@ -11,6 +11,7 @@
 @interface QuizViewController : UIViewController
 
 @property (strong, nonatomic) NSDictionary *quizDict;
+@property (strong, nonatomic) NSString *timeleftInms;
 
 @property (weak, nonatomic) IBOutlet UILabel *lblQuizTitle;
 @property (weak, nonatomic) IBOutlet UILabel *lblQuizNumber;
@@ -22,6 +23,7 @@
 
 @property (weak, nonatomic) IBOutlet UITableView *tableViewQA;
 @property (weak, nonatomic) IBOutlet UIButton *showListBtn;
+@property (weak, nonatomic) IBOutlet UIButton *resetButton;
 
 
 - (IBAction)nextButtonAction:(id)sender;

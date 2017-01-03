@@ -19,10 +19,14 @@
     NSString *questionIDs;
     
     NSInteger currentQuizIndex;
+    NSInteger visibleCounter;
+
     QuizBaseClass *quizBaseObject;
     NSTimer *timer;
     NSDate *quizStartDateTime;
     double quizTime;
+    
+    BOOL isViewWillAppearAlreadyCalled;
 }
 
 @property (strong, nonatomic) IBOutlet ShowQuestionListView *questionListView;
@@ -40,16 +44,14 @@
     [_tableViewQA setRowHeight:UITableViewAutomaticDimension];
     _tableViewQA.estimatedRowHeight = 44;
     
-    _lblQuizNumber.text = [NSString stringWithFormat:@"%li/%@",currentQuizIndex,[_quizDict objectForKey:@"noOfQuestions"]];
+    _lblQuizNumber.text = [NSString stringWithFormat:@"%li/%@",(long)currentQuizIndex,[_quizDict objectForKey:@"noOfQuestions"]];
 
     studentID = [_quizDict objectForKey:@"studentId"];
     quizID = [_quizDict objectForKey:@"quizId"];
     questionIDs = [_quizDict objectForKey:@"questionIds"];
-    quizTime = [[_quizDict objectForKey:@"timeMinutes"] doubleValue];
-    self.lblTime.text = [NSString stringWithFormat:@"%.2f",quizTime];
-
-    [self showProgressHudWithMessage:@"Loading..."];
     
+    quizTime = [_timeleftInms integerValue]/60000.00;
+    [self updateTimerLabel];
     
     //
     CGFloat x = ScreenWidth;
@@ -58,26 +60,75 @@
     self.questionListView.vc = self;
     //
     
-    [[FFWebServiceHelper sharedManager]
-     callWebServiceWithUrl:[[FFWebServiceHelper sharedManager] javaServerUrlWithString:QUIZ_GetQuizForCategoryUpdated]
-     withParameter:@{@"studentId":studentID, @"quizId":quizID, @"questionIds":questionIDs, CHECKSOURCE_KEY : CHECKSOURCE_VALUE}
-     onCompletion:^(eResponseType responseType, id response)
-     {
-         [self hideProgressHudAfterDelay:0.1];
-         
-         if (responseType == eResponseTypeSuccessJSON)
-         {
-             quizBaseObject = [QuizBaseClass modelObjectWithDictionary:response];
-             [_tableViewQA reloadData];
-             
-             timer = [NSTimer scheduledTimerWithTimeInterval:1 target:self selector:@selector(updateTimerLabel) userInfo:nil repeats:YES];
+    [self showProgressHudWithMessage:@"Loading..."];
 
-             quizStartDateTime = [NSDate date];
-         }
-         else{
-             [self showAlert:@"Something went wrong, Please try after sometime."];
-         }
-     }];
+    [[FFWebServiceHelper sharedManager]
+             callWebServiceWithUrl:[[FFWebServiceHelper sharedManager] javaServerUrlWithString:QUIZ_GetQuizForCategoryUpdated]
+             withParameter:@{@"studentId":studentID, @"quizId":quizID, @"questionIds":questionIDs, CHECKSOURCE_KEY : CHECKSOURCE_VALUE}
+             onCompletion:^(eResponseType responseType, id response)
+             {
+                 [self hideProgressHudAfterDelay:0.1];
+                 
+                 if (responseType == eResponseTypeSuccessJSON)
+                 {
+                     quizBaseObject = [QuizBaseClass modelObjectWithDictionary:response];
+                     [_tableViewQA reloadData];
+                     
+                     timer = [NSTimer scheduledTimerWithTimeInterval:1 target:self selector:@selector(updateTimerLabel) userInfo:nil repeats:YES];
+
+                     quizStartDateTime = [NSDate date];
+                     
+                     [self initializeVisibleCounter];
+                 }
+                 else if (responseType == eResponseTypeFailJSON){
+                     [self showAlert:[response objectForKey:kKEY_ErrorMessage]];
+                 }
+                 else{
+                     [self showAlert:@"Something went wrong, Please try after sometime."];
+                 }
+             }];
+}
+
+- (void)viewWillAppear:(BOOL)animated {
+    
+    if (isViewWillAppearAlreadyCalled) {
+        
+        NSString *categoryID = [_quizDict objectForKey:@"categoryId"];
+        
+        [self showProgressHudWithMessage:@"Loading..."];
+        
+        [[FFWebServiceHelper sharedManager]
+         callWebServiceWithUrl:[[FFWebServiceHelper sharedManager] javaServerUrlWithString:CHECK_IF_QUIZ_ACTIVE]
+         withParameter:@{@"categoryId":categoryID}
+         onCompletion:^(eResponseType responseType, id response)
+         {
+             [self hideProgressHudAfterDelay:0.1];
+             
+             if (responseType == eResponseTypeSuccessJSON)
+             {
+                 NSDictionary *respDict = [response objectForKey:@"responseObject"];
+                 
+                 if ([[[respDict objectForKey:@"quizStatus"] uppercaseString] isEqualToString:@"T"]) {
+                     // update timer value with timeLeft value
+                     _timeleftInms = [respDict objectForKey:@"timerLeft"];
+                     quizTime = [_timeleftInms integerValue]/60000.00;
+                     [self updateTimerLabel];
+                 }
+                 else {
+                     // SUBMIT THE QUIZ
+                     [self quizTimefinish];
+                 }
+             }
+             else if (responseType == eResponseTypeFailJSON){
+                 [self showAlert:[response objectForKey:kKEY_ErrorMessage]];
+             }
+             else{
+                 [self showAlert:@"Something went wrong, Please try after sometime."];
+             }
+         }];
+    }
+    else
+        isViewWillAppearAlreadyCalled = YES;
 }
 
 - (IBAction)popVCAction:(id)sender {
@@ -94,7 +145,7 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    return (quizBaseObject.responseArray.count != 0) ? 5 : 0;
+    return (visibleCounter != 0) ? 5 : 0;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
@@ -102,6 +153,14 @@
     UITableViewCell *cell = nil;
     
     QuesInfoObject *quesInfo = [quizBaseObject.responseArray objectAtIndex:currentQuizIndex-1];
+    
+    if([quesInfo.isFreezed isEqualToString:@"T"])
+    {
+        _resetButton.enabled = NO;
+    }
+    else
+        _resetButton.enabled = YES;
+
     
     if (indexPath.row == 0)
     {
@@ -168,9 +227,12 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
 
-    if (indexPath.row == 0) {
+    QuesInfoObject *quesInfo = [quizBaseObject.responseArray objectAtIndex:currentQuizIndex-1];
+
+    if ((indexPath.row == 0) || ([quesInfo.isFreezed isEqualToString:@"T"])) {
         return;
     }
+
     
     NSString *ontionMarked = @"";
     
@@ -190,27 +252,143 @@
             break;
     }
     
-    QuesInfoObject *quesInfo = [quizBaseObject.responseArray objectAtIndex:currentQuizIndex-1];
+    NSString *categoryID = [_quizDict objectForKey:@"categoryId"];
+    NSString *isToBeFreezed = [self checkIfQuestionToBeFreezed];
     
     [self showProgressHudWithMessage:@"Loading..."];
-    
+
     [[FFWebServiceHelper sharedManager]
-     callWebServiceWithUrl:[[FFWebServiceHelper sharedManager] javaServerUrlWithString:QUIZ_SubmitQuestionAttempt]
-     withParameter:@{@"studentId":studentID, @"quizId":quizID, @"questionId":quesInfo.questionId, @"optionMarked" : ontionMarked, @"correctOption" :quesInfo.correctOption}
-     onCompletion:^(eResponseType responseType, id response)
-     {
-         [self hideProgressHudAfterDelay:0.1];
-         
-         if (responseType == eResponseTypeSuccessJSON)
-         {
-             [self showSuccessTSMessage:@"Option marked successfully."];
-             quesInfo.optionMarked = ontionMarked;
-             [_tableViewQA reloadData];
-         }
-         else{
-             [self showAlert:@"Something went wrong, Please try after sometime."];
-         }
-     }];
+             callWebServiceWithUrl:[[FFWebServiceHelper sharedManager] javaServerUrlWithString:QUIZ_SubmitQuestionAttempt]
+             withParameter:@{@"studentId":studentID, @"quizId":quizID, @"questionId":quesInfo.questionId, @"optionMarked" : ontionMarked, @"correctOption" :quesInfo.correctOption, @"categoryId":categoryID, @"studentSessionId":quizBaseObject.studentSessionId, @"isFreezed": isToBeFreezed}
+             onCompletion:^(eResponseType responseType, id response)
+             {
+                 [self hideProgressHudAfterDelay:0.1];
+                 
+                 if (responseType == eResponseTypeSuccessJSON)
+                 {
+                     // update timer value with timeLeft value
+                     NSDictionary *respDict = [response objectForKey:@"responseObject"];
+                     _timeleftInms = [respDict objectForKey:@"timerLeft"];
+                     quizTime = [_timeleftInms integerValue]/60000.00;
+                     [self updateTimerLabel];
+                     
+                     [self showSuccessTSMessage:@"Option marked successfully."];
+                     quesInfo.optionMarked = ontionMarked;
+                     quesInfo.isFreezed = isToBeFreezed;
+                     
+                     [_tableViewQA reloadData];
+                     
+                     if(quizBaseObject.responseArray.count/20 <= [self getAttemptedCount])
+                     {
+                         if(visibleCounter < quizBaseObject.responseArray.count)
+                         {
+                             visibleCounter += quizBaseObject.responseArray.count/5;
+                             
+                             if(currentQuizIndex != quizBaseObject.responseArray.count)
+                             {
+                                 _btnNext.hidden = NO;
+                                 _lblNext.hidden = NO;
+                             }
+                         }
+                     }
+                 }
+                 else if (responseType == eResponseTypeFailJSON){
+                     [self showAlert:[response objectForKey:kKEY_ErrorMessage]];
+                 }
+                 else{
+                     [self showAlert:@"Something went wrong, Please try after sometime."];
+                 }
+             }];
+}
+
+#pragma Mark - Question Part display & Freeze logic methods
+
+- (NSString*)checkIfQuestionToBeFreezed {
+    
+    int slot = 0;
+    
+    switch((currentQuizIndex-1)/(quizBaseObject.responseArray.count/5))
+    {
+        case 0:
+            slot = 0;
+            break;
+        case 1:
+            slot = 1;
+            break;
+        case 2:
+            slot = 2;
+            break;
+        case 3:
+            slot = 3;
+            break;
+        case 4:
+            slot = 4;
+            break;
+    }
+    
+    int maxFreezed = quizBaseObject.responseArray.count/20;
+    int slotSize= quizBaseObject.responseArray.count/5;
+    int markedCounter = 0;
+    for(int i=slot*slotSize;i<(slot+1)*slotSize;i++)
+    {
+        QuesInfoObject *quesInfo = [quizBaseObject.responseArray objectAtIndex:i];
+        
+        if (quesInfo.optionMarked != nil) {
+            ++markedCounter;
+        }
+    }
+    
+    if(markedCounter < maxFreezed)
+    {
+        return @"T";
+    }
+    else
+    {
+        return @"F";
+    }
+}
+
+- (int)getAttemptedCount {
+
+    int startIndex = 0;
+    
+    if(visibleCounter == quizBaseObject.responseArray.count/5)
+    {
+        startIndex = 0;
+    }
+    else
+    {
+        startIndex = visibleCounter - (quizBaseObject.responseArray.count/5);
+    }
+    
+    int attempted = 0;
+    for(int i=startIndex;i<visibleCounter;i++)
+    {
+        QuesInfoObject *quesInfo = [quizBaseObject.responseArray objectAtIndex:i];
+
+        if (quesInfo.optionMarked != nil) {
+            ++attempted;
+        }
+    }
+    
+    return attempted;
+}
+
+- (void)initializeVisibleCounter {
+    
+    visibleCounter = quizBaseObject.responseArray.count/5;
+
+    while([self getAttemptedCount] >= quizBaseObject.responseArray.count/20)
+    {
+        if(visibleCounter < quizBaseObject.responseArray.count)
+        {
+            visibleCounter+= quizBaseObject.responseArray.count/5;
+        }
+        else
+        {
+            break;
+        }
+    }
 }
 
 #pragma mark - IBActions
@@ -227,7 +405,7 @@
 -(void)showQuestionList {
     
     self.showListBtn.selected = YES;
-    [self.questionListView reloadList:quizBaseObject.responseArray];
+    [self.questionListView reloadList:[quizBaseObject.responseArray subarrayWithRange:NSMakeRange(0, visibleCounter)]];
     self.questionListView.btn.alpha = 0.0;
     
     [UIView animateWithDuration:0.50 animations:^{
@@ -256,7 +434,7 @@
         
         _btnNext.hidden = NO;
         _lblNext.hidden = NO;
-    }else if (currentQuizIndex == quizBaseObject.responseArray.count) {
+    }else if (currentQuizIndex == visibleCounter) {
         _btnNext.hidden = YES;
         _lblNext.hidden = YES;
         
@@ -272,7 +450,7 @@
     
     QuesInfoObject *quesInfo = [quizBaseObject.responseArray objectAtIndex:currentQuizIndex-1];
     _lblQuizTitle.text = quesInfo.moduleName;
-    _lblQuizNumber.text = [NSString stringWithFormat:@"%li/%@",currentQuizIndex,[_quizDict objectForKey:@"noOfQuestions"]];
+    _lblQuizNumber.text = [NSString stringWithFormat:@"%li/%@",(long)currentQuizIndex,[_quizDict objectForKey:@"noOfQuestions"]];
     [_tableViewQA reloadData];
 }
 
@@ -288,14 +466,14 @@
         _lblPrev.hidden = NO;
     }
     
-    if (currentQuizIndex == quizBaseObject.responseArray.count) {
+    if (currentQuizIndex == visibleCounter) {
         _btnNext.hidden = YES;
         _lblNext.hidden = YES;
     }
     
     QuesInfoObject *quesInfo = [quizBaseObject.responseArray objectAtIndex:currentQuizIndex-1];
     _lblQuizTitle.text = quesInfo.moduleName;
-    _lblQuizNumber.text = [NSString stringWithFormat:@"%li/%@",currentQuizIndex,[_quizDict objectForKey:@"noOfQuestions"]];
+    _lblQuizNumber.text = [NSString stringWithFormat:@"%li/%@",(long)currentQuizIndex,[_quizDict objectForKey:@"noOfQuestions"]];
     [_tableViewQA reloadData];
 }
 
@@ -308,14 +486,14 @@
         _lblPrev.hidden = YES;
     }
     
-    if (currentQuizIndex == quizBaseObject.responseArray.count -1) {
+    if (currentQuizIndex == visibleCounter -1) {
         _btnNext.hidden = NO;
         _lblNext.hidden = NO;
     }
     
     QuesInfoObject *quesInfo = [quizBaseObject.responseArray objectAtIndex:currentQuizIndex-1];
     _lblQuizTitle.text = quesInfo.moduleName;
-    _lblQuizNumber.text = [NSString stringWithFormat:@"%li/%@",currentQuizIndex,[_quizDict objectForKey:@"noOfQuestions"]];
+    _lblQuizNumber.text = [NSString stringWithFormat:@"%li/%@",(long)currentQuizIndex,[_quizDict objectForKey:@"noOfQuestions"]];
     [_tableViewQA reloadData];
 }
 
@@ -341,6 +519,9 @@
              quesInfo.optionMarked = nil;
              [_tableViewQA reloadData];
          }
+         else if (responseType == eResponseTypeFailJSON){
+             [self showAlert:[response objectForKey:kKEY_ErrorMessage]];
+         }
          else{
              [self showAlert:@"Something went wrong, Please try after sometime."];
          }
@@ -365,6 +546,7 @@
     [self presentViewController:alertController animated:YES completion:nil];
     
 }
+
 -(void)quizTimefinish {
     
     // dismiss all the previously presented vc, then show this alert
@@ -397,15 +579,24 @@
          if (responseType == eResponseTypeSuccessJSON)
          {
              [self showAlert:@"You have successfully submitted the quiz."];
-
-             QuizResultViewController *vc = (QuizResultViewController *)[UIViewController instantiateViewControllerWithIdentifier:@"QuizResultViewController" fromStoryboard:@"Home"];
-             vc.quizDict = self.quizDict;
              
              NSMutableArray *vcArray = self.navigationController.viewControllers.mutableCopy;
-             [vcArray removeLastObject];
-             [vcArray removeLastObject];
-             [vcArray addObject:vc];
-             self.navigationController.viewControllers = vcArray;
+
+             if ([[[_quizDict objectForKey:@"isPaid"] uppercaseString] isEqualToString:@"F"]) {
+                 
+                 QuizResultViewController *vc = (QuizResultViewController *)[UIViewController instantiateViewControllerWithIdentifier:@"QuizResultViewController" fromStoryboard:@"Home"];
+                 vc.quizDict = self.quizDict;
+                 
+                 [vcArray removeLastObject];
+                 [vcArray removeLastObject];
+                 [vcArray addObject:vc];
+                 self.navigationController.viewControllers = vcArray;
+             }
+             else
+                 [self.navigationController popToViewController:[vcArray objectAtIndex:vcArray.count-3] animated:YES];
+         }
+         else if (responseType == eResponseTypeFailJSON){
+             [self showAlert:[response objectForKey:kKEY_ErrorMessage]];
          }
          else{
              [self showAlert:@"Something went wrong, Please try after sometime."];
@@ -417,7 +608,7 @@
     
     NSInteger time = quizTime*60 + [quizStartDateTime timeIntervalSinceNow];
     
-    self.lblTime.text = [NSString stringWithFormat:@"%02ld:%02ld",time/60,time % 60];
+    self.lblTime.text = [NSString stringWithFormat:@"%02d:%02d",time/60,time % 60];
     
     if ( time <= 0) {//quizTime in min
         
@@ -426,7 +617,6 @@
         
         self.lblTime.text = [NSString stringWithFormat:@"00:00"];
         [self submitQuiz];
-
     }
 }
 

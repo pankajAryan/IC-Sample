@@ -30,8 +30,9 @@
 //    tableviewInstruction.layer.shadowOffset = CGSizeMake(0, 0);
 //    tableviewInstruction.layer.shadowRadius = 1;
 //    tableviewInstruction.layer.shadowOpacity = 1.0;
-    
-    self.txtView_instruction.text = [NSString stringWithFormat:@"You need a stable internet connection to attempt this test.\n\nEvery answer marked will be auto-recorded.\n\nThis test consists of %ld questions.\n\nYou get +1 for every correct answer & -0.25 for every wrong answer. No marks will be deducted for not attempting a question.\n\nTotal test duration is %ld minutes.\n\nYou can submit the test by clicking on End Test or it will auto-submit if it times out.",[[_quizDict objectForKey:@"noOfQuestions"] integerValue],[[_quizDict objectForKey:@"timeMinutes"] integerValue]];
+
+    NSString *instruction = [_quizDict objectForKey:@"instruction"];
+    self.txtView_instruction.text = instruction;
 }
 
 - (IBAction)popVCAction:(id)sender {
@@ -47,9 +48,40 @@
 #pragma mark- IBActions
 - (IBAction)btnBeginAction:(UIButton *)sender {
     
-    QuizViewController *vc = (QuizViewController *)[UIViewController instantiateViewControllerWithIdentifier:@"QuizViewController" fromStoryboard:@"Home"];
-    vc.quizDict = self.quizDict;
-    [self.navigationController pushViewController:vc animated:YES];
+    NSString *categoryID = [_quizDict objectForKey:@"categoryId"];
+
+    [self showProgressHudWithMessage:@"Loading..."];
+    
+    [[FFWebServiceHelper sharedManager]
+                 callWebServiceWithUrl:[[FFWebServiceHelper sharedManager] javaServerUrlWithString:CHECK_IF_QUIZ_ACTIVE]
+                 withParameter:@{@"categoryId":categoryID}
+                 onCompletion:^(eResponseType responseType, id response)
+                 {
+                     [self hideProgressHudAfterDelay:0.1];
+                     
+                     if (responseType == eResponseTypeSuccessJSON)
+                     {
+                         NSDictionary *respDict = [response objectForKey:@"responseObject"];
+                         
+                         NSString *timeLeft = [respDict objectForKey:@"timerLeft"];
+                         
+                         if ([[[respDict objectForKey:@"quizStatus"] uppercaseString] isEqualToString:@"T"]) {
+                             QuizViewController *vc = (QuizViewController *)[UIViewController instantiateViewControllerWithIdentifier:@"QuizViewController" fromStoryboard:@"Home"];
+                             vc.quizDict = self.quizDict;
+                             vc.timeleftInms = timeLeft;
+                             [self.navigationController pushViewController:vc animated:YES];
+                         }
+                         else {
+                             [self showAlert:@"The test hasn't started yet!"];
+                         }
+                     }
+                     else if (responseType == eResponseTypeFailJSON){
+                         [self showAlert:[response objectForKey:kKEY_ErrorMessage]];
+                     }
+                     else{
+                         [self showAlert:@"Something went wrong, Please try after sometime."];
+                     }
+                 }];
 }
 
 

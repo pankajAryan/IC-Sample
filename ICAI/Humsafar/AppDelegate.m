@@ -35,6 +35,17 @@
         [self.window makeKeyAndVisible];
     }
     
+    [[FFWebServiceHelper sharedManager]
+     callWebServiceWithUrl:[NSURL URLWithString:GET_JAVA_BASE_URL]
+     withParameter:nil
+     onCompletion:^(eResponseType responseType, id response)
+     {
+         if (responseType == eResponseTypeSuccessJSON)
+         {
+             [FFWebServiceHelper sharedManager].dynamicBaseUrl = [response objectForKey:@"server_url"];
+         }
+     }];
+
     return YES;
 }
 

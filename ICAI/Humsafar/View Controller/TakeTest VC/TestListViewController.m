@@ -26,22 +26,30 @@
     [self showProgressHudWithMessage:@"Loading..."];
     
     [[FFWebServiceHelper sharedManager]
-     callWebServiceWithUrl:[[FFWebServiceHelper sharedManager] javaServerUrlWithString:GET_QUIZZES]
-     withParameter:@{@"studentId":applicationId,@"categoryId":@"1",@"source":@"app",CHECKSOURCE_KEY : CHECKSOURCE_VALUE}
-     onCompletion:^(eResponseType responseType, id response)
-     {
-         [self hideProgressHudAfterDelay:0.1];
-         
-         if (responseType == eResponseTypeSuccessJSON)
-         {
-             arrayTestList = [response objectForKey:@"responseObject"];
-             
-             [_tableView_TestList reloadData];
-         }
-         else{
-             [self showAlert:@"Something went wrong, Please try after sometime."];
-         }
-     }];
+             callWebServiceWithUrl:[[FFWebServiceHelper sharedManager] javaServerUrlWithString:GET_QUIZZES]
+             withParameter:@{@"studentId":applicationId,@"categoryId":@"1",@"source":@"app",CHECKSOURCE_KEY : CHECKSOURCE_VALUE}
+             onCompletion:^(eResponseType responseType, id response)
+             {
+                 [self hideProgressHudAfterDelay:0.1];
+                 
+                 if (responseType == eResponseTypeSuccessJSON)
+                 {
+                     arrayTestList = [response objectForKey:@"responseObject"];
+                     
+                     if (!arrayTestList.count) {
+                         [self showAlert:@"The quiz is not active presently. Test for class 9th/10th is from 10:15 am to 11:30 pm IST. Test for class 11th/12th is from 4:15 pm to 5:30 pm."];
+                         [self popVCAction:nil];
+                     }
+                     else
+                         [_tableView_TestList reloadData];
+                 }
+                 else if (responseType == eResponseTypeFailJSON){
+                     [self showAlert:[response objectForKey:kKEY_ErrorMessage]];
+                 }
+                 else{
+                     [self showAlert:@"Something went wrong, Please try after sometime."];
+                 }
+             }];
 }
 
 - (IBAction)testDesignatedAction:(id)sender {
@@ -50,10 +58,16 @@
 //{"quizId":"1","isAttempted":"F","studentId":"15963","questionIds":"26,3,8,20,9,17,31,1,5,32,13,12,2,15,37,28,29,34,27,16,36,7,11,24,38,18,30,25,39,23,22,21,10,40,19,6,33,35,14,4","noOfQuestions":"40","timeMinutes":"30"}
     
     if ([[testObject objectForKey:@"isAttempted"] compare:@"T" options:NSCaseInsensitiveSearch] == NSOrderedSame) {
+        
+        if ([[[testObject objectForKey:@"isPaid"] uppercaseString] isEqualToString:@"F"]) {
+            [self showAlert:@"You need to pay your enrollment fee first!"];
+        }
+        else {
             // View Score flow
-        QuizResultViewController *vc = (QuizResultViewController *)[UIViewController instantiateViewControllerWithIdentifier:@"QuizResultViewController" fromStoryboard:@"Home"];
-        vc.quizDict = testObject;
-        [self.navigationController pushViewController:vc animated:YES];
+            QuizResultViewController *vc = (QuizResultViewController *)[UIViewController instantiateViewControllerWithIdentifier:@"QuizResultViewController" fromStoryboard:@"Home"];
+            vc.quizDict = testObject;
+            [self.navigationController pushViewController:vc animated:YES];
+        }
     }
     else {  // Take Test flow
         InstructionViewController *vc = (InstructionViewController *)[UIViewController instantiateViewControllerWithIdentifier:@"InstructionViewController" fromStoryboard:@"Home"];
@@ -86,7 +100,7 @@
     
     NSDictionary *testObject = [arrayTestList objectAtIndex:indexPath.row];
     
-    cell.lblTestTitle.text = [NSString stringWithFormat:@"Test Number: %li",indexPath.row+1];
+    cell.lblTestTitle.text = [NSString stringWithFormat:@"Test Number: %i",indexPath.row+1];
     cell.lblQuesCount.text = [NSString stringWithFormat:@"Number of questions: %@",[testObject objectForKey:@"noOfQuestions"]];
     cell.lblDuration.text = [NSString stringWithFormat:@"Duration: %@ minutes",[testObject objectForKey:@"timeMinutes"]];
     

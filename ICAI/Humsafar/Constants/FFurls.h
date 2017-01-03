@@ -8,14 +8,18 @@
 
 // ************ LIVE APP CONFIGURATION ***********************************************//
 
-#define GET_JAVA_BASE_URL       @"http://icaicommercewizard.com/app_api/server_url.json"
+#define GET_JAVA_BASE_URL       @""//@"http://icaicommercewizard.com/app_api/server_url.json"
 
 #define PHP_BASE_URL            @"https://icaicommercewizard.com/"
 
-#define JAVA_BASE_URL           @"http://icaicommercewizard.com:8080/CommerceWizard/rest/service/"
- 
+//#define JAVA_BASE_URL           @"http://icaicommercewizard.com:8080/CommerceWizard/rest/service/"
+
+// ************ DEV APP CONFIGURATION ***********************************************//
+#define JAVA_BASE_URL           @"http://128.199.129.241:8080/CommerceWizard/rest/service/"
 
 // *********************|| Suffix to BASE_URL ||*************************************//
+
+#define UPDATE_APNS_ID          @"updatePushNotificationId"
 
 #define LOGIN                   @"studentappglogin"
 
@@ -38,6 +42,8 @@
 
 // QUIZ Screens
 
+#define CHECK_IF_QUIZ_ACTIVE   @"checkIfQuizForCategoryIsActive"
+
 #define GET_QUIZZES            @"getQuizzesForStudent"
 
 #define QUIZ_RESULT            @"getQuizResult"
@@ -46,7 +52,7 @@
 
 
 #define QUIZ_GetQuizForCategoryUpdated           @"getQuizForCategoryUpdated"
-#define QUIZ_SubmitQuestionAttempt               @"submitQuestionAttempt"
+#define QUIZ_SubmitQuestionAttempt               @"submitQuestionAttemptUpdated"
 #define QUIZ_clearQuestionAttempt                @"clearQuestionAttempt"
 #define QUIZ_submitQuiz                          @"submitQuiz"
 
@@ -74,7 +80,7 @@
 
 #define Payment_AppRepay            @"studentapprepay"              //2
 
-#define SEND_AppPaymentStatus    @"studentapppaymentstatus"      //3
+#define SEND_AppPaymentStatus       @"studentapppaymentstatus"      //3
 
 
 #pragma mark - PayTm Stuff

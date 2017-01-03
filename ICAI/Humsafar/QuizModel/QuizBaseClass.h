@@ -19,7 +19,7 @@
 @property (nonatomic, strong) NSString *quizId;
 @property (nonatomic, strong) NSString *studentId;
 @property (nonatomic, strong) NSString *timeRemaining;
-
+@property (nonatomic, strong) NSString *studentSessionId;
 
 + (instancetype)modelObjectWithDictionary:(NSDictionary *)dict;
 - (instancetype)initWithDictionary:(NSDictionary *)dict;

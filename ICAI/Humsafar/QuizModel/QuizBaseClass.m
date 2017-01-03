@@ -18,6 +18,7 @@ NSString *const kQuizBaseClassQuizId = @"quizId";
 NSString *const kQuizBaseClassCategoryId = @"categoryId";
 NSString *const kQuizBaseClassStrudentId = @"studentId";
 NSString *const kQuizBaseClassTimeRemaining = @"timeRemaining";
+NSString *const kQuizBaseClassStudentSessionId = @"uniqueSessionId";
 
 
 @interface QuizBaseClass ()
@@ -66,6 +67,7 @@ NSString *const kQuizBaseClassTimeRemaining = @"timeRemaining";
         self.quizId = [self objectOrNilForKey:kQuizBaseClassQuizId fromDictionary:(NSDictionary *)receivedQuizResponseObject];
         self.categoryId = [self objectOrNilForKey:kQuizBaseClassCategoryId fromDictionary:(NSDictionary *)receivedQuizResponseObject];
         self.studentId = [self objectOrNilForKey:kQuizBaseClassStrudentId fromDictionary:(NSDictionary *)receivedQuizResponseObject];
+        self.studentSessionId = [self objectOrNilForKey:kQuizBaseClassStudentSessionId fromDictionary:(NSDictionary *)receivedQuizResponseObject];
         self.timeRemaining = [self objectOrNilForKey:kQuizBaseClassTimeRemaining fromDictionary:(NSDictionary *)receivedQuizResponseObject];
         
         if ([[(NSDictionary *)receivedQuizResponseObject objectForKey:kQuizBaseClassQuestion] isKindOfClass:[NSArray class]]) {

@@ -64,6 +64,9 @@
                              
                              _frontView.hidden = YES;
                          }
+                         else if (responseType == eResponseTypeFailJSON){
+                             [self showAlert:[response objectForKey:kKEY_ErrorMessage]];
+                         }
                          else {
                              [self showAlert:@"Something went wrong, Please try after sometime."];
                          }
@@ -108,9 +111,12 @@
                                  // Initiate Paytm payment
                                  [self callPaymentWithOrderId:strOrderId andAmount:strAmount];
                              }
-                             else{
+                             else if (responseType == eResponseTypeFailJSON){
                                  [self showAlert:[response objectForKey:kKEY_ErrorMessage]];
                              }
+                             else
+                                 [self showAlert:@"Something went wrong, Please try after sometime."];
+
                          } @catch (NSException *exception) {
                              
                          }
@@ -210,9 +216,13 @@
                              _imgViewPayStatus.image = [UIImage imageNamed:@"ruppe"];
                              _viewPaymentContainer.hidden = YES;
                              
-                         }else{
+                         }
+                         else{
                              [self showAlert:[response objectForKey:@"Error submitting payment! Please try after sometime."]];
                          }
+                     }
+                     else if (responseType == eResponseTypeFailJSON){
+                         [self showAlert:[response objectForKey:kKEY_ErrorMessage]];
                      }
                      else{
                          [self showAlert:[response objectForKey:kKEY_ErrorMessage]];
