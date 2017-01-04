@@ -224,7 +224,7 @@
             completionBlock(eResponseTypeNoInternet ,nil);
 
             //[SharedModelManager stopProgress];
-            [self showAlertWithTitle:@"Network Error" message:kMessageInternetFailure];
+            [self showAlertWithTitle:@"Network Error" message:@"Please check your internet connection!"];
         }
         
     }@catch (NSException *exception) {

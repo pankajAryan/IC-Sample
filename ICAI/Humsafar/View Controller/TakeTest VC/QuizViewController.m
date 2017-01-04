@@ -25,8 +25,6 @@
     NSTimer *timer;
     NSDate *quizStartDateTime;
     double quizTime;
-    
-    BOOL isViewWillAppearAlreadyCalled;
 }
 
 @property (strong, nonatomic) IBOutlet ShowQuestionListView *questionListView;
@@ -53,6 +51,16 @@
     quizTime = [_timeleftInms integerValue]/60000.00;
     [self updateTimerLabel];
     
+    quizBaseObject = [QuizBaseClass modelObjectWithDictionary:self.questionsDict];
+    
+    timer = [NSTimer scheduledTimerWithTimeInterval:1 target:self selector:@selector(updateTimerLabel) userInfo:nil repeats:YES];
+    
+    quizStartDateTime = [NSDate date];
+    
+    [self initializeVisibleCounter];
+    
+//    [_tableViewQA reloadData];
+    
     //
     CGFloat x = ScreenWidth;
     self.questionListView.frame = CGRectMake(x, 64, ScreenWidth, ScreenHeight-64);
@@ -60,76 +68,58 @@
     self.questionListView.vc = self;
     //
     
-    [self showProgressHudWithMessage:@"Loading..."];
-
-    [[FFWebServiceHelper sharedManager]
-             callWebServiceWithUrl:[[FFWebServiceHelper sharedManager] javaServerUrlWithString:QUIZ_GetQuizForCategoryUpdated]
-             withParameter:@{@"studentId":studentID, @"quizId":quizID, @"questionIds":questionIDs, CHECKSOURCE_KEY : CHECKSOURCE_VALUE}
-             onCompletion:^(eResponseType responseType, id response)
-             {
-                 [self hideProgressHudAfterDelay:0.1];
-                 
-                 if (responseType == eResponseTypeSuccessJSON)
-                 {
-                     quizBaseObject = [QuizBaseClass modelObjectWithDictionary:response];
-                     [_tableViewQA reloadData];
-                     
-                     timer = [NSTimer scheduledTimerWithTimeInterval:1 target:self selector:@selector(updateTimerLabel) userInfo:nil repeats:YES];
-
-                     quizStartDateTime = [NSDate date];
-                     
-                     [self initializeVisibleCounter];
-                 }
-                 else if (responseType == eResponseTypeFailJSON){
-                     [self showAlert:[response objectForKey:kKEY_ErrorMessage]];
-                 }
-                 else{
-                     [self showAlert:@"Something went wrong, Please try after sometime."];
-                 }
-             }];
+    [[NSNotificationCenter defaultCenter]
+                                 addObserver:self
+                                 selector:@selector(applicationDidBecomeActive)
+                                 name:UIApplicationDidBecomeActiveNotification
+                                 object:NULL];
 }
 
-- (void)viewWillAppear:(BOOL)animated {
+- (void)applicationDidBecomeActive
+{
+    NSString *categoryID = [_quizDict objectForKey:@"categoryId"];
     
-    if (isViewWillAppearAlreadyCalled) {
-        
-        NSString *categoryID = [_quizDict objectForKey:@"categoryId"];
-        
-        [self showProgressHudWithMessage:@"Loading..."];
-        
-        [[FFWebServiceHelper sharedManager]
-         callWebServiceWithUrl:[[FFWebServiceHelper sharedManager] javaServerUrlWithString:CHECK_IF_QUIZ_ACTIVE]
-         withParameter:@{@"categoryId":categoryID}
-         onCompletion:^(eResponseType responseType, id response)
+//    [self showProgressHudWithMessage:@"Loading..."];
+    
+    [[FFWebServiceHelper sharedManager]
+     callWebServiceWithUrl:[[FFWebServiceHelper sharedManager] javaServerUrlWithString:CHECK_IF_QUIZ_ACTIVE]
+     withParameter:@{@"categoryId":categoryID}
+     onCompletion:^(eResponseType responseType, id response)
+     {
+//         [self hideProgressHudAfterDelay:0.1];
+         
+         if (responseType == eResponseTypeSuccessJSON)
          {
-             [self hideProgressHudAfterDelay:0.1];
+             NSDictionary *respDict = [response objectForKey:@"responseObject"];
              
-             if (responseType == eResponseTypeSuccessJSON)
-             {
-                 NSDictionary *respDict = [response objectForKey:@"responseObject"];
-                 
-                 if ([[[respDict objectForKey:@"quizStatus"] uppercaseString] isEqualToString:@"T"]) {
-                     // update timer value with timeLeft value
-                     _timeleftInms = [respDict objectForKey:@"timerLeft"];
-                     quizTime = [_timeleftInms integerValue]/60000.00;
-                     [self updateTimerLabel];
-                 }
-                 else {
-                     // SUBMIT THE QUIZ
-                     [self quizTimefinish];
-                 }
+             if ([[[respDict objectForKey:@"quizStatus"] uppercaseString] isEqualToString:@"T"]) {
+                 // update timer value with timeLeft value
+                 _timeleftInms = [respDict objectForKey:@"timerLeft"];
+                 quizTime = [_timeleftInms integerValue]/60000.00;
+                 [self updateTimerLabel];
              }
-             else if (responseType == eResponseTypeFailJSON){
-                 [self showAlert:[response objectForKey:kKEY_ErrorMessage]];
+             else {
+                 // SUBMIT THE QUIZ
+                 [self quizTimefinish];
              }
-             else{
-                 [self showAlert:@"Something went wrong, Please try after sometime."];
-             }
-         }];
-    }
-    else
-        isViewWillAppearAlreadyCalled = YES;
+         }
+//         else if (responseType == eResponseTypeFailJSON){
+//             [self showAlert:[response objectForKey:kKEY_ErrorMessage]];
+//         }
+//         else{
+//             [self showAlert:@"Something went wrong, Please try after sometime."];
+//         }
+     }];
 }
+
+- (void)dealloc
+{
+    [[NSNotificationCenter defaultCenter] removeObserver:self];
+    // technically these timers retain self so there's a cycle but
+    // we're a singleton anyway.
+    [timer invalidate];
+}
+
 
 - (IBAction)popVCAction:(id)sender {
 
@@ -267,10 +257,10 @@
                  if (responseType == eResponseTypeSuccessJSON)
                  {
                      // update timer value with timeLeft value
-                     NSDictionary *respDict = [response objectForKey:@"responseObject"];
-                     _timeleftInms = [respDict objectForKey:@"timerLeft"];
-                     quizTime = [_timeleftInms integerValue]/60000.00;
-                     [self updateTimerLabel];
+//                     NSDictionary *respDict = [response objectForKey:@"responseObject"];
+//                     _timeleftInms = [respDict objectForKey:@"timerLeft"];
+//                     quizTime = [_timeleftInms integerValue]/60000.00;
+//                     [self updateTimerLabel];
                      
                      [self showSuccessTSMessage:@"Option marked successfully."];
                      quesInfo.optionMarked = ontionMarked;
@@ -578,22 +568,34 @@
          
          if (responseType == eResponseTypeSuccessJSON)
          {
-             [self showAlert:@"You have successfully submitted the quiz."];
+             NSString *isSessionValid = [[response objectForKey:@"responseObject"] objectForKey:@"isSessionValid"];
              
-             NSMutableArray *vcArray = self.navigationController.viewControllers.mutableCopy;
-
-             if ([[[_quizDict objectForKey:@"isPaid"] uppercaseString] isEqualToString:@"F"]) {
-                 
-                 QuizResultViewController *vc = (QuizResultViewController *)[UIViewController instantiateViewControllerWithIdentifier:@"QuizResultViewController" fromStoryboard:@"Home"];
-                 vc.quizDict = self.quizDict;
-                 
-                 [vcArray removeLastObject];
-                 [vcArray removeLastObject];
-                 [vcArray addObject:vc];
-                 self.navigationController.viewControllers = vcArray;
+             if ([isSessionValid.uppercaseString isEqualToString:@"F"]) {
+                 [self showAlert:@"User can't be logged into 2 devices simultaneously."];
              }
-             else
-                 [self.navigationController popToViewController:[vcArray objectAtIndex:vcArray.count-3] animated:YES];
+             else {
+                 [self showAlert:@"You have successfully submitted the quiz."];
+                 
+                 NSMutableArray *vcArray = self.navigationController.viewControllers.mutableCopy;
+                 
+                 if ([[[_quizDict objectForKey:@"isPaid"] uppercaseString] isEqualToString:@"T"]) {
+                     
+                     [[NSNotificationCenter defaultCenter] removeObserver:self];
+                     // technically these timers retain self so there's a cycle but
+                     // we're a singleton anyway.
+                     [timer invalidate];
+                     
+                     QuizResultViewController *vc = (QuizResultViewController *)[UIViewController instantiateViewControllerWithIdentifier:@"QuizResultViewController" fromStoryboard:@"Home"];
+                     vc.quizDict = self.quizDict;
+                     
+                     [vcArray removeLastObject];
+                     [vcArray removeLastObject];
+                     [vcArray addObject:vc];
+                     self.navigationController.viewControllers = vcArray;
+                 }
+                 else
+                     [self.navigationController popToViewController:[vcArray objectAtIndex:vcArray.count-3] animated:YES];
+             }
          }
          else if (responseType == eResponseTypeFailJSON){
              [self showAlert:[response objectForKey:kKEY_ErrorMessage]];

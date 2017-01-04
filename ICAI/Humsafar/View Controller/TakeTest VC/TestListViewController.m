@@ -37,7 +37,7 @@
                      arrayTestList = [response objectForKey:@"responseObject"];
                      
                      if (!arrayTestList.count) {
-                         [self showAlert:@"The quiz is not active presently. Test for class 9th/10th is from 10:15 am to 11:30 pm IST. Test for class 11th/12th is from 4:15 pm to 5:30 pm."];
+                         [self showAlert:@"The quiz is not active presently. Level 1 Online Exam will be held on 8th Jan 2017 for class 9th/10th from 10:45 am to 12:00 pm IST and for class 11th/12th from 4:15 pm to 5:30 pm."];
                          [self popVCAction:nil];
                      }
                      else

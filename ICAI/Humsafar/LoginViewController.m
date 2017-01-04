@@ -118,12 +118,12 @@ NSString *encryptionKey =   @"2b9cYGfQ%D-^hnCB";
         NSData *aesdataresult = [SecurityUtil encryptAESData:_txtFieldPassword.text];
         NSString *password = [SecurityUtil encodeBase64Data:aesdataresult];
         
-        NSDictionary *paramsDict = @{@"user_email":_txtFieldUsername.text, @"user_password":password};
+        NSDictionary *paramsDict = @{@"email":_txtFieldUsername.text, @"password":password};
         
         [self showProgressHudWithMessage:@"SigningIn..."];
 
         [[FFWebServiceHelper sharedManager]
-                callWebServiceWithUrl:[FFWebServiceHelper phpServerUrlWithString:LOGIN]
+                callWebServiceWithUrl:[[FFWebServiceHelper sharedManager] javaServerUrlWithString:LOGIN]
                 withParameter:paramsDict
                 onCompletion:^(eResponseType responseType, id response)
                 {
@@ -133,16 +133,16 @@ NSString *encryptionKey =   @"2b9cYGfQ%D-^hnCB";
                     {
                         NSDictionary *dictUserdata = [response objectForKey:@"responseObject"];
                         
-                        [UIViewController saveDatatoUserDefault:[dictUserdata objectForKey:@"application_id"] forKey:@"application_id"];
+                        [UIViewController saveDatatoUserDefault:[dictUserdata objectForKey:@"applicationId"] forKey:@"application_id"];
                         [UIViewController saveDatatoUserDefault:@"1" forKey:@"isUserLoggedIn"];
 
-                        [UIViewController saveDatatoUserDefault:[dictUserdata objectForKey:@"student_name"] forKey:@"student_name"];
-                        [UIViewController saveDatatoUserDefault:[dictUserdata objectForKey:@"student_email"] forKey:@"student_email"];
+                        [UIViewController saveDatatoUserDefault:[dictUserdata objectForKey:@"studentFirstName"] forKey:@"student_name"];
+                        [UIViewController saveDatatoUserDefault:_txtFieldUsername.text forKey:@"student_email"];
                         [UIViewController saveDatatoUserDefault:[dictUserdata objectForKey:@"gender"] forKey:@"gender"];
                         
-                        [UIViewController saveDatatoUserDefault:[dictUserdata objectForKey:@"application_download"] forKey:@"application_download"];
+                        //[UIViewController saveDatatoUserDefault:[dictUserdata objectForKey:@"application_download"] forKey:@"application_download"];
                         
-                        [UIViewController saveDatatoUserDefault:[dictUserdata objectForKey:@"payable_amount"] forKey:@"payable_amount"];
+                        [UIViewController saveDatatoUserDefault:@"150" forKey:@"payable_amount"];
 
                         RootViewController *VC = [RootViewController instantiateViewControllerWithIdentifier:@"RootViewController" fromStoryboard:@"Main"];
                         

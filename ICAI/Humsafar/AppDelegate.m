@@ -34,7 +34,7 @@
         
         [self.window makeKeyAndVisible];
     }
-    
+/*
     [[FFWebServiceHelper sharedManager]
      callWebServiceWithUrl:[NSURL URLWithString:GET_JAVA_BASE_URL]
      withParameter:nil
@@ -45,7 +45,7 @@
              [FFWebServiceHelper sharedManager].dynamicBaseUrl = [response objectForKey:@"server_url"];
          }
      }];
-
+*/
     return YES;
 }
 

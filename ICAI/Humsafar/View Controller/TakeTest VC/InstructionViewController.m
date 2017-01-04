@@ -26,12 +26,8 @@
     //SHADOW TO TABLE VIEW
     tableviewInstruction.layer.borderColor = [[UIColor lightGrayColor] CGColor];
     tableviewInstruction.layer.borderWidth = 1.0;
-//    tableviewInstruction.layer.masksToBounds = NO;
-//    tableviewInstruction.layer.shadowOffset = CGSizeMake(0, 0);
-//    tableviewInstruction.layer.shadowRadius = 1;
-//    tableviewInstruction.layer.shadowOpacity = 1.0;
 
-    NSString *instruction = [_quizDict objectForKey:@"instruction"];
+    NSString *instruction = [[_quizDict objectForKey:@"instruction"] stringByReplacingOccurrencesOfString:@"\\n \\n" withString:@"\n \n"];
     self.txtView_instruction.text = instruction;
 }
 
@@ -57,28 +53,52 @@
                  withParameter:@{@"categoryId":categoryID}
                  onCompletion:^(eResponseType responseType, id response)
                  {
-                     [self hideProgressHudAfterDelay:0.1];
-                     
                      if (responseType == eResponseTypeSuccessJSON)
                      {
                          NSDictionary *respDict = [response objectForKey:@"responseObject"];
                          
                          NSString *timeLeft = [respDict objectForKey:@"timerLeft"];
                          
-                         if ([[[respDict objectForKey:@"quizStatus"] uppercaseString] isEqualToString:@"T"]) {
-                             QuizViewController *vc = (QuizViewController *)[UIViewController instantiateViewControllerWithIdentifier:@"QuizViewController" fromStoryboard:@"Home"];
-                             vc.quizDict = self.quizDict;
-                             vc.timeleftInms = timeLeft;
-                             [self.navigationController pushViewController:vc animated:YES];
+                         if ([[[respDict objectForKey:@"quizStatus"] uppercaseString] isEqualToString:@"T"])
+                         {
+                             NSString *studentID = [_quizDict objectForKey:@"studentId"];
+                             NSString *quizID = [_quizDict objectForKey:@"quizId"];
+                             NSString *questionIDs = [_quizDict objectForKey:@"questionIds"];
+                             
+                             [[FFWebServiceHelper sharedManager]
+                              callWebServiceWithUrl:[[FFWebServiceHelper sharedManager] javaServerUrlWithString:QUIZ_GetQuizForCategoryUpdated]
+                              withParameter:@{@"studentId":studentID, @"quizId":quizID, @"questionIds":questionIDs, CHECKSOURCE_KEY : CHECKSOURCE_VALUE}
+                              onCompletion:^(eResponseType responseType, id response)
+                              {
+                                  [self hideProgressHudAfterDelay:0.1];
+                                  
+                                  if (responseType == eResponseTypeSuccessJSON)
+                                  {
+                                      QuizViewController *vc = (QuizViewController *)[UIViewController instantiateViewControllerWithIdentifier:@"QuizViewController" fromStoryboard:@"Home"];
+                                      vc.quizDict = self.quizDict;
+                                      vc.questionsDict = response;
+                                      vc.timeleftInms = timeLeft;
+                                      [self.navigationController pushViewController:vc animated:YES];
+                                  }
+                                  else if (responseType == eResponseTypeFailJSON){
+                                      [self showAlert:[response objectForKey:kKEY_ErrorMessage]];
+                                  }
+                                  else{
+                                      [self showAlert:@"Something went wrong, Please try after sometime."];
+                                  }
+                              }];
                          }
                          else {
-                             [self showAlert:@"The test hasn't started yet!"];
+                             [self hideProgressHudAfterDelay:0.1];
+                             [self showAlert:@"The test hasn't started yet! Level 1 Online Exam will be held on 8th Jan 2017 for class 9th/10th from 10:45 am to 12:00 pm IST and for class 11th/12th from 4:15 pm to 5:30 pm."];
                          }
                      }
                      else if (responseType == eResponseTypeFailJSON){
+                         [self hideProgressHudAfterDelay:0.1];
                          [self showAlert:[response objectForKey:kKEY_ErrorMessage]];
                      }
                      else{
+                         [self hideProgressHudAfterDelay:0.1];
                          [self showAlert:@"Something went wrong, Please try after sometime."];
                      }
                  }];

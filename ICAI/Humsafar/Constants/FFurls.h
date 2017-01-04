@@ -8,20 +8,22 @@
 
 // ************ LIVE APP CONFIGURATION ***********************************************//
 
-#define GET_JAVA_BASE_URL       @""//@"http://icaicommercewizard.com/app_api/server_url.json"
+//#define GET_JAVA_BASE_URL       @"http://icaicommercewizard.com/app_api/server_url.json"
 
 #define PHP_BASE_URL            @"https://icaicommercewizard.com/"
 
-//#define JAVA_BASE_URL           @"http://icaicommercewizard.com:8080/CommerceWizard/rest/service/"
+//#define JAVA_BASE_URL           @"http://35.154.105.35/CommerceWizard/rest/service/"
 
 // ************ DEV APP CONFIGURATION ***********************************************//
+
 #define JAVA_BASE_URL           @"http://128.199.129.241:8080/CommerceWizard/rest/service/"
+
 
 // *********************|| Suffix to BASE_URL ||*************************************//
 
 #define UPDATE_APNS_ID          @"updatePushNotificationId"
 
-#define LOGIN                   @"studentappglogin"
+#define LOGIN                   @"studentLogin"
 
 #define Forgot_Password         @"studentappforgotpassword"
 
@@ -55,8 +57,6 @@
 #define QUIZ_SubmitQuestionAttempt               @"submitQuestionAttemptUpdated"
 #define QUIZ_clearQuestionAttempt                @"clearQuestionAttempt"
 #define QUIZ_submitQuiz                          @"submitQuiz"
-
-
 
 
 

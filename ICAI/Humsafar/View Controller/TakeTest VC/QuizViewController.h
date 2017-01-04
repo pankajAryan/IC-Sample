@@ -11,6 +11,8 @@
 @interface QuizViewController : UIViewController
 
 @property (strong, nonatomic) NSDictionary *quizDict;
+@property (strong, nonatomic) NSDictionary *questionsDict;
+
 @property (strong, nonatomic) NSString *timeleftInms;
 
 @property (weak, nonatomic) IBOutlet UILabel *lblQuizTitle;

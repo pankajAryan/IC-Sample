@@ -378,12 +378,12 @@
              testCentersArray = [response objectForKey:kKEY_ResponseObject];
              //[self showAlert:[response objectForKey:kKEY_ErrorMessage]];
          }
-         else if (responseType == eResponseTypeFailJSON){
-             [self showAlert:[response objectForKey:kKEY_ErrorMessage]];
-         }
-         else{
-             [self showAlert:@"Something went wrong, Please try after sometime."];
-         }
+//         else if (responseType == eResponseTypeFailJSON){
+//             [self showAlert:[response objectForKey:kKEY_ErrorMessage]];
+//         }
+//         else{
+//             [self showAlert:@"Something went wrong, Please try after sometime."];
+//         }
      }];
 }
 
