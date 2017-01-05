@@ -59,8 +59,6 @@
     
     [self initializeVisibleCounter];
     
-//    [_tableViewQA reloadData];
-    
     //
     CGFloat x = ScreenWidth;
     self.questionListView.frame = CGRectMake(x, 64, ScreenWidth, ScreenHeight-64);
@@ -256,12 +254,6 @@
                  
                  if (responseType == eResponseTypeSuccessJSON)
                  {
-                     // update timer value with timeLeft value
-//                     NSDictionary *respDict = [response objectForKey:@"responseObject"];
-//                     _timeleftInms = [respDict objectForKey:@"timerLeft"];
-//                     quizTime = [_timeleftInms integerValue]/60000.00;
-//                     [self updateTimerLabel];
-                     
                      [self showSuccessTSMessage:@"Option marked successfully."];
                      quesInfo.optionMarked = ontionMarked;
                      quesInfo.isFreezed = isToBeFreezed;
@@ -569,6 +561,11 @@
          {
              NSString *isSessionValid = [[response objectForKey:@"responseObject"] objectForKey:@"isSessionValid"];
              
+             [[NSNotificationCenter defaultCenter] removeObserver:self];
+             // technically these timers retain self so there's a cycle but
+             // we're a singleton anyway.
+             [timer invalidate];
+
              if ([isSessionValid.uppercaseString isEqualToString:@"F"]) {
                  [self showAlert:@"User can't be logged into 2 devices simultaneously. Try submitting on the other device."];
              }
@@ -578,11 +575,6 @@
                  NSMutableArray *vcArray = self.navigationController.viewControllers.mutableCopy;
                  
                  if ([[[_quizDict objectForKey:@"isPaid"] uppercaseString] isEqualToString:@"T"]) {
-                     
-                     [[NSNotificationCenter defaultCenter] removeObserver:self];
-                     // technically these timers retain self so there's a cycle but
-                     // we're a singleton anyway.
-                     [timer invalidate];
                      
                      QuizResultViewController *vc = (QuizResultViewController *)[UIViewController instantiateViewControllerWithIdentifier:@"QuizResultViewController" fromStoryboard:@"Home"];
                      vc.quizDict = self.quizDict;

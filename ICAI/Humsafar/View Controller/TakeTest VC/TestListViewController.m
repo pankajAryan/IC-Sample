@@ -99,7 +99,7 @@
     
     NSDictionary *testObject = [arrayTestList objectAtIndex:indexPath.row];
     
-    cell.lblTestTitle.text = [NSString stringWithFormat:@"Test Number: %i",indexPath.row+1];
+    cell.lblTestTitle.text = [NSString stringWithFormat:@"Test Number: %li",indexPath.row+1];
     cell.lblQuesCount.text = [NSString stringWithFormat:@"Number of questions: %@",[testObject objectForKey:@"noOfQuestions"]];
     cell.lblDuration.text = [NSString stringWithFormat:@"Duration: %@ minutes",[testObject objectForKey:@"timeMinutes"]];
     

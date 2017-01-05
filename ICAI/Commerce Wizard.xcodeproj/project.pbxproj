@@ -895,7 +895,7 @@
 				TargetAttributes = {
 					CE2B39781DAE6D1F00B266E1 = {
 						CreatedOnToolsVersion = 8.0;
-						DevelopmentTeam = CT4G76434G;
+						DevelopmentTeam = X4U85Q3KVF;
 						ProvisioningStyle = Automatic;
 						SystemCapabilities = {
 							com.apple.Keychain = {
@@ -1161,7 +1161,7 @@
 				CODE_SIGN_ENTITLEMENTS = Humsafar/Humsafar.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer: Himanshu Yadav (4YZ4V7E3TV)";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				DEVELOPMENT_TEAM = CT4G76434G;
+				DEVELOPMENT_TEAM = X4U85Q3KVF;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/Humsafar",
@@ -1189,7 +1189,7 @@
 				CODE_SIGN_ENTITLEMENTS = Humsafar/Humsafar.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer: Himanshu Yadav (4YZ4V7E3TV)";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				DEVELOPMENT_TEAM = CT4G76434G;
+				DEVELOPMENT_TEAM = X4U85Q3KVF;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/Humsafar",
