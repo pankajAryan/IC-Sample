@@ -37,7 +37,7 @@
                      arrayTestList = [response objectForKey:@"responseObject"];
                      
                      if (!arrayTestList.count) {
-                         [self showAlert:@"The quiz is not active presently. Level 1 Online Exam will be held on 8th Jan 2017 for class 9th/10th from 10:45 am to 12:00 pm IST and for class 11th/12th from 4:15 pm to 5:30 pm."];
+                         [self showAlert:@"The quiz is not active presently. Level 1 Online Exam will be held on 8th Jan 2017 for class 9th/10th from 10:45 AM to 12:00 PM IST and for class 11th/12th from 4:15 PM to 5:30 PM IST"];
                          [self popVCAction:nil];
                      }
                      else
@@ -46,9 +46,8 @@
                  else if (responseType == eResponseTypeFailJSON){
                      [self showAlert:[response objectForKey:kKEY_ErrorMessage]];
                  }
-                 else{
+                 else if (responseType != eResponseTypeNoInternet)
                      [self showAlert:@"Something went wrong, Please try after sometime."];
-                 }
              }];
 }
 

@@ -40,9 +40,7 @@
     }else{
         // not complete URL
         // append base URL with next URL
-        
-        //dynamicBaseUrl = [UIViewController retrieveDataFromUserDefault:@"server_url"];
-        
+                
         if ((_dynamicBaseUrl !=nil) && _dynamicBaseUrl.length) {
             urlString = [NSString stringWithFormat:@"%@%@",_dynamicBaseUrl,serviceURL];
         }

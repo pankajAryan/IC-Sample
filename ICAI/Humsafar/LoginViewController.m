@@ -99,9 +99,8 @@ NSString *encryptionKey =   @"2b9cYGfQ%D-^hnCB";
                              else if (responseType == eResponseTypeFailJSON){
                                  [self showAlert:[response objectForKey:kKEY_ErrorMessage]];
                              }
-                             else{
+                             else if (responseType != eResponseTypeNoInternet)
                                  [self showAlert:@"Something went wrong, Please try after sometime."];
-                             }
                          }];
     }
 }
@@ -151,9 +150,8 @@ NSString *encryptionKey =   @"2b9cYGfQ%D-^hnCB";
                     else if (responseType == eResponseTypeFailJSON){
                         [self showAlert:[response objectForKey:kKEY_ErrorMessage]];
                     }
-                    else{
+                    else if (responseType != eResponseTypeNoInternet)
                         [self showAlert:@"Something went wrong, Please try after sometime."];
-                    }
                 }];
     }
 }

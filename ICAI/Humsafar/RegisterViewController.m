@@ -244,9 +244,8 @@
          else if (responseType == eResponseTypeFailJSON){
              [self showAlert:[response objectForKey:kKEY_ErrorMessage]];
          }
-         else{
+         else if (responseType != eResponseTypeNoInternet)
              [self showAlert:@"Something went wrong, Please try after sometime."];
-         }
      }];
 }
 
@@ -302,9 +301,8 @@
                          else if (responseType == eResponseTypeFailJSON){
                              [self showAlert:[response objectForKey:kKEY_ErrorMessage]];
                          }
-                         else{
+                         else if (responseType != eResponseTypeNoInternet)
                              [self showAlert:@"Something went wrong, Please try after sometime."];
-                         }
                      }];
 }
 
@@ -357,9 +355,8 @@
                          else if (responseType == eResponseTypeFailJSON){
                              [self showAlert:[response objectForKey:kKEY_ErrorMessage]];
                          }
-                         else{
+                         else if (responseType != eResponseTypeNoInternet)
                              [self showAlert:@"Something went wrong, Please try after sometime."];
-                         }
                      }];
 }
 

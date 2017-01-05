@@ -285,9 +285,8 @@
                  else if (responseType == eResponseTypeFailJSON){
                      [self showAlert:[response objectForKey:kKEY_ErrorMessage]];
                  }
-                 else{
+                 else if (responseType != eResponseTypeNoInternet)
                      [self showAlert:@"Something went wrong, Please try after sometime."];
-                 }
              }];
 }
 
@@ -512,9 +511,8 @@
          else if (responseType == eResponseTypeFailJSON){
              [self showAlert:[response objectForKey:kKEY_ErrorMessage]];
          }
-         else{
+         else if (responseType != eResponseTypeNoInternet)
              [self showAlert:@"Something went wrong, Please try after sometime."];
-         }
      }];
 }
 
@@ -542,17 +540,18 @@
     // dismiss all the previously presented vc, then show this alert
     [self dismissViewControllerAnimated:YES completion:nil];
     
-    UIAlertController *alertController = [UIAlertController alertControllerWithTitle:@"Submit/End Quiz" message:@"Your time is finished." preferredStyle:UIAlertControllerStyleAlert];
+//    UIAlertController *alertController = [UIAlertController alertControllerWithTitle:@"Time Up!" message:@"You must submit your Quiz now." preferredStyle:UIAlertControllerStyleAlert];
     
-    [alertController addAction:[UIAlertAction actionWithTitle:@"Submit" style:UIAlertActionStyleDefault handler:^(UIAlertAction *action) {
+//    [alertController addAction:[UIAlertAction actionWithTitle:@"SUBMIT QUIZ" style:UIAlertActionStyleDefault handler:^(UIAlertAction *action) {
         
-        [alertController dismissViewControllerAnimated:YES completion:nil];
-        [self submitQuiz];
-    }]];
+//        [alertController dismissViewControllerAnimated:YES completion:nil];
     
-    [self presentViewController:alertController animated:YES completion:nil];
+    [self showWarningTSMessage:@"Time Up! Auto Submitting your test now."];
+    [self submitQuiz];
     
+//    }]];
     
+//    [self presentViewController:alertController animated:YES completion:nil];
 }
 
 -(void)submitQuiz {
@@ -571,7 +570,7 @@
              NSString *isSessionValid = [[response objectForKey:@"responseObject"] objectForKey:@"isSessionValid"];
              
              if ([isSessionValid.uppercaseString isEqualToString:@"F"]) {
-                 [self showAlert:@"User can't be logged into 2 devices simultaneously."];
+                 [self showAlert:@"User can't be logged into 2 devices simultaneously. Try submitting on the other device."];
              }
              else {
                  [self showAlert:@"You have successfully submitted the quiz."];
@@ -600,9 +599,8 @@
          else if (responseType == eResponseTypeFailJSON){
              [self showAlert:[response objectForKey:kKEY_ErrorMessage]];
          }
-         else{
+         else if (responseType != eResponseTypeNoInternet)
              [self showAlert:@"Something went wrong, Please try after sometime."];
-         }
      }];
 }
 
@@ -610,7 +608,7 @@
     
     NSInteger time = quizTime*60 + [quizStartDateTime timeIntervalSinceNow];
     
-    self.lblTime.text = [NSString stringWithFormat:@"%02d:%02d",time/60,time % 60];
+    self.lblTime.text = [NSString stringWithFormat:@"%02ld:%02ld",time/60,time % 60];
     
     if ( time <= 0) {//quizTime in min
         
@@ -618,7 +616,9 @@
         timer = nil;
         
         self.lblTime.text = [NSString stringWithFormat:@"00:00"];
-        [self submitQuiz];
+        
+        [self quizTimefinish];
+        //[self submitQuiz];
     }
 }
 
