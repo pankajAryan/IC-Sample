@@ -11,8 +11,8 @@
 @interface AnswerTableViewCell : UITableViewCell
 
 @property (weak, nonatomic) IBOutlet UIView *viewOptionContainer;
-@property (weak, nonatomic) IBOutlet UILabel *lblAnswer;
 @property (weak, nonatomic) IBOutlet UIButton *radioButton;
+@property (weak, nonatomic) IBOutlet UITextView *txtViewAnswer;
 
 
 @end

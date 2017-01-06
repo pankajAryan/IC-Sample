@@ -82,8 +82,15 @@
     {
         cell = [tableView dequeueReusableCellWithIdentifier:@"questionCell"];
         
-        UILabel *question = [cell viewWithTag:21];
-        question.text = quesInfo.questionText;
+        UITextView *question = [cell viewWithTag:21];
+        
+        NSAttributedString *attributedString = [[NSAttributedString alloc]
+                                                initWithData: [quesInfo.questionText dataUsingEncoding:NSUnicodeStringEncoding]
+                                                options: @{ NSDocumentTypeDocumentAttribute: NSHTMLTextDocumentType }
+                                                documentAttributes: nil
+                                                error: nil
+                                                ];
+        question.attributedText = attributedString;
         
         return cell;
     }
@@ -93,11 +100,13 @@
         
         optionCell.radioButton.selected = NO;
         optionCell.viewOptionContainer.backgroundColor = [UIColor whiteColor];
-
+        
+        NSString *strQUestion = @"";
+        
         switch (indexPath.row)
         {
             case 1:
-                optionCell.lblAnswer.text = quesInfo.option1;
+                strQUestion = quesInfo.option1;
                 
                 if ([quesInfo.correctOption.uppercaseString isEqualToString:@"A"]) {
                     optionCell.viewOptionContainer.backgroundColor = [UIColor greenBGColor];
@@ -114,7 +123,7 @@
 
                 break;
             case 2:
-                optionCell.lblAnswer.text = quesInfo.option2;
+                strQUestion = quesInfo.option2;
                 
                 if ([quesInfo.correctOption.uppercaseString isEqualToString:@"B"]) {
                     optionCell.viewOptionContainer.backgroundColor = [UIColor greenBGColor];
@@ -131,7 +140,7 @@
                 
                 break;
             case 3:
-                optionCell.lblAnswer.text = quesInfo.option3;
+                strQUestion = quesInfo.option3;
                 
                 if ([quesInfo.correctOption.uppercaseString isEqualToString:@"C"]) {
                     optionCell.viewOptionContainer.backgroundColor = [UIColor greenBGColor];
@@ -148,7 +157,7 @@
                 
                 break;
             case 4:
-                optionCell.lblAnswer.text = quesInfo.option4;
+                strQUestion = quesInfo.option4;
                 
                 if ([quesInfo.correctOption.uppercaseString isEqualToString:@"D"]) {
                     optionCell.viewOptionContainer.backgroundColor = [UIColor greenBGColor];
@@ -168,6 +177,14 @@
             default:
                 break;
         }
+        
+        NSAttributedString *attributedString = [[NSAttributedString alloc]
+                                                initWithData: [strQUestion dataUsingEncoding:NSUnicodeStringEncoding]
+                                                options: @{ NSDocumentTypeDocumentAttribute: NSHTMLTextDocumentType }
+                                                documentAttributes: nil
+                                                error: nil
+                                                ];
+        optionCell.txtViewAnswer.attributedText = attributedString;
         
         return optionCell;
     }

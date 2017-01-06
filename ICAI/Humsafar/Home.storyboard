@@ -208,13 +208,13 @@
                                         </constraints>
                                     </imageView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="1000" text="2016" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Bu1-GB-Ql4">
-                                        <rect key="frame" x="141" y="158.5" width="39" height="16"/>
+                                        <rect key="frame" x="141" y="158.5" width="39" height="15.5"/>
                                         <fontDescription key="fontDescription" name="OpenSans-Semibold" family="Open Sans" pointSize="17"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="GcR-1p-YQJ">
-                                        <rect key="frame" x="8" y="232.5" width="304" height="274"/>
+                                        <rect key="frame" x="8" y="232" width="304" height="274"/>
                                         <subviews>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fXf-Il-Rxf">
                                                 <rect key="frame" x="8" y="8" width="140" height="124"/>
@@ -378,7 +378,7 @@
                                         </constraints>
                                     </view>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="1000" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="2aq-ga-tn9">
-                                        <rect key="frame" x="20" y="182.5" width="280" height="44"/>
+                                        <rect key="frame" x="20" y="182" width="280" height="44"/>
                                         <string key="text">Organized by 
 CareerCounselling Committee, ICAI</string>
                                         <fontDescription key="fontDescription" name="OpenSans" family="Open Sans" pointSize="16"/>
@@ -1672,24 +1672,22 @@ Website: www.icai.org </string>
                                                     <rect key="frame" x="7" y="7" width="306" height="30"/>
                                                     <color key="backgroundColor" red="0.85222945449999998" green="0.85222945449999998" blue="0.85222945449999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 </view>
-                                                <label opaque="NO" userInteractionEnabled="NO" tag="21" contentMode="left" horizontalHuggingPriority="750" verticalHuggingPriority="1000" verticalCompressionResistancePriority="1000" text="ques text" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eay-T7-oRj">
+                                                <textView clipsSubviews="YES" multipleTouchEnabled="YES" tag="21" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="1000" verticalCompressionResistancePriority="1000" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" editable="NO" textAlignment="natural" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zR2-P7-gXl">
                                                     <rect key="frame" x="16" y="12" width="288" height="20"/>
-                                                    <fontDescription key="fontDescription" name="OpenSans" family="Open Sans" pointSize="16"/>
-                                                    <nil key="textColor"/>
-                                                    <nil key="highlightedColor"/>
-                                                    <userDefinedRuntimeAttributes>
-                                                        <userDefinedRuntimeAttribute type="string" keyPath="text" value=""/>
-                                                    </userDefinedRuntimeAttributes>
-                                                </label>
+                                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                    <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                    <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                                </textView>
                                             </subviews>
                                             <constraints>
                                                 <constraint firstAttribute="bottom" secondItem="uPT-fY-zGB" secondAttribute="bottom" constant="7" id="BkG-YT-vO3"/>
                                                 <constraint firstAttribute="trailing" secondItem="uPT-fY-zGB" secondAttribute="trailing" constant="7" id="F32-gf-aKl"/>
-                                                <constraint firstItem="eay-T7-oRj" firstAttribute="top" secondItem="Ohk-19-fod" secondAttribute="topMargin" constant="4" id="J4s-4u-0yT"/>
-                                                <constraint firstAttribute="bottomMargin" secondItem="eay-T7-oRj" secondAttribute="bottom" constant="4" id="MSo-MK-8ro"/>
+                                                <constraint firstItem="zR2-P7-gXl" firstAttribute="leading" secondItem="Ohk-19-fod" secondAttribute="leadingMargin" constant="8" id="KDS-ei-MR1"/>
+                                                <constraint firstItem="zR2-P7-gXl" firstAttribute="top" secondItem="Ohk-19-fod" secondAttribute="topMargin" constant="4" id="KoC-Sb-Flq"/>
                                                 <constraint firstItem="uPT-fY-zGB" firstAttribute="leading" secondItem="Ohk-19-fod" secondAttribute="leading" constant="7" id="PBK-Mo-HxJ"/>
-                                                <constraint firstAttribute="trailingMargin" secondItem="eay-T7-oRj" secondAttribute="trailing" constant="8" id="QB8-6Z-ad3"/>
-                                                <constraint firstItem="eay-T7-oRj" firstAttribute="leading" secondItem="Ohk-19-fod" secondAttribute="leadingMargin" constant="8" id="Spe-VI-ZeM"/>
+                                                <constraint firstAttribute="trailingMargin" secondItem="zR2-P7-gXl" secondAttribute="trailing" constant="8" id="R2S-ek-rD9"/>
+                                                <constraint firstAttribute="bottomMargin" secondItem="zR2-P7-gXl" secondAttribute="bottom" constant="4" id="nIY-MW-thP"/>
                                                 <constraint firstItem="uPT-fY-zGB" firstAttribute="top" secondItem="Ohk-19-fod" secondAttribute="top" constant="7" id="phq-jz-d0R"/>
                                             </constraints>
                                         </tableViewCellContentView>
@@ -1704,15 +1702,13 @@ Website: www.icai.org </string>
                                                 <view tag="21" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qXR-OM-3kc">
                                                     <rect key="frame" x="7" y="7" width="306" height="30"/>
                                                     <subviews>
-                                                        <label opaque="NO" userInteractionEnabled="NO" tag="23" contentMode="left" horizontalHuggingPriority="750" verticalHuggingPriority="1000" verticalCompressionResistancePriority="1000" text="option 1" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qbf-Ai-Rfc">
+                                                        <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="1000" verticalCompressionResistancePriority="1000" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" editable="NO" textAlignment="natural" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WKH-jw-dw5">
                                                             <rect key="frame" x="39" y="5" width="257" height="20"/>
-                                                            <fontDescription key="fontDescription" name="OpenSans" family="Open Sans" pointSize="16"/>
-                                                            <nil key="textColor"/>
-                                                            <nil key="highlightedColor"/>
-                                                            <userDefinedRuntimeAttributes>
-                                                                <userDefinedRuntimeAttribute type="string" keyPath="text" value=""/>
-                                                            </userDefinedRuntimeAttributes>
-                                                        </label>
+                                                            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                            <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
+                                                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                            <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                                        </textView>
                                                         <button opaque="NO" userInteractionEnabled="NO" tag="22" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wsC-4z-oPN">
                                                             <rect key="frame" x="9" y="3" width="24" height="24"/>
                                                             <constraints>
@@ -1728,12 +1724,12 @@ Website: www.icai.org </string>
                                                     </subviews>
                                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                                     <constraints>
+                                                        <constraint firstAttribute="trailing" secondItem="WKH-jw-dw5" secondAttribute="trailing" constant="10" id="7se-73-4FA"/>
                                                         <constraint firstItem="wsC-4z-oPN" firstAttribute="centerY" secondItem="qXR-OM-3kc" secondAttribute="centerY" id="AN0-Fh-K0b"/>
-                                                        <constraint firstItem="qbf-Ai-Rfc" firstAttribute="leading" secondItem="wsC-4z-oPN" secondAttribute="trailing" constant="6" id="AeA-dL-UWb"/>
-                                                        <constraint firstAttribute="bottom" secondItem="qbf-Ai-Rfc" secondAttribute="bottom" constant="5" id="Jex-lL-z4c"/>
-                                                        <constraint firstItem="qbf-Ai-Rfc" firstAttribute="top" secondItem="qXR-OM-3kc" secondAttribute="top" constant="5" id="OIG-JT-byR"/>
-                                                        <constraint firstAttribute="trailing" secondItem="qbf-Ai-Rfc" secondAttribute="trailing" constant="10" id="Z9k-fE-DC4"/>
+                                                        <constraint firstItem="WKH-jw-dw5" firstAttribute="top" secondItem="qXR-OM-3kc" secondAttribute="top" constant="5" id="NZk-U1-STj"/>
+                                                        <constraint firstAttribute="bottom" secondItem="WKH-jw-dw5" secondAttribute="bottom" constant="5" id="mcy-ge-yvL"/>
                                                         <constraint firstItem="wsC-4z-oPN" firstAttribute="leading" secondItem="qXR-OM-3kc" secondAttribute="leading" constant="9" id="nbg-sh-32B"/>
+                                                        <constraint firstItem="WKH-jw-dw5" firstAttribute="leading" secondItem="wsC-4z-oPN" secondAttribute="trailing" constant="6" id="ohX-hO-26L"/>
                                                     </constraints>
                                                 </view>
                                             </subviews>
@@ -1745,8 +1741,8 @@ Website: www.icai.org </string>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
-                                            <outlet property="lblAnswer" destination="qbf-Ai-Rfc" id="pnP-Ez-sFt"/>
                                             <outlet property="radioButton" destination="wsC-4z-oPN" id="XbZ-BB-xFa"/>
+                                            <outlet property="txtViewAnswer" destination="WKH-jw-dw5" id="ta5-9a-zMv"/>
                                             <outlet property="viewOptionContainer" destination="hO8-43-s7J" id="zO8-m6-l35"/>
                                         </connections>
                                     </tableViewCell>
@@ -1790,7 +1786,7 @@ Website: www.icai.org </string>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Reset" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iqt-l0-icx">
-                                <rect key="frame" x="112.5" y="546.5" width="32.5" height="16.5"/>
+                                <rect key="frame" x="112" y="546.5" width="32.5" height="16.5"/>
                                 <fontDescription key="fontDescription" name="OpenSans-Semibold" family="Open Sans" pointSize="12"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -1807,7 +1803,7 @@ Website: www.icai.org </string>
                                 </connections>
                             </button>
                             <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Previous" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6DJ-HJ-WEp">
-                                <rect key="frame" x="39.5" y="546.5" width="50" height="16.5"/>
+                                <rect key="frame" x="39" y="546.5" width="50" height="16.5"/>
                                 <fontDescription key="fontDescription" name="OpenSans-Semibold" family="Open Sans" pointSize="12"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>

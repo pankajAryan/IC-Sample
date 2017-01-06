@@ -154,8 +154,14 @@
     {
         cell = [tableView dequeueReusableCellWithIdentifier:@"questionCell"];
         
-        UILabel *question = [cell viewWithTag:21];
-        question.text = quesInfo.questionText;
+        UITextView *question = [cell viewWithTag:21];        
+        NSAttributedString *attributedString = [[NSAttributedString alloc]
+                                                initWithData: [quesInfo.questionText dataUsingEncoding:NSUnicodeStringEncoding]
+                                                options: @{ NSDocumentTypeDocumentAttribute: NSHTMLTextDocumentType }
+                                                documentAttributes: nil
+                                                error: nil
+                                                ];
+        question.attributedText = attributedString;
         
         return cell;
     }
@@ -166,10 +172,12 @@
         optionCell.radioButton.selected = NO;
         optionCell.viewOptionContainer.backgroundColor = [UIColor whiteColor];
         
+        NSString *strQUestion = @"";
+
         switch (indexPath.row)
         {
             case 1:
-                optionCell.lblAnswer.text = quesInfo.option1;
+                strQUestion = quesInfo.option1;
                 
                 if ([quesInfo.optionMarked.uppercaseString isEqualToString:@"A"]) {
                     
@@ -178,7 +186,7 @@
                 
                 break;
             case 2:
-                optionCell.lblAnswer.text = quesInfo.option2;
+                strQUestion = quesInfo.option2;
                 
                 if ([quesInfo.optionMarked.uppercaseString isEqualToString:@"B"]) {
                     
@@ -187,7 +195,7 @@
                 
                 break;
             case 3:
-                optionCell.lblAnswer.text = quesInfo.option3;
+                strQUestion = quesInfo.option3;
                 
                 if ([quesInfo.optionMarked.uppercaseString isEqualToString:@"C"]) {
                     
@@ -196,7 +204,7 @@
                 
                 break;
             case 4:
-                optionCell.lblAnswer.text = quesInfo.option4;
+                strQUestion = quesInfo.option4;
                 
                 if ([quesInfo.optionMarked.uppercaseString isEqualToString:@"D"]) {
                     
@@ -208,6 +216,14 @@
             default:
                 break;
         }
+        
+        NSAttributedString *attributedString = [[NSAttributedString alloc]
+                                                initWithData: [strQUestion dataUsingEncoding:NSUnicodeStringEncoding]
+                                                options: @{ NSDocumentTypeDocumentAttribute: NSHTMLTextDocumentType }
+                                                documentAttributes: nil
+                                                error: nil
+                                                ];
+        optionCell.txtViewAnswer.attributedText = attributedString;
         
         return optionCell;
     }

@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11542" systemVersion="16A323" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16A323" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11524"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -214,25 +214,23 @@
                                                     <rect key="frame" x="7" y="7" width="361" height="30"/>
                                                     <color key="backgroundColor" red="0.85222945449999998" green="0.85222945449999998" blue="0.85222945449999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 </view>
-                                                <label opaque="NO" userInteractionEnabled="NO" tag="21" contentMode="left" horizontalHuggingPriority="750" verticalHuggingPriority="1000" verticalCompressionResistancePriority="1000" text="ques text" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Q2t-wZ-BSn">
+                                                <textView clipsSubviews="YES" multipleTouchEnabled="YES" tag="21" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="1000" verticalCompressionResistancePriority="1000" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" editable="NO" textAlignment="natural" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AAF-f9-32n">
                                                     <rect key="frame" x="16" y="12" width="343" height="20"/>
-                                                    <fontDescription key="fontDescription" name="OpenSans" family="Open Sans" pointSize="16"/>
-                                                    <nil key="textColor"/>
-                                                    <nil key="highlightedColor"/>
-                                                    <userDefinedRuntimeAttributes>
-                                                        <userDefinedRuntimeAttribute type="string" keyPath="text" value=""/>
-                                                    </userDefinedRuntimeAttributes>
-                                                </label>
+                                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                    <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                    <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                                </textView>
                                             </subviews>
                                             <constraints>
                                                 <constraint firstItem="9Ve-Wh-8Oj" firstAttribute="leading" secondItem="qgP-Xs-2yx" secondAttribute="leading" constant="7" id="20E-vV-Gux"/>
-                                                <constraint firstItem="Q2t-wZ-BSn" firstAttribute="top" secondItem="qgP-Xs-2yx" secondAttribute="topMargin" constant="4" id="4qk-OO-Cnt"/>
-                                                <constraint firstAttribute="bottomMargin" secondItem="Q2t-wZ-BSn" secondAttribute="bottom" constant="4" id="A9t-L7-W4O"/>
-                                                <constraint firstItem="Q2t-wZ-BSn" firstAttribute="leading" secondItem="qgP-Xs-2yx" secondAttribute="leadingMargin" constant="8" id="Co1-2n-v26"/>
                                                 <constraint firstAttribute="trailing" secondItem="9Ve-Wh-8Oj" secondAttribute="trailing" constant="7" id="FTi-mU-m4g"/>
-                                                <constraint firstAttribute="trailingMargin" secondItem="Q2t-wZ-BSn" secondAttribute="trailing" constant="8" id="Vio-8z-2KI"/>
+                                                <constraint firstAttribute="bottomMargin" secondItem="AAF-f9-32n" secondAttribute="bottom" constant="4" id="ROd-Gl-ojd"/>
+                                                <constraint firstItem="AAF-f9-32n" firstAttribute="top" secondItem="qgP-Xs-2yx" secondAttribute="topMargin" constant="4" id="brq-28-SYf"/>
+                                                <constraint firstAttribute="trailingMargin" secondItem="AAF-f9-32n" secondAttribute="trailing" constant="8" id="gsX-2H-fSu"/>
                                                 <constraint firstItem="9Ve-Wh-8Oj" firstAttribute="top" secondItem="qgP-Xs-2yx" secondAttribute="top" constant="7" id="hWG-6l-aox"/>
                                                 <constraint firstAttribute="bottom" secondItem="9Ve-Wh-8Oj" secondAttribute="bottom" constant="7" id="j6A-VA-j8t"/>
+                                                <constraint firstItem="AAF-f9-32n" firstAttribute="leading" secondItem="qgP-Xs-2yx" secondAttribute="leadingMargin" constant="8" id="yth-Bi-pHo"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                     </tableViewCell>
@@ -246,15 +244,13 @@
                                                 <view tag="21" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="tcp-BF-BfI">
                                                     <rect key="frame" x="7" y="7" width="361" height="30"/>
                                                     <subviews>
-                                                        <label opaque="NO" userInteractionEnabled="NO" tag="23" contentMode="left" horizontalHuggingPriority="750" verticalHuggingPriority="1000" verticalCompressionResistancePriority="1000" text="option 1" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2zK-ca-uio">
+                                                        <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="1000" verticalCompressionResistancePriority="1000" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" editable="NO" textAlignment="natural" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nP6-O7-q0b">
                                                             <rect key="frame" x="39" y="5" width="312" height="20"/>
-                                                            <fontDescription key="fontDescription" name="OpenSans" family="Open Sans" pointSize="16"/>
-                                                            <nil key="textColor"/>
-                                                            <nil key="highlightedColor"/>
-                                                            <userDefinedRuntimeAttributes>
-                                                                <userDefinedRuntimeAttribute type="string" keyPath="text" value=""/>
-                                                            </userDefinedRuntimeAttributes>
-                                                        </label>
+                                                            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                            <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
+                                                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                            <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                                        </textView>
                                                         <button opaque="NO" userInteractionEnabled="NO" tag="22" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PSQ-FH-6Fh">
                                                             <rect key="frame" x="9" y="3" width="24" height="24"/>
                                                             <constraints>
@@ -267,12 +263,12 @@
                                                     </subviews>
                                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                                     <constraints>
-                                                        <constraint firstItem="2zK-ca-uio" firstAttribute="leading" secondItem="PSQ-FH-6Fh" secondAttribute="trailing" constant="6" id="9AE-XE-aEv"/>
-                                                        <constraint firstItem="2zK-ca-uio" firstAttribute="top" secondItem="tcp-BF-BfI" secondAttribute="top" constant="5" id="LYx-Ar-R9L"/>
+                                                        <constraint firstItem="nP6-O7-q0b" firstAttribute="top" secondItem="tcp-BF-BfI" secondAttribute="top" constant="5" id="2C3-8a-oAs"/>
                                                         <constraint firstItem="PSQ-FH-6Fh" firstAttribute="centerY" secondItem="tcp-BF-BfI" secondAttribute="centerY" id="UY3-ba-W6j"/>
-                                                        <constraint firstAttribute="trailing" secondItem="2zK-ca-uio" secondAttribute="trailing" constant="10" id="clb-ip-Ldl"/>
-                                                        <constraint firstAttribute="bottom" secondItem="2zK-ca-uio" secondAttribute="bottom" constant="5" id="gZb-4d-Ck0"/>
+                                                        <constraint firstItem="nP6-O7-q0b" firstAttribute="leading" secondItem="PSQ-FH-6Fh" secondAttribute="trailing" constant="6" id="gdR-R1-sjt"/>
+                                                        <constraint firstAttribute="trailing" secondItem="nP6-O7-q0b" secondAttribute="trailing" constant="10" id="hGV-HG-tiC"/>
                                                         <constraint firstItem="PSQ-FH-6Fh" firstAttribute="leading" secondItem="tcp-BF-BfI" secondAttribute="leading" constant="9" id="iuT-ry-0Zf"/>
+                                                        <constraint firstAttribute="bottom" secondItem="nP6-O7-q0b" secondAttribute="bottom" constant="5" id="mhf-gD-X9x"/>
                                                     </constraints>
                                                 </view>
                                             </subviews>
@@ -284,8 +280,8 @@
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
-                                            <outlet property="lblAnswer" destination="2zK-ca-uio" id="Cbp-WX-6Ew"/>
                                             <outlet property="radioButton" destination="PSQ-FH-6Fh" id="LAg-R2-NBl"/>
+                                            <outlet property="txtViewAnswer" destination="nP6-O7-q0b" id="L2Q-dH-Cyh"/>
                                             <outlet property="viewOptionContainer" destination="tcp-BF-BfI" id="SzW-B3-YB5"/>
                                         </connections>
                                     </tableViewCell>
@@ -329,7 +325,7 @@
                                 </connections>
                             </button>
                             <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Reset" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ao6-kX-JwY">
-                                <rect key="frame" x="134" y="645.5" width="32.5" height="16.5"/>
+                                <rect key="frame" x="134.5" y="645.5" width="32.5" height="16.5"/>
                                 <fontDescription key="fontDescription" name="OpenSans-Semibold" family="Open Sans" pointSize="12"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -342,7 +338,7 @@
                                 </connections>
                             </button>
                             <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Previous" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="01n-K2-5TC">
-                                <rect key="frame" x="50.5" y="645.5" width="50" height="16.5"/>
+                                <rect key="frame" x="50" y="645.5" width="50" height="16.5"/>
                                 <fontDescription key="fontDescription" name="OpenSans-Semibold" family="Open Sans" pointSize="12"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -393,7 +389,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="tad-28-7Up" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-5520" y="175"/>
+            <point key="canvasLocation" x="-5520.8000000000002" y="174.96251874062969"/>
         </scene>
     </scenes>
     <resources>
