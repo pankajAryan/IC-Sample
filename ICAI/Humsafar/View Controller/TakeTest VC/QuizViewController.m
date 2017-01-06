@@ -538,7 +538,7 @@
         
 //        [alertController dismissViewControllerAnimated:YES completion:nil];
     
-    [self showWarningTSMessage:@"Time Up! Auto Submitting your test now."];
+    [self showWarningTSMessage:@"Time's Up!"];
     [self submitQuiz];
     
 //    }]];
@@ -598,9 +598,14 @@
 
 -(void)updateTimerLabel {
     
-    NSInteger time = quizTime*60 + [quizStartDateTime timeIntervalSinceNow];
+    NSInteger timeInSeconds = quizTime*60 + [quizStartDateTime timeIntervalSinceNow];
     
-    self.lblTime.text = [NSString stringWithFormat:@"%02ld:%02ld",time/60,time % 60];
+    NSInteger hours = timeInSeconds/3600;
+    NSInteger minutesMinusHours = (timeInSeconds - (hours*3600))/60;
+    NSInteger secondsMinusMinutes = (timeInSeconds - (hours*3600))%60;
+
+    
+    self.lblTime.text = [NSString stringWithFormat:@"%02ld:%02ld:%02ld",(long)hours,(long)minutesMinusHours,(long)secondsMinusMinutes];
     
     if ( time <= 0) {//quizTime in min
         
