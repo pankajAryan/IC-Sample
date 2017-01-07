@@ -82,7 +82,32 @@
     {
         cell = [tableView dequeueReusableCellWithIdentifier:@"questionCell"];
         
-        UITextView *question = [cell viewWithTag:21];
+        UITextView *instruction = [cell viewWithTag:21];
+        
+        if ((quesInfo.questionInstruction != nil) && (quesInfo.questionInstruction.length))
+        {
+            NSString *instructionText = [NSString stringWithFormat:@"INSTRUCTION: %@",quesInfo.questionInstruction];
+            
+            instructionText = [instructionText stringByAppendingString:[NSString stringWithFormat:@"<style>body{font-family: '%@'; font-size:%fpx;}</style>", instruction.font.fontName, instruction.font.pointSize]];
+            
+            NSAttributedString *attributedString = [[NSAttributedString alloc]
+                                                    initWithData: [instructionText dataUsingEncoding:NSUnicodeStringEncoding]
+                                                    options: @{ NSDocumentTypeDocumentAttribute: NSHTMLTextDocumentType }
+                                                    documentAttributes: nil
+                                                    error: nil
+                                                    ];
+            instruction.attributedText = attributedString;
+            
+            instruction.hidden = NO;
+        }
+        else {
+            instruction.text = nil;
+            instruction.hidden = YES;
+        }
+        
+        UITextView *question = [cell viewWithTag:22];
+        
+        quesInfo.questionText = [quesInfo.questionText stringByAppendingString:[NSString stringWithFormat:@"<style>body{font-family: '%@'; font-size:%fpx;}</style>", question.font.fontName, question.font.pointSize]];
         
         NSAttributedString *attributedString = [[NSAttributedString alloc]
                                                 initWithData: [quesInfo.questionText dataUsingEncoding:NSUnicodeStringEncoding]
@@ -177,6 +202,8 @@
             default:
                 break;
         }
+        
+        strQUestion = [strQUestion stringByAppendingString:[NSString stringWithFormat:@"<style>body{font-family: '%@'; font-size:%fpx;}</style>", optionCell.txtViewAnswer.font.fontName, optionCell.txtViewAnswer.font.pointSize]];
         
         NSAttributedString *attributedString = [[NSAttributedString alloc]
                                                 initWithData: [strQUestion dataUsingEncoding:NSUnicodeStringEncoding]
