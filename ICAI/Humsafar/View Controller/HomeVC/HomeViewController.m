@@ -41,11 +41,14 @@
              withParameter:@{@"applicationId":applicationId, CHECKSOURCE_KEY:CHECKSOURCE_VALUE, @"deviceOS":@"iOS", @"notificationId":@""}
              onCompletion:^(eResponseType responseType, id response)
              {
-                 NSDecimalNumber * latestVersion = [NSDecimalNumber decimalNumberWithString:[response objectForKey:@"responseObject"]];
-                 NSDecimalNumber * currentVersion = [NSDecimalNumber decimalNumberWithString:[[[NSBundle mainBundle] infoDictionary] objectForKey:@"CFBundleShortVersionString"]];
-
-                 if ([currentVersion compare:latestVersion] == NSOrderedAscending) {
-                     [self showAlert:@"Please update your app to newer version from the app store."];
+                 if (responseType == eResponseTypeSuccessJSON)
+                 {
+                     NSDecimalNumber * latestVersion = [NSDecimalNumber decimalNumberWithString:[response objectForKey:@"responseObject"]];
+                     NSDecimalNumber * currentVersion = [NSDecimalNumber decimalNumberWithString:[[[NSBundle mainBundle] infoDictionary] objectForKey:@"CFBundleShortVersionString"]];
+                     
+                     if ([currentVersion compare:latestVersion] == NSOrderedAscending) {
+                         [self showAlert:@"Please update your app to newer version from the app store."];
+                     }
                  }
              }];
 }
